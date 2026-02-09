@@ -24,7 +24,10 @@
   position: relative;
   color: #ccc; /* estrella vacía (contorno) */
 }
-
+/* Evita que las estrellas vacías se rellenen */
+.star:not(.full):not(.half) {
+  color: #ccc;
+}
 /* Estrella completa */
 .star.full {
   color: #c0c0c0; /* plata */
@@ -32,7 +35,16 @@
 
 /* Media estrella con contorno */
 .star.half {
-  color: #ccc; /* contorno visible */
+  color: #ccc;
+}
+
+.star.half::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #c0c0c0;
 }
 
 .star.half::before {
