@@ -41,6 +41,43 @@
   color: #c0c0c0; /* mitad izquierda rellena */
 }
   <style>
+ /* Valoración con estrellas editoriales */
+.valoracion {
+  margin-top: 2rem;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 0.25rem;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.star {
+  position: relative;
+  color: #ccc; /* estrella vacía (contorno) */
+}
+
+/* Estrella completa */
+.star.full {
+  color: #c0c0c0; /* plata */
+}
+
+/* Media estrella con contorno */
+.star.half {
+  color: #ccc; /* contorno visible */
+}
+
+.star.half::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #c0c0c0; /* mitad izquierda rellena */
+}
+  
+    
     body {
       margin: 0;
       font-family: Georgia, serif;
