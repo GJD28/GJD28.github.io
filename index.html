@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gabinete de Juicio y Debate</title>
 
-  <!-- Fuente manuscrita -->
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
 /* ===============================
@@ -86,17 +86,66 @@ header {
    =============================== */
 nav {
   margin: 1.5rem 0;
-}
-
-nav a {
-  color: #444;
-  margin: 0 1rem;
-  text-decoration: none;
+  font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
 }
 
-nav a:hover {
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list a,
+.nav-button {
+  text-decoration: none;
+  color: #444;
+  cursor: pointer;
+}
+
+.nav-list a:hover,
+.nav-button:hover {
   color: #000;
+}
+
+/* Dropdown por clic */
+.dropdown {
+  position: relative;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 1.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f4f4f2;
+  border: 1px solid #ccc;
+  min-width: 180px;
+  text-align: left;
+  z-index: 10;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #222;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #e6e6e3;
 }
 
 /* ===============================
@@ -145,10 +194,26 @@ footer {
   </div>
 
   <nav>
-    <a href="index.html">Inicio</a>
-    <a href="criticas.html">Críticas</a>
-    <a href="rumores.html">Rumores</a>
-    <a href="articulos.html">Artículos</a>
+    <ul class="nav-list">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="criticas.html">Críticas</a></li>
+      <li><a href="articulos.html">Artículos</a></li>
+      <li><a href="rumores.html">Rumores</a></li>
+
+      <li class="dropdown">
+        <button class="nav-button" onclick="toggleDropdown()">
+          Autores ▾
+        </button>
+        <div class="dropdown-content" id="dropdownAutores">
+          <a href="autores/dolores-aranda.html">Dolores Aranda</a>
+          <a href="autores/german-juncosa.html">Germán Juncosa</a>
+          <a href="autores/irene-salgado.html">Irene Salgado</a>
+          <a href="autores/nil-miralles.html">Nil Miralles</a>
+          <a href="autores/alvaro-rios.html">Álvaro Ríos</a>
+          <a href="autores/miguel-romero.html">Miguel Romero</a>
+        </div>
+      </li>
+    </ul>
   </nav>
 </header>
 
@@ -161,23 +226,46 @@ footer {
     Por <a href="autores/german-juncosa.html">Germán Juncosa</a> · David Fincher · 1997
   </div>
 
-  <img
-    src="https://upload.wikimedia.org/wikipedia/en/3/3b/The_Game_%281997_film%29_poster.jpg"
-    alt="Cartel original de la película The Game de David Fincher"
-    style="width:100%; margin: 1.5rem 0; border: 1px solid #ccc;"
-  >
-
   <p>
     The Game es una película que siempre me ha funcionado mejor en el cuerpo que en la cabeza.
     Cada vez que vuelvo a ella entro sin resistencia en su clima y me dejo arrastrar por una
-    sensación de inestabilidad muy bien sostenida.
+    sensación de inestabilidad muy bien sostenida. Fincher sabe exactamente qué tipo de
+    experiencia quiere provocar y la ejecuta con una seguridad que se nota desde los
+    primeros minutos.
   </p>
 
-  <img
-    src="https://upload.wikimedia.org/wikipedia/commons/0/0c/The_Game_%281997%29_Michael_Douglas_scene.jpg"
-    alt="Michael Douglas en una escena de The Game"
-    style="width:100%; margin: 2rem 0; border: 1px solid #ccc;"
-  >
+  <p>
+    Me interesa especialmente cómo la película se apoya en Nicholas Van Orton como figura
+    central. Su rigidez, su forma de ocupar el espacio y de relacionarse con los demás
+    construyen un punto de partida muy fértil. Ver cómo ese mundo ordenado empieza a
+    deformarse resulta estimulante porque el proceso está bien dosificado. La película
+    encuentra ahí su mayor virtud: convertir el control en una trampa narrativa y emocional.
+  </p>
+
+  <p>
+    Durante buena parte del metraje, The Game maneja la tensión con mucha inteligencia. La
+    acumulación de situaciones funciona, el desconcierto crece y el espectador comparte la
+    pérdida de referencias sin sentirse manipulado. Es un thriller que confía en el
+    recorrido y que entiende el valor de la atmósfera, del espacio y del ritmo. En ese
+    tramo, Fincher está especialmente inspirado.
+  </p>
+
+  <p>
+    Donde la película se me queda corta es en el cierre. El desenlace es eficaz y está bien
+    armado, pero introduce una limpieza excesiva que enfría parte de lo que venía
+    funcionando tan bien. Todo encaja, todo se explica y todo queda bajo control otra vez.
+    El problema no es que tenga sentido, sino que reduce la incomodidad acumulada y deja
+    una sensación más calculada de la que pedía el viaje.
+  </p>
+
+  <p>
+    Aun así, The Game me sigue gustando mucho. No la considero una obra mayor ni una película
+    redonda, pero sí un thriller muy sólido, con una identidad clara y con momentos de
+    auténtica fuerza. Es una de esas películas que disfruto más mientras la estoy viendo
+    que cuando empiezo a pensarla después, y eso, en su caso, juega a favor. Fincher
+    sostiene el pulso durante casi todo el metraje y eso basta para que el viaje merezca
+    la pena.
+  </p>
 
   <div class="valoracion">
     <div class="stars">
@@ -195,6 +283,14 @@ footer {
 <footer>
   © 2026 · Gabinete de Juicio y Debate
 </footer>
+
+<script>
+function toggleDropdown() {
+  const dropdown = document.getElementById('dropdownAutores');
+  dropdown.style.display =
+    dropdown.style.display === 'block' ? 'none' : 'block';
+}
+</script>
 
 </body>
 </html>
