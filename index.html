@@ -5,6 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pelis GJD</title>
 
+  /* Valoración con estrellas editoriales */
+.valoracion {
+  margin-top: 2rem;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 0.25rem;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.star {
+  position: relative;
+  color: #ccc; /* estrella vacía (contorno) */
+}
+
+/* Estrella completa */
+.star.full {
+  color: #c0c0c0; /* plata */
+}
+
+/* Media estrella con contorno */
+.star.half {
+  color: #ccc; /* contorno visible */
+}
+
+.star.half::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #c0c0c0; /* mitad izquierda rellena */
+}
   <style>
     body {
       margin: 0;
@@ -112,7 +147,79 @@
 
   <main>
 
-    <!-- AQUÍ PEGARÁS LOS ARTÍCULOS -->
+  <article>
+  <h2>The Game</h2>
+
+  <div class="meta">
+    Por <a href="autores/german-juncosa.html">Germán Juncosa</a> · David Fincher · 1997
+  </div>
+
+  <!-- Imagen de portada -->
+  <img
+    src="https://upload.wikimedia.org/wikipedia/en/3/3b/The_Game_%281997_film%29_poster.jpg"
+    alt="Cartel original de la película The Game de David Fincher"
+    style="width:100%; margin: 1.5rem 0; border: 1px solid #ccc;"
+  >
+
+  <p>
+    The Game es una película que siempre me ha funcionado mejor en el cuerpo que en la cabeza.
+    Cada vez que vuelvo a ella entro sin resistencia en su clima y me dejo arrastrar por una
+    sensación de inestabilidad muy bien sostenida. Fincher sabe exactamente qué tipo de
+    experiencia quiere provocar y la ejecuta con una seguridad que se nota desde los
+    primeros minutos.
+  </p>
+
+  <p>
+    Me interesa especialmente cómo la película se apoya en Nicholas Van Orton como figura
+    central. Su rigidez, su forma de ocupar el espacio y de relacionarse con los demás
+    construyen un punto de partida muy fértil. Ver cómo ese mundo ordenado empieza a
+    deformarse resulta estimulante porque el proceso está bien dosificado. La película
+    encuentra ahí su mayor virtud: convertir el control en una trampa narrativa y emocional.
+  </p>
+
+  <!-- Imagen dentro del cuerpo -->
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/0/0c/The_Game_%281997%29_Michael_Douglas_scene.jpg"
+    alt="Michael Douglas en una escena de The Game"
+    style="width:100%; margin: 2rem 0; border: 1px solid #ccc;"
+  >
+
+  <p>
+    Durante buena parte del metraje, The Game maneja la tensión con mucha inteligencia. La
+    acumulación de situaciones funciona, el desconcierto crece y el espectador comparte la
+    pérdida de referencias sin sentirse manipulado. Es un thriller que confía en el
+    recorrido y que entiende el valor de la atmósfera, del espacio y del ritmo. En ese
+    tramo, Fincher está especialmente inspirado.
+  </p>
+
+  <p>
+    Donde la película se me queda corta es en el cierre. El desenlace es eficaz y está bien
+    armado, pero introduce una limpieza excesiva que enfría parte de lo que venía
+    funcionando tan bien. Todo encaja, todo se explica y todo queda bajo control otra vez.
+    El problema no es que tenga sentido, sino que reduce la incomodidad acumulada y deja
+    una sensación más calculada de la que pedía el viaje.
+  </p>
+
+  <p>
+    Aun así, The Game me sigue gustando mucho. No la considero una obra mayor ni una película
+    redonda, pero sí un thriller muy sólido, con una identidad clara y con momentos de
+    auténtica fuerza. Es una de esas películas que disfruto más mientras la estoy viendo
+    que cuando empiezo a pensarla después, y eso, en su caso, juega a favor. Fincher
+    sostiene el pulso durante casi todo el metraje y eso basta para que el viaje merezca
+    la pena.
+  </p>
+
+  <!-- Valoración 3,5 / 5 -->
+  <div class="valoracion">
+    <div class="stars">
+      <span class="star full">★</span>
+      <span class="star full">★</span>
+      <span class="star full">★</span>
+      <span class="star half">★</span>
+      <span class="star">★</span>
+    </div>
+  </div>
+</article>
 
     
 
