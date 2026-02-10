@@ -27,15 +27,15 @@
 
 .star {
   position: relative;
-  color: #ccc;
+  color: #ccc; /* estrella vacía */
 }
 
 .star.full {
-  color: #c0c0c0;
+  color: #000; /* relleno negro */
 }
 
 .star.half {
-  color: #ccc;
+  color: #ccc; /* contorno */
 }
 
 .star.half::before {
@@ -44,9 +44,8 @@
   left: 0;
   width: 50%;
   overflow: hidden;
-  color: #c0c0c0;
+  color: #000; /* mitad rellena en negro */
 }
-
 /* ===============================
    Base
    =============================== */
