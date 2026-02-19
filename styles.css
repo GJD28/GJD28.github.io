@@ -198,3 +198,17 @@ footer {
   color: #666;
   font-size: 0.85rem;
 }
+
+
+/* ===============================
+   Desplegable vertical (Autores)
+   =============================== */
+
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-content a {
+  width: 100%;
+}
