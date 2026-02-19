@@ -106,45 +106,8 @@ nav {
   color: #000;
 }
 
-/* Dropdown por clic */
-.dropdown {
-  position: relative;
-}
-
-.nav-button {
-  background: none;
-  border: none;
-  font-family: inherit;
-  font-size: inherit;
-  padding: 0;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 1.6rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #f4f4f2;
-  border: 1px solid #ccc;
-  min-width: 180px;
-  text-align: left;
-  z-index: 10;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: #222;
-  text-decoration: none;
-}
-
-.dropdown-content a:hover {
-  background-color: #e6e6e3;
-}
-
 /* ===============================
-   Contenido
+   Contenido general
    =============================== */
 main {
   max-width: 900px;
@@ -152,6 +115,7 @@ main {
   padding: 2.5rem 1.5rem;
 }
 
+/* Artículos largos (críticas completas, artículos, rumores) */
 article {
   margin-bottom: 3.5rem;
   padding-bottom: 2.5rem;
@@ -179,22 +143,28 @@ article h2 a:hover {
 }
 
 /* ===============================
-   Footer
+   SECCIÓN CRÍTICAS (LISTADO)
    =============================== */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  color: #666;
-  font-size: 0.85rem;
+
+main#listado-criticas {
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start;
 }
 
-/* === MINIATURAS EN SECCIÓN CRÍTICAS === */
+/* Anulamos el estilo de artículo largo SOLO aquí */
+main#listado-criticas article {
+  width: 260px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
 
+/* Miniatura */
 .critica-mini {
-  width: 280px;
-  margin: 20px;
-  display: inline-block;
-  vertical-align: top;
+  display: block;
 }
 
 .critica-mini img {
@@ -210,10 +180,21 @@ footer {
 
 .critica-mini .autor {
   font-size: 0.85rem;
-  margin: 8px 0 4px;
+  margin: 6px 0 2px;
+  color: #555;
 }
 
 .critica-mini p {
   font-size: 0.85rem;
   margin: 0;
+}
+
+/* ===============================
+   Footer
+   =============================== */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #666;
+  font-size: 0.85rem;
 }
