@@ -32,7 +32,7 @@
 </header>
 
 <main id="listado-criticas">
-  <!-- Las críticas se generan automáticamente aquí -->
+  <!-- Las críticas se generan automáticamente -->
 </main>
 
 <footer>
@@ -42,38 +42,39 @@
 <!-- CONTENIDO UNIFICADO -->
 <script src="contenido.js"></script>
 
-<!-- GENERADOR DE CRÍTICAS -->
+<!-- GENERADOR DE MINIATURAS DE CRÍTICAS -->
 <script>
   const contenedor = document.getElementById("listado-criticas");
 
   const criticas = contenido
-    .filter(entrada => entrada.seccion === "criticas")
+    .filter(e => e.seccion === "criticas")
     .sort((a, b) => b.año - a.año);
 
   criticas.forEach(entrada => {
-    const articulo = document.createElement("article");
+    const article = document.createElement("article");
+    article.className = "critica-mini";
 
     const enlace = document.createElement("a");
     enlace.href = `entrada.html?id=${entrada.id}`;
-    enlace.className = "critica-miniatura";
 
     const imagen = document.createElement("img");
     imagen.src = entrada.imagen.src;
     imagen.alt = entrada.imagen.alt;
 
     const autor = document.createElement("div");
-    autor.className = "meta";
-    autor.textContent = `Por ${entrada.autor}`;
+    autor.className = "autor";
+    autor.textContent = entrada.autor;
 
-    const extracto = document.createElement("p");
-    extracto.textContent = entrada.entradilla;
+    const texto = document.createElement("p");
+    const palabras = entrada.entradilla.split(" ").slice(0, 8).join(" ");
+    texto.textContent = palabras + "…";
 
     enlace.appendChild(imagen);
     enlace.appendChild(autor);
-    enlace.appendChild(extracto);
+    enlace.appendChild(texto);
 
-    articulo.appendChild(enlace);
-    contenedor.appendChild(articulo);
+    article.appendChild(enlace);
+    contenedor.appendChild(article);
   });
 </script>
 
