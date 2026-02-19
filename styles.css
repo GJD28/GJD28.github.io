@@ -187,3 +187,33 @@ footer {
   color: #666;
   font-size: 0.85rem;
 }
+
+/* === MINIATURAS EN SECCIÓN CRÍTICAS === */
+
+.critica-mini {
+  width: 280px;
+  margin: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.critica-mini img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.critica-mini a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.critica-mini .autor {
+  font-size: 0.85rem;
+  margin: 8px 0 4px;
+}
+
+.critica-mini p {
+  font-size: 0.85rem;
+  margin: 0;
+}
