@@ -50,11 +50,13 @@ function obtenerId() {
 function renderEntrada(entrada) {
   const contenedor = document.getElementById('entrada');
 
+  const autorURL = encodeURIComponent(entrada.autor);
+
   let html = `
     <h2>${entrada.titulo}</h2>
 
     <div class="meta">
-      Por ${entrada.autor}
+      Por <a href="autor.html?nombre=${autorURL}">${entrada.autor}</a>
       ${entrada.director ? `· ${entrada.director}` : ``}
       ${entrada.año ? `· ${entrada.año}` : ``}
       ${entrada.fecha_publicacion && entrada.fecha_publicacion !== "—" ? `· ${entrada.fecha_publicacion}` : ``}
