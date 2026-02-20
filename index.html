@@ -47,70 +47,17 @@
 
 <main>
 
-<article id="the-game">
-  <h2>The Game</h2>
+  <!-- DESTACADOS -->
+  <section class="portada-bloque">
+    <h2>Destacados</h2>
+    <div id="destacados" class="portada-grid"></div>
+  </section>
 
-  <div class="meta">
-    Por <a href="autores/german-juncosa.html">Germán Juncosa</a> · David Fincher · 1997
-  </div>
-
-  <img
-    src="the-game.png"
-    alt="Imagen creada para la crítica de The Game"
-    class="imagen-articulo"
-  />
-
-  <p>
-    The Game es una película que siempre me ha funcionado mejor en el cuerpo que en la cabeza.
-    Cada vez que vuelvo a ella entro sin resistencia en su clima y me dejo arrastrar por una
-    sensación de inestabilidad muy bien sostenida. Fincher sabe exactamente qué tipo de
-    experiencia quiere provocar y la ejecuta con una seguridad que se nota desde los
-    primeros minutos.
-  </p>
-
-  <p>
-    Me interesa especialmente cómo la película se apoya en Nicholas Van Orton como figura
-    central. Su rigidez, su forma de ocupar el espacio y de relacionarse con los demás
-    construyen un punto de partida muy fértil. Ver cómo ese mundo ordenado empieza a
-    deformarse resulta estimulante porque el proceso está bien dosificado. La película
-    encuentra ahí su mayor virtud: convertir el control en una trampa narrativa y emocional.
-  </p>
-
-  <p>
-    Durante buena parte del metraje, The Game maneja la tensión con mucha inteligencia. La
-    acumulación de situaciones funciona, el desconcierto crece y el espectador comparte la
-    pérdida de referencias sin sentirse manipulado. Es un thriller que confía en el
-    recorrido y que entiende el valor de la atmósfera, del espacio y del ritmo. En ese
-    tramo, Fincher está especialmente inspirado.
-  </p>
-
-  <p>
-    Donde la película se me queda corta es en el cierre. El desenlace es eficaz y está bien
-    armado, pero introduce una limpieza excesiva que enfría parte de lo que venía
-    funcionando tan bien. Todo encaja, todo se explica y todo queda bajo control otra vez.
-    El problema no es que tenga sentido, sino que reduce la incomodidad acumulada y deja
-    una sensación más calculada de la que pedía el viaje.
-  </p>
-
-  <p>
-    Aun así, The Game me sigue gustando mucho. No la considero una obra mayor ni una película
-    redonda, pero sí un thriller muy sólido, con una identidad clara y con momentos de
-    auténtica fuerza. Es una de esas películas que disfruto más mientras la estoy viendo
-    que cuando empiezo a pensarla después, y eso, en su caso, juega a favor. Fincher
-    sostiene el pulso durante casi todo el metraje y eso basta para que el viaje merezca
-    la pena.
-  </p>
-
-  <div class="valoracion">
-    <div class="stars">
-      <span class="star full">★</span>
-      <span class="star full">★</span>
-      <span class="star full">★</span>
-      <span class="star half">★</span>
-      <span class="star">★</span>
-    </div>
-  </div>
-</article>
+  <!-- ÚLTIMAS ENTRADAS -->
+  <section class="portada-bloque">
+    <h2>Últimas entradas</h2>
+    <div id="ultimas-entradas" class="portada-grid"></div>
+  </section>
 
 </main>
 
@@ -118,16 +65,65 @@
   © 2026 · Gabinete de Juicio y Debate
 </footer>
 
+<!-- CONTENIDO -->
+<script src="contenido.js"></script>
+
 <script>
 function toggleDropdown() {
   const dropdown = document.getElementById('dropdownAutores');
-
-  if (dropdown.classList.contains('open')) {
-    dropdown.classList.remove('open');
-  } else {
-    dropdown.classList.add('open');
-  }
+  dropdown.classList.toggle('open');
 }
+
+function crearTarjeta(entrada) {
+  const article = document.createElement('article');
+  article.className = 'tarjeta-portada';
+
+  article.innerHTML = `
+    <a href="entrada.html?id=${entrada.id}">
+      <img src="${entrada.imagen.src}" alt="${entrada.imagen.alt}">
+      <h3>${entrada.titulo}</h3>
+    </a>
+    <div class="meta">
+      ${entrada.autor} · ${entrada.director} · ${entrada.año}
+    </div>
+    <p>${entrada.entradilla}</p>
+  `;
+
+  return article;
+}
+
+function cargarDestacados() {
+  const contenedor = document.getElementById('destacados');
+  const destacados = contenido.filter(e => e.destacada === true);
+
+  destacados.forEach(entrada => {
+    contenedor.appendChild(crearTarjeta(entrada));
+  });
+}
+
+function cargarUltimas() {
+  const contenedor = document.getElementById('ultimas-entradas');
+
+  const ordenadas = [...contenido].sort((a, b) => {
+    if (a.fecha_publicacion === "—") return 1;
+    if (b.fecha_publicacion === "—") return -1;
+
+    const [da, ma, ya] = a.fecha_publicacion.split('/');
+    const [db, mb, yb] = b.fecha_publicacion.split('/');
+
+    const fechaA = new Date(`${ya}-${ma}-${da}`);
+    const fechaB = new Date(`${yb}-${mb}-${db}`);
+
+    return fechaB - fechaA;
+  });
+
+  ordenadas.slice(0, 10).forEach(entrada => {
+    contenedor.appendChild(crearTarjeta(entrada));
+  });
+}
+
+cargarDestacados();
+cargarUltimas();
 </script>
 
 </body>
