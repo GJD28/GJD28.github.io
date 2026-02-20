@@ -72,5 +72,55 @@ const contenido = [
       "De época",
       "Vampiros"
     ]
+  },
+
+  {
+    id: "the-game-1997",
+    seccion: "criticas",
+    titulo: "The Game",
+    autor: "Germán Juncosa",
+    fecha_publicacion: "20/02/2026",
+    director: "David Fincher",
+    año: 1997,
+    nota: 3.5,
+    destacada: false,
+    imagen: {
+      src: "the-game.png",
+      alt: "The Game (1997), dirigida por David Fincher"
+    },
+    entradilla: "Un thriller que funciona mejor como experiencia sensorial que como mecanismo cerrado, sostenido por una atmósfera de inestabilidad muy bien dosificada.",
+    contenido: [
+      {
+        tipo: "texto",
+        valor: "The Game es una película que siempre me ha funcionado mejor en el cuerpo que en la cabeza. Cada vez que vuelvo a ella entro sin resistencia en su clima y me dejo arrastrar por una sensación de inestabilidad muy bien sostenida. Fincher sabe exactamente qué tipo de experiencia quiere provocar y la ejecuta con una seguridad que se nota desde los primeros minutos."
+      },
+      {
+        tipo: "texto",
+        valor: "Me interesa especialmente cómo la película se apoya en Nicholas Van Orton como figura central. Su rigidez, su forma de ocupar el espacio y de relacionarse con los demás construyen un punto de partida muy fértil. Ver cómo ese mundo ordenado empieza a deformarse resulta estimulante porque el proceso está bien dosificado. La película encuentra ahí su mayor virtud: convertir el control en una trampa narrativa y emocional."
+      },
+      {
+        tipo: "texto",
+        valor: "Durante buena parte del metraje, The Game maneja la tensión con mucha inteligencia. La acumulación de situaciones funciona, el desconcierto crece y el espectador comparte la pérdida de referencias sin sentirse manipulado. Es un thriller que confía en el recorrido y que entiende el valor de la atmósfera, del espacio y del ritmo. En ese tramo, Fincher está especialmente inspirado."
+      },
+      {
+        tipo: "texto",
+        valor: "Donde la película se me queda corta es en el cierre. El desenlace es eficaz y está bien armado, pero introduce una limpieza excesiva que enfría parte de lo que venía funcionando tan bien. Todo encaja, todo se explica y todo queda bajo control otra vez. El problema no es que tenga sentido, sino que reduce la incomodidad acumulada y deja una sensación más calculada de la que pedía el viaje."
+      },
+      {
+        tipo: "texto",
+        valor: "Aun así, The Game me sigue gustando mucho. No la considero una obra mayor ni una película redonda, pero sí un thriller muy sólido, con una identidad clara y con momentos de auténtica fuerza. Es una de esas películas que disfruto más mientras la estoy viendo que cuando empiezo a pensarla después, y eso, en su caso, juega a favor. Fincher sostiene el pulso durante casi todo el metraje y eso basta para que el viaje merezca la pena."
+      }
+    ],
+    etiquetas: [
+      "Michael Douglas",
+      "Sean Penn",
+      "David Fincher",
+      "1997",
+      "Thriller",
+      "Psicológico",
+      "Conspiración",
+      "Identidad",
+      "Años 90"
+    ]
   }
 ];
