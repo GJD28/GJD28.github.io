@@ -13,36 +13,58 @@
   <!-- CSS unificado -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- FIX desplegable autores -->
   <style>
-    .dropdown {
+    /* ===== CARRUSELES PORTADA ===== */
+    .carousel {
       position: relative;
+      overflow: hidden;
     }
 
-    .dropdown-content {
-      display: none;
+    .carousel-track {
+      display: flex;
+      gap: 1rem;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-item {
+      flex: 0 0 250px;
+      aspect-ratio: 1 / 1;
+      background: #fff;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .carousel-item h3 {
+      font-size: 1rem;
+      margin: 0.5rem 0 0;
+    }
+
+    .carousel-item .meta {
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    .carousel-controls {
       position: absolute;
-      top: 100%;
-      left: 0;
-      background: white;
-      min-width: 200px;
-      border: 1px solid #ddd;
-      z-index: 1000;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      pointer-events: none;
     }
 
-    .dropdown-content a {
-      display: block;
-      padding: 8px 12px;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .dropdown-content a:hover {
-      background: #f0f0f0;
-    }
-
-    .dropdown-content.open {
-      display: block;
+    .carousel-controls button {
+      pointer-events: all;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid #ccc;
+      cursor: pointer;
+      padding: 0.25rem 0.5rem;
     }
   </style>
 </head>
@@ -60,20 +82,6 @@
       <li><a href="criticas.html">Críticas</a></li>
       <li><a href="articulos.html">Artículos</a></li>
       <li><a href="rumores.html">Rumores</a></li>
-
-      <li class="dropdown">
-        <button class="nav-button" type="button" onclick="toggleDropdown()">
-          Autores ▾
-        </button>
-        <div class="dropdown-content" id="dropdownAutores">
-          <a href="autores/dolores-aranda.html">Dolores Aranda</a>
-          <a href="autores/german-juncosa.html">Germán Juncosa</a>
-          <a href="autores/irene-salgado.html">Irene Salgado</a>
-          <a href="autores/nil-miralles.html">Nil Miralles</a>
-          <a href="autores/alvaro-rios.html">Álvaro Ríos</a>
-          <a href="autores/miguel-romero.html">Miguel Romero</a>
-        </div>
-      </li>
     </ul>
   </nav>
 </header>
@@ -83,13 +91,27 @@
   <!-- DESTACADOS -->
   <section class="portada-bloque">
     <h2>Destacados</h2>
-    <div id="destacados" class="portada-grid"></div>
+
+    <div class="carousel" data-carousel="destacados">
+      <div class="carousel-track" id="destacados"></div>
+      <div class="carousel-controls">
+        <button data-dir="-1">‹</button>
+        <button data-dir="1">›</button>
+      </div>
+    </div>
   </section>
 
   <!-- ÚLTIMAS ENTRADAS -->
   <section class="portada-bloque">
     <h2>Últimas entradas</h2>
-    <div id="ultimas-entradas" class="portada-grid"></div>
+
+    <div class="carousel" data-carousel="ultimas">
+      <div class="carousel-track" id="ultimas-entradas"></div>
+      <div class="carousel-controls">
+        <button data-dir="-1">‹</button>
+        <button data-dir="1">›</button>
+      </div>
+    </div>
   </section>
 
 </main>
@@ -98,65 +120,60 @@
   © 2026 · Gabinete de Juicio y Debate
 </footer>
 
-<!-- CONTENIDO -->
 <script src="contenido.js"></script>
 
 <script>
-function toggleDropdown() {
-  const dropdown = document.getElementById('dropdownAutores');
-  dropdown.classList.toggle('open');
-}
+function crearItem(entrada) {
+  const div = document.createElement('div');
+  div.className = 'carousel-item';
 
-function crearTarjeta(entrada) {
-  const article = document.createElement('article');
-  article.className = 'tarjeta-portada';
-
-  article.innerHTML = `
+  div.innerHTML = `
     <a href="entrada.html?id=${entrada.id}">
       <img src="${entrada.imagen.src}" alt="${entrada.imagen.alt}">
-      <h3>${entrada.titulo}</h3>
     </a>
-    <div class="meta">
-      ${entrada.autor} · ${entrada.director} · ${entrada.año}
-    </div>
-    <p>${entrada.entradilla}</p>
+    <h3>${entrada.titulo}</h3>
+    <div class="meta">${entrada.autor} · ${entrada.año}</div>
   `;
 
-  return article;
+  return div;
 }
 
-function cargarDestacados() {
-  const contenedor = document.getElementById('destacados');
-  const destacados = contenido.filter(e => e.destacada === true);
+function iniciarCarrusel(trackId, entradas) {
+  const track = document.getElementById(trackId);
+  let index = 0;
 
-  destacados.forEach(entrada => {
-    contenedor.appendChild(crearTarjeta(entrada));
+  entradas.forEach(e => track.appendChild(crearItem(e)));
+
+  const carousel = track.closest('.carousel');
+  const buttons = carousel.querySelectorAll('button');
+
+  function mover(dir) {
+    index = (index + dir + entradas.length) % entradas.length;
+    track.style.transform = `translateX(-${index * 266}px)`;
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => mover(parseInt(btn.dataset.dir)));
   });
+
+  setInterval(() => mover(1), 4000);
 }
 
-function cargarUltimas() {
-  const contenedor = document.getElementById('ultimas-entradas');
+iniciarCarrusel(
+  'destacados',
+  contenido.filter(e => e.destacada)
+);
 
-  const ordenadas = [...contenido].sort((a, b) => {
+iniciarCarrusel(
+  'ultimas-entradas',
+  [...contenido].sort((a, b) => {
     if (a.fecha_publicacion === "—") return 1;
     if (b.fecha_publicacion === "—") return -1;
-
     const [da, ma, ya] = a.fecha_publicacion.split('/');
     const [db, mb, yb] = b.fecha_publicacion.split('/');
-
-    const fechaA = new Date(`${ya}-${ma}-${da}`);
-    const fechaB = new Date(`${yb}-${mb}-${db}`);
-
-    return fechaB - fechaA;
-  });
-
-  ordenadas.slice(0, 10).forEach(entrada => {
-    contenedor.appendChild(crearTarjeta(entrada));
-  });
-}
-
-cargarDestacados();
-cargarUltimas();
+    return new Date(`${yb}-${mb}-${db}`) - new Date(`${ya}-${ma}-${da}`);
+  }).slice(0, 10)
+);
 </script>
 
 </body>
