@@ -14,57 +14,40 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    /* ===== CARRUSELES PORTADA ===== */
-    .carousel {
+    nav {
       position: relative;
-      overflow: hidden;
+      overflow: visible;
     }
 
-    .carousel-track {
-      display: flex;
-      gap: 1rem;
-      transition: transform 0.5s ease;
+    .dropdown {
+      position: relative;
     }
 
-    .carousel-item {
-      flex: 0 0 250px;
-      aspect-ratio: 1 / 1;
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
       background: #fff;
+      border: 1px solid #ccc;
+      min-width: 220px;
+      z-index: 9999;
     }
 
-    .carousel-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .dropdown-content.open {
       display: block;
     }
 
-    .carousel-item h3 {
-      font-size: 1rem;
-      margin: 0.5rem 0 0;
+    .dropdown-content a {
+      display: block;
+      padding: 8px 12px;
+      text-decoration: none;
+      color: inherit;
+      white-space: nowrap;
     }
 
-    .carousel-item .meta {
-      font-size: 0.8rem;
-      opacity: 0.7;
-    }
-
-    .carousel-controls {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      pointer-events: none;
-    }
-
-    .carousel-controls button {
-      pointer-events: all;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid #ccc;
-      cursor: pointer;
-      padding: 0.25rem 0.5rem;
+    .dropdown-content a:hover {
+      background: #f0f0f0;
     }
   </style>
 </head>
@@ -82,6 +65,13 @@
       <li><a href="criticas.html">Críticas</a></li>
       <li><a href="articulos.html">Artículos</a></li>
       <li><a href="rumores.html">Rumores</a></li>
+
+      <li class="dropdown">
+        <button class="nav-button" type="button" onclick="toggleDropdown()">
+          Autores ▾
+        </button>
+        <div class="dropdown-content" id="dropdownAutores"></div>
+      </li>
     </ul>
   </nav>
 </header>
@@ -92,7 +82,7 @@
   <section class="portada-bloque">
     <h2>Destacados</h2>
 
-    <div class="carousel" data-carousel="destacados">
+    <div class="carousel">
       <div class="carousel-track" id="destacados"></div>
       <div class="carousel-controls">
         <button data-dir="-1">‹</button>
@@ -105,7 +95,7 @@
   <section class="portada-bloque">
     <h2>Últimas entradas</h2>
 
-    <div class="carousel" data-carousel="ultimas">
+    <div class="carousel">
       <div class="carousel-track" id="ultimas-entradas"></div>
       <div class="carousel-controls">
         <button data-dir="-1">‹</button>
@@ -123,6 +113,24 @@
 <script src="contenido.js"></script>
 
 <script>
+/* ===== AUTORES ===== */
+function toggleDropdown() {
+  document.getElementById('dropdownAutores').classList.toggle('open');
+}
+
+function cargarAutores() {
+  const contenedor = document.getElementById('dropdownAutores');
+  const autoresUnicos = [...new Set(contenido.map(e => e.autor))].sort();
+
+  autoresUnicos.forEach(autor => {
+    const enlace = document.createElement('a');
+    enlace.href = `autor.html?nombre=${encodeURIComponent(autor)}`;
+    enlace.textContent = autor;
+    contenedor.appendChild(enlace);
+  });
+}
+
+/* ===== CARRUSELES ===== */
 function crearItem(entrada) {
   const div = document.createElement('div');
   div.className = 'carousel-item';
@@ -132,7 +140,7 @@ function crearItem(entrada) {
       <img src="${entrada.imagen.src}" alt="${entrada.imagen.alt}">
     </a>
     <h3>${entrada.titulo}</h3>
-    <div class="meta">${entrada.autor} · ${entrada.año}</div>
+    <div class="meta">${entrada.autor}</div>
   `;
 
   return div;
@@ -141,6 +149,8 @@ function crearItem(entrada) {
 function iniciarCarrusel(trackId, entradas) {
   const track = document.getElementById(trackId);
   let index = 0;
+
+  if (!entradas || entradas.length === 0) return;
 
   entradas.forEach(e => track.appendChild(crearItem(e)));
 
@@ -159,6 +169,9 @@ function iniciarCarrusel(trackId, entradas) {
   setInterval(() => mover(1), 4000);
 }
 
+/* ===== INICIO ===== */
+cargarAutores();
+
 iniciarCarrusel(
   'destacados',
   contenido.filter(e => e.destacada)
@@ -166,13 +179,15 @@ iniciarCarrusel(
 
 iniciarCarrusel(
   'ultimas-entradas',
-  [...contenido].sort((a, b) => {
-    if (a.fecha_publicacion === "—") return 1;
-    if (b.fecha_publicacion === "—") return -1;
-    const [da, ma, ya] = a.fecha_publicacion.split('/');
-    const [db, mb, yb] = b.fecha_publicacion.split('/');
-    return new Date(`${yb}-${mb}-${db}`) - new Date(`${ya}-${ma}-${da}`);
-  }).slice(0, 10)
+  [...contenido]
+    .sort((a, b) => {
+      if (a.fecha_publicacion === "—") return 1;
+      if (b.fecha_publicacion === "—") return -1;
+      const [da, ma, ya] = a.fecha_publicacion.split('/');
+      const [db, mb, yb] = b.fecha_publicacion.split('/');
+      return new Date(`${yb}-${mb}-${db}`) - new Date(`${ya}-${ma}-${da}`);
+    })
+    .slice(0, 10)
 );
 </script>
 
