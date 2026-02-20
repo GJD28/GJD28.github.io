@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autor · Gabinete de Juicio y Debate</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS unificado -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <div class="banner-texto">
+    <h1>Gabinete de Juicio y Debate</h1>
+  </div>
+
+  <nav>
+    <ul class="nav-list">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="criticas.html">Críticas</a></li>
+      <li><a href="articulos.html">Artículos</a></li>
+      <li><a href="rumores.html">Rumores</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section id="autor">
+    <h2 id="nombre-autor"></h2>
+    <div id="lista-entradas"></div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 · Gabinete de Juicio y Debate
+</footer>
+
+<script src="contenido.js"></script>
+
+<script>
+function obtenerAutor() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('nombre');
+}
+
+function crearTarjetaAutor(entrada) {
+  const article = document.createElement('article');
+  article.className = 'tarjeta-autor';
+
+  article.innerHTML = `
+    <a href="entrada.html?id=${entrada.id}">
+      <img src="${entrada.imagen.src}" alt="${entrada.imagen.alt}">
+      <h3>${entrada.titulo}</h3>
+    </a>
+    <div class="meta">
+      ${entrada.seccion} · ${entrada.director ?? ''} ${entrada.año ?? ''}
+    </div>
+    <p>${entrada.entradilla}</p>
+  `;
+
+  return article;
+}
+
+const autor = obtenerAutor();
+const contenedorNombre = document.getElementById('nombre-autor');
+const contenedorLista = document.getElementById('lista-entradas');
+
+if (!autor) {
+  contenedorNombre.textContent = "Autor no especificado";
+} else {
+  contenedorNombre.textContent = autor;
+
+  const entradasAutor = contenido.filter(e => e.autor === autor);
+
+  if (entradasAutor.length === 0) {
+    contenedorLista.innerHTML = "<p>Este autor aún no tiene textos publicados.</p>";
+  } else {
+    entradasAutor.forEach(entrada => {
+      contenedorLista.appendChild(crearTarjetaAutor(entrada));
+    });
+  }
+}
+</script>
+
+</body>
+</html>
