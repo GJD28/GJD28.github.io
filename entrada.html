@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabinete de Juicio y Debate</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS unificado -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <div class="banner-texto">
+    <h1>Gabinete de Juicio y Debate</h1>
+  </div>
+
+  <nav>
+    <ul class="nav-list">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="criticas.html">Críticas</a></li>
+      <li><a href="articulos.html">Artículos</a></li>
+      <li><a href="rumores.html">Rumores</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <article id="entrada"></article>
+</main>
+
+<footer>
+  © 2026 · Gabinete de Juicio y Debate
+</footer>
+
+<script src="contenido.js"></script>
+
+<script>
+function obtenerId() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('id');
+}
+
+function renderEntrada(entrada) {
+  const contenedor = document.getElementById('entrada');
+
+  let html = `
+    <h2>${entrada.titulo}</h2>
+
+    <div class="meta">
+      Por ${entrada.autor}
+      ${entrada.director ? `· ${entrada.director}` : ``}
+      ${entrada.año ? `· ${entrada.año}` : ``}
+      ${entrada.fecha_publicacion && entrada.fecha_publicacion !== "—" ? `· ${entrada.fecha_publicacion}` : ``}
+    </div>
+  `;
+
+  if (entrada.imagen) {
+    html += `
+      <img
+        src="${entrada.imagen.src}"
+        alt="${entrada.imagen.alt}"
+        class="imagen-articulo"
+      >
+    `;
+  }
+
+  entrada.contenido.forEach(bloque => {
+    if (bloque.tipo === "texto") {
+      html += `<p>${bloque.valor}</p>`;
+    }
+  });
+
+  if (entrada.seccion === "criticas" && entrada.nota !== undefined) {
+    html += `
+      <div class="valoracion">
+        <strong>Valoración:</strong> ${entrada.nota} / 5
+      </div>
+    `;
+  }
+
+  if (entrada.etiquetas && entrada.etiquetas.length > 0) {
+    html += `
+      <div class="etiquetas">
+        <strong>Etiquetas:</strong>
+        ${entrada.etiquetas.map(e => `<span class="etiqueta">${e}</span>`).join(' ')}
+      </div>
+    `;
+  }
+
+  contenedor.innerHTML = html;
+}
+
+const id = obtenerId();
+const entrada = contenido.find(e => e.id === id);
+
+if (entrada) {
+  renderEntrada(entrada);
+} else {
+  document.getElementById('entrada').innerHTML =
+    "<p>La entrada que buscas no existe.</p>";
+}
+</script>
+
+</body>
+</html>
