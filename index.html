@@ -29,7 +29,7 @@
       <li><a href="rumores.html">Rumores</a></li>
 
       <li class="dropdown">
-        <button class="nav-button" onclick="toggleDropdown()">
+        <button class="nav-button" type="button" onclick="toggleDropdown()">
           Autores ▾
         </button>
         <div class="dropdown-content" id="dropdownAutores">
@@ -121,8 +121,12 @@
 <script>
 function toggleDropdown() {
   const dropdown = document.getElementById('dropdownAutores');
-  dropdown.style.display =
-    dropdown.style.display === 'block' ? 'none' : 'block';
+
+  if (dropdown.classList.contains('open')) {
+    dropdown.classList.remove('open');
+  } else {
+    dropdown.classList.add('open');
+  }
 }
 </script>
 
