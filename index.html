@@ -12,6 +12,39 @@
 
   <!-- CSS unificado -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- FIX desplegable autores -->
+  <style>
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      min-width: 200px;
+      border: 1px solid #ddd;
+      z-index: 1000;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .dropdown-content a:hover {
+      background: #f0f0f0;
+    }
+
+    .dropdown-content.open {
+      display: block;
+    }
+  </style>
 </head>
 
 <body>
