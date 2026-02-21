@@ -10,23 +10,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS unificado -->
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    /* ===== NAV ===== */
-    nav {
-      position: relative;
-      overflow: visible;
-    }
+    nav { position: relative; overflow: visible; }
 
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown > a {
-      cursor: pointer;
-    }
+    .dropdown { position: relative; }
+    .dropdown > a { cursor: pointer; }
 
     .dropdown-content {
       display: none;
@@ -39,20 +29,63 @@
       z-index: 9999;
     }
 
-    .dropdown-content.open {
-      display: block;
-    }
+    .dropdown-content.open { display: block; }
 
     .dropdown-content a {
       display: block;
       padding: 8px 12px;
       text-decoration: none;
       color: inherit;
-      white-space: nowrap;
     }
 
-    .dropdown-content a:hover {
+    /* ===== BUSCADOR ===== */
+    .buscador {
+      position: relative;
+      margin-left: 1rem;
+    }
+
+    .buscador input {
+      padding: 4px 6px;
+      font-size: 0.9rem;
+    }
+
+    .resultados {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border: 1px solid #ccc;
+      z-index: 9999;
+    }
+
+    .resultado {
+      padding: 6px 8px;
+      cursor: pointer;
+    }
+
+    .resultado:hover {
       background: #f0f0f0;
+    }
+
+    /* ===== CARRUSEL ===== */
+    .carousel { position: relative; overflow: hidden; }
+    .carousel-track {
+      display: flex;
+      gap: 1rem;
+      transition: transform 0.5s ease;
+    }
+    .carousel-item {
+      flex: 0 0 250px;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   </style>
 </head>
@@ -75,6 +108,11 @@
         <a href="#" id="toggleAutores">Autores ▾</a>
         <div class="dropdown-content" id="dropdownAutores"></div>
       </li>
+
+      <li class="buscador">
+        <input type="text" id="busqueda" placeholder="Buscar…" />
+        <div class="resultados" id="resultados"></div>
+      </li>
     </ul>
   </nav>
 </header>
@@ -85,10 +123,6 @@
     <h2>Destacados</h2>
     <div class="carousel">
       <div class="carousel-track" id="destacados"></div>
-      <div class="carousel-controls">
-        <button data-dir="-1">‹</button>
-        <button data-dir="1">›</button>
-      </div>
     </div>
   </section>
 
@@ -96,10 +130,6 @@
     <h2>Últimas entradas</h2>
     <div class="carousel">
       <div class="carousel-track" id="ultimas-entradas"></div>
-      <div class="carousel-controls">
-        <button data-dir="-1">‹</button>
-        <button data-dir="1">›</button>
-      </div>
     </div>
   </section>
 
@@ -113,88 +143,81 @@
 
 <script>
 /* ===== AUTORES ===== */
-const toggle = document.getElementById('toggleAutores');
-const dropdown = document.getElementById('dropdownAutores');
+const toggleAutores = document.getElementById('toggleAutores');
+const dropdownAutores = document.getElementById('dropdownAutores');
 
-toggle.addEventListener('click', e => {
+toggleAutores.addEventListener('click', e => {
   e.preventDefault();
-  dropdown.classList.toggle('open');
+  dropdownAutores.classList.toggle('open');
 });
 
 document.addEventListener('click', e => {
   if (!e.target.closest('.dropdown')) {
-    dropdown.classList.remove('open');
+    dropdownAutores.classList.remove('open');
   }
 });
 
-function cargarAutores() {
-  const autores = [...new Set(contenido.map(e => e.autor))].sort();
+[...new Set(contenido.map(e => e.autor))].sort().forEach(a => {
+  const link = document.createElement('a');
+  link.href = `autor.html?nombre=${encodeURIComponent(a)}`;
+  link.textContent = a;
+  dropdownAutores.appendChild(link);
+});
 
-  autores.forEach(a => {
-    const link = document.createElement('a');
-    link.href = `autor.html?nombre=${encodeURIComponent(a)}`;
-    link.textContent = a;
-    dropdown.appendChild(link);
-  });
-}
+/* ===== BUSCADOR ===== */
+const input = document.getElementById('busqueda');
+const resultados = document.getElementById('resultados');
 
-/* ===== CARRUSELES ===== */
-function crearItem(entrada) {
-  const div = document.createElement('div');
-  div.className = 'carousel-item';
+input.addEventListener('input', () => {
+  const q = input.value.toLowerCase().trim();
+  resultados.innerHTML = '';
+  if (!q) return;
 
-  div.innerHTML = `
-    <a href="entrada.html?id=${entrada.id}">
-      <img src="${entrada.imagen.src}" alt="${entrada.imagen.alt}">
-    </a>
-    <h3>${entrada.titulo}</h3>
-    <div class="meta">${entrada.autor}</div>
-  `;
-
-  return div;
-}
-
-function iniciarCarrusel(trackId, entradas) {
-  const track = document.getElementById(trackId);
-  let index = 0;
-
-  if (!entradas || entradas.length === 0) return;
-
-  entradas.forEach(e => track.appendChild(crearItem(e)));
-
-  const carousel = track.closest('.carousel');
-  const buttons = carousel.querySelectorAll('button');
-
-  function mover(dir) {
-    index = (index + dir + entradas.length) % entradas.length;
-    track.style.transform = `translateX(-${index * 266}px)`;
-  }
-
-  buttons.forEach(btn =>
-    btn.addEventListener('click', () => mover(parseInt(btn.dataset.dir)))
+  const encontrados = contenido.filter(e =>
+    e.titulo.toLowerCase().includes(q) ||
+    (e.etiquetas && e.etiquetas.some(et => et.toLowerCase().includes(q)))
   );
 
-  setInterval(() => mover(1), 4000);
+  encontrados.forEach(e => {
+    const div = document.createElement('div');
+    div.className = 'resultado';
+    div.textContent = `${e.titulo} — ${e.autor}`;
+    div.onclick = () => {
+      window.location.href = `entrada.html?id=${e.id}`;
+    };
+    resultados.appendChild(div);
+  });
+});
+
+/* ===== CARRUSELES ===== */
+function crearItem(e) {
+  const d = document.createElement('div');
+  d.className = 'carousel-item';
+  d.innerHTML = `
+    <a href="entrada.html?id=${e.id}">
+      <img src="${e.imagen.src}" alt="${e.imagen.alt}">
+    </a>
+    <h3>${e.titulo}</h3>
+    <div class="meta">${e.autor}</div>
+  `;
+  return d;
 }
 
-cargarAutores();
+function cargar(trackId, entradas) {
+  const track = document.getElementById(trackId);
+  entradas.forEach(e => track.appendChild(crearItem(e)));
+}
 
-iniciarCarrusel(
-  'destacados',
-  contenido.filter(e => e.destacada)
-);
-
-iniciarCarrusel(
+cargar('destacados', contenido.filter(e => e.destacada));
+cargar(
   'ultimas-entradas',
-  [...contenido]
-    .sort((a, b) => {
-      if (a.fecha_publicacion === "—") return 1;
-      if (b.fecha_publicacion === "—") return -1;
-      const [da, ma, ya] = a.fecha_publicacion.split('/');
-      const [db, mb, yb] = b.fecha_publicacion.split('/');
-      return new Date(`${yb}-${mb}-${db}`) - new Date(`${ya}-${ma}-${da}`);
-    })
-    .slice(0, 10)
+  [...contenido].sort((a, b) => {
+    if (a.fecha_publicacion === "—") return 1;
+    if (b.fecha_publicacion === "—") return -1;
+    const [da, ma, ya] = a.fecha_publicacion.split('/');
+    const [db, mb, yb] = b.fecha_publicacion.split('/');
+    return new Date(`${yb}-${mb}-${db}`) - new Date(`${ya}-${ma}-${da}`);
+  }).slice(0, 10)
 );
 </script>
 
