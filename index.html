@@ -27,6 +27,16 @@
       <li><a href="articulos.html">Artículos</a></li>
       <li><a href="rumores.html">Rumores</a></li>
       <li><a href="autores.html">Autores</a></li>
+
+      <li class="buscador">
+        <input
+          type="text"
+          id="busqueda"
+          placeholder="Buscar por título, autor o etiqueta…"
+          autocomplete="off"
+        />
+        <div class="resultados" id="resultados"></div>
+      </li>
     </ul>
   </nav>
 </header>
@@ -56,7 +66,73 @@
 <script src="contenido.js"></script>
 
 <script>
-/* ===== CARRUSELES ===== */
+/* ===============================
+   BUSCADOR MEJORADO
+   =============================== */
+
+const inputBusqueda = document.getElementById('busqueda');
+const contResultados = document.getElementById('resultados');
+
+function limpiarBuscador() {
+  contResultados.innerHTML = '';
+  inputBusqueda.value = '';
+}
+
+inputBusqueda.addEventListener('input', () => {
+  const q = inputBusqueda.value.trim().toLowerCase();
+  contResultados.innerHTML = '';
+
+  if (!q) return;
+
+  const resultados = contenido.filter(e => {
+    const titulo = e.titulo.toLowerCase();
+    const autor = e.autor.toLowerCase();
+    const etiquetas = (e.etiquetas || []).join(' ').toLowerCase();
+
+    return (
+      titulo.includes(q) ||
+      autor.includes(q) ||
+      etiquetas.includes(q)
+    );
+  }).slice(0, 7);
+
+  if (resultados.length === 0) {
+    const div = document.createElement('div');
+    div.className = 'resultado';
+    div.textContent = 'No se han encontrado resultados';
+    contResultados.appendChild(div);
+    return;
+  }
+
+  resultados.forEach(e => {
+    const div = document.createElement('div');
+    div.className = 'resultado';
+    div.textContent = `${e.titulo} — ${e.autor}`;
+    div.addEventListener('click', () => {
+      window.location.href = `entrada.html?id=${e.id}`;
+    });
+    contResultados.appendChild(div);
+  });
+});
+
+/* Cerrar al clicar fuera */
+document.addEventListener('click', e => {
+  if (!e.target.closest('.buscador')) {
+    limpiarBuscador();
+  }
+});
+
+/* Cerrar con ESC */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    limpiarBuscador();
+  }
+});
+
+/* ===============================
+   CARRUSELES (sin cambios)
+   =============================== */
+
 function crearItem(e) {
   const d = document.createElement('div');
   d.className = 'carousel-item';
