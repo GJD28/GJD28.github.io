@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
+    /* ===== NAV ===== */
     nav {
       position: relative;
       overflow: visible;
@@ -21,6 +22,10 @@
 
     .dropdown {
       position: relative;
+    }
+
+    .dropdown > a {
+      cursor: pointer;
     }
 
     .dropdown-content {
@@ -67,9 +72,7 @@
       <li><a href="rumores.html">Rumores</a></li>
 
       <li class="dropdown">
-        <button class="nav-button" type="button" onclick="toggleDropdown()">
-          Autores ▾
-        </button>
+        <a href="#" id="toggleAutores">Autores ▾</a>
         <div class="dropdown-content" id="dropdownAutores"></div>
       </li>
     </ul>
@@ -78,10 +81,8 @@
 
 <main>
 
-  <!-- DESTACADOS -->
   <section class="portada-bloque">
     <h2>Destacados</h2>
-
     <div class="carousel">
       <div class="carousel-track" id="destacados"></div>
       <div class="carousel-controls">
@@ -91,10 +92,8 @@
     </div>
   </section>
 
-  <!-- ÚLTIMAS ENTRADAS -->
   <section class="portada-bloque">
     <h2>Últimas entradas</h2>
-
     <div class="carousel">
       <div class="carousel-track" id="ultimas-entradas"></div>
       <div class="carousel-controls">
@@ -114,19 +113,28 @@
 
 <script>
 /* ===== AUTORES ===== */
-function toggleDropdown() {
-  document.getElementById('dropdownAutores').classList.toggle('open');
-}
+const toggle = document.getElementById('toggleAutores');
+const dropdown = document.getElementById('dropdownAutores');
+
+toggle.addEventListener('click', e => {
+  e.preventDefault();
+  dropdown.classList.toggle('open');
+});
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.dropdown')) {
+    dropdown.classList.remove('open');
+  }
+});
 
 function cargarAutores() {
-  const contenedor = document.getElementById('dropdownAutores');
-  const autoresUnicos = [...new Set(contenido.map(e => e.autor))].sort();
+  const autores = [...new Set(contenido.map(e => e.autor))].sort();
 
-  autoresUnicos.forEach(autor => {
-    const enlace = document.createElement('a');
-    enlace.href = `autor.html?nombre=${encodeURIComponent(autor)}`;
-    enlace.textContent = autor;
-    contenedor.appendChild(enlace);
+  autores.forEach(a => {
+    const link = document.createElement('a');
+    link.href = `autor.html?nombre=${encodeURIComponent(a)}`;
+    link.textContent = a;
+    dropdown.appendChild(link);
   });
 }
 
@@ -162,14 +170,13 @@ function iniciarCarrusel(trackId, entradas) {
     track.style.transform = `translateX(-${index * 266}px)`;
   }
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => mover(parseInt(btn.dataset.dir)));
-  });
+  buttons.forEach(btn =>
+    btn.addEventListener('click', () => mover(parseInt(btn.dataset.dir)))
+  );
 
   setInterval(() => mover(1), 4000);
 }
 
-/* ===== INICIO ===== */
 cargarAutores();
 
 iniciarCarrusel(
