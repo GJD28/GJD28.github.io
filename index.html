@@ -11,83 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
-
-  <style>
-    nav { position: relative; overflow: visible; }
-
-    .dropdown { position: relative; }
-    .dropdown > a { cursor: pointer; }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: #fff;
-      border: 1px solid #ccc;
-      min-width: 220px;
-      z-index: 9999;
-    }
-
-    .dropdown-content.open { display: block; }
-
-    .dropdown-content a {
-      display: block;
-      padding: 8px 12px;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ===== BUSCADOR ===== */
-    .buscador {
-      position: relative;
-      margin-left: 1rem;
-    }
-
-    .buscador input {
-      padding: 4px 6px;
-      font-size: 0.9rem;
-    }
-
-    .resultados {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: #fff;
-      border: 1px solid #ccc;
-      z-index: 9999;
-    }
-
-    .resultado {
-      padding: 6px 8px;
-      cursor: pointer;
-    }
-
-    .resultado:hover {
-      background: #f0f0f0;
-    }
-
-    /* ===== CARRUSEL ===== */
-    .carousel { position: relative; overflow: hidden; }
-    .carousel-track {
-      display: flex;
-      gap: 1rem;
-      transition: transform 0.5s ease;
-    }
-    .carousel-item {
-      flex: 0 0 250px;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-    .carousel-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
 </head>
 
 <body>
@@ -103,16 +26,7 @@
       <li><a href="criticas.html">Críticas</a></li>
       <li><a href="articulos.html">Artículos</a></li>
       <li><a href="rumores.html">Rumores</a></li>
-
-      <li class="dropdown">
-        <a href="#" id="toggleAutores">Autores ▾</a>
-        <div class="dropdown-content" id="dropdownAutores"></div>
-      </li>
-
-      <li class="buscador">
-        <input type="text" id="busqueda" placeholder="Buscar…" />
-        <div class="resultados" id="resultados"></div>
-      </li>
+      <li><a href="autores.html">Autores</a></li>
     </ul>
   </nav>
 </header>
@@ -142,53 +56,6 @@
 <script src="contenido.js"></script>
 
 <script>
-/* ===== AUTORES ===== */
-const toggleAutores = document.getElementById('toggleAutores');
-const dropdownAutores = document.getElementById('dropdownAutores');
-
-toggleAutores.addEventListener('click', e => {
-  e.preventDefault();
-  dropdownAutores.classList.toggle('open');
-});
-
-document.addEventListener('click', e => {
-  if (!e.target.closest('.dropdown')) {
-    dropdownAutores.classList.remove('open');
-  }
-});
-
-[...new Set(contenido.map(e => e.autor))].sort().forEach(a => {
-  const link = document.createElement('a');
-  link.href = `autor.html?nombre=${encodeURIComponent(a)}`;
-  link.textContent = a;
-  dropdownAutores.appendChild(link);
-});
-
-/* ===== BUSCADOR ===== */
-const input = document.getElementById('busqueda');
-const resultados = document.getElementById('resultados');
-
-input.addEventListener('input', () => {
-  const q = input.value.toLowerCase().trim();
-  resultados.innerHTML = '';
-  if (!q) return;
-
-  const encontrados = contenido.filter(e =>
-    e.titulo.toLowerCase().includes(q) ||
-    (e.etiquetas && e.etiquetas.some(et => et.toLowerCase().includes(q)))
-  );
-
-  encontrados.forEach(e => {
-    const div = document.createElement('div');
-    div.className = 'resultado';
-    div.textContent = `${e.titulo} — ${e.autor}`;
-    div.onclick = () => {
-      window.location.href = `entrada.html?id=${e.id}`;
-    };
-    resultados.appendChild(div);
-  });
-});
-
 /* ===== CARRUSELES ===== */
 function crearItem(e) {
   const d = document.createElement('div');
@@ -205,10 +72,12 @@ function crearItem(e) {
 
 function cargar(trackId, entradas) {
   const track = document.getElementById(trackId);
+  if (!track) return;
   entradas.forEach(e => track.appendChild(crearItem(e)));
 }
 
 cargar('destacados', contenido.filter(e => e.destacada));
+
 cargar(
   'ultimas-entradas',
   [...contenido].sort((a, b) => {
