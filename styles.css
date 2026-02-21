@@ -21,10 +21,6 @@
   color: #000;
 }
 
-.star.half {
-  color: #ccc;
-}
-
 .star.half::before {
   content: "★";
   position: absolute;
@@ -83,46 +79,40 @@ nav {
   margin: 1.5rem 0;
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
+  position: relative;
+  overflow: visible;
 }
 
 .nav-list {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.nav-list a,
-.nav-button {
+.nav-list a {
   text-decoration: none;
   color: #444;
-  cursor: pointer;
 }
 
-.nav-list a:hover,
-.nav-button:hover {
+.nav-list a:hover {
   color: #000;
 }
 
 /* ===============================
-   Dropdown Autores (DEFINITIVO)
+   Dropdown (Autores)
    =============================== */
-
 .dropdown {
   position: relative;
 }
 
-.nav-button {
-  background: none;
-  border: none;
-  font-family: inherit;
-  font-size: inherit;
-  padding: 0;
+.dropdown > a {
+  cursor: pointer;
 }
 
-/* SIEMPRE vertical, SIEMPRE oculto al cargar */
 .dropdown-content {
   position: absolute;
   top: 1.6rem;
@@ -132,7 +122,7 @@ nav {
   border: 1px solid #ccc;
   min-width: 180px;
   text-align: left;
-  z-index: 10;
+  z-index: 1000;
 
   display: flex;
   flex-direction: column;
@@ -143,22 +133,50 @@ nav {
 }
 
 .dropdown-content a {
-  display: block;
-  width: 100%;
   padding: 0.5rem 1rem;
   color: #222;
-  text-decoration: none;
 }
 
 .dropdown-content a:hover {
   background-color: #e6e6e3;
 }
 
-/* Estado abierto */
-.dropdown.open .dropdown-content {
+.dropdown-content.open {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
+}
+
+/* ===============================
+   Buscador
+   =============================== */
+.buscador {
+  position: relative;
+}
+
+.buscador input {
+  padding: 4px 6px;
+  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.resultados {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #f4f4f2;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.resultado {
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+}
+
+.resultado:hover {
+  background-color: #e6e6e3;
 }
 
 /* ===============================
@@ -170,7 +188,6 @@ main {
   padding: 2.5rem 1.5rem;
 }
 
-/* Artículos largos */
 article {
   margin-bottom: 3.5rem;
   padding-bottom: 2.5rem;
@@ -182,15 +199,6 @@ article h2 {
   font-size: 1.8rem;
 }
 
-article h2 a {
-  text-decoration: none;
-  color: #222;
-}
-
-article h2 a:hover {
-  text-decoration: underline;
-}
-
 .meta {
   color: #777;
   font-size: 0.9rem;
@@ -198,49 +206,42 @@ article h2 a:hover {
 }
 
 /* ===============================
-   SECCIÓN CRÍTICAS (LISTADO)
+   Carruseles de portada
    =============================== */
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
 
-main#listado-criticas {
-  max-width: 1200px;
+.carousel-track {
   display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: flex-start;
+  gap: 1rem;
+  transition: transform 0.5s ease;
 }
 
-/* Anulamos estilos de artículo largo SOLO aquí */
-main#listado-criticas article {
-  width: 260px;
-  margin: 0;
-  padding: 0;
-  border: none;
+.carousel-item {
+  flex: 0 0 250px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
 }
 
-.critica-mini {
-  display: block;
-}
-
-.critica-mini img {
+.carousel-item img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
 }
 
-.critica-mini a {
-  text-decoration: none;
-  color: inherit;
+.carousel-item h3 {
+  font-size: 0.95rem;
+  margin: 0.5rem;
 }
 
-.critica-mini .autor {
-  font-size: 0.85rem;
-  margin: 6px 0 2px;
-  color: #555;
-}
-
-.critica-mini p {
-  font-size: 0.85rem;
-  margin: 0;
+.carousel-item .meta {
+  font-size: 0.8rem;
+  margin: 0 0.5rem 0.5rem;
 }
 
 /* ===============================
