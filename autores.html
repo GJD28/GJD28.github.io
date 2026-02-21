@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Autor · Gabinete de Juicio y Debate</title>
+  <title>Autores · Gabinete de Juicio y Debate</title>
 
   <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,11 +31,8 @@
   </nav>
 </header>
 
-<main id="autor">
-  <section id="autor-cabecera"></section>
-  <section id="autor-entradas">
-    <h2>Textos publicados</h2>
-  </section>
+<main id="listado-autores">
+  <h2>Autores</h2>
 </main>
 
 <footer>
@@ -45,42 +42,22 @@
 <script src="contenido.js"></script>
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const id = params.get('id');
+const contenedor = document.getElementById('listado-autores');
 
-const autor = autores[id];
-const cabecera = document.getElementById('autor-cabecera');
-const listado = document.getElementById('autor-entradas');
+/* Obtener autores únicos a partir del contenido */
+const autoresUnicos = [...new Set(contenido.map(e => e.autor))].sort();
 
-if (!autor) {
-  cabecera.innerHTML = '<p>Autor no encontrado.</p>';
-} else {
-  document.title = `${autor.nombre} · Gabinete de Juicio y Debate`;
-
-  cabecera.innerHTML = `
-    <div class="autor-header">
-      <img src="autores/${autor.foto}" alt="${autor.nombre}">
-      <div class="autor-bio">
-        <h2>${autor.nombre}</h2>
-        <p>${autor.bio}</p>
-      </div>
-    </div>
+autoresUnicos.forEach(nombre => {
+  const article = document.createElement('article');
+  article.innerHTML = `
+    <h3>
+      <a href="autor.html?nombre=${encodeURIComponent(nombre)}">
+        ${nombre}
+      </a>
+    </h3>
   `;
-
-  const entradasAutor = contenido.filter(e => e.autor === id);
-
-  if (entradasAutor.length === 0) {
-    listado.innerHTML += '<p>Este autor todavía no ha publicado textos.</p>';
-  } else {
-    entradasAutor.forEach(e => {
-      const article = document.createElement('article');
-      article.innerHTML = `
-        <h3><a href="entrada.html?id=${e.id}">${e.titulo}</a></h3>
-      `;
-      listado.appendChild(article);
-    });
-  }
-}
+  contenedor.appendChild(article);
+});
 </script>
 
 </body>
