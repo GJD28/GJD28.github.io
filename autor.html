@@ -33,6 +33,10 @@
 
 <main>
 
+  <!-- CABECERA DEL AUTOR -->
+  <section id="autor-cabecera"></section>
+
+  <!-- LISTADO DE ENTRADAS -->
   <section id="autor">
     <h2 id="nombre-autor"></h2>
     <div id="lista-entradas"></div>
@@ -71,12 +75,30 @@ function crearTarjetaAutor(entrada) {
 }
 
 const autor = obtenerAutor();
+const cabecera = document.getElementById('autor-cabecera');
 const contenedorNombre = document.getElementById('nombre-autor');
 const contenedorLista = document.getElementById('lista-entradas');
 
 if (!autor) {
   contenedorNombre.textContent = "Autor no especificado";
 } else {
+
+  /* ----- CABECERA ----- */
+  if (autor === "Irene Salgado") {
+    cabecera.innerHTML = `
+      <div class="autor-header">
+        <img src="autores/irene-salgado.png" alt="Irene Salgado">
+        <div class="autor-bio">
+          <h2>Irene Salgado</h2>
+          <p>
+            Me emociono fácil con el cine y me implico sin demasiadas defensas. Soy bastante hooligan de Scorsese cuando decide bajar el volumen y dejar que el tiempo haga su trabajo, y me pierdo con gusto cada vez que Isabelle Huppert entra en un plano. Me encantan las películas que apetece volver a ver sin una razón clara y las que te hacen recomendar cosas como si fueran descubrimientos personales. Vivo el cine con entusiasmo, con curiosidad y con una alegría muy poco sofisticada. Escribo desde ahí, desde las ganas sinceras de compartir algo que me ha tocado.
+          </p>
+        </div>
+      </div>
+    `;
+  }
+
+  /* ----- NOMBRE Y ENTRADAS ----- */
   contenedorNombre.textContent = autor;
 
   const entradasAutor = contenido.filter(e => e.autor === autor);
