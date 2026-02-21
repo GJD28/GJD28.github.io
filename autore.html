@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autores · Gabinete de Juicio y Debate</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <div class="banner-texto">
+    <h1>Gabinete de Juicio y Debate</h1>
+  </div>
+
+  <nav>
+    <ul class="nav-list">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="criticas.html">Críticas</a></li>
+      <li><a href="articulos.html">Artículos</a></li>
+      <li><a href="rumores.html">Rumores</a></li>
+      <li><a href="autores.html">Autores</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="listado-autores">
+  <h2>Autores</h2>
+</main>
+
+<footer>
+  © 2026 · Gabinete de Juicio y Debate
+</footer>
+
+<script src="contenido.js"></script>
+
+<script>
+const contenedor = document.getElementById('listado-autores');
+
+/* Obtener autores únicos */
+const autores = [...new Set(contenido.map(e => e.autor))].sort();
+
+autores.forEach(nombre => {
+  const article = document.createElement('article');
+  article.innerHTML = `
+    <h3>
+      <a href="autor.html?nombre=${encodeURIComponent(nombre)}">
+        ${nombre}
+      </a>
+    </h3>
+  `;
+  contenedor.appendChild(article);
+});
+</script>
+
+</body>
+</html>
