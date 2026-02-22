@@ -36,10 +36,15 @@
   <!-- CABECERA DEL AUTOR -->
   <section id="autor-cabecera"></section>
 
-  <!-- LISTADO DE ENTRADAS -->
+  <!-- CARRUSEL DE ENTRADAS -->
   <section id="autor">
     <h2 id="nombre-autor"></h2>
-    <div id="lista-entradas"></div>
+
+    <div class="carousel autor-carousel">
+      <button class="carousel-btn prev" aria-label="Anterior">‹</button>
+      <div class="carousel-track"></div>
+      <button class="carousel-btn next" aria-label="Siguiente">›</button>
+    </div>
   </section>
 
 </main>
@@ -56,31 +61,13 @@ function obtenerAutor() {
   return params.get('nombre');
 }
 
-function crearTarjetaAutor(entrada) {
-  const article = document.createElement('article');
-  article.className = 'tarjeta-autor';
-
-  article.innerHTML = `
-    <a href="entrada.html?id=${entrada.id}">
-      <img src="${entrada.imagen.src}" alt="${entrada.imagen.alt}">
-      <h3>${entrada.titulo}</h3>
-    </a>
-    <div class="meta">
-      ${entrada.seccion} · ${entrada.director ?? ''} ${entrada.año ?? ''}
-    </div>
-    <p>${entrada.entradilla}</p>
-  `;
-
-  return article;
-}
-
 const autor = obtenerAutor();
 const cabecera = document.getElementById('autor-cabecera');
-const contenedorNombre = document.getElementById('nombre-autor');
-const contenedorLista = document.getElementById('lista-entradas');
+const nombreAutor = document.getElementById('nombre-autor');
+const track = document.querySelector('.autor-carousel .carousel-track');
 
 if (!autor) {
-  contenedorNombre.textContent = "Autor no especificado";
+  nombreAutor.textContent = "Autor no especificado";
 } else {
 
   /* ----- CABECERA ----- */
@@ -98,19 +85,43 @@ if (!autor) {
     `;
   }
 
-  /* ----- NOMBRE Y ENTRADAS ----- */
-  contenedorNombre.textContent = autor;
+  nombreAutor.textContent = autor;
 
+  /* ----- ENTRADAS DEL AUTOR ----- */
   const entradasAutor = contenido.filter(e => e.autor === autor);
 
   if (entradasAutor.length === 0) {
-    contenedorLista.innerHTML = "<p>Este autor aún no tiene textos publicados.</p>";
+    track.innerHTML = "<p>Este autor aún no tiene textos publicados.</p>";
   } else {
     entradasAutor.forEach(entrada => {
-      contenedorLista.appendChild(crearTarjetaAutor(entrada));
+      const item = document.createElement('div');
+      item.className = 'carousel-item autor-item';
+
+      item.innerHTML = `
+        <a href="entrada.html?id=${entrada.id}">
+          <img src="${entrada.imagen.src}" alt="${entrada.imagen.alt}">
+          <h3>${entrada.titulo}</h3>
+          <p class="autor-entradilla">${entrada.entradilla}</p>
+        </a>
+      `;
+
+      track.appendChild(item);
     });
   }
 }
+
+/* ----- CONTROLES DEL CARRUSEL ----- */
+const carousel = document.querySelector('.autor-carousel');
+const prevBtn = carousel.querySelector('.prev');
+const nextBtn = carousel.querySelector('.next');
+
+prevBtn.addEventListener('click', () => {
+  carousel.scrollBy({ left: -300, behavior: 'smooth' });
+});
+
+nextBtn.addEventListener('click', () => {
+  carousel.scrollBy({ left: 300, behavior: 'smooth' });
+});
 </script>
 
 </body>
