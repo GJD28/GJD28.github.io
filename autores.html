@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Autores · Gabinete de Juicio y Debate</title>
 
-  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -31,8 +30,9 @@
   </nav>
 </header>
 
-<main id="listado-autores">
+<main>
   <h2>Autores</h2>
+  <section class="autores-grid"></section>
 </main>
 
 <footer>
@@ -42,21 +42,27 @@
 <script src="contenido.js"></script>
 
 <script>
-const contenedor = document.getElementById('listado-autores');
+const grid = document.querySelector('.autores-grid');
 
-/* Obtener autores únicos a partir del contenido */
-const autoresUnicos = [...new Set(contenido.map(e => e.autor))].sort();
+/* Autores que ya tienen textos publicados */
+const autoresConTextos = [...new Set(contenido.map(e => e.autor))];
 
-autoresUnicos.forEach(nombre => {
+autoresConTextos.forEach(nombre => {
+  const ficha = fichasAutores[nombre];
+
+  if (!ficha) return;
+
   const article = document.createElement('article');
+  article.className = 'autor-card';
+
   article.innerHTML = `
-    <h3>
-      <a href="autor.html?nombre=${encodeURIComponent(nombre)}">
-        ${nombre}
-      </a>
-    </h3>
+    <a href="autor.html?nombre=${encodeURIComponent(nombre)}">
+      <img src="${ficha.foto}" alt="${ficha.nombre}">
+      <h3>${ficha.nombre}</h3>
+    </a>
   `;
-  contenedor.appendChild(article);
+
+  grid.appendChild(article);
 });
 </script>
 
