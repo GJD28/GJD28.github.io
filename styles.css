@@ -1,36 +1,4 @@
 /* ===============================
-   Valoración con estrellas
-   =============================== */
-.valoracion {
-  margin-top: 2rem;
-}
-
-.stars {
-  display: inline-flex;
-  gap: 0.25rem;
-  font-size: 1.4rem;
-  line-height: 1;
-}
-
-.star {
-  position: relative;
-  color: #ccc;
-}
-
-.star.full {
-  color: #000;
-}
-
-.star.half::before {
-  content: "★";
-  position: absolute;
-  left: 0;
-  width: 50%;
-  overflow: hidden;
-  color: #000;
-}
-
-/* ===============================
    Base
    =============================== */
 body {
@@ -41,15 +9,14 @@ body {
   line-height: 1.7;
 }
 
-/* Imagen en artículos */
-.imagen-articulo {
-  width: 180px;
-  float: left;
-  margin: 0.5rem 1.5rem 1rem 0;
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
 }
 
 /* ===============================
-   Header y banner
+   Header
    =============================== */
 header {
   text-align: center;
@@ -64,33 +31,20 @@ header {
 }
 
 .banner-texto h1 {
-  margin: 0;
   font-family: 'Caveat', cursive;
-  font-size: 3rem;
-  font-weight: normal;
-  letter-spacing: 0.04em;
   color: #ccc;
+  font-size: 3rem;
 }
 
 /* ===============================
    Navegación
    =============================== */
-nav {
-  margin: 1.5rem 0;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  position: relative;
-  overflow: visible;
-}
-
 .nav-list {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 2rem;
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .nav-list a {
@@ -98,206 +52,30 @@ nav {
   color: #444;
 }
 
-.nav-list a:hover {
-  color: #000;
-}
-
 /* ===============================
-   Dropdown (Autores)
+   Autores (sala de espera)
    =============================== */
-.dropdown {
-  position: relative;
+.autores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.dropdown > a {
-  cursor: pointer;
-}
-
-.dropdown-content {
-  position: absolute;
-  top: 1.6rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #f4f4f2;
-  border: 1px solid #ccc;
-  min-width: 180px;
-  text-align: left;
-  z-index: 1000;
-
-  display: flex;
-  flex-direction: column;
-
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.dropdown-content a {
-  padding: 0.5rem 1rem;
-  color: #222;
-}
-
-.dropdown-content a:hover {
-  background-color: #e6e6e3;
-}
-
-.dropdown-content.open {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* ===============================
-   Buscador
-   =============================== */
-.buscador {
-  position: relative;
-}
-
-.buscador input {
-  padding: 4px 6px;
-  font-size: 0.85rem;
-  font-family: 'Inter', sans-serif;
-}
-
-.resultados {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background-color: #f4f4f2;
-  border: 1px solid #ccc;
-  z-index: 1000;
-}
-
-.resultado {
-  padding: 0.4rem 0.6rem;
-  cursor: pointer;
-}
-
-.resultado:hover {
-  background-color: #e6e6e3;
-}
-
-/* ===============================
-   Contenido general
-   =============================== */
-main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2.5rem 1.5rem;
-}
-
-article {
-  margin-bottom: 3.5rem;
-  padding-bottom: 2.5rem;
-  border-bottom: 1px solid #ccc;
-}
-
-article h2 {
-  margin-top: 0;
-  font-size: 1.8rem;
-}
-
-.meta {
-  color: #777;
-  font-size: 0.9rem;
-  margin-bottom: 1.2rem;
-}
-
-/* ===============================
-   Carruseles de portada
-   =============================== */
-.carousel {
-  position: relative;
-  overflow: hidden;
-}
-
-.carousel-track {
-  display: flex;
-  gap: 1rem;
-  transition: transform 0.5s ease;
-}
-
-.carousel-item {
-  flex: 0 0 250px;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+.autor-card {
   background-color: #fff;
+  text-align: center;
 }
 
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.carousel-item h3 {
-  font-size: 0.95rem;
-  margin: 0.5rem;
-}
-
-.carousel-item .meta {
-  font-size: 0.8rem;
-  margin: 0 0.5rem 0.5rem;
-}
-
-/* ===============================
-   Carrusel en página de autor
-   =============================== */
-
-.autor-carousel {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.autor-carousel .carousel-track {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-}
-
-.autor-carousel .carousel-track::-webkit-scrollbar {
-  display: none;
-}
-
-.autor-item {
-  flex: 0 0 240px;
-  background-color: #fff;
-  padding-bottom: 0.5rem;
-}
-
-.autor-item img {
+.autor-card img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
-.autor-item h3 {
-  font-size: 0.95rem;
-  margin: 0.5rem;
-}
-
-.autor-entradilla {
-  font-size: 0.85rem;
-  color: #444;
-  margin: 0 0.5rem 0.5rem;
-}
-
-.carousel-btn {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #444;
-}
-
-.carousel-btn:hover {
-  color: #000;
+.autor-card h3 {
+  margin: 0.75rem;
+  font-size: 1rem;
 }
 
 /* ===============================
@@ -305,7 +83,7 @@ article h2 {
    =============================== */
 footer {
   text-align: center;
-  padding: 2rem 1rem;
-  color: #666;
+  padding: 2rem;
   font-size: 0.85rem;
+  color: #666;
 }
