@@ -245,6 +245,62 @@ article h2 {
 }
 
 /* ===============================
+   Carrusel en página de autor
+   =============================== */
+
+.autor-carousel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.autor-carousel .carousel-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.autor-carousel .carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.autor-item {
+  flex: 0 0 240px;
+  background-color: #fff;
+  padding-bottom: 0.5rem;
+}
+
+.autor-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.autor-item h3 {
+  font-size: 0.95rem;
+  margin: 0.5rem;
+}
+
+.autor-entradilla {
+  font-size: 0.85rem;
+  color: #444;
+  margin: 0 0.5rem 0.5rem;
+}
+
+.carousel-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #444;
+}
+
+.carousel-btn:hover {
+  color: #000;
+}
+
+/* ===============================
    Footer
    =============================== */
 footer {
