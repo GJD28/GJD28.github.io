@@ -47,9 +47,27 @@ function obtenerId() {
   return params.get('id');
 }
 
+/* ----- ESTRELLAS ----- */
+function renderEstrellas(nota) {
+  const estrellasTotales = 5;
+  let html = '<div class="stars">';
+
+  for (let i = 1; i <= estrellasTotales; i++) {
+    if (nota >= i) {
+      html += '<span class="star full">★</span>';
+    } else if (nota >= i - 0.5) {
+      html += '<span class="star half">★</span>';
+    } else {
+      html += '<span class="star">★</span>';
+    }
+  }
+
+  html += '</div>';
+  return html;
+}
+
 function renderEntrada(entrada) {
   const contenedor = document.getElementById('entrada');
-
   const autorURL = encodeURIComponent(entrada.autor);
 
   let html = `
@@ -82,7 +100,8 @@ function renderEntrada(entrada) {
   if (entrada.seccion === "criticas" && entrada.nota !== undefined) {
     html += `
       <div class="valoracion">
-        <strong>Valoración:</strong> ${entrada.nota} / 5
+        <strong>Valoración:</strong>
+        ${renderEstrellas(entrada.nota)}
       </div>
     `;
   }
