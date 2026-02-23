@@ -1,4 +1,36 @@
 /* ===============================
+   Valoración con estrellas
+   =============================== */
+.valoracion {
+  margin-top: 2rem;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 0.25rem;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.star {
+  position: relative;
+  color: #ccc;
+}
+
+.star.full {
+  color: #000;
+}
+
+.star.half::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #000;
+}
+
+/* ===============================
    Base
    =============================== */
 body {
@@ -9,14 +41,8 @@ body {
   line-height: 1.7;
 }
 
-main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2.5rem 1.5rem;
-}
-
 /* ===============================
-   Header
+   Header y banner
    =============================== */
 header {
   text-align: center;
@@ -31,25 +57,166 @@ header {
 }
 
 .banner-texto h1 {
+  margin: 0;
   font-family: 'Caveat', cursive;
-  color: #ccc;
   font-size: 3rem;
+  font-weight: normal;
+  letter-spacing: 0.04em;
+  color: #ccc;
 }
 
 /* ===============================
    Navegación
    =============================== */
+nav {
+  margin: 1.5rem 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+}
+
 .nav-list {
   display: flex;
   justify-content: center;
   gap: 2rem;
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .nav-list a {
   text-decoration: none;
   color: #444;
+}
+
+.nav-list a:hover {
+  color: #000;
+}
+
+/* ===============================
+   Contenido general
+   =============================== */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+article {
+  margin-bottom: 3.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+article h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+.meta {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
+}
+
+/* ===============================
+   Imagen en artículos
+   =============================== */
+.imagen-articulo {
+  width: 180px;
+  float: left;
+  margin: 0.5rem 1.5rem 1rem 0;
+}
+
+/* ===============================
+   Carruseles de portada (CLAVE)
+   =============================== */
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+}
+
+.carousel-item {
+  flex: 0 0 250px;          /* 👈 TAMAÑO FIJO */
+  aspect-ratio: 1 / 1;     /* 👈 CUADRADO */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* 👈 RECORTE CORRECTO */
+}
+
+.carousel-item h3 {
+  font-size: 0.95rem;
+  margin: 0.5rem;
+}
+
+.carousel-item .meta {
+  font-size: 0.8rem;
+  margin: 0 0.5rem 0.5rem;
+}
+
+/* ===============================
+   Carrusel en página de autor
+   =============================== */
+.autor-carousel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.autor-carousel .carousel-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.autor-carousel .carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.autor-item {
+  flex: 0 0 240px;
+  background-color: #fff;
+}
+
+.autor-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.autor-item h3 {
+  font-size: 0.95rem;
+  margin: 0.5rem;
+}
+
+.autor-entradilla {
+  font-size: 0.85rem;
+  color: #444;
+  margin: 0 0.5rem 0.5rem;
+}
+
+.carousel-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #444;
+}
+
+.carousel-btn:hover {
+  color: #000;
 }
 
 /* ===============================
@@ -83,7 +250,7 @@ header {
    =============================== */
 footer {
   text-align: center;
-  padding: 2rem;
-  font-size: 0.85rem;
+  padding: 2rem 1rem;
   color: #666;
+  font-size: 0.85rem;
 }
