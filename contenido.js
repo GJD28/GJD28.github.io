@@ -53,7 +53,7 @@ const contenido = [
     nota: 3.5,
     destacada: false,
     imagen: {
-      src: "the-game.png",
+      src: "the-game-nueva.png",
       alt: "The Game (1997), dirigida por David Fincher"
     },
     entradilla: "Un thriller que funciona mejor como experiencia sensorial que como mecanismo cerrado.",
