@@ -11,7 +11,7 @@ const fichasAutores = {
 
   "Germán Juncosa": {
     nombre: "Germán Juncosa",
-    foto: "autores/german-juncosa.png",
+    foto: "autores/german-juncosa2.png",
     bio: "Me muevo cómodo en el thriller, el terror y el cine de los noventa que apostaba por el entretenimiento adulto sin complejos. Vuelvo a menudo a películas como Seven, Heat o El silencio de los corderos, y no tengo ningún problema en disfrutar de cierto cine comercial cuando está bien hecho. Prefiero las películas con carácter, incluso con imperfecciones, a las que funcionan como un mecanismo demasiado pulido."
   }
 };
@@ -37,7 +37,10 @@ const contenido = [
     },
     entradilla: "Entrevista con el vampiro aspira a una solemnidad que no sabe sostener, obsesionada con su propia gravedad.",
     contenido: [
-      { tipo: "texto", valor: "Advertencia al lector: lo que sigue asume la película ya vista." }
+      {
+        tipo: "texto",
+        valor: "Advertencia al lector: lo que sigue asume la película ya vista."
+      }
     ],
     etiquetas: []
   },
@@ -53,12 +56,15 @@ const contenido = [
     nota: 3.5,
     destacada: false,
     imagen: {
-      src: "the-game-nueva.png",
+      src: "the-game.png",
       alt: "The Game (1997), dirigida por David Fincher"
     },
     entradilla: "Un thriller que funciona mejor como experiencia sensorial que como mecanismo cerrado.",
     contenido: [
-      { tipo: "texto", valor: "The Game es una película que siempre me ha funcionado mejor en el cuerpo que en la cabeza." }
+      {
+        tipo: "texto",
+        valor: "The Game es una película que siempre me ha funcionado mejor en el cuerpo que en la cabeza."
+      }
     ],
     etiquetas: []
   }
