@@ -39,43 +39,42 @@
   © 2026 · Gabinete de Juicio y Debate
 </footer>
 
-<!-- CONTENIDO UNIFICADO -->
 <script src="contenido.js"></script>
 
-<!-- GENERADOR DE MINIATURAS DE CRÍTICAS -->
 <script>
-  const contenedor = document.getElementById("listado-criticas");
+const contenedor = document.getElementById("listado-criticas");
 
-  const criticas = contenido
-    .filter(e => e.seccion === "criticas")
-    .sort((a, b) => b.año - a.año);
+const criticas = contenido
+  .filter(e => e.seccion === "criticas")
+  .sort((a, b) => b.año - a.año);
 
-  criticas.forEach(entrada => {
-    const article = document.createElement("article");
-    article.className = "critica-mini";
+criticas.forEach(entrada => {
+  const article = document.createElement("article");
+  article.className = "critica-mini";
 
-    const enlace = document.createElement("a");
-    enlace.href = `entrada.html?id=${entrada.id}`;
+  const enlace = document.createElement("a");
+  enlace.href = `entrada.html?id=${entrada.id}`;
 
-    const imagen = document.createElement("img");
-    imagen.src = entrada.imagen.src;
-    imagen.alt = entrada.imagen.alt;
+  const imagen = document.createElement("img");
+  imagen.src = entrada.imagen.src;
+  imagen.alt = entrada.imagen.alt;
+  imagen.className = "critica-imagen";
 
-    const autor = document.createElement("div");
-    autor.className = "autor";
-    autor.textContent = entrada.autor;
+  const autor = document.createElement("div");
+  autor.className = "autor";
+  autor.textContent = entrada.autor;
 
-    const texto = document.createElement("p");
-    const palabras = entrada.entradilla.split(" ").slice(0, 8).join(" ");
-    texto.textContent = palabras + "…";
+  const texto = document.createElement("p");
+  const palabras = entrada.entradilla.split(" ").slice(0, 8).join(" ");
+  texto.textContent = palabras + "…";
 
-    enlace.appendChild(imagen);
-    enlace.appendChild(autor);
-    enlace.appendChild(texto);
+  enlace.appendChild(imagen);
+  enlace.appendChild(autor);
+  enlace.appendChild(texto);
 
-    article.appendChild(enlace);
-    contenedor.appendChild(article);
-  });
+  article.appendChild(enlace);
+  contenedor.appendChild(article);
+});
 </script>
 
 </body>
