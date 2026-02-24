@@ -27,12 +27,20 @@
       <li><a href="criticas.html">Críticas</a></li>
       <li><a href="articulos.html">Artículos</a></li>
       <li><a href="rumores.html">Rumores</a></li>
+      <li><a href="autores.html">Autores</a></li>
     </ul>
   </nav>
 </header>
 
-<main id="listado-criticas">
-  <!-- Las críticas se generan automáticamente -->
+<main>
+
+  <section class="portada-bloque">
+    <h2>Todas las críticas</h2>
+    <div class="carousel">
+      <div class="carousel-track" id="todas-criticas"></div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -42,38 +50,29 @@
 <script src="contenido.js"></script>
 
 <script>
-const contenedor = document.getElementById("listado-criticas");
+document.addEventListener('DOMContentLoaded', () => {
 
-const criticas = contenido
-  .filter(e => e.seccion === "criticas")
-  .sort((a, b) => b.año - a.año);
+  function crearItem(e) {
+    const d = document.createElement('div');
+    d.className = 'carousel-item';
+    d.innerHTML = `
+      <a href="entrada.html?id=${e.id}">
+        <img src="${e.imagen.src}" alt="${e.imagen.alt}">
+      </a>
+      <h3>${e.titulo}</h3>
+      <div class="meta">${e.autor}</div>
+    `;
+    return d;
+  }
 
-criticas.forEach(entrada => {
-  const article = document.createElement("article");
-  article.className = "critica-mini";
+  const track = document.getElementById('todas-criticas');
 
-  const enlace = document.createElement("a");
-  enlace.href = `entrada.html?id=${entrada.id}`;
+  const criticas = contenido.filter(e => e.seccion === "criticas");
 
-  const imagen = document.createElement("img");
-  imagen.src = entrada.imagen.src;
-  imagen.alt = entrada.imagen.alt;
-  imagen.className = "critica-imagen";
+  criticas.forEach(e => {
+    track.appendChild(crearItem(e));
+  });
 
-  const autor = document.createElement("div");
-  autor.className = "autor";
-  autor.textContent = entrada.autor;
-
-  const texto = document.createElement("p");
-  const palabras = entrada.entradilla.split(" ").slice(0, 8).join(" ");
-  texto.textContent = palabras + "…";
-
-  enlace.appendChild(imagen);
-  enlace.appendChild(autor);
-  enlace.appendChild(texto);
-
-  article.appendChild(enlace);
-  contenedor.appendChild(article);
 });
 </script>
 
