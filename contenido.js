@@ -1,176 +1,119 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gabinete de Juicio y Debate</title>
+/* =========================
+   FICHAS DE AUTORES
+   ========================= */
 
-  <!-- Fuentes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+const fichasAutores = {
+  "Irene Salgado": {
+    nombre: "Irene Salgado",
+    foto: "irene-salgado.png",
+    bio: "Me emociono fácil con el cine y me implico sin demasiadas defensas. Soy bastante hooligan de Scorsese cuando decide bajar el volumen y dejar que el tiempo haga su trabajo, y me pierdo con gusto cada vez que Isabelle Huppert entra en un plano. Me encantan las películas que apetece volver a ver sin una razón clara y las que te hacen recomendar cosas como si fueran descubrimientos personales. Vivo el cine con entusiasmo, con curiosidad y con una alegría muy poco sofisticada. Escribo desde ahí, desde las ganas sinceras de compartir algo que me ha tocado."
+  },
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles.css">
-</head>
+  "Germán Juncosa": {
+    nombre: "Germán Juncosa",
+    foto: "german-juncosa2.png",
+    bio: "Me muevo cómodo en el thriller, el terror y el cine de los noventa que apostaba por el entretenimiento adulto sin complejos. Vuelvo a menudo a películas como Seven, Heat o El silencio de los corderos, y no tengo ningún problema en disfrutar de cierto cine comercial cuando está bien hecho. Prefiero las películas con carácter, incluso con imperfecciones, a las que funcionan como un mecanismo demasiado pulido."
+  }
+};
 
-<body>
+/* =========================
+   CONTENIDO
+   ========================= */
 
-<header>
-  <div class="banner-texto">
-    <h1>Gabinete de Juicio y Debate</h1>
-  </div>
+const contenido = [
 
-  <nav>
-    <ul class="nav-list">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="criticas.html">Críticas</a></li>
-      <li><a href="articulos.html">Artículos</a></li>
-      <li><a href="rumores.html">Rumores</a></li>
-      <li><a href="autores.html">Autores</a></li>
+  /* =========================
+     THE GAME
+     ========================= */
 
-      <li class="buscador">
-        <input
-          type="text"
-          id="busqueda"
-          placeholder="Buscar por título, autor o etiqueta…"
-          autocomplete="off"
-        />
-        <div class="resultados" id="resultados"></div>
-      </li>
-    </ul>
-  </nav>
-</header>
+  {
+    id: "the-game-1997",
+    seccion: "criticas",
+    titulo: "The Game",
+    autor: "Germán Juncosa",
+    fecha_publicacion: "20/02/2026",
+    director: "David Fincher",
+    año: 1997,
+    nota: 3.5,
+    destacada: true,
+    imagen: {
+      src: "the-game-nueva.png",
+      alt: "The Game (1997), dirigida por David Fincher"
+    },
+    entradilla: "Un thriller que funciona mejor como experiencia sensorial que como mecanismo cerrado, sostenido por una atmósfera de inestabilidad muy bien dosificada.",
+    contenido: [
+      {
+        tipo: "texto",
+        valor: "The Game es una película que siempre me ha funcionado mejor en el cuerpo que en la cabeza. Cada vez que vuelvo a ella entro sin resistencia en su clima y me dejo arrastrar por una sensación de inestabilidad muy bien sostenida. Fincher sabe exactamente qué tipo de experiencia quiere provocar y la ejecuta con una seguridad que se nota desde los primeros minutos."
+      },
+      {
+        tipo: "texto",
+        valor: "Me interesa especialmente cómo la película se apoya en Nicholas Van Orton como figura central. Su rigidez, su forma de ocupar el espacio y de relacionarse con los demás construyen un punto de partida muy fértil. Ver cómo ese mundo ordenado empieza a deformarse resulta estimulante porque el proceso está bien dosificado. La película encuentra ahí su mayor virtud: convertir el control en una trampa narrativa y emocional."
+      },
+      {
+        tipo: "texto",
+        valor: "Durante buena parte del metraje, The Game maneja la tensión con mucha inteligencia. La acumulación de situaciones funciona, el desconcierto crece y el espectador comparte la pérdida de referencias sin sentirse manipulado. Es un thriller que confía en el recorrido y que entiende el valor de la atmósfera, del espacio y del ritmo. En ese tramo, Fincher está especialmente inspirado."
+      },
+      {
+        tipo: "texto",
+        valor: "Donde la película se me queda corta es en el cierre. El desenlace es eficaz y está bien armado, pero introduce una limpieza excesiva que enfría parte de lo que venía funcionando tan bien. Todo encaja, todo se explica y todo queda bajo control otra vez. El problema no es que tenga sentido, sino que reduce la incomodidad acumulada y deja una sensación más calculada de la que pedía el viaje."
+      },
+      {
+        tipo: "texto",
+        valor: "Aun así, The Game me sigue gustando mucho. No la considero una obra mayor ni una película redonda, pero sí un thriller muy sólido, con una identidad clara y con momentos de auténtica fuerza. Es una de esas películas que disfruto más mientras la estoy viendo que cuando empiezo a pensarla después, y eso, en su caso, juega a favor. Fincher sostiene el pulso durante casi todo el metraje y eso basta para que el viaje merezca la pena."
+      }
+    ],
+    etiquetas: [
+      "Michael Douglas",
+      "David Fincher",
+      "1997",
+      "Thriller",
+      "Años 90"
+    ]
+  },
 
-<main>
+  /* =========================
+     ENTREVISTA CON EL VAMPIRO
+     ========================= */
 
-  <section class="portada-bloque">
-    <h2>Destacados</h2>
-    <div class="carousel">
-      <div class="carousel-track" id="destacados"></div>
-    </div>
-  </section>
-
-  <section class="portada-bloque">
-    <h2>Últimas entradas</h2>
-    <div class="carousel">
-      <div class="carousel-track" id="ultimas-entradas"></div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  © 2026 · Gabinete de Juicio y Debate
-</footer>
-
-<!-- CONTENIDO -->
-<script src="contenido.js"></script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-
-  /* ===============================
-     BUSCADOR
-     =============================== */
-
-  const inputBusqueda = document.getElementById('busqueda');
-  const contResultados = document.getElementById('resultados');
-
-  function limpiarBuscador() {
-    contResultados.innerHTML = '';
-    inputBusqueda.value = '';
+  {
+    id: "entrevista-con-el-vampiro-1994",
+    seccion: "criticas",
+    titulo: "Entrevista con el vampiro",
+    autor: "Álvaro Ríos",
+    fecha_publicacion: "01/01/2026",
+    director: "Neil Jordan",
+    año: 1994,
+    nota: 2,
+    destacada: false,
+    imagen: {
+      src: "ECEV.png",
+      alt: "Entrevista con el vampiro (1994), dirigida por Neil Jordan"
+    },
+    entradilla: "Entrevista con el vampiro aspira a una solemnidad que no sabe sostener, obsesionada con su propia gravedad.",
+    contenido: [
+      { tipo: "texto", valor: "Advertencia al lector: lo que sigue asume la película ya vista." },
+      { tipo: "texto", valor: "«La belleza es una forma de desesperación.»\n— Charles Baudelaire, El spleen de París" },
+      { tipo: "texto", valor: "Entrevista con el vampiro aspira a una solemnidad que no sabe sostener. Neil Jordan dirige una película obsesionada con su propia gravedad, convencida de estar hablando de la eternidad, el deseo y la culpa, cuando en realidad se recrea en una imaginería gótica de escaparate, tan recargada como finalmente insignificante. El film se contempla a sí mismo con una seriedad impostada que nace del gesto reiterado y no de una verdadera densidad cinematográfica." },
+      { tipo: "texto", valor: "La narración avanza como un lamento prolongado y estetizado. El paso del tiempo, la inmortalidad y el hastío aparecen envueltos en una melancolía ornamental que se repite sin transformación apreciable. La lentitud domina el ritmo y el conjunto se aplana en una misma cadencia emocional. La película se vuelve pesada por acumulación y acaba girando sobre su propio ensimismamiento." },
+      { tipo: "texto", valor: "El problema central reside en las interpretaciones, especialmente en las más visibles. Tom Cruise encarna a Lestat desde un disfrute evidente de su propia presencia. La actuación se repliega sobre el actor y se convierte en una exhibición constante de carisma autosatisfecho. Cada gesto reclama atención y el personaje queda reducido a un escaparate de vanidad. El vampiro pierde cualquier espesor posible y se transforma en un ruido continuo, tan insistente como agotador." },
+      { tipo: "texto", valor: "Brad Pitt ofrece un Louis sostenido en una languidez decorativa e inmediatamente fatigosa. El hastío del personaje se expresa como una pose elegante repetida hasta la extenuación. La experiencia de la inmortalidad se diluye en un abatimiento uniforme que fatiga al espectador mucho antes de que la película alcance su último tramo. La melancolía acaba convertida en gesto vacío." },
+      { tipo: "texto", valor: "Antonio Banderas aparece como Armand y eleva el desajuste a un extremo difícil de justificar. Su interpretación roza lo grotesco por acumulación. Excesiva, afectada y completamente desbordada, convierte cada escena en un ejercicio de histrionismo que rompe cualquier continuidad tonal. Su presencia desactiva la atmósfera y empuja la película hacia un territorio cercano a la caricatura." },
+      { tipo: "texto", valor: "El contraste con Kirsten Dunst resulta revelador. En medio de este desfile de egos y poses, su Claudia introduce una incomodidad tangible. Hay crueldad, rabia y frustración expresadas con una claridad que el resto del reparto apenas alcanza. Su trabajo deja en evidencia la superficialidad interpretativa que domina el conjunto." },
+      { tipo: "texto", valor: "En el plano formal, la dirección se refugia en un academicismo lujoso y asfixiante. Decorados, iluminación y vestuario sostienen una belleza mortecina que se repite hasta perder cualquier capacidad de sugestión. La puesta en escena acompaña la autocomplacencia general y refuerza la sensación de estancamiento." },
+      { tipo: "texto", valor: "La música de Elliot Goldenthal insiste en el dramatismo mediante un subrayado constante. La emoción se amplifica de forma mecánica y termina por vaciarse. La tristeza se convierte en un ruido de fondo persistente, más decorativo que significativo." },
+      { tipo: "texto", valor: "Entrevista con el vampiro envejece mal por una cuestión de actitud. La película se mira con devoción y confunde importancia con profundidad. El artificio se impone y la verdad desaparece entre capas de afectación. Lo que queda es un objeto vistoso, solemnemente hueco y en buena medida olvidable." }
+    ],
+    etiquetas: [
+      "Brad Pitt",
+      "Tom Cruise",
+      "Antonio Banderas",
+      "Kirsten Dunst",
+      "Neil Jordan",
+      "1994",
+      "Terror",
+      "Vampiros"
+    ]
   }
 
-  inputBusqueda.addEventListener('input', () => {
-    const q = inputBusqueda.value.trim().toLowerCase();
-    contResultados.innerHTML = '';
-
-    if (!q) return;
-
-    const resultados = contenido.filter(e => {
-      const titulo = e.titulo.toLowerCase();
-      const autor = e.autor.toLowerCase();
-      const etiquetas = (e.etiquetas || []).join(' ').toLowerCase();
-      return titulo.includes(q) || autor.includes(q) || etiquetas.includes(q);
-    }).slice(0, 7);
-
-    if (resultados.length === 0) {
-      const div = document.createElement('div');
-      div.className = 'resultado';
-      div.textContent = 'No se han encontrado resultados';
-      contResultados.appendChild(div);
-      return;
-    }
-
-    resultados.forEach(e => {
-      const div = document.createElement('div');
-      div.className = 'resultado';
-      div.textContent = `${e.titulo} — ${e.autor}`;
-      div.addEventListener('click', () => {
-        window.location.href = `entrada.html?id=${e.id}`;
-      });
-      contResultados.appendChild(div);
-    });
-  });
-
-  document.addEventListener('click', e => {
-    if (!e.target.closest('.buscador')) limpiarBuscador();
-  });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') limpiarBuscador();
-  });
-
-  /* ===============================
-     CARRUSELES
-     =============================== */
-
-  function crearItem(e) {
-    const d = document.createElement('div');
-    d.className = 'carousel-item';
-    d.innerHTML = `
-      <a href="entrada.html?id=${e.id}">
-        <img src="${e.imagen.src}" alt="${e.imagen.alt}">
-      </a>
-      <h3>${e.titulo}</h3>
-      <div class="meta">${e.autor}</div>
-    `;
-    return d;
-  }
-
-  function cargar(trackId, entradas) {
-    const track = document.getElementById(trackId);
-    if (!track) return;
-
-    track.innerHTML = '';
-
-    entradas.forEach(e => {
-      track.appendChild(crearItem(e));
-    });
-
-    if (entradas.length === 0) {
-      track.innerHTML = `<p class="meta">No hay entradas disponibles.</p>`;
-    }
-  }
-
-  /* DESTACADOS */
-  const destacados = contenido.filter(e => e.destacada);
-  cargar('destacados', destacados);
-
-  /* ÚLTIMAS ENTRADAS */
-  const ultimas = [...contenido].sort((a, b) => {
-    if (a.fecha_publicacion === "—") return 1;
-    if (b.fecha_publicacion === "—") return -1;
-    const [da, ma, ya] = a.fecha_publicacion.split('/');
-    const [db, mb, yb] = b.fecha_publicacion.split('/');
-    return new Date(`${yb}-${mb}-${db}`) - new Date(`${ya}-${ma}-${da}`);
-  }).slice(0, 10);
-
-  cargar('ultimas-entradas', ultimas);
-
-});
-</script>
-
-</body>
-</html>
+];
