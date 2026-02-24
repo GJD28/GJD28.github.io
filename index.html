@@ -1,170 +1,215 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gabinete de Juicio y Debate</title>
-
-  <!-- Fuentes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-
-<header>
-  <div class="banner-texto">
-    <h1>Gabinete de Juicio y Debate</h1>
-  </div>
-
-  <nav>
-    <ul class="nav-list">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="criticas.html">Críticas</a></li>
-      <li><a href="articulos.html">Artículos</a></li>
-      <li><a href="rumores.html">Rumores</a></li>
-      <li><a href="autores.html">Autores</a></li>
-
-      <li class="buscador">
-        <input
-          type="text"
-          id="busqueda"
-          placeholder="Buscar por título, autor o etiqueta…"
-          autocomplete="off"
-        />
-        <div class="resultados" id="resultados"></div>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-<main>
-
-  <section class="portada-bloque">
-    <h2>Destacados</h2>
-    <div class="carousel">
-      <div class="carousel-track" id="destacados"></div>
-    </div>
-  </section>
-
-  <section class="portada-bloque">
-    <h2>Últimas entradas</h2>
-    <div class="carousel">
-      <div class="carousel-track" id="ultimas-entradas"></div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  © 2026 · Gabinete de Juicio y Debate
-</footer>
-
-<script src="contenido.js"></script>
-
-<script>
 /* ===============================
-   BUSCADOR MEJORADO
+   Valoración con estrellas
    =============================== */
-
-const inputBusqueda = document.getElementById('busqueda');
-const contResultados = document.getElementById('resultados');
-
-function limpiarBuscador() {
-  contResultados.innerHTML = '';
-  inputBusqueda.value = '';
+.valoracion {
+  margin-top: 2rem;
 }
 
-inputBusqueda.addEventListener('input', () => {
-  const q = inputBusqueda.value.trim().toLowerCase();
-  contResultados.innerHTML = '';
+.stars {
+  display: inline-flex;
+  gap: 0.25rem;
+  font-size: 1.4rem;
+  line-height: 1;
+}
 
-  if (!q) return;
+.star {
+  position: relative;
+  color: #ccc;
+}
 
-  const resultados = contenido.filter(e => {
-    const titulo = e.titulo.toLowerCase();
-    const autor = e.autor.toLowerCase();
-    const etiquetas = (e.etiquetas || []).join(' ').toLowerCase();
+.star.full {
+  color: #000;
+}
 
-    return (
-      titulo.includes(q) ||
-      autor.includes(q) ||
-      etiquetas.includes(q)
-    );
-  }).slice(0, 7);
-
-  if (resultados.length === 0) {
-    const div = document.createElement('div');
-    div.className = 'resultado';
-    div.textContent = 'No se han encontrado resultados';
-    contResultados.appendChild(div);
-    return;
-  }
-
-  resultados.forEach(e => {
-    const div = document.createElement('div');
-    div.className = 'resultado';
-    div.textContent = `${e.titulo} — ${e.autor}`;
-    div.addEventListener('click', () => {
-      window.location.href = `entrada.html?id=${e.id}`;
-    });
-    contResultados.appendChild(div);
-  });
-});
-
-/* Cerrar al clicar fuera */
-document.addEventListener('click', e => {
-  if (!e.target.closest('.buscador')) {
-    limpiarBuscador();
-  }
-});
-
-/* Cerrar con ESC */
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    limpiarBuscador();
-  }
-});
+.star.half::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #000;
+}
 
 /* ===============================
-   CARRUSELES (sin cambios)
+   Base
    =============================== */
-
-function crearItem(e) {
-  const d = document.createElement('div');
-  d.className = 'carousel-item';
-  d.innerHTML = `
-    <a href="entrada.html?id=${e.id}">
-      <img src="${e.imagen.src}" alt="${e.imagen.alt}">
-    </a>
-    <h3>${e.titulo}</h3>
-    <div class="meta">${e.autor}</div>
-  `;
-  return d;
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background-color: #f4f4f2;
+  color: #222;
+  line-height: 1.7;
 }
 
-function cargar(trackId, entradas) {
-  const track = document.getElementById(trackId);
-  if (!track) return;
-  entradas.forEach(e => track.appendChild(crearItem(e)));
+/* ===============================
+   Header y banner
+   =============================== */
+header {
+  text-align: center;
 }
 
-cargar('destacados', contenido.filter(e => e.destacada));
+.banner-texto {
+  height: 220px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-cargar(
-  'ultimas-entradas',
-  [...contenido].sort((a, b) => {
-    if (a.fecha_publicacion === "—") return 1;
-    if (b.fecha_publicacion === "—") return -1;
-    const [da, ma, ya] = a.fecha_publicacion.split('/');
-    const [db, mb, yb] = b.fecha_publicacion.split('/');
-    return new Date(`${yb}-${mb}-${db}`) - new Date(`${ya}-${ma}-${da}`);
-  }).slice(0, 10)
-);
-</script>
+.banner-texto h1 {
+  margin: 0;
+  font-family: 'Caveat', cursive;
+  font-size: 3rem;
+  color: #ccc;
+}
 
-</body>
-</html>
+/* ===============================
+   Navegación
+   =============================== */
+nav {
+  margin: 1.5rem 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #444;
+}
+
+.nav-list a:hover {
+  color: #000;
+}
+
+/* ===============================
+   Contenido general
+   =============================== */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+article {
+  margin-bottom: 3.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.meta {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* ===============================
+   Imagen en artículos
+   =============================== */
+.imagen-articulo {
+  width: 180px;
+  float: left;
+  margin: 0.5rem 1.5rem 1rem 0;
+}
+
+/* ===============================
+   CARRUSELES (ESTO ERA LA CLAVE)
+   =============================== */
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+}
+
+.carousel-item {
+  flex: 0 0 240px;
+  height: 240px;              /* 👈 ALTURA FIJA */
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.carousel-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;               /* 👈 OBLIGA A ENTRAR EN LA CAJA */
+  object-fit: cover;          /* 👈 RECORTE LIMPIO */
+  display: block;
+}
+
+.carousel-item h3 {
+  font-size: 0.95rem;
+  margin: 0.5rem;
+}
+
+.carousel-item .meta {
+  font-size: 0.8rem;
+  margin: 0 0.5rem 0.5rem;
+}
+
+/* ===============================
+   Críticas (listado)
+   =============================== */
+.critica-mini a {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  text-decoration: none;
+  color: inherit;
+}
+
+.critica-imagen {
+  width: 140px;
+  flex-shrink: 0;
+}
+
+/* ===============================
+   Autores (sala de espera)
+   =============================== */
+.autores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.autor-card {
+  background-color: #fff;
+  text-align: center;
+}
+
+.autor-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.autor-card h3 {
+  margin: 0.75rem;
+  font-size: 1rem;
+}
+
+/* ===============================
+   Footer
+   =============================== */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #666;
+  font-size: 0.85rem;
+}
