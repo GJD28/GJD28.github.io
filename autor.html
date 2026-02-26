@@ -70,16 +70,16 @@ if (!autor) {
   nombreAutor.textContent = "Autor no especificado";
 } else {
 
-  /* ----- CABECERA ----- */
-  if (autor === "Irene Salgado") {
+  /* ----- CABECERA AUTOMÁTICA ----- */
+  const ficha = fichasAutores[autor];
+
+  if (ficha) {
     cabecera.innerHTML = `
       <div class="autor-header">
-        <img src="autores/irene-salgado.png" alt="Irene Salgado">
+        <img src="${ficha.foto}" alt="${ficha.nombre}">
         <div class="autor-bio">
-          <h2>Irene Salgado</h2>
-          <p>
-            Me emociono fácil con el cine y me implico sin demasiadas defensas. Soy bastante hooligan de Scorsese cuando decide bajar el volumen y dejar que el tiempo haga su trabajo, y me pierdo con gusto cada vez que Isabelle Huppert entra en un plano. Me encantan las películas que apetece volver a ver sin una razón clara y las que te hacen recomendar cosas como si fueran descubrimientos personales. Vivo el cine con entusiasmo, con curiosidad y con una alegría muy poco sofisticada. Escribo desde ahí, desde las ganas sinceras de compartir algo que me ha tocado.
-          </p>
+          <h2>${ficha.nombre}</h2>
+          <p>${ficha.bio.replace(/\n\n/g, "<br><br>")}</p>
         </div>
       </div>
     `;
