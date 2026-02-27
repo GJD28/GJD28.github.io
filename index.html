@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gabinete de Juicio y Debate</title>
 
-  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -64,15 +62,10 @@
   © 2026 · Gabinete de Juicio y Debate
 </footer>
 
-<!-- CONTENIDO -->
 <script src="contenido.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-
-  /* ===============================
-     BUSCADOR
-     =============================== */
 
   const inputBusqueda = document.getElementById('busqueda');
   const contResultados = document.getElementById('resultados');
@@ -85,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
   inputBusqueda.addEventListener('input', () => {
     const q = inputBusqueda.value.trim().toLowerCase();
     contResultados.innerHTML = '';
-
     if (!q) return;
 
     const resultados = contenido.filter(e => {
@@ -94,14 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const etiquetas = (e.etiquetas || []).join(' ').toLowerCase();
       return titulo.includes(q) || autor.includes(q) || etiquetas.includes(q);
     }).slice(0, 7);
-
-    if (resultados.length === 0) {
-      const div = document.createElement('div');
-      div.className = 'resultado';
-      div.textContent = 'No se han encontrado resultados';
-      contResultados.appendChild(div);
-      return;
-    }
 
     resultados.forEach(e => {
       const div = document.createElement('div');
@@ -122,20 +106,37 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') limpiarBuscador();
   });
 
-  /* ===============================
-     CARRUSELES
-     =============================== */
-
   function crearItem(e) {
     const d = document.createElement('div');
     d.className = 'carousel-item';
+
+    let tipoClase = '';
+    let tipoTexto = '';
+
+    if (e.seccion === 'criticas') {
+      tipoClase = 'tipo-critica';
+      tipoTexto = 'CRÍTICA';
+    } else if (e.seccion === 'articulos') {
+      tipoClase = 'tipo-articulo';
+      tipoTexto = 'ARTÍCULO';
+    } else if (e.seccion === 'rumores') {
+      tipoClase = 'tipo-rumor';
+      tipoTexto = 'RUMOR';
+    }
+
     d.innerHTML = `
       <a href="entrada.html?id=${e.id}">
-        <img src="${e.imagen.src}" alt="${e.imagen.alt}">
+        <div class="miniatura-wrapper">
+          <img src="${e.imagen.src}" alt="${e.imagen.alt}">
+          <div class="miniatura-banner ${tipoClase}">
+            ${tipoTexto}
+          </div>
+        </div>
       </a>
       <h3>${e.titulo}</h3>
       <div class="meta">${e.autor}</div>
     `;
+
     return d;
   }
 
@@ -148,20 +149,12 @@ document.addEventListener('DOMContentLoaded', () => {
     entradas.forEach(e => {
       track.appendChild(crearItem(e));
     });
-
-    if (entradas.length === 0) {
-      track.innerHTML = `<p class="meta">No hay entradas disponibles.</p>`;
-    }
   }
 
-  /* DESTACADOS */
   const destacados = contenido.filter(e => e.destacada);
   cargar('destacados', destacados);
 
-  /* ÚLTIMAS ENTRADAS */
   const ultimas = [...contenido].sort((a, b) => {
-    if (a.fecha_publicacion === "—") return 1;
-    if (b.fecha_publicacion === "—") return -1;
     const [da, ma, ya] = a.fecha_publicacion.split('/');
     const [db, mb, yb] = b.fecha_publicacion.split('/');
     return new Date(`${yb}-${mb}-${db}`) - new Date(`${ya}-${ma}-${da}`);
