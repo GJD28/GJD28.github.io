@@ -26,40 +26,21 @@
       <li><a href="articulos.html">Artículos</a></li>
       <li><a href="rumores.html">Rumores</a></li>
       <li><a href="autores.html">Autores</a></li>
-
-      <li class="buscador">
-        <input
-          type="text"
-          id="busqueda"
-          placeholder="Buscar por título, autor o etiqueta…"
-          autocomplete="off"
-        />
-        <div class="resultados" id="resultados"></div>
-      </li>
     </ul>
   </nav>
 </header>
 
 <main>
 
-  <!-- DESTACADOS -->
-  <section class="portada-bloque">
-    <h2>Destacados</h2>
-    <div class="carousel portada-carousel">
-      <button class="carousel-btn prev">‹</button>
-      <div class="carousel-track" id="destacados"></div>
-      <button class="carousel-btn next">›</button>
-    </div>
-  </section>
-
-  <!-- ÚLTIMAS ENTRADAS -->
   <section class="portada-bloque">
     <h2>Últimas entradas</h2>
-    <div class="carousel portada-carousel">
+
+    <div class="carousel-wrapper">
       <button class="carousel-btn prev">‹</button>
       <div class="carousel-track" id="ultimas-entradas"></div>
       <button class="carousel-btn next">›</button>
     </div>
+
   </section>
 
 </main>
@@ -73,9 +54,11 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
+  const track = document.getElementById('ultimas-entradas');
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+
   function crearItem(e) {
-    const d = document.createElement('div');
-    d.className = 'carousel-item';
 
     let tipoClase = '';
     let tipoTexto = '';
@@ -91,7 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
       tipoTexto = 'RUMOR';
     }
 
-    d.innerHTML = `
+    const item = document.createElement('div');
+    item.className = 'carousel-item';
+
+    item.innerHTML = `
       <a href="entrada.html?id=${e.id}">
         <div class="miniatura-wrapper">
           <img src="${e.imagen.src}" alt="${e.imagen.alt}">
@@ -99,28 +85,14 @@ document.addEventListener('DOMContentLoaded', () => {
             ${tipoTexto}
           </div>
         </div>
+        <h3>${e.titulo}</h3>
+        <div class="meta">${e.autor}</div>
       </a>
-      <h3>${e.titulo}</h3>
-      <div class="meta">${e.autor}</div>
     `;
 
-    return d;
+    return item;
   }
 
-  function cargar(trackId, entradas) {
-    const track = document.getElementById(trackId);
-    if (!track) return;
-    track.innerHTML = '';
-    entradas.forEach(e => {
-      track.appendChild(crearItem(e));
-    });
-  }
-
-  /* DESTACADOS */
-  const destacados = contenido.filter(e => e.destacada);
-  cargar('destacados', destacados);
-
-  /* ÚLTIMAS ENTRADAS — SIEMPRE HASTA 10 */
   const ultimas = [...contenido]
     .sort((a, b) => {
       const [da, ma, ya] = a.fecha_publicacion.split('/');
@@ -129,21 +101,20 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .slice(0, 10);
 
-  cargar('ultimas-entradas', ultimas);
+  ultimas.forEach(e => track.appendChild(crearItem(e)));
 
-  /* BOTONES DE CARRUSEL */
-  document.querySelectorAll('.portada-carousel').forEach(carousel => {
-    const track = carousel.querySelector('.carousel-track');
-    const prev = carousel.querySelector('.prev');
-    const next = carousel.querySelector('.next');
+  /* Mostrar flechas solo si hay más de 4 */
+  if (ultimas.length <= 4) {
+    prev.style.display = 'none';
+    next.style.display = 'none';
+  }
 
-    prev.addEventListener('click', () => {
-      track.scrollBy({ left: -300, behavior: 'smooth' });
-    });
+  prev.addEventListener('click', () => {
+    track.scrollBy({ left: -300, behavior: 'smooth' });
+  });
 
-    next.addEventListener('click', () => {
-      track.scrollBy({ left: 300, behavior: 'smooth' });
-    });
+  next.addEventListener('click', () => {
+    track.scrollBy({ left: 300, behavior: 'smooth' });
   });
 
 });
