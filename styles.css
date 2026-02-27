@@ -119,16 +119,7 @@ article h2 {
 }
 
 /* ===============================
-   Imagen en artículos
-   =============================== */
-.imagen-articulo {
-  width: 180px;
-  float: left;
-  margin: 0.5rem 1.5rem 1rem 0;
-}
-
-/* ===============================
-   Carruseles de portada
+   Carruseles
    =============================== */
 .carousel {
   position: relative;
@@ -149,10 +140,45 @@ article h2 {
   background-color: #fff;
 }
 
-.carousel-item img {
+/* ===== Wrapper imagen miniatura ===== */
+.miniatura-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.miniatura-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ===== Banner inferior tipo ===== */
+.miniatura-banner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.4rem 0;
+  text-align: center;
+  font-size: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+
+/* Colores por sección */
+.tipo-critica {
+  background-color: #000;
+}
+
+.tipo-articulo {
+  background-color: #b30000;
+}
+
+.tipo-rumor {
+  background-color: #0055aa;
 }
 
 .carousel-item h3 {
@@ -248,7 +274,6 @@ article h2 {
 /* ===============================
    Cabecera página de autor
    =============================== */
-
 .autor-header {
   background-color: #fff;
   padding: 2rem;
