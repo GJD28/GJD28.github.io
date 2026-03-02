@@ -107,11 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
     track.innerHTML = '';
     entradas.forEach(e => track.appendChild(crearItem(e)));
 
-    if (entradas.length <= 4) {
-      prev.style.display = 'none';
-      next.style.display = 'none';
-    }
-
     prev.addEventListener('click', () => {
       track.scrollBy({ left: -300, behavior: 'smooth' });
     });
