@@ -36,9 +36,13 @@
 
   <section class="portada-bloque">
     <h2>Todas las críticas</h2>
+
     <div class="carousel">
+      <button class="carousel-btn prev criticas-prev">‹</button>
       <div class="carousel-track" id="todas-criticas"></div>
+      <button class="carousel-btn next criticas-next">›</button>
     </div>
+
   </section>
 
 </main>
@@ -53,8 +57,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   function crearItem(e) {
+
     const d = document.createElement('div');
     d.className = 'carousel-item';
+
     d.innerHTML = `
       <a href="entrada.html?id=${e.id}">
         <img src="${e.imagen.src}" alt="${e.imagen.alt}">
@@ -62,16 +68,31 @@ document.addEventListener('DOMContentLoaded', () => {
       <h3>${e.titulo}</h3>
       <div class="meta">${e.autor}</div>
     `;
+
     return d;
   }
 
-  const track = document.getElementById('todas-criticas');
+  function cargarCarrusel(trackId, prevClass, nextClass, entradas) {
+
+    const track = document.getElementById(trackId);
+    const prev = document.querySelector('.' + prevClass);
+    const next = document.querySelector('.' + nextClass);
+
+    track.innerHTML = '';
+    entradas.forEach(e => track.appendChild(crearItem(e)));
+
+    prev.addEventListener('click', () => {
+      track.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    next.addEventListener('click', () => {
+      track.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  }
 
   const criticas = contenido.filter(e => e.seccion === "criticas");
 
-  criticas.forEach(e => {
-    track.appendChild(crearItem(e));
-  });
+  cargarCarrusel('todas-criticas', 'criticas-prev', 'criticas-next', criticas);
 
 });
 </script>
