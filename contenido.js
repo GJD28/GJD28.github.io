@@ -21,10 +21,10 @@ const fichasAutores = {
     bio: "Veo muchas más películas que cine, para mi desgracia. La costumbre de sentarme ante cualquier estreno tiene algo de disciplina mal entendida y algo de adicción voluntaria. Paso demasiadas horas atravesando páramos para justificar, de vez en cuando, un destello que lo compense todo.\n\nHabrá quien piense que cierta experiencia debería afinar el olfato y evitar tropiezos previsibles. Prefiero mantener esa puerta entreabierta. La posibilidad de que, en medio del ruido y la mediocridad industrial, aparezca una imagen verdadera sigue siendo motivo suficiente para volver a apagar las luces."
   },
 
-  "Miguel Romero": {
+ "Miguel Romero": {
     nombre: "Miguel Romero",
     foto: "miguel-romero.png",
-    bio: ""
+    bio: "Me formé a base de videoclub, carátulas gastadas y decisiones a ciegas. Tengo una debilidad clara por el cine de los ochenta y los noventa.\n\nVoy al cine con ganas de que me muevan algo por dentro, da igual si es a base de una idea grande o de un tiroteo bien montado. Una película ligera y ruidosa puede ser tan seria como la que te pide silencio sepulcral y ceño fruncido. Si salgo del cine con una escena clavada en la cabeza o con el pulso un poco acelerado, para mí ya ha merecido la pena. El cine, para mí, va de disfrutar durante dos horas y, para eso, lo mismo me puede servir Michael Bay que Andrei Tarkovski."
   }
 };
 
