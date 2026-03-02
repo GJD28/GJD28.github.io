@@ -32,6 +32,25 @@
 
 <main>
 
+  <!-- =========================
+       DESTACADOS
+       ========================= -->
+
+  <section class="portada-bloque">
+    <h2>Destacados</h2>
+
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev-destacados">‹</button>
+      <div class="carousel-track" id="destacados"></div>
+      <button class="carousel-btn next-destacados">›</button>
+    </div>
+
+  </section>
+
+  <!-- =========================
+       ÚLTIMAS ENTRADAS
+       ========================= -->
+
   <section class="portada-bloque">
     <h2>Últimas entradas</h2>
 
@@ -54,9 +73,9 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-  const track = document.getElementById('ultimas-entradas');
-  const prev = document.querySelector('.prev');
-  const next = document.querySelector('.next');
+  /* ===============================
+     FUNCIÓN CREAR ITEM
+     =============================== */
 
   function crearItem(e) {
 
@@ -93,6 +112,39 @@ document.addEventListener('DOMContentLoaded', () => {
     return item;
   }
 
+  /* ===============================
+     DESTACADOS
+     =============================== */
+
+  const trackDest = document.getElementById('destacados');
+  const prevDest = document.querySelector('.prev-destacados');
+  const nextDest = document.querySelector('.next-destacados');
+
+  const destacados = contenido.filter(e => e.destacada === true);
+
+  destacados.forEach(e => trackDest.appendChild(crearItem(e)));
+
+  if (destacados.length <= 4) {
+    prevDest.style.display = 'none';
+    nextDest.style.display = 'none';
+  }
+
+  prevDest.addEventListener('click', () => {
+    trackDest.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+
+  nextDest.addEventListener('click', () => {
+    trackDest.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+
+  /* ===============================
+     ÚLTIMAS ENTRADAS
+     =============================== */
+
+  const track = document.getElementById('ultimas-entradas');
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+
   const ultimas = [...contenido]
     .sort((a, b) => {
       const [da, ma, ya] = a.fecha_publicacion.split('/');
@@ -103,7 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ultimas.forEach(e => track.appendChild(crearItem(e)));
 
-  /* Mostrar flechas solo si hay más de 4 */
   if (ultimas.length <= 4) {
     prev.style.display = 'none';
     next.style.display = 'none';
