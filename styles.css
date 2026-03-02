@@ -119,61 +119,50 @@ article h2 {
 }
 
 /* ===============================
-   Imagen en artículos (PEQUEÑA)
+   Imagen en artículos
    =============================== */
 .imagen-articulo {
-  width: 160px;
+  width: 180px;
   float: left;
   margin: 0.5rem 1.5rem 1rem 0;
 }
 
 /* ===============================
-   Carruseles portada
+   Carruseles de portada
    =============================== */
-.carousel-wrapper {
+.carousel {
   position: relative;
+  overflow: hidden;
 }
 
 .carousel-track {
   display: flex;
   gap: 1rem;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-}
-
-.carousel-track::-webkit-scrollbar {
-  display: none;
 }
 
 .carousel-item {
   flex: 0 0 250px;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ===============================
-   Miniatura + banner
-   =============================== */
-.miniatura-wrapper {
-  position: relative;
-  width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: relative;
 }
 
-.miniatura-wrapper img {
+.carousel-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.miniatura-banner {
+/* NUEVO: banner inferior */
+.carousel-item .miniatura-banner {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 0.4rem 0;
+  padding: 0.35rem 0;
   text-align: center;
   font-size: 0.75rem;
   font-family: 'Inter', sans-serif;
@@ -186,9 +175,17 @@ article h2 {
 .tipo-articulo { background-color: #b30000; }
 .tipo-rumor { background-color: #0055aa; }
 
-/* ===============================
-   Flechas integradas
-   =============================== */
+.carousel-item h3 {
+  font-size: 0.95rem;
+  margin: 0.5rem;
+}
+
+.carousel-item .meta {
+  font-size: 0.8rem;
+  margin: 0 0.5rem 0.5rem;
+}
+
+/* NUEVO: flechas integradas */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -201,8 +198,8 @@ article h2 {
   z-index: 5;
 }
 
-.carousel-btn.prev { left: -10px; }
-.carousel-btn.next { right: -10px; }
+.carousel-btn.prev { left: 5px; }
+.carousel-btn.next { right: 5px; }
 
 .carousel-btn:hover {
   background: #000;
@@ -222,6 +219,11 @@ article h2 {
   display: flex;
   gap: 1rem;
   overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.autor-carousel .carousel-track::-webkit-scrollbar {
+  display: none;
 }
 
 .autor-item {
@@ -235,6 +237,11 @@ article h2 {
   object-fit: cover;
 }
 
+.autor-item h3 {
+  font-size: 0.95rem;
+  margin: 0.5rem;
+}
+
 .autor-entradilla {
   font-size: 0.85rem;
   color: #444;
@@ -242,7 +249,7 @@ article h2 {
 }
 
 /* ===============================
-   Autores grid
+   Autores (listado general)
    =============================== */
 .autores-grid {
   display: grid;
@@ -265,6 +272,31 @@ article h2 {
 .autor-card h3 {
   margin: 0.75rem;
   font-size: 1rem;
+}
+
+/* ===============================
+   Cabecera página de autor
+   =============================== */
+.autor-header {
+  background-color: #fff;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.autor-header h2 {
+  margin: 0 0 1.5rem 0;
+}
+
+.autor-header img {
+  width: 220px;
+  height: auto;
+  object-fit: cover;
+  float: left;
+  margin: 0 2rem 1rem 0;
+}
+
+.autor-header p {
+  margin: 0;
 }
 
 /* ===============================
