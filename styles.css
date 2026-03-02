@@ -1,3 +1,135 @@
+/* ===============================
+   Valoración con estrellas
+   =============================== */
+.valoracion {
+  margin-top: 2rem;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 0.25rem;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.star {
+  position: relative;
+  color: #ccc;
+}
+
+.star.full {
+  color: #000;
+}
+
+.star.half::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #000;
+}
+
+/* ===============================
+   Base
+   =============================== */
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background-color: #f4f4f2;
+  color: #222;
+  line-height: 1.7;
+}
+
+/* ===============================
+   Header y banner
+   =============================== */
+header {
+  text-align: center;
+}
+
+.banner-texto {
+  height: 220px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-texto h1 {
+  margin: 0;
+  font-family: 'Caveat', cursive;
+  font-size: 3rem;
+  font-weight: normal;
+  letter-spacing: 0.04em;
+  color: #ccc;
+}
+
+/* ===============================
+   Navegación
+   =============================== */
+nav {
+  margin: 1.5rem 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #444;
+}
+
+.nav-list a:hover {
+  color: #000;
+}
+
+/* ===============================
+   Contenido general
+   =============================== */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+article {
+  margin-bottom: 3.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+article h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+.meta {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
+}
+
+/* ===============================
+   Imagen en artículos (PEQUEÑA)
+   =============================== */
+.imagen-articulo {
+  width: 160px;
+  float: left;
+  margin: 0.5rem 1.5rem 1rem 0;
+}
+
+/* ===============================
+   Carruseles portada
+   =============================== */
 .carousel-wrapper {
   position: relative;
 }
@@ -16,8 +148,13 @@
 .carousel-item {
   flex: 0 0 250px;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
+/* ===============================
+   Miniatura + banner
+   =============================== */
 .miniatura-wrapper {
   position: relative;
   width: 100%;
@@ -45,10 +182,13 @@
   color: #fff;
 }
 
-.tipo-critica { background: #000; }
-.tipo-articulo { background: #b30000; }
-.tipo-rumor { background: #0055aa; }
+.tipo-critica { background-color: #000; }
+.tipo-articulo { background-color: #b30000; }
+.tipo-rumor { background-color: #0055aa; }
 
+/* ===============================
+   Flechas integradas
+   =============================== */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -67,4 +207,72 @@
 .carousel-btn:hover {
   background: #000;
   color: #fff;
+}
+
+/* ===============================
+   Carrusel en página de autor
+   =============================== */
+.autor-carousel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.autor-carousel .carousel-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.autor-item {
+  flex: 0 0 240px;
+  background-color: #fff;
+}
+
+.autor-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.autor-entradilla {
+  font-size: 0.85rem;
+  color: #444;
+  margin: 0 0.5rem 0.5rem;
+}
+
+/* ===============================
+   Autores grid
+   =============================== */
+.autores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.autor-card {
+  background-color: #fff;
+  text-align: center;
+}
+
+.autor-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.autor-card h3 {
+  margin: 0.75rem;
+  font-size: 1rem;
+}
+
+/* ===============================
+   Footer
+   =============================== */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #666;
+  font-size: 0.85rem;
 }
