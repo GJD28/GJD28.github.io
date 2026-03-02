@@ -30,8 +30,15 @@
   </nav>
 </header>
 
-<main id="listado-articulos">
-  <h2>Artículos</h2>
+<main>
+
+  <section class="portada-bloque">
+    <h2>Todos los artículos</h2>
+    <div class="carousel">
+      <div class="carousel-track" id="todos-articulos"></div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -41,22 +48,32 @@
 <script src="contenido.js"></script>
 
 <script>
-const contenedor = document.getElementById('listado-articulos');
+document.addEventListener('DOMContentLoaded', () => {
 
-contenido
-  .filter(e => e.seccion === "articulos")
-  .forEach(e => {
-    const article = document.createElement('article');
-    article.innerHTML = `
+  function crearItem(e) {
+    const d = document.createElement('div');
+    d.className = 'carousel-item';
+
+    d.innerHTML = `
       <a href="entrada.html?id=${e.id}">
         <img src="${e.imagen.src}" alt="${e.imagen.alt}">
-        <h3>${e.titulo}</h3>
       </a>
+      <h3>${e.titulo}</h3>
       <div class="meta">${e.autor}</div>
-      <p>${e.entradilla}</p>
     `;
-    contenedor.appendChild(article);
+
+    return d;
+  }
+
+  const track = document.getElementById('todos-articulos');
+
+  const articulos = contenido.filter(e => e.seccion === "articulos");
+
+  articulos.forEach(e => {
+    track.appendChild(crearItem(e));
   });
+
+});
 </script>
 
 </body>
