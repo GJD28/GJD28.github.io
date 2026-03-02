@@ -16,7 +16,7 @@
 
 <header>
   <div class="banner-texto">
-    <h1>Gabinete de Juicio y Debate</h1>
+    <h1>Artículos</h1>
   </div>
 
   <nav>
@@ -34,9 +34,13 @@
 
   <section class="portada-bloque">
     <h2>Todos los artículos</h2>
+
     <div class="carousel">
+      <button class="carousel-btn prev articulos-prev">‹</button>
       <div class="carousel-track" id="todos-articulos"></div>
+      <button class="carousel-btn next articulos-next">›</button>
     </div>
+
   </section>
 
 </main>
@@ -51,6 +55,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   function crearItem(e) {
+
     const d = document.createElement('div');
     d.className = 'carousel-item';
 
@@ -65,13 +70,27 @@ document.addEventListener('DOMContentLoaded', () => {
     return d;
   }
 
-  const track = document.getElementById('todos-articulos');
+  function cargarCarrusel(trackId, prevClass, nextClass, entradas) {
+
+    const track = document.getElementById(trackId);
+    const prev = document.querySelector('.' + prevClass);
+    const next = document.querySelector('.' + nextClass);
+
+    track.innerHTML = '';
+    entradas.forEach(e => track.appendChild(crearItem(e)));
+
+    prev.addEventListener('click', () => {
+      track.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    next.addEventListener('click', () => {
+      track.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  }
 
   const articulos = contenido.filter(e => e.seccion === "articulos");
 
-  articulos.forEach(e => {
-    track.appendChild(crearItem(e));
-  });
+  cargarCarrusel('todos-articulos', 'articulos-prev', 'articulos-next', articulos);
 
 });
 </script>
