@@ -32,34 +32,24 @@
 
 <main>
 
-  <!-- =========================
-       DESTACADOS
-       ========================= -->
-
+  <!-- DESTACADOS -->
   <section class="portada-bloque">
     <h2>Destacados</h2>
-
-    <div class="carousel-wrapper">
-      <button class="carousel-btn prev-destacados">‹</button>
+    <div class="carousel">
+      <button class="carousel-btn prev destacados-prev">‹</button>
       <div class="carousel-track" id="destacados"></div>
-      <button class="carousel-btn next-destacados">›</button>
+      <button class="carousel-btn next destacados-next">›</button>
     </div>
-
   </section>
 
-  <!-- =========================
-       ÚLTIMAS ENTRADAS
-       ========================= -->
-
+  <!-- ÚLTIMAS ENTRADAS -->
   <section class="portada-bloque">
     <h2>Últimas entradas</h2>
-
-    <div class="carousel-wrapper">
-      <button class="carousel-btn prev">‹</button>
+    <div class="carousel">
+      <button class="carousel-btn prev ultimas-prev">‹</button>
       <div class="carousel-track" id="ultimas-entradas"></div>
-      <button class="carousel-btn next">›</button>
+      <button class="carousel-btn next ultimas-next">›</button>
     </div>
-
   </section>
 
 </main>
@@ -72,10 +62,6 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-
-  /* ===============================
-     FUNCIÓN CREAR ITEM
-     =============================== */
 
   function crearItem(e) {
 
@@ -112,39 +98,34 @@ document.addEventListener('DOMContentLoaded', () => {
     return item;
   }
 
-  /* ===============================
-     DESTACADOS
-     =============================== */
+  function cargarCarrusel(trackId, prevClass, nextClass, entradas) {
 
-  const trackDest = document.getElementById('destacados');
-  const prevDest = document.querySelector('.prev-destacados');
-  const nextDest = document.querySelector('.next-destacados');
+    const track = document.getElementById(trackId);
+    const prev = document.querySelector('.' + prevClass);
+    const next = document.querySelector('.' + nextClass);
 
-  const destacados = contenido.filter(e => e.destacada === true);
+    track.innerHTML = '';
+    entradas.forEach(e => track.appendChild(crearItem(e)));
 
-  destacados.forEach(e => trackDest.appendChild(crearItem(e)));
+    if (entradas.length <= 4) {
+      prev.style.display = 'none';
+      next.style.display = 'none';
+    }
 
-  if (destacados.length <= 4) {
-    prevDest.style.display = 'none';
-    nextDest.style.display = 'none';
+    prev.addEventListener('click', () => {
+      track.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    next.addEventListener('click', () => {
+      track.scrollBy({ left: 300, behavior: 'smooth' });
+    });
   }
 
-  prevDest.addEventListener('click', () => {
-    trackDest.scrollBy({ left: -300, behavior: 'smooth' });
-  });
+  // DESTACADOS
+  const destacados = contenido.filter(e => e.destacada === true);
+  cargarCarrusel('destacados', 'destacados-prev', 'destacados-next', destacados);
 
-  nextDest.addEventListener('click', () => {
-    trackDest.scrollBy({ left: 300, behavior: 'smooth' });
-  });
-
-  /* ===============================
-     ÚLTIMAS ENTRADAS
-     =============================== */
-
-  const track = document.getElementById('ultimas-entradas');
-  const prev = document.querySelector('.prev');
-  const next = document.querySelector('.next');
-
+  // ÚLTIMAS ENTRADAS
   const ultimas = [...contenido]
     .sort((a, b) => {
       const [da, ma, ya] = a.fecha_publicacion.split('/');
@@ -153,20 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .slice(0, 10);
 
-  ultimas.forEach(e => track.appendChild(crearItem(e)));
-
-  if (ultimas.length <= 4) {
-    prev.style.display = 'none';
-    next.style.display = 'none';
-  }
-
-  prev.addEventListener('click', () => {
-    track.scrollBy({ left: -300, behavior: 'smooth' });
-  });
-
-  next.addEventListener('click', () => {
-    track.scrollBy({ left: 300, behavior: 'smooth' });
-  });
+  cargarCarrusel('ultimas-entradas', 'ultimas-prev', 'ultimas-next', ultimas);
 
 });
 </script>
