@@ -38,7 +38,6 @@
 
   <!-- CARRUSEL DE ENTRADAS -->
   <section id="autor">
-    <h2 id="nombre-autor"></h2>
 
     <div class="carousel autor-carousel">
       <button class="carousel-btn prev" aria-label="Anterior">‹</button>
@@ -63,11 +62,10 @@ function obtenerAutor() {
 
 const autor = obtenerAutor();
 const cabecera = document.getElementById('autor-cabecera');
-const nombreAutor = document.getElementById('nombre-autor');
 const track = document.querySelector('.autor-carousel .carousel-track');
 
 if (!autor) {
-  nombreAutor.textContent = "Autor no especificado";
+  cabecera.innerHTML = "<p>Autor no especificado</p>";
 } else {
 
   /* ----- CABECERA AUTOMÁTICA ----- */
@@ -84,8 +82,6 @@ if (!autor) {
       </div>
     `;
   }
-
-  nombreAutor.textContent = autor;
 
   /* ----- ENTRADAS DEL AUTOR ----- */
   const entradasAutor = contenido.filter(e => e.autor === autor);
