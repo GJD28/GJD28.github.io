@@ -16,7 +16,7 @@
 
 <header>
   <div class="banner-texto">
-    <h1>Artículos</h1>
+    <h1>Gabinete de Juicio y Debate</h1>
   </div>
 
   <nav>
@@ -62,9 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
     d.innerHTML = `
       <a href="entrada.html?id=${e.id}">
         <img src="${e.imagen.src}" alt="${e.imagen.alt}">
+        <h3>${e.titulo}</h3>
       </a>
-      <h3>${e.titulo}</h3>
-      <div class="meta">${e.autor}</div>
+      <div class="meta">
+        <a href="autor.html?nombre=${encodeURIComponent(e.autor)}">${e.autor}</a>
+      </div>
     `;
 
     return d;
