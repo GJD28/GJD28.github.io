@@ -102,7 +102,7 @@ main {
 }
 
 /* =========================
-   IMÁGENES
+   MINIATURAS (UNIFICADAS)
    ========================= */
 
 .miniatura-wrapper {
@@ -112,11 +112,11 @@ main {
   overflow: hidden;
 }
 
-.miniatura-wrapper img,
-.carousel-item img {
+.miniatura-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 /* =========================
