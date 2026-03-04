@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Autor · Gabinete de Juicio y Debate</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="autor-page">
 
-<header>
+<header class="header-inicio">
+
   <div class="banner-texto">
     <h1>Gabinete de Juicio y Debate</h1>
   </div>
@@ -28,20 +31,28 @@
       <li><a href="autores.html">Autores</a></li>
     </ul>
   </nav>
+
 </header>
 
 <main>
 
   <!-- CABECERA DEL AUTOR -->
+
   <section id="autor-cabecera"></section>
 
-  <!-- CARRUSEL DE ENTRADAS -->
+
+  <!-- ENTRADAS DEL AUTOR -->
+
   <section id="autor">
 
     <div class="carousel autor-carousel">
+
       <button class="carousel-btn prev">‹</button>
+
       <div class="carousel-track"></div>
+
       <button class="carousel-btn next">›</button>
+
     </div>
 
   </section>
@@ -56,48 +67,114 @@
 
 <script>
 
-function obtenerAutor() {
+function obtenerAutor(){
+
   const params = new URLSearchParams(window.location.search);
-  return params.get('nombre');
+
+  return params.get("nombre");
+
 }
 
 const autor = obtenerAutor();
-const cabecera = document.getElementById('autor-cabecera');
-const track = document.querySelector('.autor-carousel .carousel-track');
 
-if (!autor) {
+const cabecera = document.getElementById("autor-cabecera");
+
+const track = document.querySelector(".autor-carousel .carousel-track");
+
+
+if(!autor){
 
   cabecera.innerHTML = "<p>Autor no especificado</p>";
 
-} else {
+}else{
 
   const ficha = fichasAutores[autor];
 
-  if (ficha) {
+  if(ficha){
 
     cabecera.innerHTML = `
+
       <div class="autor-header">
+
         <img src="${ficha.foto}" alt="${ficha.nombre}">
+
         <div class="autor-bio">
+
           <h2>${ficha.nombre}</h2>
-          <p>${ficha.bio.replace(/\n\n/g, "<br><br>")}</p>
+
+          <p>${ficha.bio.replace(/\n\n/g,"<br><br>")}</p>
+
         </div>
+
       </div>
+
     `;
 
   }
 
+
   const entradasAutor = contenido.filter(e => e.autor === autor);
 
-  if (entradasAutor.length === 0) {
+
+  if(entradasAutor.length === 0){
 
     track.innerHTML = "<p>Este autor aún no tiene textos publicados.</p>";
 
-  } else {
+  }else{
+
 
     entradasAutor.forEach(entrada => {
 
-      track.appendChild(crearTarjeta(entrada, "autor"));
+      let tipoClase = "";
+      let tipoTexto = "";
+
+      if(entrada.seccion === "criticas"){
+
+        tipoClase = "tipo-critica";
+        tipoTexto = "CRÍTICA";
+
+      }else if(entrada.seccion === "articulos"){
+
+        tipoClase = "tipo-articulo";
+        tipoTexto = "ARTÍCULO";
+
+      }else if(entrada.seccion === "rumores"){
+
+        tipoClase = "tipo-rumor";
+        tipoTexto = "RUMOR";
+
+      }
+
+
+      const item = document.createElement("div");
+
+      item.className = "carousel-item";
+
+
+      item.innerHTML = `
+
+        <a href="entrada.html?id=${entrada.id}">
+
+          <div class="miniatura-wrapper">
+
+            <img src="${entrada.imagen.src}" alt="${entrada.imagen.alt}">
+
+            <div class="miniatura-banner ${tipoClase}">
+
+              ${tipoTexto}
+
+            </div>
+
+          </div>
+
+          <h3>${entrada.titulo}</h3>
+
+        </a>
+
+      `;
+
+
+      track.appendChild(item);
 
     });
 
@@ -105,17 +182,23 @@ if (!autor) {
 
 }
 
-/* CONTROLES DEL CARRUSEL */
 
-const prevBtn = document.querySelector('.autor-carousel .prev');
-const nextBtn = document.querySelector('.autor-carousel .next');
+const prevBtn = document.querySelector(".autor-carousel .prev");
 
-prevBtn.addEventListener('click', () => {
-  track.scrollBy({ left: -300, behavior: 'smooth' });
+const nextBtn = document.querySelector(".autor-carousel .next");
+
+
+prevBtn.addEventListener("click",()=>{
+
+  track.scrollBy({left:-300,behavior:"smooth"});
+
 });
 
-nextBtn.addEventListener('click', () => {
-  track.scrollBy({ left: 300, behavior: 'smooth' });
+
+nextBtn.addEventListener("click",()=>{
+
+  track.scrollBy({left:300,behavior:"smooth"});
+
 });
 
 </script>
