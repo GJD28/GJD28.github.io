@@ -120,10 +120,13 @@ main {
   object-fit: cover;
 }
 
-/* === CORRECCIÓN DEL PROBLEMA DE ESPACIO === */
+/* === AÑADIDO PARA IGUALAR ARTÍCULOS A CRÍTICAS === */
 
-.carousel-item > a:first-child {
+.carousel-item a {
   display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
 
 /* =========================
@@ -161,6 +164,12 @@ main {
   color: #555;
   border-top: 1px solid #ddd;
   margin-top: 0.6rem;
+}
+
+/* === NUEVA LÍNEA PARA ELIMINAR ESPACIO BAJO EL AUTOR === */
+
+.carousel-item .meta:last-child {
+  margin-bottom: 0;
 }
 
 /* =========================
