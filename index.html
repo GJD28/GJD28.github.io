@@ -7,6 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
@@ -14,7 +15,8 @@
 
 <body>
 
-<header>
+<header class="header-inicio">
+
   <div class="banner-texto">
     <h1>Gabinete de Juicio y Debate</h1>
   </div>
@@ -28,76 +30,114 @@
       <li><a href="autores.html">Autores</a></li>
     </ul>
   </nav>
+
 </header>
 
 <main>
 
   <!-- DESTACADOS -->
+
   <section class="portada-bloque">
+
     <h2>Destacados</h2>
+
     <div class="carousel">
+
       <button class="carousel-btn prev destacados-prev">‹</button>
+
       <div class="carousel-track" id="destacados"></div>
+
       <button class="carousel-btn next destacados-next">›</button>
+
     </div>
+
   </section>
 
+
   <!-- ÚLTIMAS ENTRADAS -->
+
   <section class="portada-bloque">
+
     <h2>Últimas entradas</h2>
+
     <div class="carousel">
+
       <button class="carousel-btn prev ultimas-prev">‹</button>
+
       <div class="carousel-track" id="ultimas-entradas"></div>
+
       <button class="carousel-btn next ultimas-next">›</button>
+
     </div>
+
   </section>
 
 </main>
+
 
 <footer>
   © 2026 · Gabinete de Juicio y Debate
 </footer>
 
+
 <script src="contenido.js"></script>
 
 <script>
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  function cargarCarrusel(trackId, prevClass, nextClass, entradas) {
+  function cargarCarrusel(trackId, prevClass, nextClass, entradas){
 
     const track = document.getElementById(trackId);
-    const prev = document.querySelector('.' + prevClass);
-    const next = document.querySelector('.' + nextClass);
+    const prev = document.querySelector("." + prevClass);
+    const next = document.querySelector("." + nextClass);
 
-    track.innerHTML = '';
+    track.innerHTML = "";
 
     entradas.forEach(e => {
-      track.appendChild(crearTarjeta(e, "inicio"));
+
+      track.appendChild(crearTarjeta(e,"inicio"));
+
     });
 
-    prev.addEventListener('click', () => {
-      track.scrollBy({ left: -300, behavior: 'smooth' });
+    prev.addEventListener("click", () => {
+
+      track.scrollBy({left:-300,behavior:"smooth"});
+
     });
 
-    next.addEventListener('click', () => {
-      track.scrollBy({ left: 300, behavior: 'smooth' });
+    next.addEventListener("click", () => {
+
+      track.scrollBy({left:300,behavior:"smooth"});
+
     });
+
   }
 
+
   const destacados = contenido.filter(e => e.destacada === true);
-  cargarCarrusel('destacados', 'destacados-prev', 'destacados-next', destacados);
+
+  cargarCarrusel("destacados","destacados-prev","destacados-next",destacados);
+
 
   const ultimas = [...contenido]
-    .sort((a, b) => {
-      const [da, ma, ya] = a.fecha_publicacion.split('/');
-      const [db, mb, yb] = b.fecha_publicacion.split('/');
-      return new Date(`${yb}-${mb}-${db}`) - new Date(`${ya}-${ma}-${da}`);
-    })
-    .slice(0, 10);
 
-  cargarCarrusel('ultimas-entradas', 'ultimas-prev', 'ultimas-next', ultimas);
+  .sort((a,b)=>{
+
+    const [da,ma,ya] = a.fecha_publicacion.split("/");
+    const [db,mb,yb] = b.fecha_publicacion.split("/");
+
+    return new Date(`${yb}-${mb}-${db}`) - new Date(`${ya}-${ma}-${da}`);
+
+  })
+
+  .slice(0,10);
+
+
+  cargarCarrusel("ultimas-entradas","ultimas-prev","ultimas-next",ultimas);
 
 });
+
 </script>
 
 </body>
