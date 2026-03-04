@@ -101,7 +101,7 @@ main {
   background-color: #fff;
 }
 
-/* NUEVO: estructura vertical segura */
+/* estructura vertical segura */
 
 .carousel-item a {
   display: flex;
@@ -115,7 +115,7 @@ main {
 .miniatura-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 2 / 3;
   overflow: hidden;
 }
 
