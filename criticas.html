@@ -63,9 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     d.innerHTML = `
       <a href="entrada.html?id=${e.id}">
-        <img src="${e.imagen.src}" alt="${e.imagen.alt}">
+
+        <div class="miniatura-wrapper">
+          <img src="${e.imagen.src}" alt="${e.imagen.alt}">
+        </div>
+
         <h3>${e.titulo}</h3>
         <div class="meta">${e.autor}</div>
+
       </a>
     `;
 
