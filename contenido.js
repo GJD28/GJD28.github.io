@@ -193,3 +193,57 @@ const contenido = [
   }
 
 ];
+
+/* =========================
+   SISTEMA DE TARJETAS
+   ========================= */
+
+function crearTarjeta(e, modo = "normal") {
+
+  let bannerHTML = "";
+
+  if (modo === "inicio" || modo === "autor") {
+
+    let tipoClase = "";
+    let tipoTexto = "";
+
+    if (e.seccion === "criticas") {
+      tipoClase = "tipo-critica";
+      tipoTexto = "CRÍTICA";
+    } else if (e.seccion === "articulos") {
+      tipoClase = "tipo-articulo";
+      tipoTexto = "ARTÍCULO";
+    } else if (e.seccion === "rumores") {
+      tipoClase = "tipo-rumor";
+      tipoTexto = "RUMOR";
+    }
+
+    bannerHTML = `
+      <div class="miniatura-banner ${tipoClase}">
+        ${tipoTexto}
+      </div>
+    `;
+  }
+
+  const item = document.createElement("div");
+  item.className = "carousel-item";
+
+  let metaHTML = "";
+
+  if (modo !== "autor") {
+    metaHTML = `<div class="meta">${e.autor}</div>`;
+  }
+
+  item.innerHTML = `
+    <a href="entrada.html?id=${e.id}">
+      <div class="miniatura-wrapper">
+        <img src="${e.imagen.src}" alt="${e.imagen.alt}">
+        ${bannerHTML}
+      </div>
+      <h3>${e.titulo}</h3>
+      ${metaHTML}
+    </a>
+  `;
+
+  return item;
+}
