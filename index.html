@@ -63,41 +63,6 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-  function crearItem(e) {
-
-    let tipoClase = '';
-    let tipoTexto = '';
-
-    if (e.seccion === 'criticas') {
-      tipoClase = 'tipo-critica';
-      tipoTexto = 'CRÍTICA';
-    } else if (e.seccion === 'articulos') {
-      tipoClase = 'tipo-articulo';
-      tipoTexto = 'ARTÍCULO';
-    } else if (e.seccion === 'rumores') {
-      tipoClase = 'tipo-rumor';
-      tipoTexto = 'RUMOR';
-    }
-
-    const item = document.createElement('div');
-    item.className = 'carousel-item';
-
-    item.innerHTML = `
-      <a href="entrada.html?id=${e.id}">
-        <div class="miniatura-wrapper">
-          <img src="${e.imagen.src}" alt="${e.imagen.alt}">
-          <div class="miniatura-banner ${tipoClase}">
-            ${tipoTexto}
-          </div>
-        </div>
-        <h3>${e.titulo}</h3>
-        <div class="meta">${e.autor}</div>
-      </a>
-    `;
-
-    return item;
-  }
-
   function cargarCarrusel(trackId, prevClass, nextClass, entradas) {
 
     const track = document.getElementById(trackId);
@@ -105,7 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const next = document.querySelector('.' + nextClass);
 
     track.innerHTML = '';
-    entradas.forEach(e => track.appendChild(crearItem(e)));
+
+    entradas.forEach(e => {
+      track.appendChild(crearTarjeta(e, "inicio"));
+    });
 
     prev.addEventListener('click', () => {
       track.scrollBy({ left: -300, behavior: 'smooth' });
