@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Rumores · Gabinete de Juicio y Debate</title>
+  <title>Rumores · Gabinete de Juicio y Debate</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="rumores-page">
+<body>
 
-<header class="rumores-header">
+<header class="header-rumores">
 
-<div class="banner-texto">
-<h1>Rumores</h1>
-</div>
+  <div class="banner-texto">
+    <h1>Rumores</h1>
+  </div>
 
-<nav>
-<ul class="nav-list">
-<li><a href="index.html">Inicio</a></li>
-<li><a href="criticas.html">Críticas</a></li>
-<li><a href="articulos.html">Artículos</a></li>
-<li><a href="rumores.html">Rumores</a></li>
-<li><a href="autores.html">Autores</a></li>
-</ul>
-</nav>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="criticas.html">Críticas</a></li>
+      <li><a href="articulos.html">Artículos</a></li>
+      <li><a href="rumores.html">Rumores</a></li>
+      <li><a href="autores.html">Autores</a></li>
+    </ul>
+  </nav>
 
 </header>
 
 <main>
 
-<section class="rumores-grid" id="rumores-grid"></section>
+  <section class="rumores-grid" id="rumores-grid"></section>
 
-<button id="boton-mas-rumores">Más rumores</button>
+  <button id="boton-mas-rumores">Más rumores</button>
 
 </main>
 
 <footer>
-© 2026 · Gabinete de Juicio y Debate
+  © 2026 · Gabinete de Juicio y Debate
 </footer>
 
 <script src="contenido.js"></script>
@@ -57,47 +57,47 @@ let visibles = 12;
 
 const rumoresOrdenados = contenido
 .filter(e => e.seccion === "rumores")
-.sort((a,b) => {
+.sort((a,b)=>{
 
-const [da,ma,ya] = a.fecha_publicacion.split("/");
-const [db,mb,yb] = b.fecha_publicacion.split("/");
+  const [da,ma,ya] = a.fecha_publicacion.split("/");
+  const [db,mb,yb] = b.fecha_publicacion.split("/");
 
-return new Date(`${yb}-${mb}-${db}`) - new Date(`${ya}-${ma}-${da}`);
+  return new Date(`${yb}-${mb}-${db}`) - new Date(`${ya}-${ma}-${da}`);
 
 });
 
 function pintarRumores(){
 
-grid.innerHTML = "";
+  grid.innerHTML = "";
 
-rumoresOrdenados.slice(0,visibles).forEach(rumor => {
+  rumoresOrdenados.slice(0,visibles).forEach(rumor=>{
 
-const item = document.createElement("article");
+    const item = document.createElement("article");
 
-item.className = "rumor-card";
+    item.className = "rumor-card";
 
-item.innerHTML = `
-<a href="entrada.html?id=${rumor.id}">
-<div class="rumor-imagen">
-<img src="${rumor.imagen.src}" alt="${rumor.imagen.alt}">
-</div>
-<h3>${rumor.titulo}</h3>
-</a>
-`;
+    item.innerHTML = `
+      <a href="entrada.html?id=${rumor.id}">
+        <div class="rumor-imagen">
+          <img src="${rumor.imagen.src}" alt="${rumor.imagen.alt}">
+        </div>
+        <h3>${rumor.titulo}</h3>
+      </a>
+    `;
 
-grid.appendChild(item);
+    grid.appendChild(item);
 
-});
+  });
 
 }
 
 pintarRumores();
 
-boton.addEventListener("click", () => {
+boton.addEventListener("click",()=>{
 
-visibles += 12;
+  visibles += 12;
 
-pintarRumores();
+  pintarRumores();
 
 });
 
