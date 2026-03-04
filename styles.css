@@ -45,7 +45,8 @@ header {
   margin-bottom: 0.6rem;
 }
 
-/* nombre web en esquina */
+
+/* nombre web esquina */
 
 header::after {
 
@@ -64,16 +65,29 @@ header::after {
 }
 
 
+/* quitar texto en inicio */
+
+.header-inicio::after {
+  content: "";
+}
+
+/* quitar texto en página de autor */
+
+.autor-page header::after {
+  content: "";
+}
+
+
 /* =========================
-   COLORES POR SECCIÓN
+   COLORES DE SECCIÓN
    ========================= */
 
 .header-inicio {
-  background: #d97706;
+  background: #000;
 }
 
 .header-criticas {
-  background: #000;
+  background: #556b2f;
 }
 
 .header-articulos {
@@ -85,7 +99,7 @@ header::after {
 }
 
 .header-autores {
-  background: #2b2b2b;
+  background: #000;
 }
 
 
@@ -190,7 +204,7 @@ main {
   color: #fff;
 }
 
-.tipo-critica { background: #000; }
+.tipo-critica { background: #556b2f; }
 .tipo-articulo { background: #b30000; }
 .tipo-rumor { background: #0055aa; }
 
