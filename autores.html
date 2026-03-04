@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Autores · Gabinete de Juicio y Debate</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
@@ -14,9 +16,10 @@
 
 <body>
 
-<header>
+<header class="header-autores">
+
   <div class="banner-texto">
-    <h1>Gabinete de Juicio y Debate</h1>
+    <h1>Autores</h1>
   </div>
 
   <nav>
@@ -28,11 +31,15 @@
       <li><a href="autores.html">Autores</a></li>
     </ul>
   </nav>
+
 </header>
 
 <main>
+
   <h2>Autores</h2>
+
   <section class="autores-grid"></section>
+
 </main>
 
 <footer>
@@ -42,33 +49,53 @@
 <script src="contenido.js"></script>
 
 <script>
-const grid = document.querySelector('.autores-grid');
 
-/* Autores que ya tienen textos publicados */
+const grid = document.querySelector(".autores-grid");
+
+
+/* autores que tienen textos */
+
 let autoresConTextos = [...new Set(contenido.map(e => e.autor))];
 
-/* Orden alfabético por nombre (ignorando tildes y mayúsculas) */
-autoresConTextos.sort((a, b) => {
-  return a.localeCompare(b, 'es', { sensitivity: 'base' });
+
+/* orden alfabético */
+
+autoresConTextos.sort((a,b)=>{
+
+  return a.localeCompare(b,"es",{sensitivity:"base"});
+
 });
 
-autoresConTextos.forEach(nombre => {
+
+autoresConTextos.forEach(nombre=>{
+
   const ficha = fichasAutores[nombre];
 
-  if (!ficha) return;
+  if(!ficha) return;
 
-  const article = document.createElement('article');
-  article.className = 'autor-card';
+
+  const article = document.createElement("article");
+
+  article.className = "autor-card";
+
 
   article.innerHTML = `
+
     <a href="autor.html?nombre=${encodeURIComponent(nombre)}">
+
       <img src="${ficha.foto}" alt="${ficha.nombre}">
+
       <h3>${ficha.nombre}</h3>
+
     </a>
+
   `;
 
+
   grid.appendChild(article);
+
 });
+
 </script>
 
 </body>
