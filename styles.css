@@ -167,16 +167,13 @@ main {
 
 .autores-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, 180px);
   gap: 2rem;
   margin-top: 2rem;
-  justify-items: center;
 }
 
 .autor-card {
-  width: 100%;
-  max-width: 220px;
-  background: #fff;
+  width: 180px;
 }
 
 .autor-card img {
@@ -188,7 +185,7 @@ main {
 
 .autor-card h3 {
   text-align: center;
-  padding: 0.7rem;
+  margin-top: 0.5rem;
 }
 
 /* =========================
