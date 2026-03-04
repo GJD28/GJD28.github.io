@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Críticas · Gabinete de Juicio y Debate</title>
 
-  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header>
+<header class="header-criticas">
+
   <div class="banner-texto">
     <h1>Críticas</h1>
   </div>
@@ -30,17 +30,23 @@
       <li><a href="autores.html">Autores</a></li>
     </ul>
   </nav>
+
 </header>
 
 <main>
 
   <section class="portada-bloque">
+
     <h2>Todas las críticas</h2>
 
     <div class="carousel">
+
       <button class="carousel-btn prev criticas-prev">‹</button>
+
       <div class="carousel-track" id="todas-criticas"></div>
+
       <button class="carousel-btn next criticas-next">›</button>
+
     </div>
 
   </section>
@@ -54,34 +60,44 @@
 <script src="contenido.js"></script>
 
 <script>
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  function cargarCarrusel(trackId, prevClass, nextClass, entradas) {
+  function cargarCarrusel(trackId, prevClass, nextClass, entradas){
 
     const track = document.getElementById(trackId);
-    const prev = document.querySelector('.' + prevClass);
-    const next = document.querySelector('.' + nextClass);
+    const prev = document.querySelector("." + prevClass);
+    const next = document.querySelector("." + nextClass);
 
-    track.innerHTML = '';
+    track.innerHTML = "";
 
     entradas.forEach(e => {
-      track.appendChild(crearTarjeta(e, "normal"));
+
+      track.appendChild(crearTarjeta(e,"normal"));
+
     });
 
-    prev.addEventListener('click', () => {
-      track.scrollBy({ left: -300, behavior: 'smooth' });
+    prev.addEventListener("click", () => {
+
+      track.scrollBy({left:-300,behavior:"smooth"});
+
     });
 
-    next.addEventListener('click', () => {
-      track.scrollBy({ left: 300, behavior: 'smooth' });
+    next.addEventListener("click", () => {
+
+      track.scrollBy({left:300,behavior:"smooth"});
+
     });
+
   }
+
 
   const criticas = contenido.filter(e => e.seccion === "criticas");
 
-  cargarCarrusel('todas-criticas', 'criticas-prev', 'criticas-next', criticas);
+  cargarCarrusel("todas-criticas","criticas-prev","criticas-next",criticas);
 
 });
+
 </script>
 
 </body>
