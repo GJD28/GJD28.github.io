@@ -91,10 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
         <h3>${e.titulo}</h3>
+        <div class="meta">${e.autor}</div>
       </a>
-      <div class="meta">
-        <a href="autor.html?nombre=${encodeURIComponent(e.autor)}">${e.autor}</a>
-      </div>
     `;
 
     return item;
