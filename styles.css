@@ -119,15 +119,6 @@ main {
   object-fit: cover;
 }
 
-/* === AÑADIDO PARA IGUALAR ARTÍCULOS A CRÍTICAS === */
-
-.carousel-item a {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-}
-
 /* =========================
    BANNERS
    ========================= */
@@ -187,32 +178,6 @@ main {
 .carousel-btn:hover {
   background: #000;
   color: #fff;
-}
-
-/* =========================
-   AUTORES
-   ========================= */
-
-.autores-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.autor-card {
-  width: 140px;
-  text-align: center;
-}
-
-.autor-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-}
-
-.autor-card h3 {
-  margin-top: 0.4rem;
 }
 
 /* =========================
