@@ -102,23 +102,35 @@ main {
 }
 
 /* =========================
-   MINIATURAS UNIFICADAS
+   IMÁGENES
    ========================= */
 
-.carousel-item img {
+.miniatura-wrapper {
+  position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.miniatura-wrapper img,
+.carousel-item img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+}
+
+/* === AÑADIDO PARA IGUALAR ARTÍCULOS A CRÍTICAS === */
+
+.carousel-item a {
   display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
 
 /* =========================
    BANNERS
    ========================= */
-
-.miniatura-wrapper {
-  position: relative;
-}
 
 .miniatura-banner {
   position: absolute;
@@ -146,7 +158,7 @@ main {
 }
 
 .meta {
-  padding: 0.6rem 0.8rem 0 0.8rem;
+  padding: 0.6rem 0.8rem 0.8rem 0.8rem;
   font-size: 0.85rem;
   color: #555;
   border-top: 1px solid #ddd;
