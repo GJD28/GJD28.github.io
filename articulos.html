@@ -7,6 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
@@ -14,9 +15,10 @@
 
 <body>
 
-<header>
+<header class="header-articulos">
+
   <div class="banner-texto">
-    <h1>Gabinete de Juicio y Debate</h1>
+    <h1>Artículos</h1>
   </div>
 
   <nav>
@@ -28,17 +30,23 @@
       <li><a href="autores.html">Autores</a></li>
     </ul>
   </nav>
+
 </header>
 
 <main>
 
   <section class="portada-bloque">
+
     <h2>Todos los artículos</h2>
 
     <div class="carousel">
+
       <button class="carousel-btn prev articulos-prev">‹</button>
+
       <div class="carousel-track" id="todos-articulos"></div>
+
       <button class="carousel-btn next articulos-next">›</button>
+
     </div>
 
   </section>
@@ -52,34 +60,44 @@
 <script src="contenido.js"></script>
 
 <script>
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  function cargarCarrusel(trackId, prevClass, nextClass, entradas) {
+  function cargarCarrusel(trackId, prevClass, nextClass, entradas){
 
     const track = document.getElementById(trackId);
-    const prev = document.querySelector('.' + prevClass);
-    const next = document.querySelector('.' + nextClass);
+    const prev = document.querySelector("." + prevClass);
+    const next = document.querySelector("." + nextClass);
 
-    track.innerHTML = '';
+    track.innerHTML = "";
 
     entradas.forEach(e => {
-      track.appendChild(crearTarjeta(e, "normal"));
+
+      track.appendChild(crearTarjeta(e,"normal"));
+
     });
 
-    prev.addEventListener('click', () => {
-      track.scrollBy({ left: -300, behavior: 'smooth' });
+    prev.addEventListener("click", () => {
+
+      track.scrollBy({left:-300,behavior:"smooth"});
+
     });
 
-    next.addEventListener('click', () => {
-      track.scrollBy({ left: 300, behavior: 'smooth' });
+    next.addEventListener("click", () => {
+
+      track.scrollBy({left:300,behavior:"smooth"});
+
     });
+
   }
+
 
   const articulos = contenido.filter(e => e.seccion === "articulos");
 
-  cargarCarrusel('todos-articulos', 'articulos-prev', 'articulos-next', articulos);
+  cargarCarrusel("todos-articulos","articulos-prev","articulos-next",articulos);
 
 });
+
 </script>
 
 </body>
