@@ -16,9 +16,8 @@ h1 {
 }
 
 h2 {
-  font-family: 'Caveat', cursive;
-  font-size: 2rem;
-  margin: 0;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
 }
 
 h3 {
@@ -31,19 +30,64 @@ a {
   color: inherit;
 }
 
+
 /* =========================
-   HEADER
+   HEADER GENERAL
    ========================= */
 
 header {
-  background: #000;
   color: #fff;
-  padding: 1.5rem 2rem 1rem 2rem;
+  padding: 1.6rem 2rem 1.2rem 2rem;
+  position: relative;
 }
 
 .banner-texto {
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
 }
+
+/* nombre web en esquina */
+
+header::after {
+
+  content: "Gabinete de Juicio y Debate";
+
+  position: absolute;
+
+  right: 2rem;
+
+  bottom: 0.6rem;
+
+  font-size: 0.8rem;
+
+  opacity: 0.9;
+
+}
+
+
+/* =========================
+   COLORES POR SECCIÓN
+   ========================= */
+
+.header-inicio {
+  background: #d97706;
+}
+
+.header-criticas {
+  background: #000;
+}
+
+.header-articulos {
+  background: #b30000;
+}
+
+.header-rumores {
+  background: #0055aa;
+}
+
+.header-autores {
+  background: #2b2b2b;
+}
+
 
 /* =========================
    NAV
@@ -66,6 +110,7 @@ header {
   opacity: 0.7;
 }
 
+
 /* =========================
    MAIN
    ========================= */
@@ -77,6 +122,7 @@ main {
 .portada-bloque {
   margin-bottom: 3rem;
 }
+
 
 /* =========================
    CARRUSEL
@@ -107,14 +153,15 @@ main {
   flex-direction: column;
 }
 
+
 /* =========================
-   MINIATURAS (PÓSTERS)
+   MINIATURAS
    ========================= */
 
 .miniatura-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
 }
 
@@ -125,8 +172,9 @@ main {
   display: block;
 }
 
+
 /* =========================
-   BANNERS
+   BANNERS MINIATURAS
    ========================= */
 
 .miniatura-banner {
@@ -146,6 +194,7 @@ main {
 .tipo-articulo { background: #b30000; }
 .tipo-rumor { background: #0055aa; }
 
+
 /* =========================
    TÍTULO Y AUTOR
    ========================= */
@@ -162,75 +211,9 @@ main {
   margin-top: 0.6rem;
 }
 
-/* =========================
-   AUTORES (LISTA)
-   ========================= */
-
-.autores-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 180px);
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.autor-card {
-  width: 180px;
-}
-
-.autor-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-}
-
-.autor-card h3 {
-  text-align: center;
-  margin-top: 0.5rem;
-}
 
 /* =========================
-   CABECERA DE AUTOR
-   ========================= */
-
-.autor-header {
-  background: #fff;
-  border: 1px solid #ddd;
-  margin-bottom: 3rem;
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  align-items: center;
-}
-
-/* barra superior */
-
-.autor-header h2 {
-  grid-column: 1 / -1;
-  background: #000;
-  color: #fff;
-  padding: 1rem 1.5rem;
-  font-family: 'Caveat', cursive;
-  font-size: 2rem;
-}
-
-/* imagen */
-
-.autor-header img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  margin: 20px;
-}
-
-/* biografía */
-
-.autor-bio {
-  padding: 1.5rem;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* =========================
-   BOTONES
+   BOTONES CARRUSEL
    ========================= */
 
 .carousel-btn {
@@ -253,27 +236,76 @@ main {
   color: #fff;
 }
 
+
 /* =========================
-   FOOTER
+   AUTORES GRID
    ========================= */
 
-footer {
-  background: #000;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 3rem;
-  font-size: 0.9rem;
+.autores-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+
+  gap: 2rem;
+
 }
+
+.autor-card img {
+
+  width: 100%;
+
+  aspect-ratio: 1/1;
+
+  object-fit: cover;
+
+}
+
+.autor-card h3 {
+
+  text-align: center;
+
+  margin-top: 0.6rem;
+
+}
+
+
+/* =========================
+   CABECERA AUTOR
+   ========================= */
+
+.autor-header {
+
+  display: flex;
+
+  gap: 2rem;
+
+  background: #fff;
+
+  padding: 1.5rem;
+
+}
+
+.autor-header img {
+
+  width: 160px;
+
+  height: 160px;
+
+  object-fit: cover;
+
+}
+
+.autor-bio p {
+
+  line-height: 1.6;
+
+}
+
 
 /* =========================
    RUMORES
    ========================= */
-
-.rumores-header {
-  background: #b30000;
-  color: white;
-}
 
 .rumores-grid {
 
@@ -283,14 +315,10 @@ footer {
 
   gap: 2rem;
 
-  padding: 2rem;
-
 }
 
 .rumor-card a {
-
   display: block;
-
 }
 
 .rumor-imagen {
@@ -306,6 +334,7 @@ footer {
 .rumor-imagen img {
 
   width: 100%;
+
   height: 100%;
 
   object-fit: cover;
@@ -315,8 +344,6 @@ footer {
 .rumor-card h3 {
 
   font-size: 1rem;
-
-  font-weight: 500;
 
   line-height: 1.4;
 
@@ -330,20 +357,30 @@ footer {
 
   padding: 0.8rem 1.8rem;
 
-  font-size: 0.9rem;
-
   border: none;
 
-  background: black;
+  background: #000;
 
-  color: white;
+  color: #fff;
 
   cursor: pointer;
 
 }
 
 #boton-mas-rumores:hover {
-
   opacity: 0.8;
+}
 
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
 }
