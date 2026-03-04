@@ -65,10 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
       <a href="entrada.html?id=${e.id}">
         <img src="${e.imagen.src}" alt="${e.imagen.alt}">
         <h3>${e.titulo}</h3>
+        <div class="meta">${e.autor}</div>
       </a>
-      <div class="meta">
-        <a href="autor.html?nombre=${encodeURIComponent(e.autor)}">${e.autor}</a>
-      </div>
     `;
 
     return d;
