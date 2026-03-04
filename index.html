@@ -118,11 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // DESTACADOS
   const destacados = contenido.filter(e => e.destacada === true);
   cargarCarrusel('destacados', 'destacados-prev', 'destacados-next', destacados);
 
-  // ÚLTIMAS ENTRADAS
   const ultimas = [...contenido]
     .sort((a, b) => {
       const [da, ma, ya] = a.fecha_publicacion.split('/');
