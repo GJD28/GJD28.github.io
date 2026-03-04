@@ -101,15 +101,13 @@ main {
   background-color: #fff;
 }
 
-/* estructura vertical segura */
-
 .carousel-item a {
   display: flex;
   flex-direction: column;
 }
 
 /* =========================
-   MINIATURAS
+   MINIATURAS (PÓSTERS)
    ========================= */
 
 .miniatura-wrapper {
@@ -161,6 +159,32 @@ main {
   color: #555;
   border-top: 1px solid #ddd;
   margin-top: 0.6rem;
+}
+
+/* =========================
+   AUTORES
+   ========================= */
+
+.autores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.autor-card {
+  background: #fff;
+}
+
+.autor-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.autor-card h3 {
+  padding: 0.6rem 0.8rem 0.8rem 0.8rem;
 }
 
 /* =========================
