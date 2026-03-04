@@ -101,8 +101,15 @@ main {
   background-color: #fff;
 }
 
+/* NUEVO: estructura vertical segura */
+
+.carousel-item a {
+  display: flex;
+  flex-direction: column;
+}
+
 /* =========================
-   MINIATURAS (UNIFICADAS)
+   MINIATURAS
    ========================= */
 
 .miniatura-wrapper {
