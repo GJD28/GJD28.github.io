@@ -122,11 +122,14 @@ main {
 
 /* === AÑADIDO PARA IGUALAR ARTÍCULOS A CRÍTICAS === */
 
-.carousel-item a {
-  display: block;
+.carousel-item > a:first-child img {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-item > a:first-child {
+  display: block;
 }
 
 /* =========================
