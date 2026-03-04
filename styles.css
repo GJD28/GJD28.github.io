@@ -196,11 +196,15 @@ main {
   background: #fff;
   border: 1px solid #ddd;
   margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: center;
 }
 
 /* barra superior */
 
 .autor-header h2 {
+  grid-column: 1 / -1;
   background: #000;
   color: #fff;
   padding: 1rem 1.5rem;
@@ -208,18 +212,16 @@ main {
   font-size: 2rem;
 }
 
-/* contenido */
-
-.autor-header {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-}
+/* imagen */
 
 .autor-header img {
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
+  margin: 20px;
 }
+
+/* biografía */
 
 .autor-bio {
   padding: 1.5rem;
