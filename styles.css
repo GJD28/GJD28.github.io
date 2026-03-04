@@ -16,8 +16,9 @@ h1 {
 }
 
 h2 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
+  font-family: 'Caveat', cursive;
+  font-size: 2rem;
+  margin: 0;
 }
 
 h3 {
@@ -162,7 +163,7 @@ main {
 }
 
 /* =========================
-   AUTORES
+   AUTORES (LISTA)
    ========================= */
 
 .autores-grid {
@@ -180,12 +181,50 @@ main {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  display: block;
 }
 
 .autor-card h3 {
   text-align: center;
   margin-top: 0.5rem;
+}
+
+/* =========================
+   CABECERA DE AUTOR
+   ========================= */
+
+.autor-header {
+  background: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 3rem;
+}
+
+/* barra superior */
+
+.autor-header h2 {
+  background: #000;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  font-family: 'Caveat', cursive;
+  font-size: 2rem;
+}
+
+/* contenido */
+
+.autor-header {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+}
+
+.autor-header img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+}
+
+.autor-bio {
+  padding: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* =========================
