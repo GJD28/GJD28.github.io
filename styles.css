@@ -45,8 +45,6 @@ header {
   margin-bottom: 0.6rem;
 }
 
-/* nombre web esquina */
-
 header::after {
   content: "Gabinete de Juicio y Debate";
   position: absolute;
@@ -56,13 +54,9 @@ header::after {
   opacity: 0.9;
 }
 
-/* quitar texto en inicio */
-
 .header-inicio::after {
   content: "";
 }
-
-/* quitar texto en página de autor */
 
 .autor-page header::after {
   content: "";
@@ -73,25 +67,11 @@ header::after {
    COLORES DE SECCIÓN
    ========================= */
 
-.header-inicio {
-  background: #000;
-}
-
-.header-criticas {
-  background: #556b2f;
-}
-
-.header-articulos {
-  background: #b30000;
-}
-
-.header-rumores {
-  background: #0055aa;
-}
-
-.header-autores {
-  background: #000;
-}
+.header-inicio { background: #000; }
+.header-criticas { background: #556b2f; }
+.header-articulos { background: #b30000; }
+.header-rumores { background: #0055aa; }
+.header-autores { background: #000; }
 
 
 /* =========================
@@ -353,6 +333,10 @@ main {
   clear: both;
 }
 
+#entrada p {
+  margin-top: 0;
+}
+
 
 /* =========================
    IMAGEN EN ENTRADAS
@@ -360,14 +344,14 @@ main {
 
 .imagen-articulo {
   float: left;
-  width: 40%;
+  width: 30%;
   height: auto;
   margin: 0 1.5rem 1rem 0;
 }
 
 
 /* =========================
-   ADAPTACIÓN MÓVIL
+   MÓVIL
    ========================= */
 
 @media (max-width: 700px) {
