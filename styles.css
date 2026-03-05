@@ -340,6 +340,18 @@ main {
 
 
 /* =========================
+   IMAGEN EN ENTRADAS
+   ========================= */
+
+.imagen-articulo {
+  float: left;
+  width: 50%;
+  height: auto;
+  margin: 0 1.5rem 1rem 0;
+}
+
+
+/* =========================
    FOOTER
    ========================= */
 
