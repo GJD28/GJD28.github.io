@@ -86,7 +86,7 @@ function renderEntrada(entrada) {
   const contenedor = document.getElementById('entrada');
   const autorURL = encodeURIComponent(entrada.autor);
 
-  /* CAMBIAR COLOR DEL HEADER SEGÚN SECCIÓN */
+  /* COLOR DEL HEADER SEGÚN SECCIÓN */
 
   const header = document.querySelector("header");
 
@@ -107,8 +107,6 @@ function renderEntrada(entrada) {
 
     <div class="meta">
       Por <a href="autor.html?nombre=${autorURL}">${entrada.autor}</a>
-      ${entrada.director ? `· ${entrada.director}` : ``}
-      ${entrada.año ? `· ${entrada.año}` : ``}
       ${entrada.fecha_publicacion && entrada.fecha_publicacion !== "—" ? `· ${entrada.fecha_publicacion}` : ``}
     </div>
   `;
