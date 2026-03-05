@@ -337,6 +337,36 @@ main {
   margin-top: 0;
 }
 
+/* =========================
+   ESTRELLAS CRÍTICAS
+   ========================= */
+
+.valoracion {
+  margin-top: 1.8rem;
+  font-size: 0.95rem;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 3px;
+  margin-left: 0.4rem;
+  font-size: 1.2rem;
+}
+
+.star {
+  color: #ccc;
+}
+
+.star.full {
+  color: #d4a017;
+}
+
+.star.half {
+  background: linear-gradient(90deg, #d4a017 50%, #ccc 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 
 /* =========================
    IMAGEN EN ENTRADAS
