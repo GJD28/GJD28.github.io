@@ -340,9 +340,6 @@ main {
 /* =========================
    ESTRELLAS CRÍTICAS
    ========================= */
-/* =========================
-   ESTRELLAS CRÍTICAS
-   ========================= */
 
 .valoracion {
   margin-top: 1.8rem;
@@ -362,7 +359,7 @@ main {
 }
 
 .star.full {
-  color: #d4a017;
+  color: #556b2f;
 }
 
 .star.half {
@@ -377,9 +374,8 @@ main {
   top: 0;
   width: 50%;
   overflow: hidden;
-  color: #d4a017;
+  color: #556b2f;
 }
-
 
 /* =========================
    IMAGEN EN ENTRADAS
