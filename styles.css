@@ -378,6 +378,29 @@ main {
 
 
 /* =========================
+   LISTA DE ETIQUETAS
+   ========================= */
+
+.lista-etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.etiqueta-indice {
+  padding: 0.4rem 0.7rem;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 0.9rem;
+}
+
+.etiqueta-indice:hover {
+  background: #f0f0f0;
+}
+
+
+
+/* =========================
    ESTRELLAS CRÍTICAS
    ========================= */
 
