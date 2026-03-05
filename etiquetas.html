@@ -64,7 +64,10 @@ return texto
 
 }
 
-let etiquetas = [];
+
+/* CONTADOR DE ETIQUETAS */
+
+let contador = {};
 
 contenido.forEach(e => {
 
@@ -72,7 +75,11 @@ if(e.etiquetas){
 
 e.etiquetas.forEach(et => {
 
-etiquetas.push(et);
+if(!contador[et]){
+contador[et] = 0;
+}
+
+contador[et]++;
 
 });
 
@@ -80,20 +87,26 @@ etiquetas.push(et);
 
 });
 
-const unicas = [...new Set(etiquetas)];
 
-unicas.sort((a,b) => a.localeCompare(b,"es"));
+/* ORDEN ALFABÉTICO */
+
+const etiquetas = Object.keys(contador);
+
+etiquetas.sort((a,b) => a.localeCompare(b,"es"));
+
+
+/* CREAR LISTA */
 
 const contenedor = document.getElementById("lista-etiquetas");
 
-unicas.forEach(et => {
+etiquetas.forEach(et => {
 
 const slug = slugify(et);
 
 const enlace = document.createElement("a");
 
 enlace.href = "etiqueta.html?tag=" + encodeURIComponent(slug);
-enlace.textContent = et;
+enlace.textContent = et + " (" + contador[et] + ")";
 enlace.className = "etiqueta-indice";
 
 contenedor.appendChild(enlace);
