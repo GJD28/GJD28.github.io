@@ -42,33 +42,65 @@
 <script src="contenido.js"></script>
 
 <script>
+
 function obtenerId() {
   const params = new URLSearchParams(window.location.search);
   return params.get('id');
 }
 
+
 /* ----- ESTRELLAS ----- */
+
 function renderEstrellas(nota) {
+
   const estrellasTotales = 5;
   let html = '<div class="stars">';
 
   for (let i = 1; i <= estrellasTotales; i++) {
+
     if (nota >= i) {
       html += '<span class="star full">★</span>';
-    } else if (nota >= i - 0.5) {
+    }
+
+    else if (nota >= i - 0.5) {
       html += '<span class="star half">★</span>';
-    } else {
+    }
+
+    else {
       html += '<span class="star">★</span>';
     }
+
   }
 
   html += '</div>';
+
   return html;
+
 }
 
+
+/* ----- RENDER ENTRADA ----- */
+
 function renderEntrada(entrada) {
+
   const contenedor = document.getElementById('entrada');
   const autorURL = encodeURIComponent(entrada.autor);
+
+  /* CAMBIAR COLOR DEL HEADER SEGÚN SECCIÓN */
+
+  const header = document.querySelector("header");
+
+  if (entrada.seccion === "criticas") {
+    header.classList.add("header-criticas");
+  }
+
+  else if (entrada.seccion === "articulos") {
+    header.classList.add("header-articulos");
+  }
+
+  else if (entrada.seccion === "rumores") {
+    header.classList.add("header-rumores");
+  }
 
   let html = `
     <h2>${entrada.titulo}</h2>
@@ -82,6 +114,7 @@ function renderEntrada(entrada) {
   `;
 
   if (entrada.imagen) {
+
     html += `
       <img
         src="${entrada.imagen.src}"
@@ -89,44 +122,66 @@ function renderEntrada(entrada) {
         class="imagen-articulo"
       >
     `;
+
   }
 
   entrada.contenido.forEach(bloque => {
+
     if (bloque.tipo === "texto") {
+
       html += `<p>${bloque.valor}</p>`;
+
     }
+
   });
 
+
   if (entrada.seccion === "criticas" && entrada.nota !== undefined) {
+
     html += `
       <div class="valoracion">
         <strong>Valoración:</strong>
         ${renderEstrellas(entrada.nota)}
       </div>
     `;
+
   }
 
+
   if (entrada.etiquetas && entrada.etiquetas.length > 0) {
+
     html += `
       <div class="etiquetas">
         <strong>Etiquetas:</strong>
         ${entrada.etiquetas.map(e => `<span class="etiqueta">${e}</span>`).join(' ')}
       </div>
     `;
+
   }
 
   contenedor.innerHTML = html;
+
 }
+
+
+/* ----- INICIALIZACIÓN ----- */
 
 const id = obtenerId();
 const entrada = contenido.find(e => e.id === id);
 
 if (entrada) {
+
   renderEntrada(entrada);
-} else {
+
+}
+
+else {
+
   document.getElementById('entrada').innerHTML =
     "<p>La entrada que buscas no existe.</p>";
+
 }
+
 </script>
 
 </body>
