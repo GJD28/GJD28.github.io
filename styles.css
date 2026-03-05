@@ -340,6 +340,9 @@ main {
 /* =========================
    ESTRELLAS CRÍTICAS
    ========================= */
+/* =========================
+   ESTRELLAS CRÍTICAS
+   ========================= */
 
 .valoracion {
   margin-top: 1.8rem;
@@ -348,12 +351,13 @@ main {
 
 .stars {
   display: inline-flex;
-  gap: 3px;
+  gap: 4px;
   margin-left: 0.4rem;
   font-size: 1.2rem;
 }
 
 .star {
+  display: inline-block;
   color: #ccc;
 }
 
@@ -362,9 +366,18 @@ main {
 }
 
 .star.half {
-  background: linear-gradient(90deg, #d4a017 50%, #ccc 50%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ccc;
+  position: relative;
+}
+
+.star.half::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  overflow: hidden;
+  color: #d4a017;
 }
 
 
