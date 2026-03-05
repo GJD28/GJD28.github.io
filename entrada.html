@@ -10,13 +10,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS unificado -->
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
 <header>
+
   <div class="banner-texto">
     <h1>Gabinete de Juicio y Debate</h1>
   </div>
@@ -30,6 +31,7 @@
       <li><a href="autores.html">Autores</a></li>
     </ul>
   </nav>
+
 </header>
 
 <main>
@@ -44,62 +46,69 @@
 
 <script>
 
-function obtenerId() {
+/* ---------------------------
+   OBTENER ID DE LA URL
+--------------------------- */
+
+function obtenerId(){
   const params = new URLSearchParams(window.location.search);
-  return params.get('id');
+  return params.get("id");
 }
 
 
-/* ----- ESTRELLAS ----- */
+/* ---------------------------
+   RENDER ESTRELLAS
+--------------------------- */
 
-function renderEstrellas(nota) {
+function renderEstrellas(nota){
 
   const estrellasTotales = 5;
   let html = '<div class="stars">';
 
-  for (let i = 1; i <= estrellasTotales; i++) {
+  for(let i = 1; i <= estrellasTotales; i++){
 
-    if (nota >= i) {
+    if(nota >= i){
       html += '<span class="star full">★</span>';
     }
 
-    else if (nota >= i - 0.5) {
+    else if(nota >= i - 0.5){
       html += '<span class="star half">★</span>';
     }
 
-    else {
+    else{
       html += '<span class="star">★</span>';
     }
 
   }
 
-  html += '</div>';
-
+  html += "</div>";
   return html;
 
 }
 
 
-/* ----- RENDER ENTRADA ----- */
+/* ---------------------------
+   RENDER ENTRADA
+--------------------------- */
 
-function renderEntrada(entrada) {
+function renderEntrada(entrada){
 
-  const contenedor = document.getElementById('entrada');
+  const contenedor = document.getElementById("entrada");
   const autorURL = encodeURIComponent(entrada.autor);
 
-  /* COLOR DEL HEADER SEGÚN SECCIÓN */
+  /* COLOR HEADER SEGÚN SECCIÓN */
 
   const header = document.querySelector("header");
 
-  if (entrada.seccion === "criticas") {
+  if(entrada.seccion === "criticas"){
     header.classList.add("header-criticas");
   }
 
-  else if (entrada.seccion === "articulos") {
+  else if(entrada.seccion === "articulos"){
     header.classList.add("header-articulos");
   }
 
-  else if (entrada.seccion === "rumores") {
+  else if(entrada.seccion === "rumores"){
     header.classList.add("header-rumores");
   }
 
@@ -108,11 +117,16 @@ function renderEntrada(entrada) {
 
     <div class="meta">
       Por <a href="autor.html?nombre=${autorURL}">${entrada.autor}</a>
-      ${entrada.fecha_publicacion && entrada.fecha_publicacion !== "—" ? `· ${entrada.fecha_publicacion}` : ``}
+      ${entrada.fecha_publicacion && entrada.fecha_publicacion !== "—"
+        ? `· ${entrada.fecha_publicacion}`
+        : ``}
     </div>
   `;
 
-  if (entrada.imagen) {
+
+  /* IMAGEN */
+
+  if(entrada.imagen){
 
     html += `
       <img
@@ -127,18 +141,21 @@ function renderEntrada(entrada) {
 
   }
 
+
+  /* CONTENIDO TEXTO */
+
   entrada.contenido.forEach(bloque => {
 
-    if (bloque.tipo === "texto") {
-
+    if(bloque.tipo === "texto"){
       html += `<p>${bloque.valor}</p>`;
-
     }
 
   });
 
 
-  if (entrada.seccion === "criticas" && entrada.nota !== undefined) {
+  /* VALORACIÓN */
+
+  if(entrada.seccion === "criticas" && entrada.nota !== undefined){
 
     html += `
       <div class="valoracion">
@@ -150,39 +167,58 @@ function renderEntrada(entrada) {
   }
 
 
-  if (entrada.etiquetas && entrada.etiquetas.length > 0) {
+  /* ETIQUETAS */
+
+  if(entrada.etiquetas && entrada.etiquetas.length > 0){
 
     html += `
       <div class="etiquetas">
         <strong>Etiquetas:</strong>
         ${entrada.etiquetas.map(e => {
-          const slug = e.toLowerCase().replace(/\s+/g,"-");
-          return `<a class="etiqueta" href="etiqueta.html?tag=${encodeURIComponent(slug)}">${e}</a>`;
-        }).join(' ')}
+
+          const slug = e
+            .toLowerCase()
+            .replace(/\s+/g,"-");
+
+          return `
+            <a class="etiqueta"
+               href="etiqueta.html?tag=${encodeURIComponent(slug)}">
+              ${e}
+            </a>
+          `;
+
+        }).join(" ")}
+      </div>
+
+      <div class="ver-todas-etiquetas">
+        <a href="etiquetas.html">Explorar todas las etiquetas</a>
       </div>
     `;
 
   }
+
 
   contenedor.innerHTML = html;
 
 }
 
 
-/* ----- INICIALIZACIÓN ----- */
+/* ---------------------------
+   INICIALIZACIÓN
+--------------------------- */
 
 const id = obtenerId();
 const entrada = contenido.find(e => e.id === id);
 
-if (entrada) {
+if(entrada){
 
   renderEntrada(entrada);
 
 }
 
-else {
+else{
 
-  document.getElementById('entrada').innerHTML =
+  document.getElementById("entrada").innerHTML =
     "<p>La entrada que buscas no existe.</p>";
 
 }
