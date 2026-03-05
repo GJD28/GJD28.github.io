@@ -324,7 +324,10 @@ main {
    ========================= */
 
 #entrada {
-  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.75;
+  font-size: 1.05rem;
 }
 
 #entrada::after {
@@ -335,6 +338,7 @@ main {
 
 #entrada p {
   margin-top: 0;
+  margin-bottom: 1.2rem;
 }
 
 /* =========================
