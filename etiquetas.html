@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Etiquetas · Gabinete de Juicio y Debate</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="header-etiquetas">
+
+<div class="banner-texto">
+<h1>Etiquetas</h1>
+</div>
+
+<nav>
+<ul class="nav-list">
+<li><a href="index.html">Inicio</a></li>
+<li><a href="criticas.html">Críticas</a></li>
+<li><a href="articulos.html">Artículos</a></li>
+<li><a href="rumores.html">Rumores</a></li>
+<li><a href="autores.html">Autores</a></li>
+</ul>
+</nav>
+
+</header>
+
+<main>
+
+<section class="portada-bloque">
+
+<h2>Explorar por temas</h2>
+
+<div id="lista-etiquetas" class="lista-etiquetas"></div>
+
+</section>
+
+</main>
+
+<footer>
+© 2026 · Gabinete de Juicio y Debate
+</footer>
+
+<script src="contenido.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+function slugify(texto){
+
+return texto
+.toLowerCase()
+.replace(/\s+/g,"-");
+
+}
+
+let etiquetas = [];
+
+contenido.forEach(e => {
+
+if(e.etiquetas){
+
+e.etiquetas.forEach(et => {
+
+etiquetas.push(et);
+
+});
+
+}
+
+});
+
+const unicas = [...new Set(etiquetas)];
+
+unicas.sort((a,b) => a.localeCompare(b,"es"));
+
+const contenedor = document.getElementById("lista-etiquetas");
+
+unicas.forEach(et => {
+
+const slug = slugify(et);
+
+const enlace = document.createElement("a");
+
+enlace.href = "etiqueta.html?tag=" + encodeURIComponent(slug);
+enlace.textContent = et;
+enlace.className = "etiqueta-indice";
+
+contenedor.appendChild(enlace);
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
