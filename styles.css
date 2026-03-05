@@ -73,6 +73,9 @@ header::after {
 .header-articulos { background: #b30000; }
 .header-rumores { background: #0055aa; }
 .header-autores { background: #000; }
+.header-etiquetas {
+  background: #b38f00;
+}
 
 
 /* =========================
