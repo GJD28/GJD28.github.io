@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gabinete de Juicio y Debate</title>
+  <title>Etiqueta · Gabinete de Juicio y Debate</title>
 
-  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS unificado -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header>
+<header class="header-articulos">
+
   <div class="banner-texto">
-    <h1>Gabinete de Juicio y Debate</h1>
+    <h1 id="titulo-etiqueta"></h1>
   </div>
 
   <nav>
@@ -27,12 +27,30 @@
       <li><a href="criticas.html">Críticas</a></li>
       <li><a href="articulos.html">Artículos</a></li>
       <li><a href="rumores.html">Rumores</a></li>
+      <li><a href="autores.html">Autores</a></li>
     </ul>
   </nav>
+
 </header>
 
 <main>
-  <article id="entrada"></article>
+
+  <section class="portada-bloque">
+
+    <h2>Entradas con esta etiqueta</h2>
+
+    <div class="carousel">
+
+      <button class="carousel-btn prev etiqueta-prev">‹</button>
+
+      <div class="carousel-track" id="entradas-etiqueta"></div>
+
+      <button class="carousel-btn next etiqueta-next">›</button>
+
+    </div>
+
+  </section>
+
 </main>
 
 <footer>
@@ -42,71 +60,51 @@
 <script src="contenido.js"></script>
 
 <script>
-function obtenerId() {
+
+document.addEventListener('DOMContentLoaded', () => {
+
   const params = new URLSearchParams(window.location.search);
-  return params.get('id');
-}
+  const tag = params.get("tag");
 
-function renderEntrada(entrada) {
-  const contenedor = document.getElementById('entrada');
-  const autorURL = encodeURIComponent(entrada.autor);
+  document.getElementById("titulo-etiqueta").textContent = "Etiqueta: " + tag;
 
-  let html = `
-    <h2>${entrada.titulo}</h2>
+  function cargarCarrusel(trackId, prevClass, nextClass, entradas){
 
-    <div class="meta">
-      Por <a href="autor.html?nombre=${autorURL}">${entrada.autor}</a>
-      ${entrada.director ? `· ${entrada.director}` : ``}
-      ${entrada.año ? `· ${entrada.año}` : ``}
-      ${entrada.fecha_publicacion && entrada.fecha_publicacion !== "—"
-        ? `· ${entrada.fecha_publicacion}` : ``}
-    </div>
-  `;
+    const track = document.getElementById(trackId);
+    const prev = document.querySelector("." + prevClass);
+    const next = document.querySelector("." + nextClass);
 
-  if (entrada.imagen) {
-    html += `
-      <img
-        src="${entrada.imagen.src}"
-        alt="${entrada.imagen.alt}"
-        class="imagen-articulo"
-      >
-    `;
+    track.innerHTML = "";
+
+    entradas.forEach(e => {
+
+      track.appendChild(crearTarjeta(e,"normal"));
+
+    });
+
+    prev.addEventListener("click", () => {
+
+      track.scrollBy({left:-300,behavior:"smooth"});
+
+    });
+
+    next.addEventListener("click", () => {
+
+      track.scrollBy({left:300,behavior:"smooth"});
+
+    });
+
   }
 
-  entrada.contenido.forEach(bloque => {
-    if (bloque.tipo === "texto") {
-      html += `<p>${bloque.valor}</p>`;
-    }
-  });
+  const filtradas = contenido.filter(e => 
+    e.etiquetas && e.etiquetas.includes(tag)
+  );
 
-  if (entrada.seccion === "criticas" && entrada.nota !== undefined) {
-    html += `
-      <div class="valoracion">
-        <strong>Valoración:</strong> ${entrada.nota} / 5
-      </div>
-    `;
-  }
+  cargarCarrusel("entradas-etiqueta","etiqueta-prev","etiqueta-next",filtradas);
 
-  if (entrada.etiquetas && entrada.etiquetas.length > 0) {
-    html += `
-      <div class="etiquetas">
-        <strong>Etiquetas:</strong>
-        ${entrada.etiquetas
-          .map(e =>
-            `<a class="etiqueta" href="etiqueta.html?nombre=${encodeURIComponent(e)}">${e}</a>`
-          )
-          .join(' ')}
-      </div>
-    `;
-  }
+});
 
-  contenedor.innerHTML = html;
-}
+</script>
 
-const id = obtenerId();
-const entrada = contenido.find(e => e.id === id);
-
-if (entrada) {
-  renderEntrada(entrada);
-} else {
-  document.getElementById('entrada').innerHTML.
+</body>
+</html>
