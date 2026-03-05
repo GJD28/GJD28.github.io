@@ -1,124 +1,123 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Etiqueta · Gabinete de Juicio y Debate</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Etiqueta · Gabinete de Juicio y Debate</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header class="header-articulos">
+<header class="header-etiquetas">
 
-  <div class="banner-texto">
-    <h1 id="titulo-etiqueta"></h1>
-  </div>
+<div class="banner-texto">
+<h1 id="titulo-etiqueta"></h1>
+</div>
 
-  <nav>
-    <ul class="nav-list">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="criticas.html">Críticas</a></li>
-      <li><a href="articulos.html">Artículos</a></li>
-      <li><a href="rumores.html">Rumores</a></li>
-      <li><a href="autores.html">Autores</a></li>
-    </ul>
-  </nav>
+<nav>
+<ul class="nav-list">
+<li><a href="index.html">Inicio</a></li>
+<li><a href="criticas.html">Críticas</a></li>
+<li><a href="articulos.html">Artículos</a></li>
+<li><a href="rumores.html">Rumores</a></li>
+<li><a href="autores.html">Autores</a></li>
+</ul>
+</nav>
 
 </header>
 
 <main>
 
-  <section class="portada-bloque">
+<section class="portada-bloque">
 
-    <h2>Entradas con esta etiqueta</h2>
+<h2>Entradas con esta etiqueta</h2>
 
-    <div class="carousel">
+<div class="carousel">
 
-      <button class="carousel-btn prev etiqueta-prev">‹</button>
+<button class="carousel-btn prev etiqueta-prev">‹</button>
 
-      <div class="carousel-track" id="entradas-etiqueta"></div>
+<div class="carousel-track" id="entradas-etiqueta"></div>
 
-      <button class="carousel-btn next etiqueta-next">›</button>
+<button class="carousel-btn next etiqueta-next">›</button>
 
-    </div>
+</div>
 
-  </section>
+</section>
 
 </main>
 
 <footer>
-  © 2026 · Gabinete de Juicio y Debate
+© 2026 · Gabinete de Juicio y Debate
 </footer>
 
 <script src="contenido.js"></script>
 
 <script>
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-  const params = new URLSearchParams(window.location.search);
-  const tag = params.get("tag");
+const params = new URLSearchParams(window.location.search);
+const tag = params.get("tag");
 
-  const titulo = tag
-    .replace(/-/g," ")
-    .replace(/\b\w/g,l => l.toUpperCase());
+const titulo = tag
+.replace(/-/g," ")
+.replace(/\b\w/g,l => l.toUpperCase());
 
-  document.getElementById("titulo-etiqueta").textContent = "Etiqueta: " + titulo;
+document.getElementById("titulo-etiqueta").textContent = titulo;
 
+function slugify(texto){
 
-  function slugify(texto){
-    return texto
-      .toLowerCase()
-      .replace(/\s+/g,"-");
-  }
+return texto
+.toLowerCase()
+.replace(/\s+/g,"-");
 
+}
 
-  function cargarCarrusel(trackId, prevClass, nextClass, entradas){
+function cargarCarrusel(trackId, prevClass, nextClass, entradas){
 
-    const track = document.getElementById(trackId);
-    const prev = document.querySelector("." + prevClass);
-    const next = document.querySelector("." + nextClass);
+const track = document.getElementById(trackId);
+const prev = document.querySelector("." + prevClass);
+const next = document.querySelector("." + nextClass);
 
-    track.innerHTML = "";
+track.innerHTML = "";
 
-    entradas.forEach(e => {
+entradas.forEach(e => {
 
-      track.appendChild(crearTarjeta(e,"normal"));
+track.appendChild(crearTarjeta(e,"normal"));
 
-    });
+});
 
-    prev.addEventListener("click", () => {
+prev.addEventListener("click", () => {
 
-      track.scrollBy({left:-300,behavior:"smooth"});
+track.scrollBy({left:-300,behavior:"smooth"});
 
-    });
+});
 
-    next.addEventListener("click", () => {
+next.addEventListener("click", () => {
 
-      track.scrollBy({left:300,behavior:"smooth"});
+track.scrollBy({left:300,behavior:"smooth"});
 
-    });
+});
 
-  }
+}
 
+const filtradas = contenido.filter(e => {
 
-  const filtradas = contenido.filter(e => {
+if(!e.etiquetas) return false;
 
-    if(!e.etiquetas) return false;
+return e.etiquetas.some(et => slugify(et) === tag);
 
-    return e.etiquetas.some(et => slugify(et) === tag);
+});
 
-  });
-
-
-  cargarCarrusel("entradas-etiqueta","etiqueta-prev","etiqueta-next",filtradas);
+cargarCarrusel("entradas-etiqueta","etiqueta-prev","etiqueta-next",filtradas);
 
 });
 
