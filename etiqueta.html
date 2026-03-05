@@ -66,7 +66,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
   const tag = params.get("tag");
 
-  document.getElementById("titulo-etiqueta").textContent = "Etiqueta: " + tag;
+  const titulo = tag
+    .replace(/-/g," ")
+    .replace(/\b\w/g,l => l.toUpperCase());
+
+  document.getElementById("titulo-etiqueta").textContent = "Etiqueta: " + titulo;
+
+
+  function slugify(texto){
+    return texto
+      .toLowerCase()
+      .replace(/\s+/g,"-");
+  }
+
 
   function cargarCarrusel(trackId, prevClass, nextClass, entradas){
 
@@ -96,9 +108,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
 
-  const filtradas = contenido.filter(e => 
-    e.etiquetas && e.etiquetas.includes(tag)
-  );
+
+  const filtradas = contenido.filter(e => {
+
+    if(!e.etiquetas) return false;
+
+    return e.etiquetas.some(et => slugify(et) === tag);
+
+  });
+
 
   cargarCarrusel("entradas-etiqueta","etiqueta-prev","etiqueta-next",filtradas);
 
