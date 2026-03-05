@@ -16,8 +16,9 @@ h1 {
 }
 
 h2 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.25;
 }
 
 h3 {
@@ -196,11 +197,10 @@ main {
 }
 
 .meta {
-  padding: 0.6rem 0.8rem 0.8rem 0.8rem;
-  font-size: 0.85rem;
+  padding: 0.4rem 0 0.8rem 0;
+  font-size: 0.9rem;
   color: #555;
-  border-top: 1px solid #ddd;
-  margin-top: 0.6rem;
+  margin-bottom: 1rem;
 }
 
 
