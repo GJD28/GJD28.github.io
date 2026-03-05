@@ -340,14 +340,44 @@ main {
 
 
 /* =========================
+   CONTENIDO DE ENTRADAS
+   ========================= */
+
+#entrada {
+  line-height: 1.7;
+}
+
+#entrada::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+/* =========================
    IMAGEN EN ENTRADAS
    ========================= */
 
 .imagen-articulo {
   float: left;
-  width: 50%;
+  width: 40%;
   height: auto;
   margin: 0 1.5rem 1rem 0;
+}
+
+
+/* =========================
+   ADAPTACIÓN MÓVIL
+   ========================= */
+
+@media (max-width: 700px) {
+
+  .imagen-articulo {
+    float: none;
+    width: 100%;
+    margin: 1rem 0 1.5rem 0;
+  }
+
 }
 
 
