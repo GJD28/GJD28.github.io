@@ -155,7 +155,10 @@ function renderEntrada(entrada) {
     html += `
       <div class="etiquetas">
         <strong>Etiquetas:</strong>
-        ${entrada.etiquetas.map(e => `<a class="etiqueta" href="etiqueta.html?tag=${encodeURIComponent(e)}">${e}</a>`).join(' ')}
+        ${entrada.etiquetas.map(e => {
+          const slug = e.toLowerCase().replace(/\s+/g,"-");
+          return `<a class="etiqueta" href="etiqueta.html?tag=${encodeURIComponent(slug)}">${e}</a>`;
+        }).join(' ')}
       </div>
     `;
 
