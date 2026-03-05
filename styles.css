@@ -344,7 +344,7 @@ main {
 
 .imagen-articulo {
   float: left;
-  width: 30% !important;
+  width: 25% !important;
   max-width: 30% !important;
   height: auto;
   margin: 0 1.5rem 1rem 0;
