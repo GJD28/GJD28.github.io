@@ -356,6 +356,23 @@ main {
   color: #666;
 }
 
+/* =========================
+   EXPLORAR TODAS LAS ETIQUETAS
+   ========================= */
+
+.ver-todas-etiquetas {
+  margin-top: 0.8rem;
+}
+
+.ver-todas-etiquetas a {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.ver-todas-etiquetas a:hover {
+  text-decoration: underline;
+}
+
 
 /* =========================
    ESTRELLAS CRÍTICAS
