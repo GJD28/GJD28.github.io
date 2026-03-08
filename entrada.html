@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gabinete de Juicio y Debate</title>
+  <meta id="meta-description" name="description" content="Crítica y análisis de cine en Gabinete de Juicio y Debate.">
 
   <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -93,12 +94,12 @@ function renderEstrellas(nota){
 
 function renderEntrada(entrada){
 
-const meta = document.getElementById("meta-description");
+  const meta = document.getElementById("meta-description");
 
-if(meta && entrada.entradilla){
-  meta.setAttribute("content", entrada.entradilla);
-}
-  
+  if(meta && entrada.entradilla){
+    meta.setAttribute("content", entrada.entradilla);
+  }
+
   const contenedor = document.getElementById("entrada");
   const autorURL = encodeURIComponent(entrada.autor);
 
