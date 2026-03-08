@@ -100,6 +100,14 @@ function renderEntrada(entrada){
     meta.setAttribute("content", entrada.entradilla);
   }
 
+  const tipo = entrada.seccion === "criticas"
+    ? "Crítica"
+    : entrada.seccion === "articulos"
+    ? "Artículo"
+    : "Rumor";
+
+  document.title = `${entrada.titulo} – ${tipo} | Gabinete de Juicio y Debate`;
+
   const contenedor = document.getElementById("entrada");
   const autorURL = encodeURIComponent(entrada.autor);
 
