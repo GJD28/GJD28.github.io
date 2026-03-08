@@ -93,6 +93,12 @@ function renderEstrellas(nota){
 
 function renderEntrada(entrada){
 
+const meta = document.getElementById("meta-description");
+
+if(meta && entrada.entradilla){
+  meta.setAttribute("content", entrada.entradilla);
+}
+  
   const contenedor = document.getElementById("entrada");
   const autorURL = encodeURIComponent(entrada.autor);
 
