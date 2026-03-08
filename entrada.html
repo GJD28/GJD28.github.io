@@ -4,7 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gabinete de Juicio y Debate</title>
+
   <meta id="meta-description" name="description" content="Crítica y análisis de cine en Gabinete de Juicio y Debate.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gabinete de Juicio y Debate">
+  <meta property="og:description" content="Crítica y análisis de cine en Gabinete de Juicio y Debate.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="Gabinete de Juicio y Debate">
 
   <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,6 +115,24 @@ function renderEntrada(entrada){
     : "Rumor";
 
   document.title = `${entrada.titulo} – ${tipo} | Gabinete de Juicio y Debate`;
+
+  /* OPEN GRAPH DINÁMICO */
+
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  const ogImage = document.querySelector('meta[property="og:image"]');
+
+  if(ogTitle){
+    ogTitle.setAttribute("content", `${entrada.titulo} – ${tipo} | Gabinete de Juicio y Debate`);
+  }
+
+  if(ogDesc && entrada.entradilla){
+    ogDesc.setAttribute("content", entrada.entradilla);
+  }
+
+  if(ogImage && entrada.imagen){
+    ogImage.setAttribute("content", entrada.imagen.src);
+  }
 
   const contenedor = document.getElementById("entrada");
   const autorURL = encodeURIComponent(entrada.autor);
