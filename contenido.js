@@ -229,6 +229,66 @@ const contenido = [
   ]
 },
 
+     /* =========================
+     EL APARTAMENTO
+     ========================= */
+
+  {
+    id: "el-apartamento-1960",
+    seccion: "criticas",
+    titulo: "El apartamento",
+    autor: "Dolores Aranda",
+    fecha_publicacion: "11/03/2026",
+    director: "Billy Wilder",
+    año: 1960,
+    nota: 4.5,
+    destacada: true,
+    imagen: {
+      src: "el-apartamento.png",
+      alt: "El apartamento (1960), dirigida por Billy Wilder"
+    },
+    entradilla: "Billy Wilder convierte una comedia de oficina en una historia sobre la dignidad personal, donde el humor y la melancolía conviven con una naturalidad extraordinaria.",
+    contenido: [
+
+{ tipo: "texto", valor: "Billy Wilder abre la película con una de esas imágenes que contienen un mundo entero: un océano de escritorios idénticos extendiéndose hasta el horizonte de la oficina. Filas interminables de hombres inclinados sobre papeles, máquinas de escribir y lámparas de escritorio. El anonimato adquiere forma física desde el primer plano. En medio de ese paisaje aparece C.C. Baxter, un empleado más entre miles, un hombre discreto cuya ambición cabe dentro de un gesto sencillo: ascender un poco en la empresa." },
+
+{ tipo: "texto", valor: "La vida de Baxter encuentra su peculiar oportunidad cuando descubre que su pequeño apartamento puede convertirse en moneda de cambio. Algunos ejecutivos de la compañía necesitan un lugar discreto donde llevar a sus amantes, y Baxter decide prestarles las llaves. El sistema funciona con una lógica casi administrativa. Cada cita nocturna acerca un poco más la posibilidad de un ascenso. La comedia empieza ahí, en esa economía moral donde la cortesía y la humillación conviven con una naturalidad inquietante." },
+
+{ tipo: "texto", valor: "Wilder organiza el relato con una claridad admirable. Cada escena añade una capa a la vida de Baxter y revela un mundo laboral regido por jerarquías invisibles y favores privados. El apartamento funciona como espacio físico y como metáfora. Allí se concentran las aspiraciones, las decepciones y la fragilidad de unos personajes que intentan mantener cierta dignidad en un entorno donde el éxito suele exigir pequeñas renuncias." },
+
+{ tipo: "texto", valor: "La dirección de Billy Wilder, uno de los grandes narradores del cine estadounidense y responsable también de guiones tan precisos como los de Sunset Boulevard (El crepúsculo de los dioses, 1950) o Double Indemnity (Perdición, 1944), encuentra aquí un equilibrio perfecto entre ironía y compasión. Wilder observa a sus personajes con una lucidez implacable y al mismo tiempo les concede una humanidad profunda. La cámara se mantiene cercana, atenta a los gestos mínimos, a los silencios que revelan más que los diálogos." },
+
+{ tipo: "texto", valor: "El guion, firmado por el propio Wilder junto a I. A. L. Diamond, colaborador habitual del director y pieza clave en su etapa final, avanza con una precisión admirable. Las escenas encajan unas con otras con una naturalidad que esconde una estructura muy calculada. El humor surge de la observación y se transforma lentamente en una melancolía que envuelve toda la película." },
+
+{ tipo: "texto", valor: "El reparto sostiene esa escritura con una naturalidad extraordinaria. Jack Lemmon compone a Baxter desde una mezcla de ingenuidad y tristeza que define al personaje con apenas un gesto. Lemmon logra que el espectador reconozca la vulnerabilidad de ese hombre que intenta agradar a todo el mundo. Frente a él aparece Shirley MacLaine, que interpreta a Fran Kubelik con una mezcla de encanto y cansancio moral que da profundidad a cada escena. La presencia de Fred MacMurray como el ejecutivo Sheldrake introduce una ambigüedad inquietante: un hombre educado, elegante y perfectamente adaptado a un sistema que premia la indiferencia." },
+
+{ tipo: "texto", valor: "La película nació en un momento en que Hollywood empezaba a mirar con más atención la vida cotidiana de los adultos. Wilder y Diamond encontraron la inspiración inicial en una situación secundaria de Brief Encounter (Breve encuentro, 1945), la película de David Lean, donde un personaje menciona el préstamo de un apartamento para encuentros amorosos. Wilder vio en ese detalle una historia completa y la desarrolló hasta convertirla en el núcleo de la película." },
+
+{ tipo: "texto", valor: "La música de Adolph Deutsch acompaña el relato con una ligereza melancólica que refuerza el tono general. El tema principal aparece con discreción, como un eco emocional que acompaña a los personajes sin imponerse. Todo en la película parece avanzar con ese mismo ritmo: un movimiento suave que va revelando poco a poco el peso de las decisiones." },
+
+{ tipo: "texto", valor: "The Apartment alcanza su mayor fuerza en la forma en que une comedia y tristeza dentro del mismo gesto. Wilder construye una historia donde el humor ilumina la soledad y donde la ternura aparece en los lugares menos previsibles. El relato encuentra su sentido en el momento en que Baxter comprende que la dignidad personal no admite alquileres temporales." },
+
+{ tipo: "texto", valor: "El final llega con una sencillez admirable. Los personajes se sientan frente a una mesa, reparten unas cartas y el mundo vuelve a ordenarse durante un instante. Wilder encuentra ahí la forma perfecta de cerrar la historia. La emoción aparece con naturalidad y permanece." }
+
+    ],
+
+    etiquetas: [
+      "Billy Wilder",
+      "Jack Lemmon",
+      "Shirley MacLaine",
+      "Fred MacMurray",
+      "I. A. L. Diamond",
+      "Joseph LaShelle",
+      "Adolph Deutsch",
+      "1960",
+      "Comedia",
+      "Romance",
+      "The Mirisch Company",
+      "United Artists",
+      "Estados Unidos"
+    ]
+  },
+
   /* =========================
      UN LUGAR TRANQUILO
      ========================= */
