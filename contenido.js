@@ -116,7 +116,7 @@ const contenido = [
       "Neil Jordan",
       "1994",
       "Terror",
-      "Vampiros"
+      "Vampiros",
        "Philippe Rousselot",
 "Elliot Goldenthal",
 "Anne Rice",
@@ -224,7 +224,7 @@ const contenido = [
     "Robert Richardson",
     "2015",
     "Western",
-    "Thriller",
+    "Thriller"
     
   ]
 },
@@ -260,7 +260,6 @@ const contenido = [
       { tipo: "texto", valor: "Si hay que ponerle nota al conjunto como experiencia de saga, se queda en un 3,5 sobre 5. Tiene momentos que juegan en primera división y otros que caminan por la cuerda floja, pero el balance final es más que digno." }
     ],
     etiquetas: [
-     etiquetas: [
   "John Krasinski",
   "Emily Blunt",
   "Millicent Simmonds",
@@ -291,7 +290,7 @@ const contenido = [
   "Ciencia ficción",
   "Thriller"
 ]
-    ]
+   
   }
 
 ];
