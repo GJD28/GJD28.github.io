@@ -66,7 +66,13 @@ const contenido = [
       "David Fincher",
       "1997",
       "Thriller",
-      "Años 90"
+      "Harris Savides",
+"Howard Shore",
+"John Brancato",
+"Michael Ferris",
+"PolyGram Filmed Entertainment",
+"Propaganda Films",
+"Estados Unidos",
     ]
   },
 
@@ -111,6 +117,12 @@ const contenido = [
       "1994",
       "Terror",
       "Vampiros"
+       "Philippe Rousselot",
+"Elliot Goldenthal",
+"Anne Rice",
+"Geffen Pictures",
+"Warner Bros.",
+"Estados Unidos",
     ]
   },
 
@@ -144,14 +156,78 @@ const contenido = [
       { tipo: "texto", valor: "Salgo de ella con el corazón un poco apretado y con ganas de volver a escuchar la banda sonora entera. Y eso, para mí, significa que la película ha hecho su trabajo." }
     ],
     etiquetas: [
-      "Lady Gaga",
-      "Bradley Cooper",
-      "A Star Is Born",
-      "2018",
-      "Musical",
-      "Remake"
+      "Matthew Libatique",
+"Lady Gaga",
+"Bradley Cooper",
+"Eric Roth",
+"Will Fetters",
+"Warner Bros.",
+"Live Nation Productions",
+"Estados Unidos",
     ]
   },
+
+   /* =========================
+   LOS ODIOSOS OCHO
+   ========================= */
+
+{
+  id: "los-odiosos-ocho-2015",
+  seccion: "criticas",
+  titulo: "Los odiosos ocho",
+  autor: "Miguel Romero",
+  fecha_publicacion: "10/03/2026",
+  director: "Quentin Tarantino",
+  año: 2015,
+  nota: 4,
+  destacada: false,
+  imagen: {
+    src: "los-odiosos-ocho.png",
+    alt: "Los odiosos ocho (2015), dirigida por Quentin Tarantino"
+  },
+  entradilla: "Tarantino encierra a ocho personajes en una cabaña durante una tormenta de nieve y convierte el espacio en una ratonera de sospechas, violencia y mala baba.",
+  contenido: [
+
+{ tipo: "texto", valor: "Hay películas que te entran como una bala y otras que te meten en un sitio raro y te dicen: siéntate aquí y mira lo que pasa. Los odiosos ocho juega a eso. Tarantino planta una cabaña en mitad de una tormenta de nieve, mete dentro a un puñado de tipos que no se fían ni de su sombra y se dedica a ver cómo se van midiendo. Desde el primer rato uno sabe perfectamente que allí dentro alguien va a acabar muy mal." },
+
+{ tipo: "texto", valor: "La excusa es sencilla y muy de western clásico. Un cazarrecompensas, Kurt Russell, lleva a una prisionera que vale dinero, interpretada por Jennifer Jason Leigh, hasta el pueblo más cercano. Por el camino se suman otros viajeros y todos terminan refugiados en una mercería perdida mientras fuera cae una nevada que parece que el cielo esté tirando sacos de harina. Dentro empieza el verdadero espectáculo: miradas torcidas, preguntas con mala baba y silencios que se te meten hasta por la raja del culo." },
+
+{ tipo: "texto", valor: "Cuando Samuel L. Jackson se presenta por la puerta la cosa sube su nivel de malrollismo. Su personaje entra como un tipo que trae historias en la mochila y ninguna es bonita. Cada vez que abre la boca la mesa se convierte en un campo de minas. Tarantino deja que los personajes se suelten hostias verbales con calma, sabiendo que cada frase añade gasolina al incendio." },
+
+{ tipo: "texto", valor: "La cabaña funciona como una ratonera. Un espacio pequeño, lleno de esquinas, con gente escuchando desde el otro lado de la habitación. Tarantino mueve a los personajes como si estuvieran en un tablero: uno se levanta, otro se acerca a la puerta, alguien se queda quieto observando. Todo está colocado para que la tensión circule por el aire." },
+
+{ tipo: "texto", valor: "Y en medio de todo eso aparece Jennifer Jason Leigh, que aquí está a un nivel escandaloso. Su Daisy Domergue es una fiera desatada, una presencia incómoda que sonríe justo cuando la situación se pone más fea. Cada gesto suyo tiene mala leche y personalidad. Es de esas interpretaciones que se quedan pegadas." },
+
+{ tipo: "texto", valor: "El reparto se mueve dentro de ese ambiente como si todos supieran que la cosa puede torcerse en cualquier momento. Walton Goggins tiene ese aire de tipo que parece simpático hasta que deja de serlo. Y Tim Roth parece ese tío que te habla sin faltas de ortografía con su polo de Ralph Lauren pero que, a la que te descuidas, te calza una hostia sin que la veas venir." },
+
+{ tipo: "texto", valor: "Tarantino además se da el gustazo de rodar esto en 70 mm, como si estuviera filmando una epopeya gigantesca… para contar una historia que ocurre casi entera dentro de una habitación. Primero te abre el paisaje nevado como si fuera una postal enorme y luego te encierra en la cabaña con esta panda." },
+
+{ tipo: "texto", valor: "Lo que más me gusta de la película es la paciencia que tiene. Deja que los personajes se den la chapa unos a otros, que se cuenten batallitas, mientras las sospechas botan y rebotan y el ambiente se va convirtiendo en aire que envenena los pulmones. Cuando la cosa termina saltando por los aires, el espectáculo entra en ese terreno donde Tarantino mezcla violencia, sarcasmo y mala baba con total naturalidad." },
+
+{ tipo: "texto", valor: "Por eso es mi favorita suya. Tiene algo muy concreto: ocho personajes encerrados, todos con algo que ocultar, y un director disfrutando mientras los deja hablar, provocarse y ponerse trampas unos a otros. Es como sentarte en una mesa donde sabes que en cualquier momento alguien va a sacar una pistola." },
+
+{ tipo: "texto", valor: "La oferta de la semana: dos películas donde un grupo de personajes queda atrapado en un espacio cerrado y la tensión empieza a subir poco a poco hasta que todo revienta: La cosa (John Carpenter, 1982) y Cube (Vincenzo Natali, 1997)." }
+
+  ],
+
+  etiquetas: [
+    "Quentin Tarantino",
+    "Kurt Russell",
+    "Jennifer Jason Leigh",
+    "Samuel L. Jackson",
+    "Walton Goggins",
+    "Tim Roth",
+    "Michael Madsen",
+    "Demián Bichir",
+    "Bruce Dern",
+    "Ennio Morricone",
+    "Robert Richardson",
+    "2015",
+    "Western",
+    "Thriller",
+    
+  ]
+},
 
   /* =========================
      UN LUGAR TRANQUILO
@@ -184,11 +260,37 @@ const contenido = [
       { tipo: "texto", valor: "Si hay que ponerle nota al conjunto como experiencia de saga, se queda en un 3,5 sobre 5. Tiene momentos que juegan en primera división y otros que caminan por la cuerda floja, pero el balance final es más que digno." }
     ],
     etiquetas: [
-      "Un lugar tranquilo",
-      "Terror",
-      "Saga",
-      "Cine comercial",
-      "Silencio"
+     etiquetas: [
+  "John Krasinski",
+  "Emily Blunt",
+  "Millicent Simmonds",
+  "Noah Jupe",
+  "Cillian Murphy",
+  "Lupita Nyong'o",
+  "Djimon Hounsou",
+"2018",
+       "2020",
+       "2024",
+  "Charlotte Bruus Christensen",
+  "Polly Morgan",
+  "Pat Scola",
+"Saga",
+  "Marco Beltrami",
+  "Alexis Grapsas",
+
+  "Scott Beck",
+  "Bryan Woods",
+  "Michael Sarnoski",
+
+  "Platinum Dunes",
+  "Sunday Night Productions",
+
+  "Estados Unidos",
+
+  "Terror",
+  "Ciencia ficción",
+  "Thriller"
+]
     ]
   }
 
