@@ -15,6 +15,12 @@ const fichasAutores = {
     bio: "Me muevo cómodo en el thriller, el terror y el cine de los noventa que apostaba por el entretenimiento adulto sin complejos. Vuelvo a menudo a películas como Seven, Heat o El silencio de los corderos, y no tengo ningún problema en disfrutar de cierto cine comercial cuando está bien hecho. Prefiero las películas con carácter, incluso con imperfecciones, a las que funcionan como un mecanismo demasiado pulido."
   },
 
+     "Dolores Aranda": {
+    nombre: "Dolores Aranda",
+    foto: "dolores-aranda.png",
+    bio: "Vuelvo a menudo al cine que observa a sus personajes con paciencia. Me interesan las películas que miran antes de explicar, las que confían en un gesto, una pausa o una conversación para revelar quiénes somos. Por eso regreso con frecuencia a directores como Ingmar Bergman, Eric Rohmer o Krzysztof Kieślowski, cineastas que entendieron el cine como una forma de observación.\n\nPero tampoco le doy la espalda al cine popular cuando está hecho con convicción. El buen cine, al final, no depende tanto del tamaño de la historia como de la mirada que hay detrás de ella."
+  },
+
   "Álvaro Ríos": {
     nombre: "Álvaro Ríos",
     foto: "alvaro-rios.png",
