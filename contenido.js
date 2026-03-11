@@ -444,6 +444,22 @@ const contenido = [
 ];
 
 /* =========================
+   ORDENAR CONTENIDO POR FECHA (más reciente primero)
+   ========================= */
+
+const contenidoOrdenado = contenido
+  .slice()
+  .sort((a, b) => {
+    const [diaA, mesA, añoA] = a.fecha_publicacion.split("/");
+    const [diaB, mesB, añoB] = b.fecha_publicacion.split("/");
+
+    const fechaA = new Date(`${añoA}-${mesA}-${diaA}`);
+    const fechaB = new Date(`${añoB}-${mesB}-${diaB}`);
+
+    return fechaB - fechaA;
+  });
+
+/* =========================
    SISTEMA DE TARJETAS
    ========================= */
 
