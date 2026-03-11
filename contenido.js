@@ -21,6 +21,12 @@ const fichasAutores = {
     bio: "Vuelvo a menudo al cine que observa a sus personajes con paciencia. Me interesan las películas que miran antes de explicar, las que confían en un gesto, una pausa o una conversación para revelar quiénes somos. Por eso regreso con frecuencia a directores como Ingmar Bergman, Eric Rohmer o Krzysztof Kieślowski, cineastas que entendieron el cine como una forma de observación.\n\nPero tampoco le doy la espalda al cine popular cuando está hecho con convicción. El buen cine, al final, no depende tanto del tamaño de la historia como de la mirada que hay detrás de ella."
   },
 
+     "Nil Miralles": {
+    nombre: "Nil Miralles",
+    foto: "nil-miralles.png",
+    bio: "Siempre me ha parecido divertido teorizar, intentar anticipar y seguir el rastro de lo que viene. Me interesa estar pendiente de filtraciones, movimientos de la industria y pequeñas pistas que van apareciendo antes de que una película llegue a estrenarse. Los rumores forman parte del juego del cine comercial y muchas veces cuentan una historia paralela a la que luego vemos en pantalla. Aquí intento reunirlos, ordenarlos y compartirlos con cabeza."
+  },
+
   "Álvaro Ríos": {
     nombre: "Álvaro Ríos",
     foto: "alvaro-rios.png",
