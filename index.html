@@ -113,23 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  const destacados = contenido.filter(e => e.destacada === true);
+  const destacados = contenidoOrdenado.filter(e => e.destacada === true);
 
   cargarCarrusel("destacados","destacados-prev","destacados-next",destacados);
 
 
-  const ultimas = [...contenido]
-
-  .sort((a,b)=>{
-
-    const [da,ma,ya] = a.fecha_publicacion.split("/");
-    const [db,mb,yb] = b.fecha_publicacion.split("/");
-
-    return new Date(`${yb}-${mb}-${db}`) - new Date(`${ya}-${ma}-${da}`);
-
-  })
-
-  .slice(0,10);
+  const ultimas = contenidoOrdenado.slice(0,10);
 
 
   cargarCarrusel("ultimas-entradas","ultimas-prev","ultimas-next",ultimas);
