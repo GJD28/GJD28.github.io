@@ -242,6 +242,82 @@ const contenido = [
 },
 
      /* =========================
+     SECRET WARS RUMOR
+     ========================= */
+
+  {
+    id: "secret-wars-no-se-divide",
+    seccion: "rumores",
+    titulo: "Marvel no planea dividir Avengers: Secret Wars en dos películas… al menos por ahora",
+    autor: "Nil Miralles",
+    fecha_publicacion: "11/03/2026",
+    destacada: false,
+    imagen: {
+      src: "secret-wars2.png",
+      alt: "Avengers: Secret Wars dentro de la Saga del Multiverso del MCU"
+    },
+    entradilla: "Un nuevo rumor apuntaba a que Marvel podría dividir Secret Wars en dos películas, pero las últimas informaciones señalan que el estudio no contempla esa posibilidad por ahora.",
+    contenido: [
+
+{ tipo: "texto", valor: "Durante unos días empezó a circular un rumor bastante llamativo entre los fans del Universo Cinematográfico de Marvel: la posibilidad de que Avengers: Secret Wars se dividiera en dos películas. Teniendo en cuenta la escala que se espera para el cierre de la Saga del Multiverso, la idea no parecía precisamente descabellada." },
+
+{ tipo: "texto", valor: "Sin embargo, la información más reciente apunta justo en la dirección contraria. Y, según varias fuentes dentro del circuito habitual de rumores del MCU, Marvel Studios no estaría planeando dividir la película en dos partes." },
+
+{ tipo: "texto", valor: "La última actualización sobre Secret Wars" },
+
+{ tipo: "texto", valor: "La actualización más reciente llega a través de medios como LRM Online y AOL, que recogen comentarios procedentes del entorno de insiders habituales del MCU. Según esta información, no hay planes actuales dentro de Marvel Studios para convertir Avengers: Secret Wars en una historia dividida en dos películas." },
+
+{ tipo: "texto", valor: "Esto significa que, al menos por ahora, el proyecto sigue planteado como una única gran entrega dentro de la saga, algo que encajaría con la forma en que el estudio suele manejar sus grandes eventos cinematográficos." },
+
+{ tipo: "texto", valor: "El portal ComicBookMovie también se hizo eco de esta actualización, señalando que el estudio no estaría considerando seriamente esa opción en este momento del desarrollo del proyecto." },
+
+{ tipo: "texto", valor: "En otras palabras: aunque el tamaño de la historia pueda sugerir lo contrario, la idea de dividir la película no forma parte del plan actual." },
+
+{ tipo: "texto", valor: "De dónde salió el rumor" },
+
+{ tipo: "texto", valor: "La conversación empezó cuando algunos insiders mencionaron la posibilidad de que Marvel pudiera optar por una estructura en dos partes para Secret Wars. La lógica detrás de esa teoría era bastante simple: si la película pretende reunir múltiples personajes, universos y líneas argumentales del MCU, condensar todo eso en una sola película podría ser un desafío enorme." },
+
+{ tipo: "texto", valor: "Además, el propio estudio ya utilizó una estructura similar con Avengers: Infinity War y Avengers: Endgame, que en la práctica funcionaron como dos capítulos consecutivos de una misma historia." },
+
+{ tipo: "texto", valor: "Pero, según la información más reciente recogida por LRM Online y AOL, esa posibilidad no estaría sobre la mesa en estos momentos." },
+
+{ tipo: "texto", valor: "El desafío real de la película más grande del MCU" },
+
+{ tipo: "texto", valor: "Que Secret Wars no vaya a dividirse no significa que vaya a ser una película pequeña precisamente." },
+
+{ tipo: "texto", valor: "Dentro del MCU, el proyecto está pensado como el gran evento que cierre la Saga del Multiverso, lo que inevitablemente hace pensar en una producción enorme. La película podría implicar la participación de personajes procedentes de diferentes universos, además de conexiones con varias de las franquicias actuales de Marvel." },
+
+{ tipo: "texto", valor: "Eso es precisamente lo que ha llevado a muchos fans a imaginar una película todavía más grande de lo habitual." },
+
+{ tipo: "texto", valor: "Pero dividir una historia en dos partes también implica desafíos logísticos enormes: presupuestos todavía más altos, agendas de actores más complicadas y una producción mucho más compleja." },
+
+{ tipo: "texto", valor: "Por ahora, todo apunta a que Marvel prefiere concentrar ese gran evento en una sola película." },
+
+{ tipo: "texto", valor: "Un rumor que probablemente volverá" },
+
+{ tipo: "texto", valor: "Si algo ha demostrado el MCU a lo largo de los años es que los rumores sobre sus grandes eventos van y vienen constantemente. Y con una película tan ambiciosa como Avengers: Secret Wars todavía en desarrollo, es muy probable que sigamos viendo teorías y filtraciones en los próximos meses." },
+
+{ tipo: "texto", valor: "Por el momento, sin embargo, la información más reciente procedente de medios como LRM Online, AOL y ComicBookMovie indica que Marvel Studios no planea dividir la película en dos partes." },
+
+{ tipo: "texto", valor: "Lo que sí parece seguro es que, incluso como una sola película, Secret Wars apunta a ser uno de los eventos cinematográficos más grandes que Marvel haya intentado hasta ahora." },
+
+{ tipo: "texto", valor: "Y con el multiverso de por medio, eso ya es decir bastante." }
+
+    ],
+
+    etiquetas: [
+      "MCU",
+      "Marvel",
+      "Marvel Studios",
+      "Avengers",
+      "Saga del Multiverso",
+      "Kevin Feige",
+      "Estados Unidos",
+      "Superhéroes"
+    ]
+  },
+
+     /* =========================
      EL APARTAMENTO
      ========================= */
 
