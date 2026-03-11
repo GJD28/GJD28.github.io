@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  const criticas = contenido.filter(e => e.seccion === "criticas");
+  const criticas = contenidoOrdenado.filter(e => e.seccion === "criticas");
 
   cargarCarrusel("todas-criticas","criticas-prev","criticas-next",criticas);
 
