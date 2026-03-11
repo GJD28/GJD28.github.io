@@ -481,3 +481,42 @@ footer {
   margin-top: 3rem;
   font-size: 0.9rem;
 }
+
+/* BANNER CON BUSCADOR A LA DERECHA */
+
+.banner-texto{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+/* BUSCADOR */
+
+.buscador{
+  position:relative;
+}
+
+#buscador-input{
+  width:220px;
+  padding:6px 10px;
+  border:1px solid #ccc;
+  border-radius:4px;
+  font-family:Inter, sans-serif;
+  font-size:14px;
+}
+
+/* SUGERENCIAS */
+
+.sugerencias-busqueda{
+  position:absolute;
+  top:36px;
+  right:0;
+  width:220px;
+  background:white;
+  border:1px solid #ddd;
+  border-top:none;
+  display:none;
+  flex-direction:column;
+  z-index:1000;
+}
