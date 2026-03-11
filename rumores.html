@@ -56,16 +56,7 @@ const boton = document.getElementById("boton-mas-rumores");
 
 let visibles = 12;
 
-const rumoresOrdenados = contenido
-.filter(e => e.seccion === "rumores")
-.sort((a,b)=>{
-
-  const [da,ma,ya] = a.fecha_publicacion.split("/");
-  const [db,mb,yb] = b.fecha_publicacion.split("/");
-
-  return new Date(`${yb}-${mb}-${db}`) - new Date(`${ya}-${ma}-${da}`);
-
-});
+const rumoresOrdenados = contenidoOrdenado.filter(e => e.seccion === "rumores");
 
 function pintarRumores(){
 
