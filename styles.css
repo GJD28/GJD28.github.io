@@ -44,6 +44,10 @@ header {
 
 .banner-texto {
   margin-bottom: 0.6rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
 }
 
 header::after {
@@ -484,12 +488,7 @@ footer {
 
 /* BANNER CON BUSCADOR A LA DERECHA */
 
-.banner-texto{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-}
+
 
 /* BUSCADOR */
 
