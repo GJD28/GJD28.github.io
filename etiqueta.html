@@ -17,12 +17,11 @@
 
 <body>
 
-
 <header class="header-etiquetas">
 
 <div class="banner-texto">
 
-<h1>Etiqueta</h1>
+<h1 id="titulo-etiqueta"></h1>
 
 <div class="buscador">
 <input type="text" id="buscador-input" placeholder="Buscar..." autocomplete="off">
@@ -76,12 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
 const params = new URLSearchParams(window.location.search);
 const tag = params.get("tag");
 
-const titulo = tag
-.replace(/-/g," ")
-.replace(/\b\w/g,l => l.toUpperCase());
-
-document.getElementById("titulo-etiqueta").textContent = titulo;
-
 function slugify(texto){
 
 return texto
@@ -89,6 +82,29 @@ return texto
 .replace(/\s+/g,"-");
 
 }
+
+/* título del banner */
+
+const titulo = tag
+.replace(/-/g," ")
+.replace(/\b\w/g,l => l.toUpperCase());
+
+document.getElementById("titulo-etiqueta").textContent = "Etiqueta: " + titulo;
+
+
+/* ordenar contenido por fecha */
+
+const contenidoOrdenado = [...contenido].sort((a,b)=>{
+
+const [da,ma,ya] = a.fecha_publicacion.split("/");
+const [db,mb,yb] = b.fecha_publicacion.split("/");
+
+return new Date(`${yb}-${mb}-${db}`) - new Date(`${ya}-${ma}-${da}`);
+
+});
+
+
+/* cargar carrusel */
 
 function cargarCarrusel(trackId, prevClass, nextClass, entradas){
 
@@ -118,6 +134,9 @@ track.scrollBy({left:300,behavior:"smooth"});
 
 }
 
+
+/* filtrar por etiqueta */
+
 const filtradas = contenidoOrdenado.filter(e => {
 
 if(!e.etiquetas) return false;
@@ -125,6 +144,9 @@ if(!e.etiquetas) return false;
 return e.etiquetas.some(et => slugify(et) === tag);
 
 });
+
+
+/* mostrar resultados */
 
 cargarCarrusel("entradas-etiqueta","etiqueta-prev","etiqueta-next",filtradas);
 
