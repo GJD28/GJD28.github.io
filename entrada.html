@@ -151,14 +151,17 @@ if(meta && entrada.entradilla){
 
   /* CONTENIDO TEXTO */
 
-  entrada.contenido.forEach(bloque => {
+entrada.contenido.forEach(bloque => {
 
-    if(bloque.tipo === "texto"){
-      html += `<p>${bloque.valor}</p>`;
-    }
+  if(bloque.tipo === "texto"){
+    html += `<p>${bloque.valor}</p>`;
+  }
 
-  });
+  else if(bloque.tipo === "subtitulo"){
+    html += `<h3 class="subtitulo">${bloque.valor}</h3>`;
+  }
 
+});
 
   /* VALORACIÓN */
 
