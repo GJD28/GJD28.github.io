@@ -381,45 +381,61 @@ const contenido = [
     ]
   },
 
- 
-
-  /* =========================
+   /* =========================
      OBI-WAN RUMOR
      ========================= */
 
   {
     id: "obi-wan-ahsoka-rumor",
     seccion: "rumores",
-    titulo: "Un rumor apunta a un posible regreso de Obi-Wan Kenobi en la segunda temporada de Ahsoka",
+    titulo: "Un rumor apunta al posible regreso de Obi-Wan en Ahsoka temporada 2… y todo empezó con un comentario del equipo de rodaje",
     autor: "Nil Miralles",
     fecha_publicacion: "12/03/2026",
-    destacada: false,
+    destacada: true,
     imagen: {
       src: "ashoka.png",
       alt: "Ahsoka Tano dentro del universo de Star Wars"
     },
-    entradilla: "Un nuevo rumor sugiere que Obi-Wan Kenobi podría aparecer en la segunda temporada de Ahsoka, aunque todo apunta a que sería una intervención breve dentro de la historia.",
+    entradilla: "Un comentario aparentemente inocente de un especialista de la serie ha desatado un nuevo rumor sobre el posible regreso de Ewan McGregor como Obi-Wan Kenobi en la segunda temporada de Ahsoka.",
     contenido: [
 
-{ tipo: "texto", valor: "Un nuevo rumor dentro del ecosistema habitual de filtraciones de Star Wars apunta a una posibilidad bastante interesante: el regreso de Obi-Wan Kenobi en la segunda temporada de Ahsoka." },
+{ tipo: "texto", valor: "Si hay algo que el fandom de Star Wars ha aprendido con los años es que los rumores pueden empezar en los lugares más inesperados. A veces es una foto filtrada, otras una pieza de merchandising… y en este caso todo parece haber arrancado con un comentario aparentemente inocente de alguien que trabajó en la serie." },
+
+{ tipo: "texto", valor: "En los últimos días varios medios especializados han recogido un rumor que apunta a un posible regreso de Ewan McGregor como Obi-Wan Kenobi en la segunda temporada de Ahsoka. No hay confirmación oficial por parte de Lucasfilm, pero el detalle que ha encendido la conversación entre los fans es bastante curioso." },
 
 { tipo: "subtitulo", valor: "El comentario que ha despertado las especulaciones" },
 
-{ tipo: "texto", valor: "Según esta información, el personaje podría tener algún tipo de aparición dentro de la serie, aunque no se trataría de un papel protagonista dentro de la trama." },
+{ tipo: "texto", valor: "El origen del rumor se remonta a una investigación publicada por Bespin Bulletin, que encontró varios vídeos de un creador de contenido que aparentemente formó parte del equipo de especialistas de la segunda temporada de la serie." },
+
+{ tipo: "texto", valor: "En esos vídeos aparecía mostrando merchandising del equipo de rodaje, como chaquetas y prendas utilizadas por el equipo de producción de la nueva temporada." },
+
+{ tipo: "texto", valor: "Hasta ahí todo normal. Pero en una respuesta en redes sociales el especialista dejó caer una frase que llamó inmediatamente la atención de los fans. Recordando sus momentos favoritos trabajando en proyectos de Star Wars, mencionó uno en particular:" },
+
+{ tipo: "texto", valor: "“Cuando Ewan me dejó sostener el sable de luz de Ahsoka”." },
+
+{ tipo: "texto", valor: "La referencia directa a “Ewan” fue suficiente para que muchos interpretaran que Ewan McGregor habría estado presente durante el rodaje, lo que rápidamente disparó las teorías sobre un posible cameo de Obi-Wan." },
 
 { tipo: "subtitulo", valor: "Varios medios se hacen eco del rumor" },
 
-{ tipo: "texto", valor: "El propio análisis de Cosmic Book News apunta a que el personaje podría aparecer en forma de flashback, visión de la Fuerza o escena relacionada con el pasado de Anakin Skywalker." },
+{ tipo: "texto", valor: "A partir de ese comentario, distintos portales especializados empezaron a recoger la historia." },
 
-{ tipo: "texto", valor: "No sería algo extraño para la serie. La primera temporada de Ahsoka ya utilizó el regreso de Hayden Christensen como Anakin dentro de una secuencia ambientada en el misterioso 'World Between Worlds', una forma bastante elegante de explorar la historia de los personajes sin romper la cronología de la saga." },
+{ tipo: "texto", valor: "En Cosmic Book News señalan que el mensaje del especialista sugiere que McGregor pudo haber estado en el set durante el rodaje de la segunda temporada, lo que habría provocado la oleada de especulación sobre el regreso del personaje." },
 
-{ tipo: "texto", valor: "Además, Ahsoka y Obi-Wan comparten una conexión muy clara dentro del universo de Star Wars: ambos fueron figuras clave en la vida de Anakin durante las Guerras Clon." },
+{ tipo: "texto", valor: "Por su parte, GeekTyrant explica que el detalle encajaría con otros rumores previos que hablaban de posibles escenas relacionadas con el pasado de Anakin Skywalker y los personajes más cercanos a él." },
+
+{ tipo: "texto", valor: "Y en Murphy’s Multiverse incluso van un paso más allá al señalar que la filtración podría indicar un regreso del actor dentro de la historia, algo que algunos fans ya interpretan como una pista bastante clara." },
+
+{ tipo: "texto", valor: "En todos los casos, sin embargo, se trata de información basada en un detalle del equipo de producción, no en confirmaciones oficiales." },
 
 { tipo: "subtitulo", valor: "Cómo podría encajar Obi-Wan en la historia" },
 
 { tipo: "texto", valor: "Si el rumor terminara siendo cierto, lo más probable es que la aparición de Obi-Wan no fuese un papel principal dentro de la trama." },
 
-{ tipo: "texto", valor: "La lógica detrás de esta posibilidad es bastante clara: una aparición breve permitiría explorar la relación entre los personajes sin alterar los acontecimientos principales de la serie." },
+{ tipo: "texto", valor: "El propio análisis de Cosmic Book News apunta a que el personaje podría aparecer en forma de flashback, visión de la Fuerza o escena relacionada con el pasado de Anakin Skywalker." },
+
+{ tipo: "texto", valor: "No sería algo extraño para la serie. La primera temporada de Ahsoka ya utilizó el regreso de Hayden Christensen como Anakin dentro de una secuencia ambientada en el misterioso “World Between Worlds”, una forma bastante elegante de explorar la historia de los personajes sin romper la cronología de la saga." },
+
+{ tipo: "texto", valor: "Además, Ahsoka y Obi-Wan comparten una conexión muy clara dentro del universo de Star Wars: ambos fueron figuras clave en la vida de Anakin durante las Guerras Clon." },
 
 { tipo: "subtitulo", valor: "Por ahora sigue siendo solo un rumor" },
 
