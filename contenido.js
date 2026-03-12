@@ -382,57 +382,47 @@ const contenido = [
      ========================= */
 
   {
-    id: "obi-wan-ahsoka-rumor",
-    seccion: "rumores",
-    titulo: "Un rumor apunta a un posible regreso de Obi-Wan Kenobi en la segunda temporada de Ahsoka",
-    autor: "Nil Miralles",
-    fecha_publicacion: "12/03/2026",
-    destacada: false,
-    imagen: {
-      src: "ashoka.png",
-      alt: "Ahsoka Tano dentro del universo de Star Wars"
-    },
-    entradilla: "Un nuevo rumor sugiere que Obi-Wan Kenobi podría aparecer en la segunda temporada de Ahsoka, aunque todo apunta a que sería una intervención breve dentro de la historia.",
-    contenido: [
-
-{ tipo: "texto", valor: "Un nuevo rumor dentro del ecosistema habitual de filtraciones de Star Wars apunta a una posibilidad bastante interesante: el regreso de Obi-Wan Kenobi en la segunda temporada de Ahsoka." },
-
-{ tipo: "texto", valor: "Según esta información, el personaje podría tener algún tipo de aparición dentro de la serie, aunque no se trataría de un papel protagonista dentro de la trama." },
-
-{ tipo: "texto", valor: "Cómo podría encajar Obi-Wan en la historia" },
-
-{ tipo: "texto", valor: "Si el rumor terminara siendo cierto, lo más probable es que la aparición de Obi-Wan no fuese un papel principal dentro de la trama." },
-
-{ tipo: "texto", valor: "El propio análisis de Cosmic Book News apunta a que el personaje podría aparecer en forma de flashback, visión de la Fuerza o escena relacionada con el pasado de Anakin Skywalker." },
-
-{ tipo: "texto", valor: "No sería algo extraño para la serie. La primera temporada de Ahsoka ya utilizó el regreso de Hayden Christensen como Anakin dentro de una secuencia ambientada en el misterioso 'World Between Worlds', una forma bastante elegante de explorar la historia de los personajes sin romper la cronología de la saga." },
-
-{ tipo: "texto", valor: "Además, Ahsoka y Obi-Wan comparten una conexión muy clara dentro del universo de Star Wars: ambos fueron figuras clave en la vida de Anakin durante las Guerras Clon." },
-
-{ tipo: "texto", valor: "Por ahora sigue siendo solo un rumor" },
-
-{ tipo: "texto", valor: "Como suele ocurrir con este tipo de historias, Lucasfilm no ha confirmado nada oficialmente. Y con producciones de este tamaño es bastante habitual que aparezcan detalles ambiguos que luego no terminan formando parte del resultado final." },
-
-{ tipo: "texto", valor: "Lo que sí está claro es que la segunda temporada de Ahsoka sigue siendo uno de los proyectos más importantes del universo televisivo de Star Wars. Y si algo ha demostrado Dave Filoni con esta serie es que le gusta explorar las conexiones entre los personajes clásicos de la saga." },
-
-{ tipo: "texto", valor: "Así que, de momento, el posible regreso de Obi-Wan Kenobi queda en el terreno de los rumores." },
-
-{ tipo: "texto", valor: "Pero si al final vemos a Ahsoka reencontrándose con el antiguo maestro de Anakin… digamos que no sería precisamente el cameo más extraño que ha hecho Star Wars últimamente." }
-
-    ],
-
-    etiquetas: [
-      "Star Wars",
-      "Lucasfilm",
-      "Ahsoka",
-      "Obi-Wan Kenobi",
-      "Anakin Skywalker",
-      "Dave Filoni",
-      "Disney+",
-      "Estados Unidos",
-      "Ciencia ficción"
-    ]
+  id: "obi-wan-secret-wars-rumor",
+  seccion: "rumores",
+  titulo: "Un comentario sobre Obi-Wan en Secret Wars despierta especulaciones entre los fans",
+  autor: "Nil Miralles",
+  fecha_publicacion: "12/03/2026",
+  destacada: false,
+  imagen: {
+    src: "obiwan-secret-wars.png",
+    alt: "Posible aparición de Obi-Wan Kenobi en Avengers: Secret Wars"
   },
+  entradilla: "Un comentario reciente ha encendido la imaginación de algunos fans del MCU, que ya especulan con la posible presencia de Obi-Wan Kenobi en Secret Wars.",
+  contenido: [
+
+    { tipo: "subtitulo", valor: "El comentario que ha despertado las especulaciones" },
+
+    { tipo: "texto", valor: "El origen del rumor está en un comentario aparentemente casual que ha empezado a circular en redes y foros especializados. A partir de esa frase, varios aficionados han comenzado a plantear la posibilidad de que el personaje de Obi-Wan Kenobi pueda aparecer en Avengers: Secret Wars dentro de algún tipo de cruce multiversal." },
+
+    { tipo: "subtitulo", valor: "Varios medios se hacen eco del rumor" },
+
+    { tipo: "texto", valor: "A partir de ese momento, algunos medios y páginas dedicadas al seguimiento del MCU han recogido la especulación. Aunque ninguno de ellos aporta información confirmada, el simple hecho de que el comentario haya empezado a circular ha bastado para alimentar la conversación entre los fans." },
+
+    { tipo: "subtitulo", valor: "Cómo podría encajar Obi-Wan en la historia" },
+
+    { tipo: "texto", valor: "La teoría de los aficionados parte de la lógica del propio multiverso. Si Secret Wars pretende reunir personajes de distintos universos cinematográficos, algunos fans imaginan que podrían aparecer figuras procedentes de franquicias ajenas al MCU. En ese escenario hipotético, la aparición de Obi-Wan sería un cameo o una referencia breve dentro de un evento multiversal mucho mayor." },
+
+    { tipo: "subtitulo", valor: "Por ahora sigue siendo solo un rumor" },
+
+    { tipo: "texto", valor: "Por supuesto, por ahora no hay ninguna confirmación oficial que apunte en esa dirección. Marvel Studios no ha hecho ningún comentario sobre esta posibilidad y todo sigue perteneciendo al terreno de la especulación. Como ocurre con muchos rumores relacionados con grandes producciones del estudio, probablemente pasará tiempo antes de saber si hay algo de verdad detrás de esta teoría." }
+
+  ],
+  etiquetas: [
+    "MCU",
+    "Marvel Studios",
+    "Avengers",
+    "Secret Wars",
+    "Obi-Wan Kenobi",
+    "Kevin Feige",
+    "Estados Unidos",
+    "Superhéroes"
+  ]
+}
    
   /* =========================
      UN LUGAR TRANQUILO
