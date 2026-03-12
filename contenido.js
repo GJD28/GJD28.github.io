@@ -386,7 +386,7 @@ const contenido = [
     seccion: "rumores",
     titulo: "Un rumor apunta a un posible regreso de Obi-Wan Kenobi en la segunda temporada de Ahsoka",
     autor: "Nil Miralles",
-    fecha_publicacion: "11/03/2026",
+    fecha_publicacion: "12/03/2026",
     destacada: false,
     imagen: {
       src: "ashoka.png",
