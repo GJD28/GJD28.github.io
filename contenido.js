@@ -315,7 +315,7 @@ const contenido = [
       "Estados Unidos",
       "Superhéroes"
     ]
-  },,
+  },
 
      /* =========================
      EL APARTAMENTO
