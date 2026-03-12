@@ -305,7 +305,7 @@ const contenido = [
 
     ],
 
-    etiquetas: [
+     etiquetas: [
       "MCU",
       "Marvel",
       "Marvel Studios",
@@ -316,6 +316,10 @@ const contenido = [
       "Superhéroes"
     ]
   },
+
+     /* =========================
+     EL APARTAMENTO
+     ========================= */
 
      /* =========================
      EL APARTAMENTO
