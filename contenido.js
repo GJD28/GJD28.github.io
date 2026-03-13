@@ -461,6 +461,62 @@ const contenido = [
       "Ciencia ficción"
     ]
   },
+
+  /* =========================
+     PIZZA MOVIES
+     ========================= */
+
+  {
+    id: "pizza-movies-2026",
+    seccion: "criticas",
+    titulo: "Pizza Movies",
+    autor: "Irene Salgado",
+    fecha_publicacion: "13/03/2026",
+    director: "Carlo Padial",
+    año: 2026,
+    nota: 3,
+    destacada: false,
+    imagen: {
+      src: "pizza-movies.png",
+      alt: "Pizza Movies (2026), dirigida por Carlo Padial"
+    },
+    entradilla: "Una comedia libre y juguetona presentada en el Festival de Málaga que mezcla cine, precariedad creativa y humor con espíritu de reunión entre amigos.",
+    contenido: [
+
+{ tipo: "texto", valor: "Salgo de ver Pizza Movies en el Festival de Málaga con esa sensación que me gusta mucho cuando voy a festivales: la de haber visto algo raro en el buen sentido. No raro por extravagante, sino raro porque se mueve a su aire y parece que no le preocupa demasiado encajar en ningún molde concreto. Carlo Padial propone una comedia que respira con libertad, como si la película avanzara al ritmo de las ideas que le van apeteciendo." },
+
+{ tipo: "texto", valor: "La premisa tiene algo muy simpático desde el principio. Una pareja siente que su vida profesional se ha ido quedando pequeña y decide abrir una pizzería dedicada al cine. La idea ya tiene gracia por sí sola. Yo la escuché en la sinopsis y pensé que era una locura bonita. Luego la película se encarga de explorar esa locura con bastante cariño." },
+
+{ tipo: "texto", valor: "El centro está en la relación entre Berto Romero y Judit Martín. Los dos forman una pareja que se siente muy reconocible. Hay cansancio, hay bromas privadas, hay discusiones pequeñas que se olvidan rápido. Me gusta cómo se acompañan en pantalla. Transmiten la sensación de dos personas que llevan tiempo caminando juntas y que, incluso cuando toman decisiones absurdas, lo hacen con una mezcla de cariño y resignación muy humana." },
+
+{ tipo: "texto", valor: "Carlo Padial dirige con ese estilo suyo tan particular. Sus películas suelen moverse entre la observación del mundo cultural y el humor un poco caótico. Aquí ocurre algo parecido. La historia avanza con momentos muy definidos y otros que parecen surgir simplemente porque la idea le hace gracia al director. Esa libertad forma parte del juego. Hay escenas que funcionan como chistes muy claros y otras que se quedan flotando con una sonrisa medio torcida." },
+
+{ tipo: "texto", valor: "El reparto se mueve muy bien dentro de ese tono. Además de los protagonistas aparecen rostros muy reconocibles del cine y la comedia española. Por la película pasan Bruna Cusí, Raúl Arévalo, Joaquín Reyes o Miguel Noguera, y cada aparición suma un pequeño momento de humor o de complicidad. A mí me gusta mucho cuando las películas tienen ese aire de reunión entre amigos que se entienden." },
+
+{ tipo: "texto", valor: "Hay también algo que me toca especialmente porque tiene que ver con el cine en sí. Pizza Movies mira al mundo creativo con una mezcla de ironía y cariño. Aparecen bromas sobre la precariedad, sobre los sueños que a veces se desinflan, sobre la necesidad de seguir inventando cosas aunque parezcan ridículas. Yo conecto bastante con esa idea. A veces una idea absurda es lo único que mantiene viva la ilusión." },
+
+{ tipo: "texto", valor: "La pizzería funciona como corazón de la película. Es un espacio pequeño, casi doméstico, donde entran personajes, conversaciones y ocurrencias. Ese lugar acaba teniendo algo acogedor. Me imaginaba sentándome allí, comiendo una pizza con nombres de películas y escuchando a la gente discutir sobre cine durante horas." },
+
+{ tipo: "texto", valor: "La película avanza con un ritmo irregular, eso es verdad. Hay momentos que funcionan muy bien y otros que parecen existir simplemente porque a Padial le apetecía probar algo. Yo acepto ese tipo de cine cuando detecto cariño por lo que se está haciendo. Aquí ese cariño está bastante claro." },
+
+{ tipo: "texto", valor: "Dentro del Festival de Málaga, donde conviven propuestas muy distintas, Pizza Movies se siente como una comedia pequeña, juguetona y muy consciente del mundo cultural en el que vive. Sales con la sensación de haber pasado un rato curioso, de haber visto algo que no se parece demasiado a lo demás." },
+
+{ tipo: "texto", valor: "Y eso, en un festival, siempre me parece una buena noticia." }
+
+    ],
+    etiquetas: [
+      "Carlo Padial",
+      "Berto Romero",
+      "Judit Martín",
+      "Bruna Cusí",
+      "Raúl Arévalo",
+      "Joaquín Reyes",
+      "Miguel Noguera",
+      "2026",
+      "Comedia",
+      "España"
+    ]
+  },
    
   /* =========================
      UN LUGAR TRANQUILO
