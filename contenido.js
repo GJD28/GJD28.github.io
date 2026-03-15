@@ -608,6 +608,12 @@ function crearTarjeta(e, modo = "normal") {
 
   let bannerHTML = "";
 
+   let estrenoHTML = "";
+
+if(esEstrenoActivo(e)){
+  estrenoHTML = `<div class="banner-estreno"></div>`;
+}
+
   if (modo === "inicio" || modo === "autor") {
 
     let tipoClase = "";
@@ -651,5 +657,25 @@ function crearTarjeta(e, modo = "normal") {
     </a>
   `;
 
-  return item;
+   return item;
+}
+
+
+/* =========================
+   DETECTAR ESTRENOS
+   ========================= */
+
+function esEstrenoActivo(entrada){
+
+  if(!entrada.estreno) return false;
+
+  const [d,m,y] = entrada.fecha_publicacion.split("/");
+  const fechaPublicacion = new Date(`${y}-${m}-${d}`);
+
+  const hoy = new Date();
+
+  const dias = (hoy - fechaPublicacion) / (1000*60*60*24);
+
+  return dias <= 28;
+
 }
