@@ -517,6 +517,60 @@ const contenido = [
       "España"
     ]
   },
+
+  /* =========================
+     YO NO MORIRÉ DE AMOR
+     ========================= */
+
+  {
+    id: "yo-no-morire-de-amor-2026",
+    seccion: "criticas",
+    titulo: "Yo no moriré de amor",
+    autor: "Dolores Aranda",
+    fecha_publicacion: "15/03/2026",
+    director: "Marta Matute",
+    año: 2026,
+    nota: 3.5,
+    destacada: false,
+    estreno: true,
+    imagen: {
+      src: "yo-no-morire-de-amor.png",
+      alt: "Yo no moriré de amor (2026), dirigida por Marta Matute"
+    },
+    entradilla: "Un drama íntimo que observa la enfermedad desde la vida cotidiana y desde la mirada de una hija que intenta sostener la normalidad mientras todo empieza a cambiar.",
+    contenido: [
+
+{ tipo: "texto", valor: "El cine suele acercarse a la enfermedad desde el dramatismo. El conflicto se convierte en el motor visible de la historia. Yo no moriré de amor adopta un camino más silencioso. La película observa la enfermedad como una transformación lenta de la vida cotidiana." },
+
+{ tipo: "texto", valor: "La historia sigue a Claudia, una chica de dieciocho años cuya vida cambia cuando su madre empieza a perder la memoria. La película se sitúa completamente en esa edad concreta. La juventud suele aparecer en el cine como un momento de expansión: decisiones nuevas, descubrimientos, primeras experiencias. Aquí ese impulso convive con una responsabilidad inesperada. La protagonista se encuentra en medio de dos tiempos distintos de la vida." },
+
+{ tipo: "texto", valor: "Júlia Mascort sostiene la película con una interpretación muy contenida. Claudia atraviesa el relato intentando mantener una normalidad que cada día resulta más difícil. La enfermedad de su madre transforma la dinámica familiar y obliga a reorganizar la vida doméstica alrededor del cuidado." },
+
+{ tipo: "texto", valor: "El personaje de la madre, interpretado por Sonia Almarcha, introduce el elemento más frágil de la historia. La película se acerca a su deterioro con una mirada cercana, concentrada en los cambios pequeños que alteran la relación entre madre e hija. El reconocimiento empieza a volverse incierto. La memoria deja de ser un territorio estable." },
+
+{ tipo: "texto", valor: "La presencia del padre, interpretado por Tomás del Estal, añade otra dimensión al retrato familiar. La película muestra cómo cada miembro de la familia responde de manera distinta a la enfermedad. El hogar se convierte en el centro emocional de la historia, un espacio donde las rutinas diarias adquieren un peso cada vez mayor." },
+
+{ tipo: "texto", valor: "Marta Matute dirige la película con una puesta en escena sobria. El relato avanza a través de escenas domésticas, conversaciones y momentos de convivencia donde la enfermedad aparece integrada en la vida diaria. La cámara permanece cerca de los personajes, observando los cambios en sus relaciones." },
+
+{ tipo: "texto", valor: "Ese enfoque da forma al tema central de la película: la experiencia del cuidado. El relato sigue el desgaste emocional que acompaña a esa responsabilidad. La juventud de Claudia introduce una tensión constante entre su propia vida y las necesidades de su madre." },
+
+{ tipo: "texto", valor: "La película encuentra su fuerza en esa observación íntima de la vida familiar. El título introduce una idea de resistencia emocional. La historia termina construyéndose alrededor de esa resistencia, de la forma en que el afecto persiste incluso cuando la memoria empieza a desaparecer." },
+
+{ tipo: "texto", valor: "El resultado es un drama contenido que mira de cerca la fragilidad de las relaciones cuando la enfermedad altera el equilibrio de una familia." }
+
+    ],
+    etiquetas: [
+      "Marta Matute",
+      "Júlia Mascort",
+      "Sonia Almarcha",
+      "Tomás del Estal",
+      "Distinto Films",
+"Dos Soles Media",
+       "2026",
+      "Drama",
+      "España"
+    ]
+  },
    
   /* =========================
      UN LUGAR TRANQUILO
