@@ -664,6 +664,16 @@ function crearTarjeta(e, modo = "normal") {
 
    let estrenoHTML = "";
 
+   let autorBannerHTML = "";
+
+if (modo !== "autor") {
+  autorBannerHTML = `
+    <div class="miniatura-autor">
+      ${e.autor.toUpperCase()}
+    </div>
+  `;
+}
+
 if(esEstrenoActivo(e)){
   estrenoHTML = `<div class="miniatura-estreno">ESTRENO</div>`;
 }
@@ -696,17 +706,16 @@ if(esEstrenoActivo(e)){
 
   let metaHTML = "";
 
-  if (modo !== "autor") {
-    metaHTML = `<div class="meta">${e.autor}</div>`;
-  }
+
 
   item.innerHTML = `
     <a href="entrada.html?id=${e.id}">
       <div class="miniatura-wrapper">
-        <img src="${e.imagen.src}" alt="${e.imagen.alt}">
-        ${bannerHTML}
-      ${estrenoHTML}
-      </div>
+  <img src="${e.imagen.src}" alt="${e.imagen.alt}">
+  ${autorBannerHTML}
+  ${bannerHTML}
+  ${estrenoHTML}
+</div>
       <h3>${e.titulo}</h3>
       ${metaHTML}
     </a>
