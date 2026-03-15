@@ -678,28 +678,28 @@ if(esEstrenoActivo(e)){
   estrenoHTML = `<div class="miniatura-estreno">ESTRENO</div>`;
 }
 
-  if (modo === "inicio" || modo === "autor") {
+  if (modo !== "rumores") {
 
-    let tipoClase = "";
-    let tipoTexto = "";
+  let tipoClase = "";
+  let tipoTexto = "";
 
-    if (e.seccion === "criticas") {
-      tipoClase = "tipo-critica";
-      tipoTexto = "CRÍTICA";
-    } else if (e.seccion === "articulos") {
-      tipoClase = "tipo-articulo";
-      tipoTexto = "ARTÍCULO";
-    } else if (e.seccion === "rumores") {
-      tipoClase = "tipo-rumor";
-      tipoTexto = "RUMOR";
-    }
-
-    bannerHTML = `
-      <div class="miniatura-banner ${tipoClase}">
-        ${tipoTexto}
-      </div>
-    `;
+  if (e.seccion === "criticas") {
+    tipoClase = "tipo-critica";
+    tipoTexto = "CRÍTICA";
+  } else if (e.seccion === "articulos") {
+    tipoClase = "tipo-articulo";
+    tipoTexto = "ARTÍCULO";
+  } else if (e.seccion === "rumores") {
+    tipoClase = "tipo-rumor";
+    tipoTexto = "RUMOR";
   }
+
+  bannerHTML = `
+    <div class="miniatura-banner ${tipoClase}">
+      ${tipoTexto}
+    </div>
+  `;
+}
 
   const item = document.createElement("div");
   item.className = "carousel-item";
