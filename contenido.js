@@ -651,6 +651,7 @@ if(esEstrenoActivo(e)){
       <div class="miniatura-wrapper">
         <img src="${e.imagen.src}" alt="${e.imagen.alt}">
         ${bannerHTML}
+      ${estrenoHTML}
       </div>
       <h3>${e.titulo}</h3>
       ${metaHTML}
