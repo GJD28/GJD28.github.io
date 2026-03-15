@@ -190,6 +190,24 @@ main {
   color: #fff;
 }
 
+/* =========================
+   BANNER ESTRENO
+   ========================= */
+
+.miniatura-estreno {
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  width: 100%;
+  padding: 0.25rem 0;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background: #7f9a5a;
+}
+
 .tipo-critica { background: #556b2f; }
 .tipo-articulo { background: #b30000; }
 .tipo-rumor { background: #0055aa; }
