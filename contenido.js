@@ -611,7 +611,7 @@ function crearTarjeta(e, modo = "normal") {
    let estrenoHTML = "";
 
 if(esEstrenoActivo(e)){
-  estrenoHTML = `<div class="banner-estreno"></div>`;
+  estrenoHTML = `<div class="miniatura-estreno">ESTRENO</div>`;
 }
 
   if (modo === "inicio" || modo === "autor") {
