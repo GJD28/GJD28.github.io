@@ -206,6 +206,7 @@ main {
   letter-spacing: 0.05em;
   color: #fff;
   background: #000;
+  z-index: 3;
 }
 
 /* =========================
