@@ -214,11 +214,10 @@ main {
 
 /* =========================
    BANNER ESTRENO
-   ========================= */
 
 .miniatura-estreno {
   position: absolute;
-  bottom: 28px;
+  bottom: 32px;
   left: 0;
   width: 100%;
   padding: 0.25rem 0;
@@ -228,6 +227,7 @@ main {
   letter-spacing: 0.05em;
   color: #fff;
   background: #7f9a5a;
+  z-index: 2;
 }
 
 .tipo-critica { background: #556b2f; }
