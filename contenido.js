@@ -9,11 +9,11 @@ const fichasAutores = {
     bio: "Me emociono fácil con el cine y me implico sin demasiadas defensas. Soy bastante hooligan de Scorsese cuando decide bajar el volumen y dejar que el tiempo haga su trabajo, y me pierdo con gusto cada vez que Isabelle Huppert entra en un plano. Me encantan las películas que apetece volver a ver sin una razón clara y las que te hacen recomendar cosas como si fueran descubrimientos personales. Vivo el cine con entusiasmo, con curiosidad y con una alegría muy poco sofisticada. Escribo desde ahí, desde las ganas sinceras de compartir algo que me ha tocado."
   },
 
-  "Paula Elizábal": {
-    nombre: "Paula Elizábal",
-    foto: "paula-elizabal.png",
-    bio: "Entiendo el cine como una experiencia física antes que intelectual. Me interesan las películas que generan atmósferas, que trabajan el ritmo y que consiguen quedarse en el cuerpo mucho después de haber terminado. El terror es uno de mis territorios naturales, especialmente cuando apuesta por construir sensaciones en lugar de limitarse al susto fácil. Escribo desde esa relación directa con lo que veo, desde lo que me provoca."
-  },
+ "Paula Elizábal": {
+  nombre: "Paula Elizábal",
+  foto: "paula-elizabal.png",
+  bio: "No recuerdo una primera película que lo cambiara todo. Recuerdo ver demasiadas, una detrás de otra, hasta el punto de aprenderme diálogos y escenas casi sin darme cuenta. Con el tiempo empecé a fijarme cada vez más en la imagen, en cómo una película puede sostenerse solo por lo que transmite sin necesidad de explicarlo todo.\n\nMe interesan las películas que tienen personalidad y que confían en lo que están mostrando. En el terror es donde más encuentro eso, aunque no el único sitio donde existe. Es una cuestión de mirada. Cuando una película consigue que algo se quede dentro y vuelva después, ahí hay algo que merece la pena."
+},
    
   "Germán Juncosa": {
     nombre: "Germán Juncosa",
