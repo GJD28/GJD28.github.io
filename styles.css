@@ -190,6 +190,7 @@ main {
   font-weight: 600;
   letter-spacing: 0.05em;
   color: #fff;
+  z-index: 1;
 }
 
 /* =========================
