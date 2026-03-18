@@ -9,6 +9,12 @@ const fichasAutores = {
     bio: "Me emociono fácil con el cine y me implico sin demasiadas defensas. Soy bastante hooligan de Scorsese cuando decide bajar el volumen y dejar que el tiempo haga su trabajo, y me pierdo con gusto cada vez que Isabelle Huppert entra en un plano. Me encantan las películas que apetece volver a ver sin una razón clara y las que te hacen recomendar cosas como si fueran descubrimientos personales. Vivo el cine con entusiasmo, con curiosidad y con una alegría muy poco sofisticada. Escribo desde ahí, desde las ganas sinceras de compartir algo que me ha tocado."
   },
 
+  "Paula Elizábal": {
+    nombre: "Paula Elizábal",
+    foto: "paula-elizabal.png",
+    bio: "Entiendo el cine como una experiencia física antes que intelectual. Me interesan las películas que generan atmósferas, que trabajan el ritmo y que consiguen quedarse en el cuerpo mucho después de haber terminado. El terror es uno de mis territorios naturales, especialmente cuando apuesta por construir sensaciones en lugar de limitarse al susto fácil. Escribo desde esa relación directa con lo que veo, desde lo que me provoca."
+  },
+   
   "Germán Juncosa": {
     nombre: "Germán Juncosa",
     foto: "german-juncosa2.png",
@@ -462,6 +468,75 @@ const contenido = [
     ]
   },
 
+  /* =========================
+     SINISTER
+     ========================= */
+
+  {
+    id: "sinister-2012",
+    seccion: "criticas",
+    titulo: "Sinister",
+    autor: "Paula Elizábal",
+    fecha_publicacion: "18/03/2026",
+    director: "Scott Derrickson",
+    año: 2012,
+    nota: 5,
+    destacada: false,
+    imagen: {
+      src: "sinister.png",
+      alt: "Sinister (2012), dirigida por Scott Derrickson"
+    },
+    entradilla: "Un ejercicio de terror que construye el miedo desde la atmósfera y el ritmo, hasta convertirlo en una experiencia que se queda dentro del espectador.",
+    contenido: [
+
+{ tipo: "texto", valor: "Hay un momento muy concreto en Sinister en el que ya estás dentro y no hay vuelta atrás. No es un susto, ni un giro, ni una revelación. Es la sensación de que la película ha tomado el control del ritmo al que respiras. Y a partir de ahí todo va a su tempo." },
+
+{ tipo: "texto", valor: "La historia es sencilla y casi da igual. Un escritor de true crime se muda con su familia a una casa donde ocurrió un asesinato porque quiere sacar de ahí un libro. Rebuscando en el desván encuentra unas cintas domésticas. Empieza a verlas. Con eso la película ya ha abierto la puerta y decide no cerrarla." },
+
+{ tipo: "texto", valor: "Scott Derrickson entiende algo que muy pocos directores de terror parecen tener claro: el miedo es más genuino cuando se cultiva y se deja crecer dentro del espectador, cuando se construye plano a plano, dejando que las escenas se muevan a un ritmo natural para que el conjunto empiece a incomodar de verdad." },
+
+{ tipo: "texto", valor: "Y ahí entran las cintas." },
+
+{ tipo: "texto", valor: "Cada una es un descenso hacia la oscuridad. Están pensadas para que te quedes mirando aunque notes que algo va mal. La textura de la imagen, el ritmo, el silencio antes de que ocurra algo… Cada detalle está colocado con una precisión enfermiza." },
+
+{ tipo: "texto", valor: "La del cortacésped es directamente una de las mejores escenas de terror de este siglo. Y también del anterior. Por cómo se alarga, por cómo te obliga a anticipar, por cómo llega sin necesidad de adornos. Si llegas a ese punto sin estar enganchado a la película, ahí te quedas totalmente atrapado en ella." },
+
+{ tipo: "texto", valor: "El sonido hace el resto. Hay momentos en los que parece que la película está enferma. Esa sensación se te mete en el cuerpo y se queda ahí, incómoda. Y, como quien mira un accidente en la carretera, sabes que no deberías hacerlo, que deberías apartar la vista, pero simplemente no puedes." },
+
+{ tipo: "texto", valor: "Ethan Hawke está perfecto porque entiende que su personaje va perdiendo el control poco a poco. El actor lo acepta y deja que esa sensación de su personaje sirva de espejo para la que sentimos nosotros al otro lado de la pantalla." },
+
+{ tipo: "texto", valor: "Y luego está Bughuul." },
+
+{ tipo: "texto", valor: "El diseño del personaje, la forma en la que aparece, cómo se integra en las imágenes… todo en él tiene algo profundamente inquietante. Es uno de esos villanos cuya simple presencia ya es más que suficiente y consigue, hasta cierto punto, superar el impacto que generan sus acciones. Cuando Bughuul invade la película, uno no puede hacer nada que no sea rendirse." },
+
+{ tipo: "texto", valor: "Aquí es donde muchas otras películas fallan, y esta no." },
+
+{ tipo: "texto", valor: "El tramo final cambia el tipo de miedo. Se vuelve más explícito, más definido. Parte de la inquietud inicial se transforma en otra cosa más reconocible. Pasa de lo abstracto a lo concreto y, contrariamente a lo que cabría esperar, sigue manteniendo el nivel." },
+
+{ tipo: "texto", valor: "Porque lo que te llevas de Sinister son tantas cosas que no tendría ningún sentido reducirlo a la historia, al villano, a la resolución, a los sustos puntuales o al aire perturbador que la compone. Lo que te llevas son imágenes y sensaciones que no puedes despegar de ti de ninguna forma. De nada sirve cerrar los ojos ni encender todas las luces de casa, porque la cosecha del terror cultivado en tu interior es tan grande que no te deja ir a ninguna otra parte." },
+
+{ tipo: "texto", valor: "Y eso, dentro del terror, es muy raro." },
+
+{ tipo: "texto", valor: "Por eso está donde está. Y por eso vuelve una y otra vez. Por eso es, para mí, una de las tres grandes películas de terror que nos ha dado el cine." }
+
+    ],
+    etiquetas: [
+      "Scott Derrickson",
+      "Ethan Hawke",
+      "James Ransone",
+      "2012",
+      "Terror",
+      "Thriller",
+      "Christopher Young",
+      "Chris Norr",
+      "Scott Derrickson",
+      "C. Robert Cargill",
+      "Blumhouse Productions",
+      "Automatik Entertainment",
+      "Estados Unidos"
+    ]
+  },
+   
   /* =========================
      PIZZA MOVIES
      ========================= */
