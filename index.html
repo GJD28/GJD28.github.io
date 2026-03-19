@@ -17,6 +17,8 @@
 
 <body>
 
+
+
 <header class="header-inicio">
 
 <div class="banner-texto">
@@ -91,32 +93,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* =========================
-     BUSCADOR (AÑADIDO)
-     ========================= */
-
-  const input = document.getElementById("buscador-input");
-
-  input.addEventListener("keypress", function(e) {
-
-    if (e.key === "Enter") {
-
-      const texto = input.value.trim();
-
-      if (texto !== "") {
-
-        window.location.href = "busqueda.html?q=" + encodeURIComponent(texto);
-
-      }
-
-    }
-
-  });
-
-  /* =========================
-     CARRUSEL
-     ========================= */
-
   function cargarCarrusel(trackId, prevClass, nextClass, entradas){
 
     const track = document.getElementById(trackId);
@@ -145,34 +121,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
 
-  /* DESTACADOS AUTOMÁTICOS */
+/* DESTACADOS AUTOMÁTICOS */
 
-  const ultimaCritica = contenidoOrdenado.find(e => e.seccion === "criticas");
-  const ultimoArticulo = contenidoOrdenado.find(e => e.seccion === "articulos");
-  const ultimoRumor = contenidoOrdenado.find(e => e.seccion === "rumores");
+const ultimaCritica = contenidoOrdenado.find(e => e.seccion === "criticas");
+const ultimoArticulo = contenidoOrdenado.find(e => e.seccion === "articulos");
+const ultimoRumor = contenidoOrdenado.find(e => e.seccion === "rumores");
 
-  const automaticos = [
-    ultimaCritica,
-    ultimoArticulo,
-    ultimoRumor
-  ].filter(Boolean);
+const automaticos = [
+  ultimaCritica,
+  ultimoArticulo,
+  ultimoRumor
+].filter(Boolean);
 
-  /* DESTACADOS MANUALES */
 
-  const manuales = contenidoOrdenado
-    .filter(e => e.destacada === true)
-    .filter(e => !automaticos.some(a => a.id === e.id))
-    .slice(0,7);
+/* DESTACADOS MANUALES */
 
-  /* COMBINAR DESTACADOS */
+const manuales = contenidoOrdenado
+  .filter(e => e.destacada === true)
+  .filter(e => !automaticos.some(a => a.id === e.id))
+  .slice(0,7);
 
-  const destacados = [...automaticos, ...manuales].slice(0,10);
 
-  /* CARGAR CARRUSEL */
+/* COMBINAR DESTACADOS */
 
-  cargarCarrusel("destacados","destacados-prev","destacados-next",destacados);
+const destacados = [...automaticos, ...manuales].slice(0,10);
+
+
+/* CARGAR CARRUSEL */
+
+cargarCarrusel("destacados","destacados-prev","destacados-next",destacados);
+
 
   const ultimas = contenidoOrdenado.slice(0,10);
+
 
   cargarCarrusel("ultimas-entradas","ultimas-prev","ultimas-next",ultimas);
 
