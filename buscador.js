@@ -74,6 +74,7 @@ sugerencias.style.display = resultados.length ? "flex" : "none";
 
 });
 
+
 /* ENTER → comportamiento centralizado */
 
 input.addEventListener("keydown", (e) => {
@@ -84,26 +85,56 @@ input.addEventListener("keydown", (e) => {
 
     if(query.length === 0) return;
 
-    const resultados = obtenerResultados(query);
+    // 🔍 buscar etiqueta primero
+    function buscarEtiqueta(query){
 
-    if(resultados.length > 0){
+      const q = normalizar(query);
 
-      // ir al primer resultado
-      window.location.href = "entrada.html?id=" + resultados[0].id;
+      for(const entrada of contenido){
+
+        if(!entrada.etiquetas) continue;
+
+        for(const tag of entrada.etiquetas){
+
+          if(normalizar(tag).includes(q)){
+            return tag;
+          }
+
+        }
+
+      }
+
+      return null;
+    }
+
+    const etiquetaEncontrada = buscarEtiqueta(query);
+
+    if(etiquetaEncontrada){
+
+      const tagURL = etiquetaEncontrada.toLowerCase().replace(/\s+/g,"-");
+
+      window.location.href = "etiqueta.html?tag=" + encodeURIComponent(tagURL);
 
     }else{
 
-      // ir a etiqueta
-      const tag = query.toLowerCase().replace(/\s+/g,"-");
+      const resultados = obtenerResultados(query);
 
-      window.location.href = "etiqueta.html?tag=" + encodeURIComponent(tag);
+      if(resultados.length > 0){
+
+        window.location.href = "entrada.html?id=" + resultados[0].id;
+
+      }else{
+
+        const tag = query.toLowerCase().replace(/\s+/g,"-");
+
+        window.location.href = "etiqueta.html?tag=" + encodeURIComponent(tag);
+
+      }
 
     }
 
   }
 
 });
-
-
 
 });
