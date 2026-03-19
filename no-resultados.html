@@ -9,9 +9,18 @@
 <body>
 
 <header class="header-inicio">
+
   <div class="banner-texto">
+
     <h1>Sin resultados</h1>
+
+    <div class="buscador">
+      <input type="text" id="buscador-input" placeholder="Buscar..." autocomplete="off">
+      <div id="sugerencias-busqueda" class="sugerencias-busqueda"></div>
+    </div>
+
   </div>
+
 </header>
 
 <main style="text-align:center; padding:3rem;">
@@ -29,6 +38,9 @@
 <footer>
   © 2026 · Gabinete de Juicio y Debate
 </footer>
+
+<script src="contenido.js"></script>
+<script src="buscador.js"></script>
 
 <script>
 const params = new URLSearchParams(window.location.search);
