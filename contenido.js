@@ -915,6 +915,8 @@ const contenidoOrdenado = contenido
 
 function crearTarjeta(e, modo = "normal") {
 
+   const paginaActual = window.location.pathname;
+   
   let bannerHTML = "";
 
    let estrenoHTML = "";
@@ -933,7 +935,10 @@ if(esEstrenoActivo(e)){
   estrenoHTML = `<div class="miniatura-estreno">ESTRENO</div>`;
 }
 
-  if (modo !== "rumores") {
+ if (
+  paginaActual.includes("index") ||
+  paginaActual.includes("autor")
+) {
 
   let tipoClase = "";
   let tipoTexto = "";
@@ -954,6 +959,9 @@ if(esEstrenoActivo(e)){
       ${tipoTexto}
     </div>
   `;
+
+} else {
+  bannerHTML = "";
 }
 
   const item = document.createElement("div");
