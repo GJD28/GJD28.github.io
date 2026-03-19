@@ -74,24 +74,36 @@ sugerencias.style.display = resultados.length ? "flex" : "none";
 
 });
 
-
-/* enter → página de resultados */
+/* ENTER → comportamiento centralizado */
 
 input.addEventListener("keydown", (e) => {
 
-if(e.key === "Enter"){
+  if(e.key === "Enter"){
 
-const query = input.value.trim();
+    const query = input.value.trim();
 
-if(query.length > 0){
+    if(query.length === 0) return;
 
-window.location.href = "buscar.html?q=" + encodeURIComponent(query);
+    const resultados = obtenerResultados(query);
 
-}
+    if(resultados.length > 0){
 
-}
+      // ir al primer resultado
+      window.location.href = "entrada.html?id=" + resultados[0].id;
+
+    }else{
+
+      // ir a etiqueta
+      const tag = query.toLowerCase().replace(/\s+/g,"-");
+
+      window.location.href = "etiqueta.html?tag=" + encodeURIComponent(tag);
+
+    }
+
+  }
 
 });
+
 
 
 });
