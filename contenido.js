@@ -953,7 +953,13 @@ if(esEstrenoActivo(e)){
   estrenoHTML = `<div class="miniatura-estreno">ESTRENO</div>`;
 }
 
-  if (modo !== "rumores") {
+  if (
+  (paginaActual.includes("criticas") && e.seccion === "criticas") ||
+  (paginaActual.includes("articulos") && e.seccion === "articulos") ||
+  (paginaActual.includes("rumores") && e.seccion === "rumores")
+) {
+  bannerHTML = "";
+} else {
 
   let tipoClase = "";
   let tipoTexto = "";
