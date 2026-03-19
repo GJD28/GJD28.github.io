@@ -17,8 +17,6 @@
 
 <body class="autor-page">
 
-
-
 <header class="header-inicio">
 
 <div class="banner-texto">
@@ -50,7 +48,6 @@
 
   <section id="autor-cabecera"></section>
 
-
   <!-- ENTRADAS DEL AUTOR -->
 
   <section id="autor">
@@ -77,137 +74,157 @@
 
 <script>
 
-function obtenerAutor(){
+document.addEventListener('DOMContentLoaded', () => {
 
-  const params = new URLSearchParams(window.location.search);
+  /* =========================
+     BUSCADOR (AÑADIDO)
+     ========================= */
 
-  return params.get("nombre");
+  const input = document.getElementById("buscador-input");
 
-}
+  input.addEventListener("keypress", function(e) {
 
-const autor = obtenerAutor();
+    if (e.key === "Enter") {
 
-const cabecera = document.getElementById("autor-cabecera");
+      const texto = input.value.trim();
 
-const track = document.querySelector(".autor-carousel .carousel-track");
+      if (texto !== "") {
 
-
-if(!autor){
-
-  cabecera.innerHTML = "<p>Autor no especificado</p>";
-
-}else{
-
-  const ficha = fichasAutores[autor];
-
-  if(ficha){
-
-    cabecera.innerHTML = `
-
-      <div class="autor-header">
-
-        <img src="${ficha.foto}" alt="${ficha.nombre}">
-
-        <div class="autor-bio">
-
-          <h2>${ficha.nombre}</h2>
-
-          <p>${ficha.bio.replace(/\n\n/g,"<br><br>")}</p>
-
-        </div>
-
-      </div>
-
-    `;
-
-  }
-
-
- const entradasAutor = contenidoOrdenado.filter(e => e.autor === autor);
-
-
-  if(entradasAutor.length === 0){
-
-    track.innerHTML = "<p>Este autor aún no tiene textos publicados.</p>";
-
-  }else{
-
-
-    entradasAutor.forEach(entrada => {
-
-      let tipoClase = "";
-      let tipoTexto = "";
-
-      if(entrada.seccion === "criticas"){
-
-        tipoClase = "tipo-critica";
-        tipoTexto = "CRÍTICA";
-
-      }else if(entrada.seccion === "articulos"){
-
-        tipoClase = "tipo-articulo";
-        tipoTexto = "ARTÍCULO";
-
-      }else if(entrada.seccion === "rumores"){
-
-        tipoClase = "tipo-rumor";
-        tipoTexto = "RUMOR";
+        window.location.href = "busqueda.html?q=" + encodeURIComponent(texto);
 
       }
 
+    }
 
-      const item = document.createElement("div");
+  });
 
-      item.className = "carousel-item";
+  /* =========================
+     AUTOR
+     ========================= */
 
+  function obtenerAutor(){
 
-      item.innerHTML = `
+    const params = new URLSearchParams(window.location.search);
 
-        <a href="entrada.html?id=${entrada.id}">
-
-          <div class="miniatura-wrapper">
-
-            <img src="${entrada.imagen.src}" alt="${entrada.imagen.alt}">
-
-            <div class="miniatura-banner ${tipoClase}">
-
-              ${tipoTexto}
-
-            </div>
-
-          </div>
-
-          <h3>${entrada.titulo}</h3>
-
-        </a>
-
-      `;
-
-
-      track.appendChild(item);
-
-    });
+    return params.get("nombre");
 
   }
 
-}
+  const autor = obtenerAutor();
 
+  const cabecera = document.getElementById("autor-cabecera");
 
-const prevBtn = document.querySelector(".autor-carousel .prev");
+  const track = document.querySelector(".autor-carousel .carousel-track");
 
-const nextBtn = document.querySelector(".autor-carousel .next");
+  if(!autor){
 
+    cabecera.innerHTML = "<p>Autor no especificado</p>";
 
-prevBtn.addEventListener("click",()=>{
+  }else{
 
-  track.scrollBy({left:-300,behavior:"smooth"});
+    const ficha = fichasAutores[autor];
 
-});
+    if(ficha){
 
+      cabecera.innerHTML = `
 
-nextBtn.addEventListener("click",()=>{
+        <div class="autor-header">
 
-  track.scrollBy({left:300,behavior:"smooth"});
+          <img src="${ficha.foto}" alt="${ficha.nombre}">
+
+          <div class="autor-bio">
+
+            <h2>${ficha.nombre}</h2>
+
+            <p>${ficha.bio.replace(/\n\n/g,"<br><br>")}</p>
+
+          </div>
+
+        </div>
+
+      `;
+
+    }
+
+    const entradasAutor = contenidoOrdenado.filter(e => e.autor === autor);
+
+    if(entradasAutor.length === 0){
+
+      track.innerHTML = "<p>Este autor aún no tiene textos publicados.</p>";
+
+    }else{
+
+      entradasAutor.forEach(entrada => {
+
+        let tipoClase = "";
+        let tipoTexto = "";
+
+        if(entrada.seccion === "criticas"){
+
+          tipoClase = "tipo-critica";
+          tipoTexto = "CRÍTICA";
+
+        }else if(entrada.seccion === "articulos"){
+
+          tipoClase = "tipo-articulo";
+          tipoTexto = "ARTÍCULO";
+
+        }else if(entrada.seccion === "rumores"){
+
+          tipoClase = "tipo-rumor";
+          tipoTexto = "RUMOR";
+
+        }
+
+        const item = document.createElement("div");
+
+        item.className = "carousel-item";
+
+        item.innerHTML = `
+
+          <a href="entrada.html?id=${entrada.id}">
+
+            <div class="miniatura-wrapper">
+
+              <img src="${entrada.imagen.src}" alt="${entrada.imagen.alt}">
+
+              <div class="miniatura-banner ${tipoClase}">
+
+                ${tipoTexto}
+
+              </div>
+
+            </div>
+
+            <h3>${entrada.titulo}</h3>
+
+          </a>
+
+        `;
+
+        track.appendChild(item);
+
+      });
+
+    }
+
+  }
+
+  const prevBtn = document.querySelector(".autor-carousel .prev");
+
+  const nextBtn = document.querySelector(".autor-carousel .next");
+
+  prevBtn.addEventListener("click",()=>{
+
+    track.scrollBy({left:-300,behavior:"smooth"});
+
+  });
+
+  nextBtn.addEventListener("click",()=>{
+
+    track.scrollBy({left:300,behavior:"smooth"});
+
+  });
 
 });
 
