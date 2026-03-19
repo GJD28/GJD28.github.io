@@ -468,6 +468,128 @@ const contenido = [
     ]
   },
 
+{
+  id: "spiderman-brand-new-day-trailer",
+  seccion: "rumores",
+  titulo: "Spider-Man: Brand New Day lanza su primer tráiler",
+  autor: "Nil Miralles",
+  fecha_publicacion: "19/03/2026",
+  destacada: false,
+  imagen: {
+    src: "brand-new-day.png",
+    alt: "Spider-Man: Brand New Day, primer tráiler"
+  },
+  entradilla: "Marvel y Sony lanzan el primer tráiler de Spider-Man: Brand New Day y desatan una oleada de teorías, análisis y especulación sobre el futuro del personaje.",
+  contenido: [
+
+{ tipo: "texto", valor: "Vale, vamos a hablar claro: Marvel y Sony han soltado el primer tráiler de Spider-Man: Brand New Day y esto ha sido como abrir una lata de Coca-Cola agitada." },
+
+{ tipo: "texto", valor: "En cuestión de horas, medio internet estaba analizando cada plano, cada frase y cada sombra sospechosa del fondo." },
+
+{ tipo: "video", src: "https://www.youtube.com/embed/owfWVJoxXR4" },
+
+{ tipo: "texto", valor: "Y no es para menos." },
+
+{ tipo: "subtitulo", valor: "Un Peter Parker completamente solo (y un tono bastante más oscuro)" },
+
+{ tipo: "texto", valor: "Lo primero que deja claro el tráiler es que esta peli no va a ser “otra más”." },
+
+{ tipo: "texto", valor: "La historia arranca varios años después de No Way Home, con un Peter Parker que vive completamente aislado: nadie recuerda quién es, ni MJ, ni Ned… nadie." },
+
+{ tipo: "texto", valor: "Y eso se nota en el tono. Más callejero, más solitario, menos “equipo Vengadores” y más Spider-Man sobreviviendo por su cuenta." },
+
+{ tipo: "texto", valor: "De hecho, uno de los enfoques que más se repite en los análisis es ese: esto no parece una secuela típica, parece casi un reinicio emocional del personaje." },
+
+{ tipo: "texto", valor: "Vamos, el típico “vale, lo hemos roto todo… ahora empezamos de cero”." },
+
+{ tipo: "subtitulo", valor: "Nuevos aliados… y amenazas bastante curiosas" },
+
+{ tipo: "texto", valor: "El tráiler también deja caer varias cosas interesantes a nivel de personajes:" },
+
+{ tipo: "texto", valor: "* Regresa MJ, pero con una vida completamente separada de Peter (y ojo, con posible nueva pareja)\n* Aparece The Punisher, que no es precisamente el colega más optimista del MCU\n* Vuelve Scorpion como amenaza\n* Y tenemos a Bruce Banner/Hulk, en un rol bastante distinto al habitual" },
+
+{ tipo: "texto", valor: "Todo esto ya te da una pista clara: la peli va a mezclar historia personal, rollo callejero y conexiones con el MCU más grande." },
+
+{ tipo: "texto", valor: "Un cóctel curioso." },
+
+{ tipo: "subtitulo", valor: "El detalle que ha disparado los rumores" },
+
+{ tipo: "texto", valor: "Ahora viene la parte divertida." },
+
+{ tipo: "texto", valor: "Porque más allá de lo que enseña el tráiler, lo que ha hecho explotar internet son los detalles que no explica del todo." },
+
+{ tipo: "texto", valor: "El más comentado: Peter parece estar sufriendo algún tipo de mutación, incluso con pistas de que podría generar telarañas de forma orgánica." },
+
+{ tipo: "texto", valor: "Y claro, aquí ya ha empezado el festival:" },
+
+{ tipo: "texto", valor: "* teorías sobre experimentos genéticos\n* conexiones con Oscorp\n* gente hablando de versiones alternativas del personaje\n* incluso comparaciones con el Spider-Man de Tobey Maguire" },
+
+{ tipo: "texto", valor: "El fandom, en su estado natural." },
+
+{ tipo: "subtitulo", valor: "Sadie Sink y el clásico misterio Marvel" },
+
+{ tipo: "texto", valor: "Y luego está el tema de Sadie Sink." },
+
+{ tipo: "texto", valor: "El tráiler no deja claro quién interpreta, pero eso no ha impedido que ya haya teorías para aburrir:" },
+
+{ tipo: "texto", valor: "* Jean Grey (sí, ya estamos metiendo a los X-Men)\n* algún personaje nuevo vinculado al multiverso\n* o incluso una sorpresa completamente distinta" },
+
+{ tipo: "texto", valor: "Los medios internacionales ya recogen esta incertidumbre como uno de los grandes misterios del proyecto." },
+
+{ tipo: "texto", valor: "Porque si algo le gusta a Marvel es dejarte pistas sin darte respuestas." },
+
+{ tipo: "subtitulo", valor: "Un tráiler que ha arrasado (y eso también dice mucho)" },
+
+{ tipo: "texto", valor: "Por cierto, pequeño detalle que no es menor: el tráiler ha superado cifras masivas de visualizaciones en muy poco tiempo." },
+
+{ tipo: "texto", valor: "Eso no es solo hype." },
+
+{ tipo: "texto", valor: "Eso es el equivalente a decir: “vale, la gente sigue MUY dentro de Spider-Man”." },
+
+{ tipo: "subtitulo", valor: "Entonces… ¿qué pinta tiene todo esto?" },
+
+{ tipo: "texto", valor: "Te lo resumo como lo diría con una cerveza delante:" },
+
+{ tipo: "texto", valor: "Marvel y Sony están jugando aquí a algo interesante." },
+
+{ tipo: "texto", valor: "No están intentando hacer No Way Home 2." },
+
+{ tipo: "texto", valor: "Están intentando hacer una nueva etapa de Spider-Man:" },
+
+{ tipo: "texto", valor: "* más personal\n* más aislada\n* pero con semillas para algo mucho más grande" },
+
+{ tipo: "texto", valor: "Y los rumores que están saliendo alrededor del tráiler van justo por ahí: esto no es solo una peli más, es el inicio de algo." },
+
+{ tipo: "subtitulo", valor: "Y ahora viene lo importante" },
+
+{ tipo: "texto", valor: "Porque al final, todo esto está muy bien —tráiler, teorías, hype— pero la pregunta real es otra:" },
+
+{ tipo: "texto", valor: "¿Va a conseguir esta peli que volvamos a sentir lo mismo que con Spider-Man… sin multiverso, sin nostalgia y sin tres Spider-Men en pantalla?" },
+
+{ tipo: "texto", valor: "Si lo logran, Marvel tiene oro." },
+
+{ tipo: "texto", valor: "Si no… bueno, al menos el tráiler ya nos ha dado semanas de debate." },
+
+{ tipo: "texto", valor: "Y eso, siendo honestos, también forma parte del espectáculo." }
+
+  ],
+  etiquetas: [
+    "Spider-Man",
+    "Marvel",
+    "Marvel Studios",
+    "Sony Pictures",
+    "MCU",
+    "Peter Parker",
+    "MJ",
+    "The Punisher",
+    "Hulk",
+    "Scorpion",
+    "Sadie Sink",
+    "Estados Unidos",
+    "Superhéroes"
+  ]
+},
+   
   /* =========================
      NINJA SCROLL
      ========================= */
