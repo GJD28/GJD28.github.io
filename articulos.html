@@ -16,6 +16,8 @@
 
 <body>
 
+
+
 <header class="header-articulos">
 
 <div class="banner-texto">
@@ -71,32 +73,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* =========================
-     BUSCADOR (AÑADIDO)
-     ========================= */
-
-  const input = document.getElementById("buscador-input");
-
-  input.addEventListener("keypress", function(e) {
-
-    if (e.key === "Enter") {
-
-      const texto = input.value.trim();
-
-      if (texto !== "") {
-
-        window.location.href = "busqueda.html?q=" + encodeURIComponent(texto);
-
-      }
-
-    }
-
-  });
-
-  /* =========================
-     CARRUSEL
-     ========================= */
-
   function cargarCarrusel(trackId, prevClass, nextClass, entradas){
 
     const track = document.getElementById(trackId);
@@ -124,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
   }
+
 
   const articulos = contenidoOrdenado.filter(e => e.seccion === "articulos");
 
