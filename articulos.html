@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Autor · Gabinete de Juicio y Debate</title>
+  <title>Artículos · Gabinete de Juicio y Debate</title>
   <link rel="icon" href="favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,15 +14,15 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="autor-page">
+<body>
 
 
 
-<header class="header-inicio">
+<header class="header-articulos">
 
 <div class="banner-texto">
 
-<h1>Autor</h1>
+<h1>Artículos</h1>
 
 <div class="buscador">
 <input type="text" id="buscador-input" placeholder="Buscar..." autocomplete="off">
@@ -46,22 +45,17 @@
 
 <main>
 
-  <!-- CABECERA DEL AUTOR -->
+  <section class="portada-bloque">
 
-  <section id="autor-cabecera"></section>
+    <h2>Todos los artículos</h2>
 
+    <div class="carousel">
 
-  <!-- ENTRADAS DEL AUTOR -->
+      <button class="carousel-btn prev articulos-prev">‹</button>
 
-  <section id="autor">
+      <div class="carousel-track" id="todos-articulos"></div>
 
-    <div class="carousel autor-carousel">
-
-      <button class="carousel-btn prev">‹</button>
-
-      <div class="carousel-track"></div>
-
-      <button class="carousel-btn next">›</button>
+      <button class="carousel-btn next articulos-next">›</button>
 
     </div>
 
@@ -74,141 +68,43 @@
 </footer>
 
 <script src="contenido.js"></script>
-<script src="buscador.js"></script>
-  
+
 <script>
 
-function obtenerAutor(){
+document.addEventListener('DOMContentLoaded', () => {
 
-  const params = new URLSearchParams(window.location.search);
+  function cargarCarrusel(trackId, prevClass, nextClass, entradas){
 
-  return params.get("nombre");
+    const track = document.getElementById(trackId);
+    const prev = document.querySelector("." + prevClass);
+    const next = document.querySelector("." + nextClass);
 
-}
+    track.innerHTML = "";
 
-const autor = obtenerAutor();
+    entradas.forEach(e => {
 
-const cabecera = document.getElementById("autor-cabecera");
+      track.appendChild(crearTarjeta(e,"normal"));
 
-const track = document.querySelector(".autor-carousel .carousel-track");
+    });
 
+    prev.addEventListener("click", () => {
 
-if(!autor){
+      track.scrollBy({left:-300,behavior:"smooth"});
 
-  cabecera.innerHTML = "<p>Autor no especificado</p>";
+    });
 
-}else{
+    next.addEventListener("click", () => {
 
-  const ficha = fichasAutores[autor];
-
-  if(ficha){
-
-    cabecera.innerHTML = `
-
-      <div class="autor-header">
-
-        <img src="${ficha.foto}" alt="${ficha.nombre}">
-
-        <div class="autor-bio">
-
-          <h2>${ficha.nombre}</h2>
-
-          <p>${ficha.bio.replace(/\n\n/g,"<br><br>")}</p>
-
-        </div>
-
-      </div>
-
-    `;
-
-  }
-
-
- const entradasAutor = contenidoOrdenado.filter(e => e.autor === autor);
-
-
-  if(entradasAutor.length === 0){
-
-    track.innerHTML = "<p>Este autor aún no tiene textos publicados.</p>";
-
-  }else{
-
-
-    entradasAutor.forEach(entrada => {
-
-      let tipoClase = "";
-      let tipoTexto = "";
-
-      if(entrada.seccion === "criticas"){
-
-        tipoClase = "tipo-critica";
-        tipoTexto = "CRÍTICA";
-
-      }else if(entrada.seccion === "articulos"){
-
-        tipoClase = "tipo-articulo";
-        tipoTexto = "ARTÍCULO";
-
-      }else if(entrada.seccion === "rumores"){
-
-        tipoClase = "tipo-rumor";
-        tipoTexto = "RUMOR";
-
-      }
-
-
-      const item = document.createElement("div");
-
-      item.className = "carousel-item";
-
-
-      item.innerHTML = `
-
-        <a href="entrada.html?id=${entrada.id}">
-
-          <div class="miniatura-wrapper">
-
-            <img src="${entrada.imagen.src}" alt="${entrada.imagen.alt}">
-
-            <div class="miniatura-banner ${tipoClase}">
-
-              ${tipoTexto}
-
-            </div>
-
-          </div>
-
-          <h3>${entrada.titulo}</h3>
-
-        </a>
-
-      `;
-
-
-      track.appendChild(item);
+      track.scrollBy({left:300,behavior:"smooth"});
 
     });
 
   }
 
-}
 
+  const articulos = contenidoOrdenado.filter(e => e.seccion === "articulos");
 
-const prevBtn = document.querySelector(".autor-carousel .prev");
-
-const nextBtn = document.querySelector(".autor-carousel .next");
-
-
-prevBtn.addEventListener("click",()=>{
-
-  track.scrollBy({left:-300,behavior:"smooth"});
-
-});
-
-
-nextBtn.addEventListener("click",()=>{
-
-  track.scrollBy({left:300,behavior:"smooth"});
+  cargarCarrusel("todos-articulos","articulos-prev","articulos-next",articulos);
 
 });
 
