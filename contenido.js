@@ -469,6 +469,58 @@ const contenido = [
   },
 
   /* =========================
+     NINJA SCROLL
+     ========================= */
+
+  {
+    id: "ninja-scroll-1993",
+    seccion: "criticas",
+    titulo: "Ninja Scroll",
+    autor: "Sergio Valdés",
+    fecha_publicacion: "18/03/2026",
+    director: "Yoshiaki Kawajiri",
+    año: 1993,
+    nota: 3,
+    destacada: false,
+    imagen: {
+      src: "ninja-scroll.png",
+      alt: "Ninja Scroll (1993), dirigida por Yoshiaki Kawajiri"
+    },
+    entradilla: "Una de las puertas de entrada al anime adulto de los noventa, marcada por la violencia estilizada, la fantasía oscura y una narrativa directa.",
+    contenido: [
+
+{ tipo: "texto", valor: "Hay películas que funcionan como puertas de entrada a una idea concreta del cine, y Ninja Scroll ocupa ese lugar dentro del anime más adulto de los noventa. En un momento en el que la animación japonesa empezaba a consolidar su circulación internacional, el film dirigido por Yoshiaki Kawajiri se convirtió en una carta de presentación muy clara: violencia estilizada, erotismo, fantasía oscura y una narrativa que avanza con la contundencia de un relato de aventuras clásico." },
+
+{ tipo: "texto", valor: "La película sigue a Jubei, un espadachín errante atrapado en una conspiración que mezcla clanes ninja, corrupción política y elementos casi sobrenaturales. Desde ahí, Ninja Scroll construye su propuesta con bastante claridad: cada enfrentamiento introduce a un nuevo antagonista, cada tramo del viaje suma una pieza más a ese mosaico de amenazas. La estructura recuerda a cierto cine de samuráis, incluso al western más episódico, donde el héroe atraviesa espacios hostiles enfrentándose a figuras que funcionan casi como pruebas." },
+
+{ tipo: "texto", valor: "En ese recorrido, la película encuentra uno de sus principales motores en los personajes que rodean a Jubei. Jubei funciona como protagonista clásico: lacónico, competente, definido por la acción más que por el discurso. A su lado, Kagero introduce un contrapunto interesante desde lo trágico, mientras que el antagonista principal, Gemma Himuro, encarna esa idea de amenaza persistente que atraviesa toda la narración. El reparto de voces en la versión original cumple bien con ese tono seco y directo que pide la historia, sin buscar matices excesivos." },
+
+{ tipo: "texto", valor: "Desde el punto de vista de la animación, Ninja Scroll responde a una lógica muy concreta del anime de su época. El trabajo del estudio Madhouse se apoya en animación tradicional dibujada a mano, con un uso muy consciente del movimiento limitado en ciertas escenas y una expansión muy marcada en los momentos de acción. Sin ser animador profesional —y esto conviene decirlo con honestidad—, resulta fácil percibir cómo la película reserva recursos para los combates clave: ahí aparecen las coreografías más fluidas, los encuadres más dinámicos y una violencia que se apoya tanto en el montaje como en el propio trazo." },
+
+{ tipo: "texto", valor: "Esa apuesta visual conecta directamente con otra de sus claves: la estilización. Kawajiri no busca realismo, sino impacto. Los cuerpos se deforman, la sangre exagera su presencia y los villanos se diseñan desde lo grotesco a lo hiperbólico. Esa acumulación de excesos forma parte de su identidad, y durante buena parte del metraje funciona como un motor muy eficaz." },
+
+{ tipo: "texto", valor: "A medida que la película avanza aparece cierta sensación de repetición. La estructura episódica, que al principio aporta ritmo, termina generando una dinámica previsible: nuevo enemigo, combate, transición y vuelta a empezar. Falta una evolución más clara en el conflicto central, algo que dé la sensación de que todo lo anterior empuja hacia un clímax más trabajado." },
+
+{ tipo: "texto", valor: "Ahí es donde Ninja Scroll se queda a medio camino. Funciona muy bien como experiencia inmediata, como despliegue de estilo y violencia coreografiada, pero le cuesta sostener un desarrollo más profundo de sus personajes o de su propio universo. En comparación con otras obras del anime de la época como Akira o Ghost in the Shell, aquí todo se mantiene en un nivel más superficial." },
+
+{ tipo: "texto", valor: "Aun así, hay algo honesto en la película. Sabe perfectamente qué tipo de experiencia quiere ofrecer y la ejecuta con convicción. Esa claridad siempre suma, incluso cuando el resultado no termina de trascender." },
+
+{ tipo: "texto", valor: "Ninja Scroll se disfruta, especialmente si entras en su juego de exceso y acción continua, pero también deja la sensación de que podría haber sido algo más con un poco más de ambición narrativa." }
+
+    ],
+    etiquetas: [
+      "Yoshiaki Kawajiri",
+      "1993",
+      "Anime",
+      "Acción",
+      "Fantasía",
+      "Terror",
+      "Madhouse",
+      "Japón"
+    ]
+  },
+   
+  /* =========================
      SINISTER
      ========================= */
 
