@@ -9,6 +9,12 @@ const fichasAutores = {
     bio: "Me emociono fácil con el cine y me implico sin demasiadas defensas. Soy bastante hooligan de Scorsese cuando decide bajar el volumen y dejar que el tiempo haga su trabajo, y me pierdo con gusto cada vez que Isabelle Huppert entra en un plano. Me encantan las películas que apetece volver a ver sin una razón clara y las que te hacen recomendar cosas como si fueran descubrimientos personales. Vivo el cine con entusiasmo, con curiosidad y con una alegría muy poco sofisticada. Escribo desde ahí, desde las ganas sinceras de compartir algo que me ha tocado."
   },
 
+"Sergio Valdés": {
+  nombre: "Sergio Valdés",
+  foto: "sergio-valdes.png",
+  bio: "Mi relación con el cine se construyó viendo de todo, muy pronto y sin demasiados filtros. Películas de distintas épocas, géneros que se mezclaban sin orden y una curiosidad que fue creciendo sola. Con el tiempo empecé a mirar más allá de la historia, a tratar de entender qué hacía que una imagen funcionara.\n\nEl anime me marcó de una forma especial y bastante temprana. Llegué antes a Ghibli que a Disney, algo que sigue definiendo mi manera de mirar la animación. Me fascina todo lo que ocurre entre un dibujo y el siguiente, y arrastro la sensación de ser un animador frustrado cuya carrera nunca empezó."
+},
+   
  "Paula Elizábal": {
   nombre: "Paula Elizábal",
   foto: "paula-elizabal.png",
