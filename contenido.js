@@ -935,6 +935,8 @@ const contenidoOrdenado = contenido
 
 function crearTarjeta(e, modo = "normal") {
 
+   const paginaActual = window.location.pathname;
+   
   let bannerHTML = "";
 
    let estrenoHTML = "";
