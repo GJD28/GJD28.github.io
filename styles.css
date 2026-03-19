@@ -569,6 +569,7 @@ footer {
   display:none;
   flex-direction:column;
   z-index:1000;
+   color:#000; 
 }
 
 
