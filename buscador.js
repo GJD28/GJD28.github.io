@@ -6,76 +6,87 @@ const sugerencias = document.getElementById("sugerencias-busqueda");
 if(!input) return;
 
 
-/* normalizar texto */
+/* normalizar */
 
 function normalizar(texto){
   return texto.toLowerCase();
 }
 
 
-/* recoger posibles resultados */
+/* 🔹 obtener TODAS las sugerencias (etiquetas + títulos) */
 
-function obtenerResultados(query){
+function obtenerSugerencias(query){
 
-query = normalizar(query);
+  const q = normalizar(query);
 
-return contenido.filter(e => {
+  const mapa = new Map();
 
-const titulo = normalizar(e.titulo);
-const autor = normalizar(e.autor);
+  contenido.forEach(e => {
 
-const etiquetas = e.etiquetas ? e.etiquetas.join(" ").toLowerCase() : "";
+    // títulos
+    if(normalizar(e.titulo).includes(q)){
+      mapa.set(e.titulo, { tipo:"entrada", valor:e });
+    }
 
-return (
-titulo.includes(query) ||
-autor.includes(query) ||
-etiquetas.includes(query)
-);
+    // etiquetas
+    if(e.etiquetas){
+      e.etiquetas.forEach(tag => {
+        if(normalizar(tag).includes(q)){
+          mapa.set(tag, { tipo:"etiqueta", valor:tag });
+        }
+      });
+    }
 
-});
+  });
 
+  // convertir a array y ordenar alfabéticamente
+  return Array.from(mapa.entries())
+    .sort((a,b) => a[0].localeCompare(b[0]));
 }
 
 
-/* sugerencias */
+/* 🔹 SUGERENCIAS EN TIEMPO REAL */
 
 input.addEventListener("input", () => {
 
-const query = input.value.trim();
+  const query = input.value.trim();
 
-sugerencias.innerHTML = "";
+  sugerencias.innerHTML = "";
 
-if(query.length < 2){
-sugerencias.style.display = "none";
-return;
-}
+  if(query.length < 2){
+    sugerencias.style.display = "none";
+    return;
+  }
 
-const resultados = obtenerResultados(query).slice(0,5);
+  const resultados = obtenerSugerencias(query).slice(0,5);
 
-resultados.forEach(r => {
+  resultados.forEach(([texto, data]) => {
 
-const div = document.createElement("div");
+    const div = document.createElement("div");
+    div.className = "sugerencia-item";
+    div.textContent = texto;
 
-div.className = "sugerencia-item";
+    div.addEventListener("click", () => {
 
-div.textContent = r.titulo;
+      if(data.tipo === "entrada"){
+        window.location.href = "entrada.html?id=" + data.valor.id;
+      }else{
+        const tagURL = data.valor.toLowerCase().replace(/\s+/g,"-");
+        window.location.href = "etiqueta.html?tag=" + encodeURIComponent(tagURL);
+      }
 
-div.addEventListener("click", () => {
+    });
 
-window.location.href = "entrada.html?id=" + r.id;
+    sugerencias.appendChild(div);
+
+  });
+
+  sugerencias.style.display = resultados.length ? "flex" : "none";
 
 });
 
-sugerencias.appendChild(div);
 
-});
-
-sugerencias.style.display = resultados.length ? "flex" : "none";
-
-});
-
-
-/* ENTER → comportamiento centralizado */
+/* 🔹 ENTER */
 
 input.addEventListener("keydown", (e) => {
 
@@ -85,51 +96,28 @@ input.addEventListener("keydown", (e) => {
 
     if(query.length === 0) return;
 
-    // 🔍 buscar etiqueta primero
-    function buscarEtiqueta(query){
+    const sugerenciasLista = obtenerSugerencias(query);
 
-      const q = normalizar(query);
+    // buscar coincidencia exacta
+    const match = sugerenciasLista.find(([texto]) =>
+      normalizar(texto) === normalizar(query)
+    );
 
-      for(const entrada of contenido){
+    if(match){
 
-        if(!entrada.etiquetas) continue;
+      const [texto, data] = match;
 
-        for(const tag of entrada.etiquetas){
-
-          if(normalizar(tag).includes(q)){
-            return tag;
-          }
-
-        }
-
+      if(data.tipo === "entrada"){
+        window.location.href = "entrada.html?id=" + data.valor.id;
+      }else{
+        const tagURL = data.valor.toLowerCase().replace(/\s+/g,"-");
+        window.location.href = "etiqueta.html?tag=" + encodeURIComponent(tagURL);
       }
-
-      return null;
-    }
-
-    const etiquetaEncontrada = buscarEtiqueta(query);
-
-    if(etiquetaEncontrada){
-
-      const tagURL = etiquetaEncontrada.toLowerCase().replace(/\s+/g,"-");
-
-      window.location.href = "etiqueta.html?tag=" + encodeURIComponent(tagURL);
 
     }else{
 
-      const resultados = obtenerResultados(query);
-
-      if(resultados.length > 0){
-
-        window.location.href = "entrada.html?id=" + resultados[0].id;
-
-      }else{
-
-        const tag = query.toLowerCase().replace(/\s+/g,"-");
-
-        window.location.href = "etiqueta.html?tag=" + encodeURIComponent(tag);
-
-      }
+      // no hay coincidencia → no resultados
+      window.location.href = "no-resultados.html?q=" + encodeURIComponent(query);
 
     }
 
