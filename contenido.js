@@ -512,13 +512,7 @@ const contenido = [
 
 { tipo: "texto", valor: "El tráiler también deja caer varias cosas interesantes a nivel de personajes:" },
 
-{ tipo: "texto", valor: "Regresa MJ, pero con una vida completamente separada de Peter (y ojo, con posible nueva pareja)" },
-
-{ tipo: "texto", valor: "Aparece The Punisher, que no es precisamente el colega más optimista del MCU" },
-
-{ tipo: "texto", valor: "Vuelve Scorpion como amenaza" },
-
-{ tipo: "texto", valor: "Y tenemos a Bruce Banner/Hulk, en un rol bastante distinto al habitual" },
+{ tipo: "texto", valor: "* Regresa MJ, pero con una vida completamente separada de Peter (y ojo, con posible nueva pareja)\n* Aparece The Punisher, que no es precisamente el colega más optimista del MCU\n* Vuelve Scorpion como amenaza\n* Y tenemos a Bruce Banner/Hulk, en un rol bastante distinto al habitual" },
 
 { tipo: "texto", valor: "Todo esto ya te da una pista clara: la peli va a mezclar historia personal, rollo callejero y conexiones con el MCU más grande." },
 
@@ -534,13 +528,7 @@ const contenido = [
 
 { tipo: "texto", valor: "Y claro, aquí ya ha empezado el festival:" },
 
-{ tipo: "texto", valor: "teorías sobre experimentos genéticos" },
-
-{ tipo: "texto", valor: "conexiones con Oscorp" },
-
-{ tipo: "texto", valor: "gente hablando de versiones alternativas del personaje" },
-
-{ tipo: "texto", valor: "incluso comparaciones con el Spider-Man de Tobey Maguire" },
+{ tipo: "texto", valor: "* teorías sobre experimentos genéticos\n* conexiones con Oscorp\n* gente hablando de versiones alternativas del personaje\n* incluso comparaciones con el Spider-Man de Tobey Maguire" },
 
 { tipo: "texto", valor: "El fandom, en su estado natural." },
 
@@ -550,11 +538,7 @@ const contenido = [
 
 { tipo: "texto", valor: "El tráiler no deja claro quién interpreta, pero eso no ha impedido que ya haya teorías para aburrir:" },
 
-{ tipo: "texto", valor: "Jean Grey (sí, ya estamos metiendo a los X-Men)" },
-
-{ tipo: "texto", valor: "algún personaje nuevo vinculado al multiverso" },
-
-{ tipo: "texto", valor: "o incluso una sorpresa completamente distinta" },
+{ tipo: "texto", valor: "* Jean Grey (sí, ya estamos metiendo a los X-Men)\n* algún personaje nuevo vinculado al multiverso\n* o incluso una sorpresa completamente distinta" },
 
 { tipo: "texto", valor: "Los medios internacionales ya recogen esta incertidumbre como uno de los grandes misterios del proyecto." },
 
@@ -578,11 +562,7 @@ const contenido = [
 
 { tipo: "texto", valor: "Están intentando hacer una nueva etapa de Spider-Man:" },
 
-{ tipo: "texto", valor: "más personal" },
-
-{ tipo: "texto", valor: "más aislada" },
-
-{ tipo: "texto", valor: "pero con semillas para algo mucho más grande" },
+{ tipo: "texto", valor: "* más personal\n* más aislada\n* pero con semillas para algo mucho más grande" },
 
 { tipo: "texto", valor: "Y los rumores que están saliendo alrededor del tráiler van justo por ahí: esto no es solo una peli más, es el inicio de algo." },
 
@@ -935,8 +915,6 @@ const contenidoOrdenado = contenido
 
 function crearTarjeta(e, modo = "normal") {
 
-   const paginaActual = window.location.pathname;
-   
   let bannerHTML = "";
 
    let estrenoHTML = "";
@@ -955,13 +933,7 @@ if(esEstrenoActivo(e)){
   estrenoHTML = `<div class="miniatura-estreno">ESTRENO</div>`;
 }
 
-  if (
-  (paginaActual.includes("criticas") && e.seccion === "criticas") ||
-  (paginaActual.includes("articulos") && e.seccion === "articulos") ||
-  (paginaActual.includes("rumores") && e.seccion === "rumores")
-) {
-  bannerHTML = "";
-} else {
+  if (modo !== "rumores") {
 
   let tipoClase = "";
   let tipoTexto = "";
