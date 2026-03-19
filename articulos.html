@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Artículos · Gabinete de Juicio y Debate</title>
+
+  <title>Autor · Gabinete de Juicio y Debate</title>
   <link rel="icon" href="favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,15 +15,15 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="autor-page">
 
 
 
-<header class="header-articulos">
+<header class="header-inicio">
 
 <div class="banner-texto">
 
-<h1>Artículos</h1>
+<h1>Autor</h1>
 
 <div class="buscador">
 <input type="text" id="buscador-input" placeholder="Buscar..." autocomplete="off">
@@ -45,17 +46,22 @@
 
 <main>
 
-  <section class="portada-bloque">
+  <!-- CABECERA DEL AUTOR -->
 
-    <h2>Todos los artículos</h2>
+  <section id="autor-cabecera"></section>
 
-    <div class="carousel">
 
-      <button class="carousel-btn prev articulos-prev">‹</button>
+  <!-- ENTRADAS DEL AUTOR -->
 
-      <div class="carousel-track" id="todos-articulos"></div>
+  <section id="autor">
 
-      <button class="carousel-btn next articulos-next">›</button>
+    <div class="carousel autor-carousel">
+
+      <button class="carousel-btn prev">‹</button>
+
+      <div class="carousel-track"></div>
+
+      <button class="carousel-btn next">›</button>
 
     </div>
 
@@ -71,40 +77,137 @@
 
 <script>
 
-document.addEventListener('DOMContentLoaded', () => {
+function obtenerAutor(){
 
-  function cargarCarrusel(trackId, prevClass, nextClass, entradas){
+  const params = new URLSearchParams(window.location.search);
 
-    const track = document.getElementById(trackId);
-    const prev = document.querySelector("." + prevClass);
-    const next = document.querySelector("." + nextClass);
+  return params.get("nombre");
 
-    track.innerHTML = "";
+}
 
-    entradas.forEach(e => {
+const autor = obtenerAutor();
 
-      track.appendChild(crearTarjeta(e,"normal"));
+const cabecera = document.getElementById("autor-cabecera");
 
-    });
+const track = document.querySelector(".autor-carousel .carousel-track");
 
-    prev.addEventListener("click", () => {
 
-      track.scrollBy({left:-300,behavior:"smooth"});
+if(!autor){
 
-    });
+  cabecera.innerHTML = "<p>Autor no especificado</p>";
 
-    next.addEventListener("click", () => {
+}else{
 
-      track.scrollBy({left:300,behavior:"smooth"});
+  const ficha = fichasAutores[autor];
+
+  if(ficha){
+
+    cabecera.innerHTML = `
+
+      <div class="autor-header">
+
+        <img src="${ficha.foto}" alt="${ficha.nombre}">
+
+        <div class="autor-bio">
+
+          <h2>${ficha.nombre}</h2>
+
+          <p>${ficha.bio.replace(/\n\n/g,"<br><br>")}</p>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+ const entradasAutor = contenidoOrdenado.filter(e => e.autor === autor);
+
+
+  if(entradasAutor.length === 0){
+
+    track.innerHTML = "<p>Este autor aún no tiene textos publicados.</p>";
+
+  }else{
+
+
+    entradasAutor.forEach(entrada => {
+
+      let tipoClase = "";
+      let tipoTexto = "";
+
+      if(entrada.seccion === "criticas"){
+
+        tipoClase = "tipo-critica";
+        tipoTexto = "CRÍTICA";
+
+      }else if(entrada.seccion === "articulos"){
+
+        tipoClase = "tipo-articulo";
+        tipoTexto = "ARTÍCULO";
+
+      }else if(entrada.seccion === "rumores"){
+
+        tipoClase = "tipo-rumor";
+        tipoTexto = "RUMOR";
+
+      }
+
+
+      const item = document.createElement("div");
+
+      item.className = "carousel-item";
+
+
+      item.innerHTML = `
+
+        <a href="entrada.html?id=${entrada.id}">
+
+          <div class="miniatura-wrapper">
+
+            <img src="${entrada.imagen.src}" alt="${entrada.imagen.alt}">
+
+            <div class="miniatura-banner ${tipoClase}">
+
+              ${tipoTexto}
+
+            </div>
+
+          </div>
+
+          <h3>${entrada.titulo}</h3>
+
+        </a>
+
+      `;
+
+
+      track.appendChild(item);
 
     });
 
   }
 
+}
 
-  const articulos = contenidoOrdenado.filter(e => e.seccion === "articulos");
 
-  cargarCarrusel("todos-articulos","articulos-prev","articulos-next",articulos);
+const prevBtn = document.querySelector(".autor-carousel .prev");
+
+const nextBtn = document.querySelector(".autor-carousel .next");
+
+
+prevBtn.addEventListener("click",()=>{
+
+  track.scrollBy({left:-300,behavior:"smooth"});
+
+});
+
+
+nextBtn.addEventListener("click",()=>{
+
+  track.scrollBy({left:300,behavior:"smooth"});
 
 });
 
