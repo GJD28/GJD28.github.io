@@ -161,6 +161,20 @@ entrada.contenido.forEach(bloque => {
     html += `<h3 class="subtitulo">${bloque.valor}</h3>`;
   }
 
+  else if(bloque.tipo === "video"){
+    html += `
+      <div class="video-container">
+        <iframe
+          src="${bloque.src}"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    `;
+  }
+
 });
 
   /* VALORACIÓN */
