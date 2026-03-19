@@ -17,6 +17,9 @@
 
 <body>
 
+
+
+
 <header class="header-autores">
 
 <div class="banner-texto">
@@ -57,37 +60,6 @@
 <script src="contenido.js"></script>
 
 <script>
-
-/* =========================
-   BUSCADOR (AÑADIDO)
-   ========================= */
-
-document.addEventListener('DOMContentLoaded', () => {
-
-  const input = document.getElementById("buscador-input");
-
-  input.addEventListener("keypress", function(e) {
-
-    if (e.key === "Enter") {
-
-      const texto = input.value.trim();
-
-      if (texto !== "") {
-
-        window.location.href = "busqueda.html?q=" + encodeURIComponent(texto);
-
-      }
-
-    }
-
-  });
-
-});
-
-
-/* =========================
-   AUTORES
-   ========================= */
 
 const grid = document.querySelector(".autores-grid");
 
