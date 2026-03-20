@@ -762,6 +762,77 @@ const contenido = [
   "Superhéroes"
 ]
 },
+
+/* =========================
+   EL BOSQUE
+   ========================= */
+
+{
+  id: "el-bosque-2004",
+  seccion: "criticas",
+  titulo: "El bosque",
+  autor: "Álvaro Ríos",
+  fecha_publicacion: "20/03/2026",
+  director: "M. Night Shyamalan",
+  año: 2004,
+  nota: 4,
+  destacada: false,
+  imagen: {
+    src: "el-bosque.png",
+    alt: "El bosque (2004), dirigida por M. Night Shyamalan"
+  },
+  entradilla: "Shyamalan construye una fábula sobre el miedo como estructura social, sostenida más por la atmósfera y la idea que por el efectismo.",
+  contenido: [
+
+{ tipo: "texto", valor: "Shyamalan construye una fábula sobre el miedo como estructura social, sostenida más por la atmósfera y la idea que por el efectismo." },
+
+{ tipo: "texto", valor: "«El miedo es el más ignorante, el más injurioso y el más cruel de los consejeros.» — Edmund Burke" },
+
+{ tipo: "texto", valor: "Advertencia: este texto menciona elementos narrativos de la película." },
+
+{ tipo: "texto", valor: "El bosque (2004), escrita y dirigida por M. Night Shyamalan, se enfrenta desde su concepción a un problema que no es estrictamente suyo: la expectativa. A esas alturas, el director ya había sido reducido a un mecanismo, a una especie de ilusionista al que se le exige truco antes incluso de levantar el telón. La película arrastra ese peso, aunque lo verdaderamente relevante es que decide no someterse del todo a él." },
+
+{ tipo: "texto", valor: "La historia se sitúa en una comunidad rural situada en otro tiempo, organizada en torno a normas estrictas y a un equilibrio frágil con aquello que habita en el bosque que la rodea. Hay colores prohibidos, límites infranqueables y una amenaza constante que se mantiene fuera de campo durante buena parte del metraje. El planteamiento remite al cuento moral, a esa forma de relato que establece reglas claras para observar cómo se comportan los personajes dentro de ellas." },
+
+{ tipo: "texto", valor: "Shyamalan construye ese mundo con una paciencia poco frecuente. La película avanza sin prisa, apoyada en una acumulación de detalles que generan una inquietud progresiva: silencios, miradas, pequeñas alteraciones en la rutina. Durante un largo tramo, El bosque funciona como una pieza de atmósfera, más interesada en sostener una sensación que en precipitar acontecimientos." },
+
+{ tipo: "subtitulo", valor: "El miedo como estructura" },
+
+{ tipo: "texto", valor: "El relato se sostiene sobre una idea incómoda: el miedo como estructura." },
+
+{ tipo: "texto", valor: "A medida que la película avanza, lo que parecía una amenaza externa empieza a adquirir otra dimensión. El interés deja de estar en lo que hay en el bosque para desplazarse hacia cómo se organiza la vida dentro del poblado. Shyamalan articula así una fábula bastante directa sobre el miedo entendido como herramienta de orden, como elemento capaz de definir una comunidad entera." },
+
+{ tipo: "texto", valor: "Ahí es donde la película se distancia de la lectura más superficial que se le ha impuesto durante años. La obsesión por el giro final —por su naturaleza, por su eficacia— ha eclipsado con frecuencia lo que ocurre antes y después de él. El bosque no se construye para sorprender, sino para sostener una lógica interna que, cuando se revela, reorganiza lo anterior sin voluntad de invalidarlo." },
+
+{ tipo: "texto", valor: "Formalmente, Shyamalan encuentra aquí un equilibrio poco habitual en su cine. Su tendencia a la afectación queda contenida, casi disciplinada. La puesta en escena es elegante sin caer en el exhibicionismo, y el ritmo —deliberadamente pausado— permite que la película crezca sin necesidad de recurrir a artificios constantes. Hay una seguridad en la forma que rara vez se ve en el resto de su filmografía." },
+
+{ tipo: "texto", valor: "El trabajo de los actores contribuye de manera decisiva a esa estabilidad. Bryce Dallas Howard construye un personaje sostenido en una fisicidad precisa, donde cada gesto parece medido pero nunca mecánico. Su presencia articula buena parte de la carga emocional de la película. Joaquin Phoenix, por su parte, opta por una contención casi extrema, una forma de estar en escena que encaja con la lógica de un mundo donde las emociones parecen filtradas por censuras populares. Alrededor de ellos, William Hurt y Sigourney Weaver aportan una gravedad necesaria para que la comunidad resulte verosímil." },
+
+{ tipo: "texto", valor: "La música de James Newton Howard se integra con especial inteligencia en el conjunto. Su partitura, basada en cuerdas, introduce una dimensión emocional que nunca se impone de forma evidente. Acompaña, sugiere, sostiene." },
+
+{ tipo: "texto", valor: "El bosque ha sido leída durante años como una película fallida, en gran medida por una relación problemática con las expectativas del público. Vista con cierta distancia, esa lectura se revela insuficiente. Shyamalan entrega aquí una obra más contenida, más honesta y, en cierto modo, más consciente de sus propias limitaciones que en otros momentos de su carrera." },
+
+{ tipo: "texto", valor: "Puede que no alcance una perfección formal incontestable, pero aquí gana gracias a esa imperfección." },
+
+{ tipo: "texto", valor: "Dentro de una filmografía marcada por altibajos y por una constante necesidad de demostrar algo, El bosque destaca precisamente por lo contrario: por su renuncia parcial al efectismo y por su apuesta por una idea sostenida en el tiempo. Es, tal vez con el permiso de El protegido, la mejor película de este controvertido y generalmente demasiado ambicioso director." }
+
+  ],
+  etiquetas: [
+    "M. Night Shyamalan",
+    "Bryce Dallas Howard",
+    "Joaquin Phoenix",
+    "William Hurt",
+    "Sigourney Weaver",
+    "Roger Deakins",
+    "James Newton Howard",
+    "Touchstone Pictures",
+    "Blinding Edge Pictures",
+    "2004",
+    "Drama",
+    "Thriller",
+    "Estados Unidos"
+  ]
+},
    
   /* =========================
      NINJA SCROLL
