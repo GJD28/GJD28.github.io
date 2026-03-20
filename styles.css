@@ -617,6 +617,15 @@ footer {
 }
 
 .relacionado-item a{
+  color: #1a73e8; /* azul tipo enlace */
+  text-decoration: none;
+}
+
+.relacionado-item a:hover{
+  text-decoration: underline;
+}
+
+.relacionado-item a{
   color: #111;
 }
 
