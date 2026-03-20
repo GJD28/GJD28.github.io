@@ -820,6 +820,64 @@ const contenido = [
   "Fantasía"
 ]
   },
+
+/* =========================
+   EL CUERPO
+   ========================= */
+
+{
+  id: "el-cuerpo-2012",
+  seccion: "criticas",
+  titulo: "El cuerpo",
+  autor: "Germán Juncosa",
+  fecha_publicacion: "20/03/2026",
+  director: "Oriol Paulo",
+  año: 2012,
+  nota: 2,
+  destacada: false,
+  imagen: {
+    src: "el-cuerpo.png",
+    alt: "El cuerpo (2012), dirigida por Oriol Paulo"
+  },
+  entradilla: "Un thriller que funciona con precisión en su planteamiento y ritmo, pero que termina mostrando demasiado pronto el artificio sobre el que se sostiene.",
+  contenido: [
+
+{ tipo: "texto", valor: "Un thriller que funciona con precisión en su planteamiento y ritmo, pero que termina mostrando demasiado pronto el artificio sobre el que se sostiene." },
+
+{ tipo: "texto", valor: "El cuerpo es una de esas películas que funcionan con precisión durante buena parte de su metraje y que, al mismo tiempo, dejan una sensación extraña cuando se miran con un poco de distancia. La experiencia inmediata tiene algo de eficaz, incluso de absorbente, porque el planteamiento es limpio y la puesta en escena entiende muy bien el tipo de tensión que quiere construir. La desaparición de un cadáver en una morgue, el espacio cerrado, la noche como marco temporal y un puñado de personajes atrapados en una situación que no terminan de comprender. Con muy pocos elementos, la película encuentra una base sólida desde la que empezar a jugar." },
+
+{ tipo: "texto", valor: "Ahí es donde mejor se mueve. En la gestión del espacio y en la dosificación de la información. Oriol Paulo construye la intriga apoyándose en una progresión bastante clara, en la que cada nueva pieza altera ligeramente la anterior y mantiene al espectador dentro del juego. Hay oficio en cómo se administran los tiempos, en cómo se colocan los giros intermedios y en cómo se mantiene la atención sin necesidad de grandes alardes visuales. La película avanza con ritmo y sabe sostener la tensión durante un tramo considerable, algo que no siempre es fácil en un thriller tan dependiente de su premisa." },
+
+{ tipo: "texto", valor: "El reparto acompaña bien ese planteamiento. José Coronado aporta una presencia sólida, con esa mezcla de autoridad y desgaste que encaja con el tono del relato, mientras que Hugo Silva se mueve en un registro más nervioso que ayuda a sostener la incertidumbre. Belén Rueda, desde un lugar más contenido, funciona como pieza clave dentro del engranaje narrativo, en una película que depende mucho de cómo se dosifica la información sobre su personaje." },
+
+{ tipo: "texto", valor: "El problema aparece cuando uno empieza a ver el mecanismo en funcionamiento con demasiada claridad. El cuerpo apuesta por una acumulación constante de giros y revelaciones que terminan pesando más que la propia historia. Cada nueva vuelta de tuerca busca reactivar la intriga, pero al hacerlo va desplazando el interés desde la situación hacia el artificio. La película deja de apoyarse en lo que está ocurriendo para apoyarse en cómo va a sorprender al espectador en el siguiente movimiento." },
+
+{ tipo: "texto", valor: "Hay además un elemento concreto que sostiene buena parte del desarrollo y que resulta especialmente difícil de aceptar. La película introduce una pieza clave en la relación entre los personajes que exige un grado de credulidad muy alto y que termina condicionando decisiones fundamentales del relato. Sobre el papel funciona como un giro elegante, pero cuando uno se detiene a pensarlo, la construcción se resiente y deja ver un punto de partida demasiado forzado para todo lo que viene después. En una historia que depende tanto de ese movimiento, ese desequilibrio pesa más de lo que debería." },
+
+{ tipo: "texto", valor: "Esa forma de construir el relato tiene un efecto inmediato: la tensión se mantiene, pero la implicación se resiente. Cuesta entrar de verdad en lo que les pasa a los personajes porque todo parece subordinado al siguiente giro. Las decisiones, los comportamientos y algunas resoluciones empiezan a sentirse más diseñadas que vividas. La película sigue avanzando con firmeza, pero lo hace sobre una base cada vez más inestable." },
+
+{ tipo: "texto", valor: "El tramo final concentra buena parte de esas sensaciones. El cierre está pensado para encajar todas las piezas y ofrecer una explicación completa del recorrido. La estructura se cierra con precisión, pero esa misma precisión deja al descubierto el carácter calculado de todo el conjunto. El impacto existe, aunque llega acompañado de una cierta sensación de exceso, como si la película necesitara poner en negrita su propio ingenio." },
+
+{ tipo: "texto", valor: "El cuerpo termina siendo un thriller eficaz en su planteamiento y en su desarrollo inmediato, capaz de atrapar mientras dura, pero más discutible cuando se observa el conjunto. Funciona por su ritmo, por su capacidad para sostener la intriga y por un uso del espacio bastante bien resuelto. Se resiente en la acumulación de recursos de guion y en una tendencia a forzar el mecanismo hasta hacerlo demasiado visible." },
+
+{ tipo: "texto", valor: "No es una película que se venga abajo, pero sí una que pierde fuerza a medida que intenta apretar más de la cuenta. Se deja ver con interés y cumple dentro de su terreno, aunque deja la impresión de que, con un planteamiento más contenido, habría tenido un recorrido mucho más sólido." }
+
+  ],
+  etiquetas: [
+    "Oriol Paulo",
+    "José Coronado",
+    "Hugo Silva",
+    "Belén Rueda",
+    "Aura Garrido",
+    "Óscar Faura",
+    "Sergio Moure",
+    "Rodar y Rodar",
+    "Antena 3 Films",
+    "2012",
+    "Thriller",
+    "España"
+  ]
+},
    
   /* =========================
      SINISTER
