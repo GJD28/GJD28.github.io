@@ -543,9 +543,10 @@ const contenido = [
 },
 
 
-   /* =========================
+/* =========================
    SPIDER-MAN BRAND NEW DAY (TRÁILER)
    ========================= */
+
 {
   id: "spiderman-brand-new-day-trailer",
   seccion: "rumores",
@@ -560,13 +561,15 @@ const contenido = [
   entradilla: "Marvel y Sony lanzan el primer tráiler de Spider-Man: Brand New Day y desatan una oleada de teorías, análisis y especulación sobre el futuro del personaje.",
   contenido: [
 
+{ tipo: "texto", valor: "Marvel y Sony lanzan el primer tráiler de Spider-Man: Brand New Day y desatan una oleada de teorías, análisis y especulación sobre el futuro del personaje." },
+
 { tipo: "texto", valor: "Vale, vamos a hablar claro: Marvel y Sony han soltado el primer tráiler de Spider-Man: Brand New Day y esto ha sido como abrir una lata de Coca-Cola agitada. No es el típico avance que ves, comentas por encima y olvidas al rato. Aquí hay intención, hay ritmo y hay una forma muy concreta de enseñar las cosas que deja bastante claro que no están mostrando todo lo que tienen." },
 
 { tipo: "texto", valor: "En cuestión de horas, medio internet estaba analizando cada plano, cada frase y cada sombra sospechosa del fondo. Y lo curioso es que cuanto más se mira el tráiler, más sensación da de que hay piezas que no terminan de encajar del todo. Es como si todo estuviera colocado para que entiendas lo básico, pero no para que veas el dibujo completo." },
 
-{ tipo: "video", src: "https://www.youtube.com/embed/owfWVJoxXR4" },
-
 { tipo: "texto", valor: "Y no es para menos." },
+
+{ tipo: "video", src: "https://www.youtube.com/embed/owfWVJoxXR4" },
 
 { tipo: "subtitulo", valor: "Un Peter Parker completamente solo (y un tono bastante más oscuro)" },
 
@@ -661,7 +664,7 @@ const contenido = [
     "Superhéroes"
   ]
 },
-
+   
 /* =========================
    SPIDER-MAN BRAND NEW DAY (VILLANO OCULTO)
    ========================= */
