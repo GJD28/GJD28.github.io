@@ -664,6 +664,104 @@ const contenido = [
   ]
 },
 
+/* =========================
+   SPIDER-MAN BRAND NEW DAY (VILLANO OCULTO)
+   ========================= */
+
+{
+  id: "spiderman-brand-new-day-villano-oculto",
+  seccion: "rumores",
+  titulo: "El tráiler de Spider-Man: Brand New Day esconde un villano… y las teorías apuntan a algo mucho más grande de lo que parece",
+  autor: "Nil Miralles",
+  fecha_publicacion: "20/03/2026",
+  destacada: false,
+  imagen: {
+    src: "brand-new-day.png",
+    alt: "Spider-Man: Brand New Day, teorías sobre el villano oculto"
+  },
+  entradilla: "El nuevo tráiler de Spider-Man: Brand New Day deja más preguntas que respuestas y ha disparado teorías sobre la presencia de un villano oculto mucho más importante de lo que parece.",
+  contenido: [
+
+{ tipo: "texto", valor: "Vale, vamos a sentarnos un momento y hablar de lo que realmente importa del tráiler de Spider-Man: Brand New Day. Porque sí, hay acción, hay personajes conocidos y hay ese Peter Parker más solo que nunca intentando reconstruir su vida después de No Way Home. Pero más allá de todo eso, hay una sensación bastante clara que se te queda en la cabeza cuando termina el tráiler: aquí falta alguien. O mejor dicho, aquí hay alguien que Marvel no quiere enseñarte todavía." },
+
+{ tipo: "texto", valor: "Y claro, cuando Marvel juega a esconder cartas, ya sabemos cómo funciona esto. No es casualidad, no es un despiste, y desde luego no es porque no tengan material que enseñar. Es una decisión consciente. Y eso es lo que ha hecho que varios medios especializados coincidan en la misma lectura: lo que estamos viendo no es el cuadro completo, sino solo la superficie." },
+
+{ tipo: "subtitulo", valor: "Lo que el tráiler enseña… y lo que no termina de explicar" },
+
+{ tipo: "texto", valor: "Si te quedas solo con lo evidente, el tráiler parece bastante claro. Tenemos a Spider-Man enfrentándose a amenazas más “de calle”, con villanos como Scorpion o Tombstone entrando en juego, lo que refuerza ese tono más urbano y más cercano al cómic clásico del personaje. Después de una película tan descomunal como No Way Home, este cambio hacia algo más contenido tiene todo el sentido del mundo." },
+
+{ tipo: "texto", valor: "Pero el problema —o más bien, lo interesante— es que hay varios momentos en el tráiler que no encajan del todo con ese enfoque. Hay escenas donde los personajes parecen actuar de forma extraña, donde se insinúa algún tipo de manipulación o influencia externa, y donde la amenaza no se presenta como algo físico que puedas resolver con un par de puñetazos y una buena coreografía de CGI." },
+
+{ tipo: "texto", valor: "Esa disonancia es justo lo que ha encendido las alarmas. Porque cuando una película te vende un tipo de conflicto pero deja caer pistas de otro completamente distinto, normalmente significa que hay un villano mayor operando en la sombra." },
+
+{ tipo: "subtitulo", valor: "El patrón clásico de Marvel: enseñar secundarios, ocultar al importante" },
+
+{ tipo: "texto", valor: "Aquí Marvel no está inventando nada nuevo. De hecho, está aplicando una de sus jugadas favoritas desde hace años: mostrarte a los villanos “visibles” en el tráiler mientras guarda el verdadero antagonista para la película. Lo hemos visto antes y lo seguiremos viendo, porque funciona." },
+
+{ tipo: "texto", valor: "Scorpion, Tombstone y compañía podrían ser simplemente la cara visible del conflicto, pero no necesariamente el núcleo de la historia. Es decir, funcionan como obstáculos, como piezas del tablero, pero no como el jugador que mueve las fichas." },
+
+{ tipo: "texto", valor: "Y eso cambia bastante la película. Porque pasas de una historia de Spider-Man contra criminales a una historia donde hay una inteligencia detrás organizando el caos." },
+
+{ tipo: "subtitulo", valor: "Las pistas que apuntan a un villano “diferente”" },
+
+{ tipo: "texto", valor: "Uno de los elementos más comentados en los análisis del tráiler es la posible presencia de habilidades que no encajan con los villanos confirmados. Se habla de comportamientos alterados, de situaciones donde los personajes parecen no tener control total sobre sus acciones y de una amenaza que no es puramente física." },
+
+{ tipo: "texto", valor: "Eso ha llevado a muchos a pensar en un tipo de villano que el MCU todavía no ha explorado del todo en el contexto de Spider-Man: alguien con capacidades más mentales que físicas. No necesariamente alguien que se enfrente directamente a Peter en combate, sino alguien que pueda manipular, influir o incluso controlar desde la distancia." },
+
+{ tipo: "texto", valor: "Y aquí es donde empiezan las teorías más interesantes, porque este tipo de enemigo cambia completamente la dinámica de la película. Spider-Man ya no solo tiene que pelear, tiene que entender qué está pasando, quién está detrás y cómo enfrentarse a algo que no puede simplemente golpear." },
+
+{ tipo: "subtitulo", valor: "El factor Sadie Sink y el misterio que rodea su personaje" },
+
+{ tipo: "texto", valor: "Y luego está el tema que no se puede ignorar: el personaje de Sadie Sink. Porque el tráiler la muestra, pero no la explica. Y eso, en una producción de Marvel, no es casualidad." },
+
+{ tipo: "texto", valor: "Su papel podría ser clave dentro de la historia, precisamente porque está rodeado de misterio. No sabemos quién es, no sabemos de dónde viene y, lo más importante, no sabemos qué papel juega en el conflicto. Y cuando un personaje se introduce así, sin contexto claro, suele ser porque tiene más peso del que parece." },
+
+{ tipo: "texto", valor: "Algunas teorías apuntan a que podría estar relacionada con poderes que encajen con ese componente más mental o psicológico que se intuye en el tráiler. Otras van más allá y empiezan a conectar con conceptos más grandes dentro del MCU, lo que abriría la puerta a que la película no solo cuente una historia cerrada, sino que plantee algo más de cara al futuro." },
+
+{ tipo: "texto", valor: "No hay confirmaciones, pero la sensación es clara: su personaje no está ahí de adorno." },
+
+{ tipo: "subtitulo", valor: "¿Un villano oculto… o el inicio de algo más grande?" },
+
+{ tipo: "texto", valor: "Si juntas todas las piezas —las escenas que no encajan del todo, el tono más oscuro, la posible manipulación, el misterio alrededor de ciertos personajes— la conclusión a la que están llegando muchos análisis es bastante clara: Brand New Day podría estar escondiendo algo más grande de lo que parece a simple vista." },
+
+{ tipo: "texto", valor: "No sería solo una película de transición para Spider-Man, sino una historia que introduce nuevas amenazas, nuevos conceptos y, posiblemente, nuevas direcciones para el personaje dentro del MCU." },
+
+{ tipo: "texto", valor: "Y eso encaja bastante bien con el momento en el que está Marvel ahora mismo. Necesitan construir nuevas piezas, nuevos conflictos y nuevos villanos que sostengan lo que viene después." },
+
+{ tipo: "subtitulo", valor: "Entonces… ¿qué está haciendo realmente Marvel?" },
+
+{ tipo: "texto", valor: "Te lo digo claro: Marvel no te está enseñando la película. Te está enseñando la mitad que quiere que veas." },
+
+{ tipo: "texto", valor: "Porque el tráiler funciona perfectamente si lo ves como una historia más pequeña, más personal, más centrada en Spider-Man. Pero en cuanto empiezas a rascar un poco, aparecen detalles que apuntan a algo mucho más ambicioso." },
+
+{ tipo: "texto", valor: "Y ahí es donde está la gracia." },
+
+{ tipo: "texto", valor: "Ahora mismo estamos en ese punto en el que todo son teorías, interpretaciones y piezas sueltas. Pero hay algo bastante claro: hay un villano que todavía no hemos visto… y probablemente sea el más importante de la película." },
+
+{ tipo: "texto", valor: "Y sinceramente, esa es justo la clase de misterio que hace que quieras ir al cine a comprobar si estabas en lo cierto." },
+
+{ tipo: "texto", valor: "Spoiler: probablemente no lo estaremos. Y mejor así." },
+
+{
+  tipo: "relacionados",
+  ids: [
+    "spiderman-brand-new-day-trailer"
+  ]
+}
+
+  ],
+  etiquetas: [
+  "Spider-Man",
+  "Marvel",
+  "Marvel Studios",
+  "Sony Pictures",
+  "MCU",
+  "Sadie Sink",
+  "Estados Unidos",
+  "Superhéroes"
+]
+},
+   
   /* =========================
      NINJA SCROLL
      ========================= */
