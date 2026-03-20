@@ -176,6 +176,31 @@ if(meta && entrada.entradilla){
       `;
     }
 
+else if(bloque.tipo === "relacionados"){
+
+  html += `<h3 class="subtitulo">Tal vez te interese...</h3>`;
+
+  bloque.ids.forEach(idRelacionado => {
+
+    const entradaRelacionada = contenido.find(e => e.id === idRelacionado);
+
+    if(entradaRelacionada){
+
+      html += `
+        <p class="relacionado-item">
+          &middot; 
+          <a href="entrada.html?id=${entradaRelacionada.id}">
+            ${entradaRelacionada.titulo}
+          </a>
+        </p>
+      `;
+
+    }
+
+  });
+
+}
+    
   });
 
 
