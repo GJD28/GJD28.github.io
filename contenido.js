@@ -479,6 +479,10 @@ const contenido = [
       "Ciencia ficción"
     ]
   },
+
+   /* =========================
+   CUBE
+   ========================= */
 {
   id: "cube-1997",
   seccion: "criticas",
