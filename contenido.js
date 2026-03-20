@@ -542,7 +542,11 @@ const contenido = [
   ]
 },
 
-   {
+
+   /* =========================
+   SPIDER-MAN BRAND NEW DAY (TRÁILER)
+   ========================= */
+{
   id: "spiderman-brand-new-day-trailer",
   seccion: "rumores",
   titulo: "Spider-Man: Brand New Day lanza su primer tráiler",
@@ -556,9 +560,9 @@ const contenido = [
   entradilla: "Marvel y Sony lanzan el primer tráiler de Spider-Man: Brand New Day y desatan una oleada de teorías, análisis y especulación sobre el futuro del personaje.",
   contenido: [
 
-{ tipo: "texto", valor: "Vale, vamos a hablar claro: Marvel y Sony han soltado el primer tráiler de Spider-Man: Brand New Day y esto ha sido como abrir una lata de Coca-Cola agitada." },
+{ tipo: "texto", valor: "Vale, vamos a hablar claro: Marvel y Sony han soltado el primer tráiler de Spider-Man: Brand New Day y esto ha sido como abrir una lata de Coca-Cola agitada. No es el típico avance que ves, comentas por encima y olvidas al rato. Aquí hay intención, hay ritmo y hay una forma muy concreta de enseñar las cosas que deja bastante claro que no están mostrando todo lo que tienen." },
 
-{ tipo: "texto", valor: "En cuestión de horas, medio internet estaba analizando cada plano, cada frase y cada sombra sospechosa del fondo." },
+{ tipo: "texto", valor: "En cuestión de horas, medio internet estaba analizando cada plano, cada frase y cada sombra sospechosa del fondo. Y lo curioso es que cuanto más se mira el tráiler, más sensación da de que hay piezas que no terminan de encajar del todo. Es como si todo estuviera colocado para que entiendas lo básico, pero no para que veas el dibujo completo." },
 
 { tipo: "video", src: "https://www.youtube.com/embed/owfWVJoxXR4" },
 
@@ -580,7 +584,7 @@ const contenido = [
 
 { tipo: "texto", valor: "El tráiler también deja caer varias cosas interesantes a nivel de personajes:" },
 
-{ tipo: "texto", valor: "· Regresa MJ, pero con una vida completamente separada de Peter (y ojo, con posible nueva pareja)\n· Aparece The Punisher, que no es precisamente el colega más optimista del MCU\n· Vuelve Scorpion como amenaza\n· Y tenemos a Bruce Banner/Hulk, en un rol bastante distinto al habitual" },
+{ tipo: "texto", valor: "· Regresa MJ, pero con una vida completamente separada de Peter (y ojo, con posible nueva pareja)\n· Aparece The Punisher, que no es precisamente el colega más optimista del MCU\n· Vuelve Scorpion como amenaza\n· Tenemos a Bruce Banner/Hulk en un rol bastante distinto al habitual" },
 
 { tipo: "texto", valor: "Todo esto ya te da una pista clara: la peli va a mezclar historia personal, rollo callejero y conexiones con el MCU más grande." },
 
@@ -596,7 +600,7 @@ const contenido = [
 
 { tipo: "texto", valor: "Y claro, aquí ya ha empezado el festival:" },
 
-{ tipo: "texto", valor: "· teorías sobre experimentos genéticos\n· conexiones con Oscorp\n· gente hablando de versiones alternativas del personaje\n· incluso comparaciones con el Spider-Man de Tobey Maguire" },
+{ tipo: "texto", valor: "· Teorías sobre experimentos genéticos\n· Conexiones con Oscorp\n· Gente hablando de versiones alternativas del personaje\n· Comparaciones con el Spider-Man de Tobey Maguire" },
 
 { tipo: "texto", valor: "El fandom, en su estado natural." },
 
@@ -606,7 +610,7 @@ const contenido = [
 
 { tipo: "texto", valor: "El tráiler no deja claro quién interpreta, pero eso no ha impedido que ya haya teorías para aburrir:" },
 
-{ tipo: "texto", valor: "· Jean Grey (sí, ya estamos metiendo a los X-Men)\n· algún personaje nuevo vinculado al multiverso\n· o incluso una sorpresa completamente distinta" },
+{ tipo: "texto", valor: "· Jean Grey (sí, ya estamos metiendo a los X-Men)\n· Algún personaje nuevo vinculado al multiverso\n· Una sorpresa completamente distinta" },
 
 { tipo: "texto", valor: "Los medios internacionales ya recogen esta incertidumbre como uno de los grandes misterios del proyecto." },
 
@@ -630,7 +634,7 @@ const contenido = [
 
 { tipo: "texto", valor: "Están intentando hacer una nueva etapa de Spider-Man:" },
 
-{ tipo: "texto", valor: "· más personal\n· más aislada\n· pero con semillas para algo mucho más grande" },
+{ tipo: "texto", valor: "· Más personal\n· Más aislada\n· Con semillas para algo mucho más grande" },
 
 { tipo: "texto", valor: "Y los rumores que están saliendo alrededor del tráiler van justo por ahí: esto no es solo una peli más, es el inicio de algo." },
 
@@ -653,12 +657,6 @@ const contenido = [
     "Marvel Studios",
     "Sony Pictures",
     "MCU",
-    "Peter Parker",
-    "MJ",
-    "The Punisher",
-    "Hulk",
-    "Scorpion",
-    "Sadie Sink",
     "Estados Unidos",
     "Superhéroes"
   ]
