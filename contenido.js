@@ -481,6 +481,45 @@ const contenido = [
   },
 
 {
+  id: "cube-1997",
+  seccion: "criticas",
+  titulo: "Cube",
+  autor: "Álvaro Ríos",
+  fecha_publicacion: "20/03/2026",
+  director: "Vincenzo Natali",
+  año: 1997,
+  nota: 3,
+  destacada: false,
+  imagen: {
+    src: "cube.png",
+    alt: "Cube (1997), dirigida por Vincenzo Natali"
+  },
+  entradilla: "",
+
+  contenido: [
+    { tipo: "texto", valor: "" }
+  ],
+
+  etiquetas: [
+    "Vincenzo Natali",
+    "André Bijelic",
+    "Graeme Manson",
+    "Nicole de Boer",
+    "Maurice Dean Wint",
+    "David Hewlett",
+    "Nicky Guadagni",
+    "Derek Rogers",
+    "Mark Korven",
+    "The Feature Film Project",
+    "Téléfilm Canada",
+    "Canadá",
+    "1997",
+    "Ciencia ficción",
+    "Thriller"
+  ]
+},
+   
+{
   id: "spiderman-brand-new-day-trailer",
   seccion: "rumores",
   titulo: "Spider-Man: Brand New Day lanza su primer tráiler",
