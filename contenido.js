@@ -85,19 +85,21 @@ const contenido = [
       { tipo: "texto", valor: "Donde la película se me queda corta es en el cierre. El desenlace es eficaz y está bien armado, pero introduce una limpieza excesiva que enfría parte de lo que venía funcionando tan bien. Todo encaja, todo se explica y todo queda bajo control otra vez. El problema no es que tenga sentido, sino que reduce la incomodidad acumulada y deja una sensación más calculada de la que pedía el viaje." },
       { tipo: "texto", valor: "Aun así, The Game me sigue gustando mucho. No la considero una obra mayor ni una película redonda, pero sí un thriller muy sólido, con una identidad clara y con momentos de auténtica fuerza. Es una de esas películas que disfruto más mientras la estoy viendo que cuando empiezo a pensarla después, y eso, en su caso, juega a favor. Fincher sostiene el pulso durante casi todo el metraje y eso basta para que el viaje merezca la pena." }
     ],
-    etiquetas: [
-      "Michael Douglas",
-      "David Fincher",
-      "1997",
-      "Thriller",
-      "Harris Savides",
-"Howard Shore",
-"John Brancato",
-"Michael Ferris",
-"PolyGram Filmed Entertainment",
-"Propaganda Films",
-"Estados Unidos",
-    ]
+  etiquetas: [
+  "David Fincher",
+  "John Brancato",
+  "Michael Ferris",
+  "Michael Douglas",
+  "Sean Penn",
+  "Deborah Kara Unger",
+  "Harris Savides",
+  "Howard Shore",
+  "PolyGram Filmed Entertainment",
+  "Propaganda Films",
+  "Estados Unidos",
+  "1997",
+  "Thriller"
+]
   },
 
   /* =========================
@@ -133,21 +135,21 @@ const contenido = [
       { tipo: "texto", valor: "Entrevista con el vampiro envejece mal por una cuestión de actitud. La película se mira con devoción y confunde importancia con profundidad. El artificio se impone y la verdad desaparece entre capas de afectación. Lo que queda es un objeto vistoso, solemnemente hueco y en buena medida olvidable." }
     ],
     etiquetas: [
-      "Brad Pitt",
-      "Tom Cruise",
-      "Antonio Banderas",
-      "Kirsten Dunst",
-      "Neil Jordan",
-      "1994",
-      "Terror",
-      "Vampiros",
-       "Philippe Rousselot",
-"Elliot Goldenthal",
-"Anne Rice",
-"Geffen Pictures",
-"Warner Bros.",
-"Estados Unidos",
-    ]
+  "Neil Jordan",
+  "Anne Rice",
+  "Brad Pitt",
+  "Tom Cruise",
+  "Kirsten Dunst",
+  "Antonio Banderas",
+  "Philippe Rousselot",
+  "Elliot Goldenthal",
+  "Geffen Pictures",
+  "Warner Bros.",
+  "Estados Unidos",
+  "1994",
+  "Terror",
+  "Drama"
+]
   },
 
   /* =========================
@@ -180,15 +182,20 @@ const contenido = [
       { tipo: "texto", valor: "Salgo de ella con el corazón un poco apretado y con ganas de volver a escuchar la banda sonora entera. Y eso, para mí, significa que la película ha hecho su trabajo." }
     ],
     etiquetas: [
-      "Matthew Libatique",
-"Lady Gaga",
-"Bradley Cooper",
-"Eric Roth",
-"Will Fetters",
-"Warner Bros.",
-"Live Nation Productions",
-"Estados Unidos",
-    ]
+  "Bradley Cooper",
+  "Eric Roth",
+  "Will Fetters",
+  "Sam Elliott",
+  "Andrew Dice Clay",
+  "Matthew Libatique",
+  "Lady Gaga",
+  "Warner Bros.",
+  "Live Nation Productions",
+  "Estados Unidos",
+  "2018",
+  "Drama",
+  "Romance"
+]
   },
 
    /* =========================
@@ -235,22 +242,20 @@ const contenido = [
   ],
 
   etiquetas: [
-    "Quentin Tarantino",
-    "Kurt Russell",
-    "Jennifer Jason Leigh",
-    "Samuel L. Jackson",
-    "Walton Goggins",
-    "Tim Roth",
-    "Michael Madsen",
-    "Demián Bichir",
-    "Bruce Dern",
-    "Ennio Morricone",
-    "Robert Richardson",
-    "2015",
-    "Western",
-    "Thriller"
-    
-  ]
+  "Quentin Tarantino",
+  "Samuel L. Jackson",
+  "Kurt Russell",
+  "Jennifer Jason Leigh",
+  "Walton Goggins",
+  "Robert Richardson",
+  "Ennio Morricone",
+  "The Weinstein Company",
+  "Columbia Pictures",
+  "Estados Unidos",
+  "2015",
+  "Western",
+  "Thriller"
+]
 },
 
      /* =========================
@@ -377,20 +382,21 @@ const contenido = [
     ],
 
     etiquetas: [
-      "Billy Wilder",
-      "Jack Lemmon",
-      "Shirley MacLaine",
-      "Fred MacMurray",
-      "I. A. L. Diamond",
-      "Joseph LaShelle",
-      "Adolph Deutsch",
-      "1960",
-      "Comedia",
-      "Romance",
-      "The Mirisch Company",
-      "United Artists",
-      "Estados Unidos"
-    ]
+  "Billy Wilder",
+  "I. A. L. Diamond",
+  "Jack Lemmon",
+  "Shirley MacLaine",
+  "Fred MacMurray",
+  "Ray Walston",
+  "Joseph LaShelle",
+  "Adolph Deutsch",
+  "The Mirisch Company",
+  "United Artists",
+  "Estados Unidos",
+  "1960",
+  "Comedia",
+  "Romance"
+]
   },
 
    /* =========================
@@ -637,15 +643,21 @@ const contenido = [
 
     ],
     etiquetas: [
-      "Yoshiaki Kawajiri",
-      "1993",
-      "Anime",
-      "Acción",
-      "Fantasía",
-      "Terror",
-      "Madhouse",
-      "Japón"
-    ]
+  "Yoshiaki Kawajiri",
+  "Kōichi Yamadera",
+  "Emi Shinohara",
+  "Takeshi Aono",
+  "Osamu Saka",
+  "Toshiyuki Honda",
+  "Kaoru Wada",
+  "Madhouse",
+  "Toho",
+  "Japón",
+  "1993",
+  "Anime",
+  "Acción",
+  "Fantasía"
+]
   },
    
   /* =========================
@@ -701,20 +713,21 @@ const contenido = [
 
     ],
     etiquetas: [
-      "Scott Derrickson",
-      "Ethan Hawke",
-      "James Ransone",
-      "2012",
-      "Terror",
-      "Thriller",
-      "Christopher Young",
-      "Chris Norr",
-      "Scott Derrickson",
-      "C. Robert Cargill",
-      "Blumhouse Productions",
-      "Automatik Entertainment",
-      "Estados Unidos"
-    ]
+  "Scott Derrickson",
+  "C. Robert Cargill",
+  "Ethan Hawke",
+  "James Ransone",
+  "Fred Dalton Thompson",
+  "Clare Foley",
+  "Chris Norr",
+  "Christopher Young",
+  "Blumhouse Productions",
+  "Automatik Entertainment",
+  "Estados Unidos",
+  "2012",
+  "Terror",
+  "Thriller"
+]
   },
    
   /* =========================
@@ -759,18 +772,19 @@ const contenido = [
 { tipo: "texto", valor: "Y eso, en un festival, siempre me parece una buena noticia." }
 
     ],
-    etiquetas: [
-      "Carlo Padial",
-      "Berto Romero",
-      "Judit Martín",
-      "Bruna Cusí",
-      "Raúl Arévalo",
-      "Joaquín Reyes",
-      "Miguel Noguera",
-      "2026",
-      "Comedia",
-      "España"
-    ]
+ etiquetas: [
+  "Carlo Padial",
+  "Berto Romero",
+  "Judit Martín",
+  "Bruna Cusí",
+  "Raúl Arévalo",
+  "Pol Rodríguez",
+  "Suma Content",
+  "Filmin",
+  "España",
+  "2026",
+  "Comedia"
+]
   },
 
   /* =========================
@@ -815,16 +829,19 @@ const contenido = [
 
     ],
     etiquetas: [
-      "Marta Matute",
-      "Júlia Mascort",
-      "Sonia Almarcha",
-      "Tomás del Estal",
-      "Distinto Films",
-"Dos Soles Media",
-       "2026",
-      "Drama",
-      "España"
-    ]
+  "Marta Matute",
+  "Júlia Mascort",
+  "Sonia Almarcha",
+  "Tomás del Estal",
+  "Álvaro Medina",
+  "Santiago Racaj",
+  "Aránzazu Calleja",
+  "Distinto Films",
+  "Dos Soles Media",
+  "España",
+  "2026",
+  "Drama"
+]
   },
    
   /* =========================
