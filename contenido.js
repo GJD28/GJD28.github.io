@@ -664,6 +664,62 @@ const contenido = [
     "Superhéroes"
   ]
 },
+
+/* =========================
+   TORRENTE PRESIDENTE
+   ========================= */
+
+{
+  id: "torrente-presidente-2026",
+  seccion: "criticas",
+  titulo: "Torrente, Presidente",
+  autor: "Irene Salgado",
+  fecha_publicacion: "20/03/2026",
+  director: "Santiago Segura",
+  año: 2026,
+  nota: 2.5,
+  destacada: false,
+  estreno: true,
+  imagen: {
+    src: "torrente-presidente.png",
+    alt: "Torrente Presidente (2026), dirigida por Santiago Segura"
+  },
+  entradilla: "Una nueva entrega que mantiene el humor reconocible del personaje mientras deja ver cierto desgaste en sus mecanismos.",
+  contenido: [
+
+{ tipo: "texto", valor: "Una nueva entrega que mantiene el humor reconocible del personaje mientras deja ver cierto desgaste en sus mecanismos." },
+
+{ tipo: "texto", valor: "Entrar en Torrente Presidente es aceptar desde el primer minuto el tipo de viaje que propone Santiago Segura. Yo entro fácil en Torrente. Me hace gracia ese tipo de personaje que parece sacado de la calle, exagerado hasta el esperpento, pero reconocible en demasiadas cosas como para mirarlo con distancia cómoda. Me río porque identifico comportamientos, frases, actitudes que he visto mil veces. Esa cercanía incómoda es parte del mecanismo." },
+
+{ tipo: "texto", valor: "La película coloca a Torrente en un contexto político que le viene como anillo al dedo. La idea de verlo moverse dentro de ese entorno ya tiene algo de chiste en sí misma. Todo arranca con esa energía de disparate controlado, con Torrente ocupando espacios que le quedan grandes y pequeños a la vez, y con una sensación constante de que cualquier cosa puede pasar en cualquier momento. A mí eso me funciona durante buena parte del metraje. Me relajo dentro de ese caos." },
+
+{ tipo: "texto", valor: "El desarrollo avanza a base de situaciones más que de una historia cerrada con precisión. Hay una sucesión de escenas que buscan el gag, la reacción, la incomodidad. Algunas entran muy bien. Hay momentos en los que me reí de verdad, de esos que te salen solos y no te da tiempo a analizarlos. Otros pasan más rápido, se quedan en una sonrisa ligera o en una idea que podría haber dado más de sí. Esa irregularidad está ahí todo el tiempo, y forma parte de la experiencia de ver la película." },
+
+{ tipo: "texto", valor: "Santiago Segura dirige con una intención muy clara. Quiere que la película sea un vehículo para el humor del personaje. La cámara se coloca al servicio de eso, sin buscar grandes alardes formales. Todo está pensado para que Torrente sea el centro absoluto, para que cada escena gire a su alrededor y para que el ritmo no se detenga demasiado en nada que no tenga potencial cómico. Esa decisión hace que la película avance ligera, aunque también provoca que algunos momentos se queden sin desarrollar." },
+
+{ tipo: "texto", valor: "Hay algo que me interesa especialmente en esta entrega, y es cómo el personaje se relaciona con el contexto actual. Torrente siempre ha funcionado como una caricatura muy exagerada de ciertos comportamientos. Aquí esa caricatura se mezcla con un entorno político reconocible, y la combinación tiene gracia porque amplifica lo ridículo de ambos lados. Yo veo a Torrente y no lo siento como algo ajeno. Me recuerda a conversaciones, a comentarios escuchados en bares, a actitudes que aparecen en el día a día. Esa conexión es la que sostiene muchas de las escenas." },
+
+{ tipo: "texto", valor: "El reparto que acompaña a Torrente entra en ese juego con naturalidad. Hay apariciones que funcionan como pequeños golpes de humor, como guiños que suman al tono general. La película tiene ese aire de fiesta un poco desordenada donde van entrando personajes, soltando su momento y dejando paso al siguiente. A mí ese formato me resulta simpático cuando estoy dentro del código que propone." },
+
+{ tipo: "texto", valor: "También hay un punto de desgaste que se percibe. El personaje lleva muchos años entre nosotros y eso se nota en algunos recursos que resultan familiares. Hay chistes que recuerdan a otros, dinámicas que ya conocemos. Aun así, cuando la película acierta, acierta bien. Y cuando me hace reír, me olvido bastante rápido de lo demás." },
+
+{ tipo: "texto", valor: "Yo con Torrente tengo una relación bastante clara. Sé perfectamente que no estoy viendo una gran película en términos de construcción, de guion o de ambición formal. Tampoco la necesito así. Entro porque me apetece pasar un rato divertido, porque me interesa esa mirada deformada de la realidad y porque me hace gracia reconocer en pantalla ese tipo de ser humano que me cruzo más de lo que me gustaría." },
+
+{ tipo: "texto", valor: "Salgo de Torrente Presidente con una sensación agradable. Me he reído, he reconocido cosas, he pasado un buen rato. También veo las costuras, los momentos que podrían haber ido más lejos, las ideas que se quedan a medio camino. Todo eso convive sin problema." }
+
+  ],
+  etiquetas: [
+    "Santiago Segura",
+    "Saga Torrente",
+    "España",
+    "2026",
+    "Comedia",
+    "Atresmedia Cine",
+    "Amiguetes Entertainment",
+    "Roque Baños",
+    "Kiko de la Rica"
+  ]
+},
    
 /* =========================
    SPIDER-MAN BRAND NEW DAY (VILLANO OCULTO)
