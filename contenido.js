@@ -479,7 +479,6 @@ const contenido = [
       "Ciencia ficción"
     ]
   },
-
 {
   id: "cube-1997",
   seccion: "criticas",
@@ -494,10 +493,30 @@ const contenido = [
     src: "cube.png",
     alt: "Cube (1997), dirigida por Vincenzo Natali"
   },
-  entradilla: "",
+  entradilla: "Un experimento de ciencia ficción que parte de una premisa tan potente como limitada, donde la idea resiste mejor que su desarrollo.",
 
   contenido: [
-    { tipo: "texto", valor: "" }
+    { tipo: "texto", valor: "“El infierno está vacío y todos los demonios están aquí.” — William Shakespeare, La tempestad" },
+
+    { tipo: "texto", valor: "Advertencia: este texto menciona elementos narrativos de la película." },
+
+    { tipo: "texto", valor: "Cube (1997), dirigida por Vincenzo Natali, se apoya en una de esas premisas que parecen autosuficientes: un grupo de desconocidos atrapados en una estructura cúbica plagada de trampas, obligados a descifrar un sistema que nunca termina de revelarse del todo. Hay una sequedad conceptual muy atractiva en ese punto de partida, una especie de experimento casi abstracto donde cada movimiento tiene consecuencias inmediatas." },
+
+    { tipo: "texto", valor: "Los primeros compases funcionan precisamente por eso. La película avanza con una lógica sencilla, casi matemática, y el espectador entra en el juego sin resistencia. La amenaza es clara, el espacio es reconocible dentro de su extrañeza y el mecanismo invita a ser descifrado. Durante un buen tramo, Cube mantiene esa tensión con una eficacia que compensa cualquier limitación evidente de producción." },
+
+    { tipo: "subtitulo", valor: "El mecanismo empieza a agotarse antes de lo que debería." },
+
+    { tipo: "texto", valor: "A medida que la estructura se repite, la película pierde parte de su capacidad de inquietar. Las variaciones son mínimas y la sensación de avance se diluye en una sucesión de pruebas que apenas modifican las reglas del juego. La idea sigue siendo buena; la insistencia termina desgastándola." },
+
+    { tipo: "texto", valor: "Los personajes contribuyen a esa erosión. Cada uno parece diseñado para ocupar una función muy concreta dentro del grupo, y esa función se vuelve transparente demasiado pronto. Las decisiones, los conflictos y hasta los estallidos de violencia responden a una lógica previsible, como si la película no confiara del todo en la ambigüedad que su propio planteamiento pedía." },
+
+    { tipo: "texto", valor: "Las interpretaciones se mueven dentro de ese mismo marco. Hay rigidez, hay momentos de evidente artificio, pero también una cierta coherencia con el tipo de cine que Cube decide ser. La película nunca aspira a un naturalismo sofisticado; le basta con que las piezas encajen dentro del dispositivo." },
+
+    { tipo: "texto", valor: "La música de Mark Korven opta por una presencia contenida, casi funcional, que refuerza la sensación de encierro sin imponerse sobre la imagen. Cumple su cometido sin dejar una huella especialmente memorable." },
+
+    { tipo: "texto", valor: "En el fondo, Cube sugiere más de lo que desarrolla. La idea de un sistema cerrado, arbitrario y potencialmente absurdo, donde las reglas existen sin necesidad de explicación, tiene un filo inquietante que la película roza sin llegar a explorar del todo. Ese vacío conceptual juega a su favor durante un tiempo, aunque acaba revelando también sus límites." },
+
+    { tipo: "texto", valor: "Cube sigue siendo un experimento interesante, una película que se recuerda por lo que propone más que por cómo lo ejecuta. Su premisa resiste. Su desarrollo, bastante menos." }
   ],
 
   etiquetas: [
