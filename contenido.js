@@ -541,8 +541,8 @@ const contenido = [
     "Thriller"
   ]
 },
-   
-{
+
+   {
   id: "spiderman-brand-new-day-trailer",
   seccion: "rumores",
   titulo: "Spider-Man: Brand New Day lanza su primer tráiler",
@@ -580,7 +580,7 @@ const contenido = [
 
 { tipo: "texto", valor: "El tráiler también deja caer varias cosas interesantes a nivel de personajes:" },
 
-{ tipo: "texto", valor: "* Regresa MJ, pero con una vida completamente separada de Peter (y ojo, con posible nueva pareja)\n* Aparece The Punisher, que no es precisamente el colega más optimista del MCU\n* Vuelve Scorpion como amenaza\n* Y tenemos a Bruce Banner/Hulk, en un rol bastante distinto al habitual" },
+{ tipo: "texto", valor: "· Regresa MJ, pero con una vida completamente separada de Peter (y ojo, con posible nueva pareja)\n· Aparece The Punisher, que no es precisamente el colega más optimista del MCU\n· Vuelve Scorpion como amenaza\n· Y tenemos a Bruce Banner/Hulk, en un rol bastante distinto al habitual" },
 
 { tipo: "texto", valor: "Todo esto ya te da una pista clara: la peli va a mezclar historia personal, rollo callejero y conexiones con el MCU más grande." },
 
@@ -596,7 +596,7 @@ const contenido = [
 
 { tipo: "texto", valor: "Y claro, aquí ya ha empezado el festival:" },
 
-{ tipo: "texto", valor: "* teorías sobre experimentos genéticos\n* conexiones con Oscorp\n* gente hablando de versiones alternativas del personaje\n* incluso comparaciones con el Spider-Man de Tobey Maguire" },
+{ tipo: "texto", valor: "· teorías sobre experimentos genéticos\n· conexiones con Oscorp\n· gente hablando de versiones alternativas del personaje\n· incluso comparaciones con el Spider-Man de Tobey Maguire" },
 
 { tipo: "texto", valor: "El fandom, en su estado natural." },
 
@@ -606,7 +606,7 @@ const contenido = [
 
 { tipo: "texto", valor: "El tráiler no deja claro quién interpreta, pero eso no ha impedido que ya haya teorías para aburrir:" },
 
-{ tipo: "texto", valor: "* Jean Grey (sí, ya estamos metiendo a los X-Men)\n* algún personaje nuevo vinculado al multiverso\n* o incluso una sorpresa completamente distinta" },
+{ tipo: "texto", valor: "· Jean Grey (sí, ya estamos metiendo a los X-Men)\n· algún personaje nuevo vinculado al multiverso\n· o incluso una sorpresa completamente distinta" },
 
 { tipo: "texto", valor: "Los medios internacionales ya recogen esta incertidumbre como uno de los grandes misterios del proyecto." },
 
@@ -630,7 +630,7 @@ const contenido = [
 
 { tipo: "texto", valor: "Están intentando hacer una nueva etapa de Spider-Man:" },
 
-{ tipo: "texto", valor: "* más personal\n* más aislada\n* pero con semillas para algo mucho más grande" },
+{ tipo: "texto", valor: "· más personal\n· más aislada\n· pero con semillas para algo mucho más grande" },
 
 { tipo: "texto", valor: "Y los rumores que están saliendo alrededor del tráiler van justo por ahí: esto no es solo una peli más, es el inicio de algo." },
 
@@ -663,7 +663,7 @@ const contenido = [
     "Superhéroes"
   ]
 },
-   
+
   /* =========================
      NINJA SCROLL
      ========================= */
