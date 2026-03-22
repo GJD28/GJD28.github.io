@@ -730,7 +730,7 @@ const contenido = [
   seccion: "criticas",
   titulo: "La bruja",
   autor: "Paula Elizábal",
-  fecha_publicacion: "20/03/2026",
+  fecha_publicacion: "22/03/2026",
   director: "Robert Eggers",
   año: 2015,
   nota: 3.5,
