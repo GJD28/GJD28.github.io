@@ -720,6 +720,67 @@ const contenido = [
     "Kiko de la Rica"
   ]
 },
+
+/* =========================
+   LA BRUJA
+   ========================= */
+
+{
+  id: "la-bruja-2015",
+  seccion: "criticas",
+  titulo: "La bruja",
+  autor: "Paula Elizábal",
+  fecha_publicacion: "20/03/2026",
+  director: "Robert Eggers",
+  año: 2015,
+  nota: 3.5,
+  destacada: true,
+  imagen: {
+    src: "la-bruja.png",
+    alt: "La bruja (2015), dirigida por Robert Eggers"
+  },
+  entradilla: "Un terror que nace del aislamiento, la fe y la ruptura familiar, construido desde dentro con una coherencia tan precisa como inquietante.",
+  contenido: [
+
+{ tipo: "texto", valor: "Un terror que nace del aislamiento, la fe y la ruptura familiar, construido desde dentro con una coherencia tan precisa como inquietante." },
+
+{ tipo: "texto", valor: "En The Witch seguimos a una familia puritana en la Nueva Inglaterra del siglo XVII que es expulsada de su comunidad tras un conflicto religioso provocado por el padre, incapaz de someterse a la autoridad del resto. Se instalan junto a un bosque y, a partir de ahí, una desaparición, el comportamiento extraño de los hijos y una sensación constante de amenaza empiezan a tensar la convivencia. La película se mueve en ese terreno ambiguo donde lo sobrenatural y lo psicológico se mezclan sin separarse del todo." },
+
+{ tipo: "texto", valor: "Lo que ocurre a partir de ese punto tiene mucho más que ver con cómo esa familia empieza a resquebrajarse que con cualquier elemento externo. El aislamiento deja de ser un simple contexto y se convierte en el verdadero motor de la película, en el espacio donde todo se amplifica. El bosque está ahí, pero funciona casi como una extensión de ese deterioro interno. Lo que realmente pesa es la forma en la que los miembros de la familia dejan de reconocerse entre ellos, cómo la confianza se erosiona y da paso a una convivencia cada vez más tensa." },
+
+{ tipo: "texto", valor: "La expulsión inicial atraviesa toda la película y define el tono desde el principio. El hecho podría quedarse solo en una ruptura con la comunidad, pero resulta ser el ejemplo perfecto de una forma muy concreta de entender el mundo: rígida, inflexible, incapaz de convivir con otros matices. Ese mismo marco es el que después condiciona todo lo que ocurre dentro de la casa. Salen buscando pureza y acaban en un espacio donde esa misma pureza se convierte en una carga que los encierra y los entierra." },
+
+{ tipo: "texto", valor: "Robert Eggers construye ese entorno con una precisión muy poco habitual. La luz naturalista ayuda a exponer los rincones precisos del cuadro. Los interiores son densos, cargados, con una sensación constante de peso que nunca desaparece. La cámara observa sin intervenir, se queda el tiempo necesario para que el espectador note ese desgaste progresivo, como si la película te obligara a convivir con esa incomodidad sin ofrecerte una vía de escape." },
+
+{ tipo: "texto", valor: "La auténtica tensión nace de cómo se relacionan entre ellos. Cada conversación arrastra culpa, religión y una necesidad constante de dar sentido a lo que está ocurriendo. Esa necesidad, en su transitar, va cerrando caminos. Cada intento de explicación añade más presión, más sospecha, más distancia. Las miradas cambian, los gestos se endurecen y la familia empieza a funcionar como un espacio hostil en el que cualquiera puede convertirse en el problema." },
+
+{ tipo: "texto", valor: "La fe actúa como un filtro que lo distorsiona todo. Cada personaje interpreta lo que ocurre desde una estructura mental que ya viene condicionada, y eso impide cualquier lectura alternativa. Aquí nada es relativo, todo es absoluto. Todo se vuelve definitivo, y eso empuja a los personajes a posiciones cada vez más extremas, reduciendo el margen de movimiento hasta que ya no queda salida posible." },
+
+{ tipo: "texto", valor: "Anya Taylor-Joy se convierte en el eje de todo ese proceso. Su personaje queda atrapado en una dinámica que la señala desde el principio, en un entorno que ya ha decidido qué representa antes de que pueda defenderse. La película sigue ese desplazamiento sin necesidad de forzarlo, dejando que la presión del grupo la arrastre poco a poco hacia el lugar al que inevitablemente iba a llegar. Para que eso funcione, es fundamental el brillante trabajo (uno más) de esta actriz de talento casi único." },
+
+{ tipo: "texto", valor: "El uso del lenguaje refuerza esa sensación de distancia constante. Los diálogos, a menudo cortos y secos, van separando a los personajes cada vez más. Cada frase tiene un peso específico que añade fricción, que dificulta la comunicación y que contribuye a que la relación entre ellos se vuelva cada vez más rígida, más incómoda, más insostenible." },
+
+{ tipo: "texto", valor: "El tramo final recoge todo lo que se ha ido acumulando y lo lleva hasta sus últimas consecuencias sin cambiar las reglas del juego. Lejos de tener un giro que lo altere todo, hay una continuidad que termina de cerrar el círculo. La sensación deja de ser incertidumbre y se convierte en algo más definitivo, más claro, más difícil de revertir." },
+
+{ tipo: "texto", valor: "The Witch funciona porque construye su tensión desde dentro y la mantiene con una coherencia muy calculada y extremadamente elegante. Cada decisión refuerza la misma idea y empuja en la misma dirección, sin desviarse ni un milímetro." },
+
+{ tipo: "texto", valor: "Y cuando todo encaja, lo que queda no es una explicación tranquilizadora. Es la sensación de haber asistido a algo que se ha desarrollado exactamente como tenía que hacerlo. Eso, en mi opinión, es lo verdaderamente terrorífico de la película y lo que la cierra de forma redonda." }
+
+  ],
+  etiquetas: [
+    "Robert Eggers",
+    "Anya Taylor-Joy",
+    "Ralph Ineson",
+    "Kate Dickie",
+    "Jarin Blaschke",
+    "Mark Korven",
+    "A24",
+    "Parts and Labor",
+    "2015",
+    "Terror",
+    "Estados Unidos"
+  ]
+},
    
 /* =========================
    SPIDER-MAN BRAND NEW DAY (VILLANO OCULTO)
