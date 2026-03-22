@@ -542,7 +542,62 @@ const contenido = [
   ]
 },
 
+/* =========================
+   EL AMOR EN SU LUGAR
+   ========================= */
 
+{
+  id: "el-amor-en-su-lugar-2021",
+  seccion: "criticas",
+  titulo: "El amor en su lugar",
+  autor: "Dolores Aranda",
+  fecha_publicacion: "23/03/2026",
+  director: "Rodrigo Cortés",
+  año: 2021,
+  nota: 3.5,
+  destacada: false,
+  imagen: {
+    src: "el-amor-en-su-lugar.png",
+    alt: "El amor en su lugar (2021), dirigida por Rodrigo Cortés"
+  },
+  entradilla: "En el gueto de Varsovia, durante la Segunda Guerra Mundial, una compañía de actores judíos prepara la representación de una comedia musical mientras vive bajo la amenaza constante del régimen nazi. La historia se concentra en una noche concreta, en las horas previas a la función, cuando cada decisión adquiere un peso definitivo. El teatro se convierte en el centro de la acción: un espacio donde los personajes ensayan, negocian, actúan y toman decisiones mientras el exterior permanece presente como una presión constante. La película sigue a ese grupo en tiempo casi real, acompañando sus movimientos por camerinos, pasillos y escenario, y mostrando cómo la ficción que están a punto de representar convive con una realidad que avanza hacia ellos.",
+  contenido: [
+
+{ tipo: "texto", valor: "En el gueto de Varsovia, durante la Segunda Guerra Mundial, una compañía de actores judíos prepara la representación de una comedia musical mientras vive bajo la amenaza constante del régimen nazi. La historia se concentra en una noche concreta, en las horas previas a la función, cuando cada decisión adquiere un peso definitivo. El teatro se convierte en el centro de la acción: un espacio donde los personajes ensayan, negocian, actúan y toman decisiones mientras el exterior permanece presente como una presión constante. La película sigue a ese grupo en tiempo casi real, acompañando sus movimientos por camerinos, pasillos y escenario, y mostrando cómo la ficción que están a punto de representar convive con una realidad que avanza hacia ellos." },
+
+{ tipo: "texto", valor: "El amor en su lugar (2021) se apoya en un contexto histórico muy concreto: la actividad teatral real que existió en el gueto de Varsovia, y en particular en la obra Miłość szuka mieszkania de Jerzy Jurandot, representada en 1942. La película no reconstruye un hecho documentado de forma literal, sino que imagina una situación a partir de ese material, concentrando la historia en una única noche y en un espacio cerrado. Esa decisión permite que el relato funcione como una especie de cámara de presión donde todo ocurre a la vista del espectador, sin grandes saltos temporales y con una continuidad muy marcada. El tiempo no se fragmenta, avanza con los personajes, y esa proximidad refuerza la sensación de urgencia que atraviesa toda la película." },
+
+{ tipo: "texto", valor: "El reparto internacional —con Clara Rugaard, Ferdia Walsh-Peelo y Mark Ryder al frente— sostiene esa estructura desde un equilibrio delicado entre lo teatral y lo íntimo. Los personajes están constantemente en tránsito entre dos planos: el de la obra que representan y el de sus propias vidas dentro del gueto. Esa superposición define muchas de las escenas, donde una conversación puede tener al mismo tiempo un sentido dentro de la ficción escénica y otro completamente distinto en la realidad que viven. La película trabaja bien esa ambigüedad y encuentra ahí uno de sus puntos más interesantes, porque permite que el espectador perciba cómo la representación funciona también como una forma de sostenerse frente a lo que ocurre fuera del teatro." },
+
+{ tipo: "texto", valor: "La puesta en escena de Rodrigo Cortés responde a una concepción muy clara del espacio. El teatro, recreado en el Casino del Masnou, se convierte en un organismo cerrado donde cada movimiento está medido. La cámara recorre ese espacio con fluidez, enlazando escenas a través de desplazamientos continuos que refuerzan la idea de unidad temporal. El uso del plano secuencia y de una planificación que evita la fragmentación excesiva contribuye a que la película mantenga una sensación de continuidad constante. La iluminación trabaja en la misma dirección, con interiores donde la luz está controlada y delimitada, creando una atmósfera que refuerza el encierro sin necesidad de recurrir a contrastes evidentes con el exterior, que apenas se muestra pero nunca desaparece del todo." },
+
+{ tipo: "texto", valor: "La música, compuesta por Víctor Reyes, cumple una función doble dentro del film. Por un lado, reconstruye el espíritu de la obra original cuya música se ha perdido, generando números que encajan con la época. Por otro, se integra en la estructura narrativa como parte de la representación que los personajes intentan mantener en pie. Esa integración refuerza la idea de que el espectáculo no es un elemento añadido, sino el núcleo mismo de la película, el lugar donde se cruzan todas las tensiones." },
+
+{ tipo: "texto", valor: "Dentro de ese diseño aparece con claridad uno de los rasgos más característicos del cine de Cortés: su inclinación hacia el mecanismo. La película está construida como un dispositivo donde cada elemento —el tiempo casi real, el espacio único, la superposición de niveles narrativos— responde a una lógica muy definida. Esa organización permite que el relato avance con precisión y que el espectador entienda en todo momento dónde está y qué está ocurriendo. Al mismo tiempo, esa misma precisión genera una distancia particular. La historia se sitúa en un contexto donde la incertidumbre y el desorden forman parte esencial de la experiencia de los personajes, mientras la puesta en escena tiende a ordenar cada situación dentro de un sistema muy controlado. Ese contraste atraviesa la película de principio a fin y define buena parte de su tono." },
+
+{ tipo: "texto", valor: "La narrativa se articula a través de varios niveles que conviven simultáneamente: la vida de los personajes dentro del gueto, la ficción de la obra que están representando y la mirada del público que asiste a la función dentro de la propia historia. Esa estructura añade complejidad al relato y permite que cada escena tenga más de una lectura. Una misma acción puede funcionar como parte del espectáculo y, al mismo tiempo, como una decisión que afecta directamente a la supervivencia de los personajes. La película mantiene ese equilibrio con bastante consistencia, apoyándose en la claridad de su puesta en escena para evitar la confusión." },
+
+{ tipo: "texto", valor: "El resultado es una película que se define por su coherencia formal y por la solidez de su planteamiento. El amor en su lugar construye un espacio donde el arte y la supervivencia conviven de forma inseparable, y donde la representación adquiere un sentido que va más allá del propio espectáculo. La propuesta de Cortés se apoya en un diseño muy preciso que le permite desarrollar esa idea con claridad, aunque esa misma precisión introduce una distancia emocional que forma parte de la identidad de la película." }
+
+  ],
+
+  etiquetas: [
+    "Rodrigo Cortés",
+    "David Safier",
+    "Clara Rugaard",
+    "Ferdia Walsh-Peelo",
+    "Mark Ryder",
+    "Rafa García",
+    "Víctor Reyes",
+    "Nostromo Pictures",
+    "Amor en su lugar AIE",
+    "España",
+    "2021",
+    "Drama",
+    "Histórico"
+  ]
+},
+   
 /* =========================
    SPIDER-MAN BRAND NEW DAY (TRÁILER)
    ========================= */
