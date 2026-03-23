@@ -198,6 +198,60 @@ const contenido = [
 ]
   },
 
+/* =========================
+   THE QUEST
+   ========================= */
+
+{
+  id: "the-quest-1996",
+  seccion: "criticas",
+  titulo: "The Quest",
+  autor: "Miguel Romero",
+  fecha_publicacion: "23/03/2026",
+  director: "Jean-Claude Van Damme",
+  año: 1996,
+  nota: 3,
+  destacada: false,
+  imagen: {
+    src: "the-quest.png",
+    alt: "The Quest (1996), dirigida por Jean-Claude Van Damme"
+  },
+  entradilla: "The Quest es una peli dirigida por Jean-Claude Van Damme, cuyo guion se basa en una premisa de Jean-Claude Van Damme y está protagonizada por Jean-Claude Van Damme. Con eso ya sabes que si la pillas a media tarde en la tele, toca verla.",
+  contenido: [
+
+{ tipo: "texto", valor: "The Quest es una peli dirigida por Jean-Claude Van Damme, cuyo guion se basa en una premisa de Jean-Claude Van Damme y está protagonizada por Jean-Claude Van Damme. Con eso ya sabes que si la pillas a media tarde en la tele, toca verla. Arranca con Van Damme haciendo de buscavidas, tirando de calle, robando aquí, escapando allá, hasta que la lía y acaba metido en un viaje que no ha pedido. Y tú ya estás dentro porque ese tipo de arranque huele a aventura de las de antes, de las que  tiran millas sin que les importe una mierda que las cosas tengan sentido." },
+
+{ tipo: "texto", valor: "La peli se pega un buen rato llevándote de un sitio a otro como si fuera una ruta de mercadillos: barco, selva, templo, peña rara… todo muy rápido, todo muy de “venga, que hay que llegar a lo importante”. Y lo importante se sabe desde el minuto uno. Aquí se viene a ver un torneo donde la peña se da hostias representando a su país como si esto fuera una especie de mundial clandestino. Cuando empiezan a soltar mamporros, tú ya sabes contra quién va a ganar Van Damme al final, pero te la suda. Lo que quieres es que ceben ese combate como a un pavo en la mierda esa del Acción de Gracias." },
+
+{ tipo: "texto", valor: "Cuando aparece el torneo, la peli se pone seria. Seria dentro de lo que es un concepto al que le importa un pepino todo. Ahí es donde conecta con ese rollo que siempre se ha dicho de que esto parece un Street Fighter sin licencia. Incluso un Street Fighter de verdad, y no aquella cosa repulsiva de Steven E. de Souza. Uno contra uno, cada luchador con pinta de estar en su propia despedida de soltero, su estilo de lucha y su manera de entrar en escena como si acabara de salir de la pantalla de elegir personaje. El grande que parece un armario, el ágil que no para quieto, el que te mira y ya te está retando. Cada combate es como pasar de pantalla y eso engancha por mucho que sepas cuál es el jefe final. \"El monstruo\", como decíamos en mi pueblo." },
+
+{ tipo: "texto", valor: "Van Damme aquí va a lo suyo pero con un punto más terrenal. No entra como el puto amo desde el principio. Se le ve currándoselo, adaptándose y aprendiendo sobre la marcha. Luego, cuando toca pelear, hace lo de siempre: patadas imposibles y esa forma de moverse que parece que flota. El tío cumple porque sabe perfectamente en qué película está y qué espera la peña de él." },
+
+{ tipo: "texto", valor: "Los rivales están ahí para lucirse un rato y largarse, pero tienen ese encanto de catálogo noventero que funciona. Son simples, sí, simples de cojones, pero efectivos de la hostia. Cada uno tiene su momento y su forma de pelear, y eso hace que el torneo no se haga pesado. Aquí se busca el espectáculo con cimientos hechos de sopapos, no la profundidad. Y no hay que sentirse culpable, algo que la peli sabe perfectamente y por eso no intenta venderte que es otra cosa." },
+
+{ tipo: "texto", valor: "Para darle cuerpo y que no sea una colección de ñoras, hay ratos en los que la peli intenta meterle algo más de historia, darle un poco de contexto a todo el viaje. A veces cuela, si uno hace el esfuerzo de dejarlo colar,  y otras no, pero te da un poco igual porque estás esperando a que vuelva el siguiente combate. Puede que esos añadidos no cuajen del todo, pero así es el formato y sabemos que forma parte del pack." },
+
+{ tipo: "texto", valor: "Al final, The Quest es lo que es: una peli de hostias con envoltorio de aventura que se ve sola. Viene a entretenerte, a enseñarte a gente dándose leña con varios estilos y banderas y a dejarte satisfecho, porque si has elegido ver The Quest es porque querías ver algo como The Quest. Si quisieras ver una peli con silencios y con carga emocional, no estarías viendo The Quest." },
+
+{ tipo: "texto", valor: "La oferta de la semana: dos películas que también van de gente repartiéndose a base de bien, con combates uno contra uno y ese rollo de torneo que engancha fácil: Contacto sangriento (Newt Arnold, 1988) y Kickboxer (Mark DiSalle, 1989). Las dos con el belga volador." }
+
+  ],
+
+  etiquetas: [
+    "Jean-Claude Van Damme",
+    "Frank Dux",
+    "Roger Moore",
+    "James Remar",
+    "David Worth",
+    "John Barry",
+    "Universal Pictures",
+    "Estados Unidos",
+    "1996",
+    "Acción",
+    "Artes marciales"
+  ]
+},
+   
    /* =========================
    LOS ODIOSOS OCHO
    ========================= */
