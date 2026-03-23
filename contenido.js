@@ -240,7 +240,6 @@ const contenido = [
   etiquetas: [
     "Jean-Claude Van Damme",
     "Frank Dux",
-    "Jean-Claude Van Damme",
     "Roger Moore",
     "James Remar",
     "David Worth",
