@@ -533,10 +533,10 @@ const contenido = [
   nota: 2.5,
   destacada: false,
   estreno: true,
-  imagen: 
-    src: "proyecto-salvacion.jpg",
-    alt: "Proyecto Salvación (2026), dirigida por Phil Lord y Christopher Miller"
-  },
+imagen: {
+  src: "proyecto-salvacion.jpg",
+  alt: "Proyecto Salvación (2026), dirigida por Phil Lord y Christopher Miller"
+},
   entradilla: "La ciencia ficción comercial lleva años intentando resolver una tensión bastante evidente: cómo hacer comprensibles ideas complejas sin que el propio esfuerzo por explicarlas termine ahogando la película.",
   contenido: [
 
