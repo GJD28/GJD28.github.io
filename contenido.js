@@ -312,6 +312,71 @@ const contenido = [
 ]
 },
 
+/* =========================
+   LOS MERCENARIOS
+   ========================= */
+
+{
+  id: "los-mercenarios-2010",
+  seccion: "criticas",
+  titulo: "Los mercenarios",
+  autor: "Miguel Romero",
+  fecha_publicacion: "24/03/2026",
+  director: "Sylvester Stallone",
+  año: 2010,
+  nota: 4,
+  destacada: false,
+  imagen: {
+    src: "los-mercenarios.jpg",
+    alt: "Los mercenarios (2010), dirigida por Sylvester Stallone"
+  },
+  entradilla: "Los mercenarios se vendía sola antes de rodarse. Era leer que Sylvester Stallone quería juntar a medio gimnasio de los 80 y 90 y ya estabas dentro sin preguntar el argumento.",
+  contenido: [
+
+{ tipo: "texto", valor: "Los mercenarios se vendía sola antes de rodarse. Era leer que Sylvester Stallone quería juntar a medio gimnasio de los 80 y 90 y ya estabas dentro sin preguntar el argumento. Jason Statham, Jet Li, Dolph Lundgren, Mickey Rourke… eso no es un reparto, eso es un cartel de feria con tíos que te han acompañado media vida repartiendo hostias. Y con eso ya te han ganado. Porque aquí hay algo que no tienen muchas pelis: el simple hecho de reunir a esa peña ya te justifica la entrada. Da igual lo que pase después." },
+
+{ tipo: "texto", valor: "La peli arranca con lo que esperas: mercenarios, misión, tiros y una isla con un dictador de esos que duran lo justo. Todo muy de manual. Y claro, uno entra pensando que esto va a ser un pum pum pum sin alma, algo tipo la última de Rambo que era pegar tiros y mirar al infinito con cara de estreñido. Pero aquí pasa otra cosa. Aquí, entre explosión y explosión, hay ratos donde los personajes paran, hablan y se dejan ver un poco más allá del músculo. Y eso, aunque dure poco, ya cambia el sabor." },
+
+{ tipo: "texto", valor: "Luego están los momentos que son puro regalo. La escena con Bruce Willis, Arnold Schwarzenegger y Stallone compartiendo plano no dura nada, pero da igual. Es como ver a tres colegas que han sido dioses del género sentados en la misma mesa soltándose pullas. Eso no lo compras con efectos especiales ni con millones de dólares en CGI. Eso es historia del cine de acción mirándose a la cara y diciendo “seguimos aquí”." },
+
+{ tipo: "texto", valor: "Porque esa es otra. Aquí no hay bichos azules ni mundos que flipan cinco minutos y luego te dejan frío. Aquí hay tíos de carne y hueso que sabes quiénes son, que sabes lo que han hecho y que con solo aparecer ya te generan algo. Los efectos de Avatar te hacen decir “qué pasada” durante un rato. Estos cabrones te mantienen enganchado porque cada uno arrastra una mochila de películas detrás que pesa más que cualquier explosión digital." },
+
+{ tipo: "texto", valor: "Y luego está la peli en sí. Hay tiros, hay hostias, hay explosiones que parecen hechas con bidones de gasolina de verdad y no con un ordenador. But también hay pequeñas cosas que suman. La movida de Statham con la chavala, el rollo de Rourke soltando ese monólogo que te deja callado un momento, Lundgren haciendo de tipo que no está muy fino de la cabeza… Son pinceladas, no te van a cambiar la vida, pero le dan algo de cuerpo al asunto." },
+
+{ tipo: "texto", valor: "Stallone, además, dirige con bastante más cabeza de la que muchos esperaban. Sabe cuándo acelerar y cuándo dejar que los personajes respiren un poco. No es un prodigio, pero tampoco es un tío apretando el botón de detonación sin mirar. Se nota que aquí hay cariño por el género, que no es solo juntar colegas y rodar cuatro tiros." },
+
+{ tipo: "texto", valor: "También te digo una cosa: la película tiene sus cosas. La trama es más simple que el mecanismo de un chupete y hay momentos en los que todo va tan directo que parece que le han quitado escenas por el camino. Pero es que tampoco le hace falta mucho más. Esto no va de reinventar nada. Va de ver a esta panda en pantalla haciendo lo que llevan haciendo toda la vida." },
+
+{ tipo: "texto", valor: "Al final, Los mercenarios funciona porque sabe exactamente lo que es. No pide perdón, no intenta hacerse la lista y no se esconde detrás de nada. Es un homenaje con mala leche, con músculo y con un punto de “aquí estamos los de siempre, por si alguien nos echaba de menos”. Y la verdad, para los que hemos crecido con esta peña, eso entra solo, porque los echábamos de menos una puta barbaridad." },
+
+{ tipo: "texto", valor: "La oferta de la semana: dos películas donde el músculo, el carisma y las hostias bien dadas pesan más que cualquier otra cosa y donde los nombres propios ya te hacen sentarte: Con Air (Simon West, 1997) y Depredador (John McTiernan, 1987)." }
+
+  ],
+  etiquetas: [
+    "Sylvester Stallone",
+    "David Callaham",
+    "Jason Statham",
+    "Jet Li",
+    "Dolph Lundgren",
+    "Mickey Rourke",
+    "Bruce Willis",
+    "Arnold Schwarzenegger",
+    "Steve Austin",
+    "Randy Couture",
+    "Terry Crews",
+    "Charisma Carpenter",
+    "Eric Roberts",
+    "Geoffrey Hall",
+    "Brian Tyler",
+    "Millennium Films",
+    "Nu Image",
+    "Estados Unidos",
+    "2010",
+    "Acción",
+    "Thriller"
+  ]
+},
+   
      /* =========================
      SECRET WARS RUMOR
      ========================= */
