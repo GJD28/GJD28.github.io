@@ -453,6 +453,67 @@ const contenido = [
 ]
   },
 
+/* =========================
+   PROYECTO SALVACIÓN
+   ========================= */
+
+{
+  id: "proyecto-salvacion-2026",
+  seccion: "criticas",
+  titulo: "Proyecto Salvación",
+  autor: "Sergio Valdés",
+  fecha_publicacion: "26/03/2026",
+  director: "Phil Lord, Christopher Miller",
+  año: 2026,
+  nota: 2.5,
+  destacada: false,
+  estreno: true,
+  imagen: {
+    src: "proyecto-salvacion.png",
+    alt: "Proyecto Salvación (2026), dirigida por Phil Lord y Christopher Miller"
+  },
+  entradilla: "La ciencia ficción comercial lleva años intentando resolver una tensión bastante evidente: cómo hacer comprensibles ideas complejas sin que el propio esfuerzo por explicarlas termine ahogando la película.",
+  contenido: [
+
+{ tipo: "texto", valor: "La ciencia ficción comercial lleva años intentando resolver una tensión bastante evidente: cómo hacer comprensibles ideas complejas sin que el propio esfuerzo por explicarlas termine ahogando la película. Proyecto Salvación se construye exactamente sobre ese conflicto. La adaptación de la novela de Andy Weir recoge la vocación divulgativa de su autor y la empuja hacia un terreno más amplio, más espectacular y también más dependiente de su propia necesidad de justificarse." },
+
+{ tipo: "texto", valor: "La película sigue a Ryland Grace, interpretado por Ryan Gosling, un científico que despierta solo y desmemoriado y que va reconstruyendo tanto su identidad como el propósito de su misión. Ese punto de partida, pese a ser uno de los clichés del Olimpo de los Clichés, funciona muy bien como motor narrativo porque permite dosificar la información y convertir el aprendizaje en parte del relato. Durante su primer tramo, la película encuentra ahí un ritmo bastante eficaz, apoyándose en la curiosidad y en la implicación directa del espectador." },
+
+{ tipo: "texto", valor: "Gosling sostiene ese arranque con solvencia, moviéndose en un registro que combina desconcierto y ligereza sin perder del todo el peso dramático. Su presencia mantiene la película en pie incluso cuando el guion empieza a girar hacia terrenos más explicativos. A su alrededor, el resto del reparto queda más diluido, funcionando sobre todo como soporte narrativo en los momentos donde la historia necesita avanzar a través de la información." },
+
+{ tipo: "texto", valor: "La dirección corre a cargo de Phil Lord y Christopher Miller, un dúo que ha construido su carrera desde el equilibrio entre irreverencia y precisión narrativa. Su trabajo en títulos como La LEGO película o Infiltrados en clase siempre ha jugado con la mezcla de ritmo, humor y una cierta conciencia del propio relato, algo que aquí se percibe de forma más contenida. En Proyecto Salvación esa personalidad queda parcialmente diluida dentro de un material más rígido, más dependiente de la explicación que del impulso, como si la película marcara más el camino que sus propios directores." },
+
+{ tipo: "texto", valor: "El punto de inflexión llega con la introducción del personaje alienígena, una decisión que cambia el tono de la película de forma bastante clara. Ahí aparece una dinámica más cercana a la comedia de compañeros, una relación que aporta energía y que, en cierto modo, se convierte en el verdadero corazón emocional del conjunto. La película respira mejor en esos tramos porque deja de explicarse constantemente y empieza a apoyarse en la interacción entre personajes." },
+
+{ tipo: "texto", valor: "Ese equilibrio, sin embargo, no se sostiene. A medida que la historia avanza, la necesidad de explicar cada elemento del conflicto vuelve a imponerse y la película entra en una dinámica de sobreexplicación bastante insistente. Conceptos, procesos y soluciones se desarrollan con un nivel de detalle que termina afectando al ritmo, como si la película no terminara de confiar en su propia capacidad para ser entendida o, lo que es más habitual, como si no confiara en que todos y cada uno de los espectadores no sean capaces de entenderla." },
+
+{ tipo: "texto", valor: "Ahí es donde Proyecto Salvación pierde parte de su fuerza. La ambición de ser accesible y rigurosa al mismo tiempo deriva en una acumulación de información que diluye el impacto de muchas de sus ideas. Lo que debería sentirse como avance narrativo se convierte en exposición, y la experiencia empieza a pesar más de lo que la propia película parece prever." },
+
+{ tipo: "texto", valor: "La comparación con Marte (The Martian) aparece casi de forma automática, no solo por el origen compartido, sino por la manera de abordar la ciencia dentro del relato. Allí la explicación formaba parte del ritmo; aquí lo interrumpe. La cosa no va de que haya más o menos información, sino de cómo integrar eso dentro de la narración." },
+
+{ tipo: "texto", valor: "Proyecto Salvación funciona a ratos, especialmente cuando se apoya en sus personajes y en esa relación central que introduce algo de ligereza dentro del conjunto. Pero también arrastra una tendencia constante a justificarse, a explicarse más de lo necesario, y ahí es donde termina limitando su alcance." },
+
+{ tipo: "texto", valor: "El resultado es una película que se deja ver, que tiene elementos claramente eficaces, pero que no termina de encontrar el equilibrio entre lo que quiere contar y cómo decide hacerlo. Y en una propuesta construida precisamente sobre ese equilibrio, esa falta de ajuste pesa más de lo que debería." }
+
+  ],
+
+  etiquetas: [
+    "Phil Lord",
+    "Christopher Miller",
+    "Drew Goddard",
+    "Ryan Gosling",
+    "Sandra Hüller",
+    "Dariusz Wolski",
+    "Michael Giacchino",
+    "Amazon MGM Studios",
+    "Pascal Pictures",
+    "Estados Unidos",
+    "2026",
+    "Ciencia ficción",
+    "Aventura"
+  ]
+},
+   
    /* =========================
      OBI-WAN RUMOR
      ========================= */
