@@ -1595,12 +1595,20 @@ if(esEstrenoActivo(e)){
 }
 
  if (
+  paginaActual === "/" ||
   paginaActual.includes("index") ||
   paginaActual.includes("autor")
 ) {
 
   let tipoClase = "";
   let tipoTexto = "";
+
+  if (
+  paginaActual.includes("tag") ||
+  paginaActual.includes("autor") ||
+  paginaActual === "/" ||
+  paginaActual.includes("index")
+) {
 
   if (e.seccion === "criticas") {
     tipoClase = "tipo-critica";
@@ -1612,6 +1620,16 @@ if(esEstrenoActivo(e)){
     tipoClase = "tipo-rumor";
     tipoTexto = "RUMOR";
   }
+
+  bannerHTML = `
+    <div class="miniatura-banner ${tipoClase}">
+      ${tipoTexto}
+    </div>
+  `;
+
+} else {
+  bannerHTML = "";
+}
 
   bannerHTML = `
     <div class="miniatura-banner ${tipoClase}">
